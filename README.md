@@ -1,18 +1,16 @@
-WebApplikationer
-=================
+# WebbApplikationer 
+
+Our git for the projact in the course webapplications  
+
+Working on this project: Emil, Christian, Erik and David 
+
+### Info 
+
+[Home](http://www.cse.chalmers.se/edu/course/DAT076/) 
 
 
+### About the project 
 
-3 2 1 . . . 
-=================
-
-
+A small generic webshop. 
 
 
-Emil med password
-=================
-
-hej
-
-
-!!!!!!!!!!!!!

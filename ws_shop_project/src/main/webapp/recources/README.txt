@@ -1,1 +1,0 @@
-Add all images to img-folder and any other resources to respective folder. 

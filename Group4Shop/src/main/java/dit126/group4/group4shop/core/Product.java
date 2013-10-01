@@ -32,7 +32,9 @@ public class Product implements Serializable {
         this.description = description;
     }
     
-    
+    public Long getId(){
+        return this.id;
+    }
     
     
 }

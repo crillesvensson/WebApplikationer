@@ -1,6 +1,11 @@
 package dit126.group4.group4shop.core;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,5 +26,28 @@ public class ProductImage implements Serializable{
     private Long productId;
     @Column(name = "IMAGEDATA")
     private byte[] imageData;
+    
+    protected ProductImage(){
+        
+    }
+    
+    public ProductImage(String name, Long productId, File image){
+        this.name = name;
+        this.productId = productId;
+        this.imageData = this.getImageBytes(image);
+    }
+    
+    
+    
+    private byte[] getImageBytes(File image){
+        byte[] imageBytes = null;
+        try {
+           imageBytes = Files.readAllBytes(image.toPath());
+        } catch (IOException ex) {
+            Logger.getLogger(ProductImage.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            return imageBytes;
+        }
+    }
 
 }

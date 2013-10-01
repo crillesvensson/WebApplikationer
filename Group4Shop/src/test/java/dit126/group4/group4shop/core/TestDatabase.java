@@ -3,6 +3,7 @@ package dit126.group4.group4shop.core;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.BeforeClass;
 
 /**
  *
@@ -13,8 +14,8 @@ public class TestDatabase {
         final static String PU = "group4_test_shop";
         static IGroup4Shop shop;
         
-        @Before
-        public void before(){
+        @BeforeClass
+        public static void before(){
              shop = Group4ShopFactory.getShop(PU);
         }
         

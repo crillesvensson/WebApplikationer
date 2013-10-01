@@ -5,6 +5,7 @@
 package dit126.group4.group4shop.core;
 
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -14,7 +15,11 @@ public class ProductCatalogue implements IProductCatalogue{
  
     
     private EntityManagerFactory emf;
-    //private final Class<Product> clazz;
+    private final Class<Product> clazz;
     
+    public ProductCatalogue(String puName){
+        this.emf = Persistence.createEntityManagerFactory(puName);
+        this.clazz = Product.class;
+    }
     
 }

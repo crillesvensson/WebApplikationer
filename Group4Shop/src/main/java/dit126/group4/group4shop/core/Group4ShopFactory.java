@@ -8,13 +8,12 @@ package dit126.group4.group4shop.core;
  *
  * @author Christian
  */
-public class Group4Shop implements IGroup4Shop{
- 
-    public Group4Shop(String puName){
+public class Group4ShopFactory {
         
+    private Group4ShopFactory() {
     }
 
-    public IProductCatalogue getProductCatalogue() {
-        return null;
+    public static IGroup4Shop getShop(String persistenceUnitName) {
+        return new Group4Shop(persistenceUnitName);
     }
 }

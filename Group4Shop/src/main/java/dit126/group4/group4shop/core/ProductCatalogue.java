@@ -15,7 +15,6 @@ import javax.persistence.Query;
  * @author Christian
  */
 public class ProductCatalogue implements IProductCatalogue{
- 
     
     private EntityManagerFactory emf;
     private final Class<Product> clazz;

@@ -1,9 +1,5 @@
-package dit126.group4.group4shop;
+package dit126.group4.group4shop.core;
 
-import dit126.group4.group4shop.core.Group4Shop;
-import dit126.group4.group4shop.core.Group4ShopFactory;
-import dit126.group4.group4shop.core.IGroup4Shop;
-import dit126.group4.group4shop.core.Product;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

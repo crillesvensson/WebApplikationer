@@ -8,7 +8,7 @@ import javax.persistence.Table;
  * @author Group4
  */
 
-@Entity
+//@Entity
 //@Table("PRODUCT")
 public class Product {
     private String name; 

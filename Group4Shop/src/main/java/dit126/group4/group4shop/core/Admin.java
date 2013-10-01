@@ -4,6 +4,8 @@
  */
 package dit126.group4.group4shop.core;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;

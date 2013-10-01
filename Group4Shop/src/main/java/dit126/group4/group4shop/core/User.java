@@ -19,8 +19,5 @@ public class User implements Serializable {
     @Column(name="FIRSTNAME") private String firstName;
     @Column(name="LASTNAME") private String lastName;
     @Column(name="PASSWORD") private String password; // shoule be changed to use a more secure method 
-     
-    @Id
-    @Column(name="EMAIL")
-    private String email; // key when storing users in table.  
+    @Column(name="EMAIL") @Id private String email; // key when storing users in table.    
 }

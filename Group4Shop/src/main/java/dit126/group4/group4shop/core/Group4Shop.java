@@ -10,4 +10,6 @@ package dit126.group4.group4shop.core;
  */
 public class Group4Shop {
     
+    //test
+    
 }

@@ -18,6 +18,7 @@ import javax.persistence.Table;
 public class Rating {
     
     @Id
+    @Column(name = "ID")
     private Long id;
     @Column(name="USER_ID") private Long user_ID;
     @Column(name="RATING") private String rating;

@@ -5,11 +5,16 @@
 package dit126.group4.group4shop.core;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author Christian
  */
+@Entity
+@Table(name = "ADDRESS")
 public class Address {
     @Column(name = "COUNTRY")
     private String country;
@@ -21,7 +26,8 @@ public class Address {
     private String street;
     @Column(name = "STREETNR")
     private String streetNr;
-    
-    private User user;  
+    @Column(name = "USER")
+    @ManyToOne
+    private User user;
     
 }

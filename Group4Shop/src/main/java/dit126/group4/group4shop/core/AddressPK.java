@@ -7,7 +7,6 @@ package dit126.group4.group4shop.core;
 import java.io.Serializable;
 
 /**
- *
  * @author Christian
  */
 public class AddressPK implements Serializable{

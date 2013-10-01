@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>dit126.group4.group4shop.core.Product</class>
     <class>dit126.group4.group4shop.core.ProductImage</class>
+    <class>dit126.group4.group4shop.core.Address</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/group4"/>
       <property name="javax.persistence.jdbc.password" value="group4"/>

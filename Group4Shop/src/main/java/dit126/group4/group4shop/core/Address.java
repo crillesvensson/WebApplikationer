@@ -1,10 +1,12 @@
 package dit126.group4.group4shop.core;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -34,19 +36,20 @@ public class Address implements Serializable{
     @Column(name = "STREETNR")
     private int streetNr;
     @Column(name = "USER")
-    @ManyToOne
-    private User user;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Long userId;
     
     
     protected Address(){}
     
     public Address(String country, String region,
                    String postalCode, String street,
-                   int streetNr){
+                   int streetNr, Long userId){
         this.country = country;
         this.region = region;
         this.postalCode = postalCode;
         this.street = street;
         this.streetNr = streetNr;
+        this.userId = userId;
     }
 }

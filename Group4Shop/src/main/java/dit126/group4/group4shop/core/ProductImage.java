@@ -4,6 +4,7 @@
  */
 package dit126.group4.group4shop.core;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PRODUCTIMAGE")
-public class ProductImage {
+public class ProductImage implements Serializable{
     
     @Id
     @Column(name = "NAME")

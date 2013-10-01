@@ -4,6 +4,7 @@
  */
 package dit126.group4.group4shop.core;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,7 +20,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "ADDRESS")
 @IdClass(AddressPK.class)
-public class Address {
+public class Address implements Serializable{
     
     @Id
     @Column(name = "COUNTRY")
@@ -35,11 +36,21 @@ public class Address {
     private String street;
     @Id
     @Column(name = "STREETNR")
-    private String streetNr;
+    private int streetNr;
     @Column(name = "USER")
     @ManyToOne
     private User user;
     
     
-    public Address(){}
+    protected Address(){}
+    
+    public Address(String country, String region,
+                   String postalCode, String street,
+                   int streetNr){
+        this.country = country;
+        this.region = region;
+        this.postalCode = postalCode;
+        this.street = street;
+        this.streetNr = streetNr;
+    }
 }

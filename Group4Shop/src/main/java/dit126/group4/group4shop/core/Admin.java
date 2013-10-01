@@ -8,9 +8,12 @@ package dit126.group4.group4shop.core;
  *
  * @author Group4
  */
+
+@Entity
+@Table(name="ADMIN")
 public class Admin {
-    private String email;
-    private String password; // Should be changed to a more secure 
-    private String firstname; 
-    private String lastname;  
+    @Column(name="EMAIL") private String email;
+    @Column(name="PASSWORD") private String password; // Should be changed to a more secure 
+    @Column(name="FIRSTNAME") private String firstname; 
+    @Column(name="LASTNAME") private String lastname;  
 }

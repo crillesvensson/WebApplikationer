@@ -5,13 +5,13 @@ package dit126.group4.group4shop.core;
  * @author Group4
  */
 
-//@Entity
-//@Table("PRODUCT")
-//
+@Entity
+@Table(name="PRODUCT")
 public class Product {
-    private String name; 
-    private Double price;
-    private String description;    
+    @Column(name="ID") private Long id;
+    @Column(name="NAME") private String name; 
+    @Column(name="PRICE") private Double price;
+    @Column(name="DESCRIPTION") private String description;    
     
     
 }

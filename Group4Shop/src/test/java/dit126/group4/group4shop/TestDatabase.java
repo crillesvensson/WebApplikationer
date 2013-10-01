@@ -1,7 +1,12 @@
 package dit126.group4.group4shop;
 
+import dit126.group4.group4shop.core.Group4Shop;
+import dit126.group4.group4shop.core.Group4ShopFactory;
+import dit126.group4.group4shop.core.IGroup4Shop;
+import dit126.group4.group4shop.core.Product;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -9,17 +14,27 @@ import org.junit.Test;
  */
 public class TestDatabase {
 
-        final static String PU = "shop_pu";
-
+        final static String PU = "group4_test_shop";
+        static IGroup4Shop shop;
+        
         @Before
         public void before(){
-            //shop =
+             shop = Group4ShopFactory.getShop(PU);
+        }
+        
+        @Test
+        public void pointLess(){
+            assertTrue(true);
         }
         
         @Test
         public void testAddProduct(){
+            Product p = new Product(new Long(1),"Banan", 22.33, "En gul banan");
             
-            
+            shop.getProductCatalogue().add(p);
+            Product found = shop.getProductCatalogue().find(new Long(1));
+
+            assertTrue(found!=null);
         }
 
 

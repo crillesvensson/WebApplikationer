@@ -13,7 +13,7 @@ public class Group4ShopFactory {
     private Group4ShopFactory() {
     }
 
-    public static IGroup4Shop getShop(String persistenceUnitName) {
-        return new Group4Shop(persistenceUnitName);
+    public static IGroup4Shop getShop(String puName) {
+        return new Group4Shop(puName);
     }
 }

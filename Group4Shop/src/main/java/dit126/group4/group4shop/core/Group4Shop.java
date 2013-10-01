@@ -10,11 +10,13 @@ package dit126.group4.group4shop.core;
  */
 public class Group4Shop implements IGroup4Shop{
  
+    private IProductCatalogue productCatalogue;
+    
     public Group4Shop(String puName){
-        
+        this.productCatalogue = new ProductCatalogue(puName);
     }
 
     public IProductCatalogue getProductCatalogue() {
-        return null;
+        return this.productCatalogue;
     }
 }

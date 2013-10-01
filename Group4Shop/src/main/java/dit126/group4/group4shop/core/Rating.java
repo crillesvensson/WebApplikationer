@@ -20,7 +20,11 @@ import javax.validation.constraints.*;
 public class Rating implements Serializable {
     
     @Id
+<<<<<<< HEAD
     @NotNull
+=======
+    @Column(name = "ID")
+>>>>>>> 387e027cdee0fe1564842ef9a1f3331eae777961
     private Long id;
     @Column(name="USER_ID") private Long user_ID;
     @Column(name="RATING") private String rating;

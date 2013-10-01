@@ -1,6 +1,7 @@
 package dit126.group4.group4shop.core;
 
 import java.io.File;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -40,10 +41,16 @@ public class TestDatabase {
             Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
             shop.getProductCatalogue().add(p);
             
-            File image = new File("src/resources/banan.png");
+            File image = new File("/Users/Christian/Documents/school/webbapplikationer/WebApplikationer/Group4Shop/src/resources/banan.png");
             
             ProductImage i = new ProductImage("Test-image", p.getId(),image);
-            assertTrue(true);
+            
+            shop.getProductImageConatiner().add(i);
+            
+            List<ProductImage> list = shop.getProductImageConatiner().find(p.getId());
+            assertTrue(list.size() == 1);
+            assertTrue(list.get(0).getName().equals("Test-image"));
+          
         }
 
 

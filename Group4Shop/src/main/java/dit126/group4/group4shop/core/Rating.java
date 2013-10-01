@@ -4,10 +4,12 @@
  */
 package dit126.group4.group4shop.core;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.*;
 
 /**
  *
@@ -15,12 +17,19 @@ import javax.persistence.Table;
  */
 @Entity 
 @Table(name="RATING")
-public class Rating {
+public class Rating implements Serializable {
     
     @Id
+    @NotNull
     private Long id;
     @Column(name="USER_ID") private Long user_ID;
     @Column(name="RATING") private String rating;
     
+    protected Rating(){}
+    
+    protected Rating(Long user_ID, String rating){
+        this.user_ID = user_ID;
+        this.rating = rating; 
+    }
     
 }

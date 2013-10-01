@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.*;
 
 /**
  *
@@ -17,11 +18,22 @@ import javax.persistence.Table;
 public class Product implements Serializable {
     
     @Id
+    @NotNull
     @Column(name="ID") 
     private Long id;
     @Column(name="NAME") private String name; 
     @Column(name="PRICE") private Double price;
     @Column(name="DESCRIPTION") private String description;    
+    
+    protected Product(){}
+    
+    protected Product(String name, Double price, String description){
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+    
+    
     
     
 }

@@ -1,5 +1,6 @@
 package dit126.group4.group4shop.core;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,8 +12,8 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="USER")
-public class User {
+@Table(name="USERS")
+public class User implements Serializable {
     
     //private Long id; email could be id for each customer since we force them to log in 
     @Column(name="FIRSTNAME") private String firstName;

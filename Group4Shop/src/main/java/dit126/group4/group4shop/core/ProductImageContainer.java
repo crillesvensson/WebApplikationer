@@ -51,7 +51,7 @@ public class ProductImageContainer implements IProductImageContainer{
     @Override
     public List<ProductImage> find(Long id) {
         EntityManager em = this.emf.createEntityManager();
-        return em.createQuery("SELECT p FROM PRODUCT_IMAGE p WHERE p.PRODUCT = ?1")
+        return em.createQuery("SELECT p FROM ProductImage p WHERE p.productId = ?1")
                 .setParameter(1, id).getResultList();
     }
         

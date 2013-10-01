@@ -6,6 +6,10 @@ package dit126.group4.group4shop.core;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -14,10 +18,14 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="ADMIN")
-public class Admin {
-    @Column(name="EMAIL") private String email;
+@Table(name="ADMINS")
+public class Admin implements Serializable {
+    @Id
+    @Column(name="EMAIL") 
+    private String email;
     @Column(name="PASSWORD") private String password; // Should be changed to a more secure 
     @Column(name="FIRSTNAME") private String firstname; 
     @Column(name="LASTNAME") private String lastname;  
+
+
 }

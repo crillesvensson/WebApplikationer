@@ -1,7 +1,10 @@
 package dit126.group4.group4shop.core;
 
+
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -11,8 +14,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PRODUCT")
-public class Product {
-    @Column(name="ID") private Long id;
+public class Product implements Serializable {
+    
+    @Id
+    @Column(name="ID") 
+    private Long id;
     @Column(name="NAME") private String name; 
     @Column(name="PRICE") private Double price;
     @Column(name="DESCRIPTION") private String description;    

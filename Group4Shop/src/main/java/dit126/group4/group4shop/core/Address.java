@@ -35,8 +35,8 @@ public class Address implements Serializable{
     @Id
     @Column(name = "STREETNR")
     private int streetNr;
-    @Column(name = "USER")
-    @ManyToMany(cascade = CascadeType.ALL)
+    //@ManyToMany(cascade = CascadeType.ALL)
+    @Column(name = "USERID")
     private Long userId;
     
     
@@ -51,5 +51,9 @@ public class Address implements Serializable{
         this.street = street;
         this.streetNr = streetNr;
         this.userId = userId;
+    }
+    
+    public String getCountry(){
+        return this.country;
     }
 }

@@ -14,4 +14,6 @@ public interface IGroup4Shop {
     
     public IProductImageContainer getProductImageConatiner();
     
+    public IAddressCatalogue getAddressCatalogue();
+    
 }

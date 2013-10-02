@@ -12,10 +12,13 @@ public class Group4Shop implements IGroup4Shop{
  
     private IProductCatalogue productCatalogue;
     private IProductImageContainer productImageContainer;
+    private IAddressCatalogue addressCatalogue;
+    
     
     public Group4Shop(String puName){
         this.productCatalogue = new ProductCatalogue(puName);
         this.productImageContainer = new ProductImageContainer(puName);
+        this.addressCatalogue = new AddressCatalogue(puName);
     }
 
     public IProductCatalogue getProductCatalogue() {
@@ -25,5 +28,10 @@ public class Group4Shop implements IGroup4Shop{
     @Override
     public IProductImageContainer getProductImageConatiner() {
         return this.productImageContainer;
+    }
+
+    @Override
+    public IAddressCatalogue getAddressCatalogue() {
+        return this.addressCatalogue;
     }
 }

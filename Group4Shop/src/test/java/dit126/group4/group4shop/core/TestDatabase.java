@@ -52,6 +52,18 @@ public class TestDatabase {
             assertTrue(list.get(0).getName().equals("Test-image"));
           
         }
+        
+        @Test
+        public void testAddAddress(){
+            Address a = new Address("SWE", "GBG", "fdjbn", "dskgndgs", 2, new Long(2));
+            
+            shop.getAddressCatalogue().add(a);
+            
+            List<Address> list = shop.getAddressCatalogue().find(new Long(2));
+            
+            assertTrue(list.size() == 1);
+            assertTrue(list.get(0).getCountry().equals("SWE"));
+        }
 
 
 

@@ -7,6 +7,7 @@ package dit126.group4.group4shop.core;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
@@ -29,9 +30,15 @@ public class ProductCatalogue implements IProductCatalogue{
     public void add(Product product) {
         EntityManager em = emf.createEntityManager();
         try{
-            em.getTransaction().begin();
-            em.persist(product);
-            em.getTransaction().commit();
+            EntityTransaction t = em.getTransaction();
+            try{
+                t.begin();
+                em.persist(product);
+                t.commit();
+            } finally{
+                if(t.isActive())
+                    t.rollback();
+            }
         }finally{
             em.close();
         }
@@ -42,9 +49,15 @@ public class ProductCatalogue implements IProductCatalogue{
         EntityManager em = emf.createEntityManager();
         Product product = em.find(clazz, id);
         try{
-            em.getTransaction().begin();
-            em.remove(product);
-            em.getTransaction().commit();
+            EntityTransaction t = em.getTransaction();
+            try{
+                t.begin();
+                em.remove(product);
+                t.commit();
+            }finally{
+                if(t.isActive())
+                    t.rollback();
+            }
         }finally{
             em.close();
         }
@@ -54,9 +67,15 @@ public class ProductCatalogue implements IProductCatalogue{
     public void update(Product product) {
         EntityManager em = emf.createEntityManager();
         try{
-            em.getTransaction().begin();
-            em.merge(product);
-            em.getTransaction().commit();
+            EntityTransaction t = em.getTransaction();
+            try{
+                t.begin();
+                em.merge(product);
+                t.commit();
+            }finally{
+                if(t.isActive())
+                    t.rollback();
+            }
         }finally{
             em.close();
         }
@@ -65,46 +84,24 @@ public class ProductCatalogue implements IProductCatalogue{
     @Override
     public Product find(Long id) {
         EntityManager em = emf.createEntityManager();
-        Product product = null;
-        try{
-            em.getTransaction().begin();
-            product = em.find(clazz, id);
-            em.getTransaction().commit();
-        }finally{
-            em.close();
-            return product;
-        }
+        Product product = em.find(clazz, id);
+        return product;
     }
 
     @Override
     public List<Product> getRange(int first, int nItems) {
         EntityManager em = emf.createEntityManager();
-        Query query = null;
-        List<Product> list = null;
-        try{
-            em.getTransaction().begin();
-            query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName().toUpperCase() + " p");
-            em.getTransaction().commit();
-            list = query.getResultList();
-        }finally{
-            em.close();
-            return list.subList(first, nItems);
-        }
+        Query query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName().toUpperCase() + " p");
+        List<Product> list = query.getResultList();
+        return list.subList(first, nItems);
     }
 
     @Override
     public int getCount() {
         EntityManager em = emf.createEntityManager();
-        int count = 0;
-        try{
-            em.getTransaction().begin();
-            Query query = em.createQuery("SELECT p FROM " + clazz.getSimpleName().toUpperCase() + " p");
-            em.getTransaction().commit();
-            count = query.getResultList().size();
-        }finally{
-            em.close();
-            return count;
-        }
+        Query query = em.createQuery("SELECT COUNT(p) FROM " + clazz.getSimpleName().toUpperCase() + " p");
+        int count = query.getResultList().size();
+        return count;
     }
     
 }

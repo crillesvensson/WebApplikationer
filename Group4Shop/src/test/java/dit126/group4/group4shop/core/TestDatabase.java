@@ -66,5 +66,16 @@ public class TestDatabase {
         }
 
 
+        @Test 
+        public void testAddAdmin(){
+            Admin a = new Admin("emil@group.se", "Emil", "B", "password");
+            
+            shop.getAdminregister().add(a);
+        
+            Admin a1 = shop.getAdminregister().find("emil@group.se");
+            assertTrue(true); //see if equals
+        }
+        
+        
 
 }

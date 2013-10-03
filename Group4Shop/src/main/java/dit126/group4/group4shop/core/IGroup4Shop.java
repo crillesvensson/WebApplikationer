@@ -16,4 +16,8 @@ public interface IGroup4Shop {
     
     public IAddressCatalogue getAddressCatalogue();
     
+    public IAdminRegister getAdminregister();
+    
+    public IUserRegister getUserregister();
+    
 }

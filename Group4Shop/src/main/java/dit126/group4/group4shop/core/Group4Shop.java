@@ -13,14 +13,14 @@ public class Group4Shop implements IGroup4Shop{
     private IProductCatalogue productCatalogue;
     private IProductImageContainer productImageContainer;
     private IAddressCatalogue addressCatalogue;
-    private IAdminRegister adminregister;
+    private IAdminRegister adminRegister;
     private IUserRegister userregister;
     
     public Group4Shop(String puName){
         this.productCatalogue = new ProductCatalogue(puName);
         this.productImageContainer = new ProductImageContainer(puName);
         this.addressCatalogue = new AddressCatalogue(puName);
-        this.adminregister = new AdminRegister(puName);
+        this.adminRegister = new AdminRegister(puName);
         this.userregister = new UserRegister(puName);
     }
 
@@ -40,8 +40,8 @@ public class Group4Shop implements IGroup4Shop{
     }
 
     @Override
-    public IAdminRegister getAdminregister() {
-        return this.adminregister;
+    public IAdminRegister getAdminRegister() {
+        return this.adminRegister;
     }
 
     @Override

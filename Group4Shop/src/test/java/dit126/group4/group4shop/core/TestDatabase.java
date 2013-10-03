@@ -70,10 +70,12 @@ public class TestDatabase {
         public void testAddAdmin(){
             Admin a = new Admin("emil@group.se", "Emil", "B", "password");
             
-            shop.getAdminregister().add(a);
-        
-            Admin a1 = shop.getAdminregister().find("emil@group.se");
+            shop.getAdminRegister().add(a);
+            System.out.println("Test Admin");
+            
+            Admin a1 = shop.getAdminRegister().find("emil@group.se");
             assertTrue(true); //see if equals
+            assertTrue(1 != 2 );
         }
         
         

@@ -25,8 +25,9 @@ public class ProductCatalogue implements IProductCatalogue{
     }
     
 
+    @Override
     public void add(Product product) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
         try{
             em.getTransaction().begin();
             em.persist(product);
@@ -36,8 +37,9 @@ public class ProductCatalogue implements IProductCatalogue{
         }
     }
     
+    @Override
     public void remove(Long id) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
         Product product = em.find(clazz, id);
         try{
             em.getTransaction().begin();
@@ -48,8 +50,9 @@ public class ProductCatalogue implements IProductCatalogue{
         }
     }
 
+    @Override
     public void update(Product product) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
         try{
             em.getTransaction().begin();
             em.merge(product);
@@ -59,8 +62,9 @@ public class ProductCatalogue implements IProductCatalogue{
         }
     }
 
+    @Override
     public Product find(Long id) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
         Product product = null;
         try{
             em.getTransaction().begin();
@@ -72,8 +76,9 @@ public class ProductCatalogue implements IProductCatalogue{
         }
     }
 
+    @Override
     public List<Product> getRange(int first, int nItems) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
         Query query = null;
         List<Product> list = null;
         try{
@@ -87,8 +92,9 @@ public class ProductCatalogue implements IProductCatalogue{
         }
     }
 
+    @Override
     public int getCount() {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
         int count = 0;
         try{
             em.getTransaction().begin();

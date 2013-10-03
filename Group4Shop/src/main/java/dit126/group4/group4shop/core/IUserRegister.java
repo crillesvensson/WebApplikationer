@@ -16,6 +16,6 @@ public interface IUserRegister {
 
     public void update(User t);
 
-    public User find(Long id);
+    public User find(String id);
     
 }

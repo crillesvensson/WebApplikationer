@@ -24,7 +24,8 @@ public class Rating implements Serializable {
     
     protected Rating(){}
     
-    protected Rating(Long user_ID, String rating){
+    protected Rating(Long id, Long user_ID, String rating){
+        this.id = id;
         this.user_ID = user_ID;
         this.rating = rating; 
     }

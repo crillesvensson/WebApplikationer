@@ -36,5 +36,16 @@ public class Product implements Serializable {
         return this.id;
     }
     
+    public String getName(){
+        return name;
+    }
+    
+    public Double getPrice(){
+        return price;
+    }
+    
+    public String getDescription(){
+        return description;
+    }
     
 }

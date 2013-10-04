@@ -4,7 +4,7 @@
  */
 var shop = (function(){
     
-    var baseUri = "http://localhost:8080/Group4Shop/rs/";  
+    var baseUri = "http://localhost:8080/Group4Shop/";  
     var products = new ProductCatalogue(baseUri + "products");
     //var orderBook = new OrderBook(baseUri);
     // etc ...

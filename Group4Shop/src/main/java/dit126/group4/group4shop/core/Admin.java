@@ -18,7 +18,7 @@ import javax.validation.constraints.*;
 @Table(name="ADMINS")
 public class Admin implements Serializable {
     @Id
-    @Column(name="EMAIL")
+    @Column(name="EMAIL", nullable = false)
     //@Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@\n" +
         //"(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Not a valid email!")
     private String email;

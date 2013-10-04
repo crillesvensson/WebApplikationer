@@ -18,7 +18,7 @@ public class TestDatabase {
         
         @BeforeClass
         public static void before(){
-             shop = Group4ShopFactory.getShop(PU);
+              shop = Group4ShopFactory.getShop(PU);
         }
         
         @Test

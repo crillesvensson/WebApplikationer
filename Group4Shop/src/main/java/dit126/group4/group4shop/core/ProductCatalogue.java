@@ -47,13 +47,16 @@ public class ProductCatalogue implements IProductCatalogue{
     @Override
     public void remove(Long id) {
         EntityManager em = emf.createEntityManager();
-        Product product = em.find(clazz, id);
         try{
             EntityTransaction t = em.getTransaction();
             try{
                 t.begin();
-                em.remove(product);
-                t.commit();
+                Product product = find(id);
+                if(product != null){
+                    Product toBeRemoved = em.merge(product);
+                    em.remove(toBeRemoved);
+                    t.commit();
+                }
             }finally{
                 if(t.isActive())
                     t.rollback();

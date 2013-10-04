@@ -1,23 +1,22 @@
 package dit126.group4.group4shop.core;
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.*;
 
 /**
  *
  * @author Group4
  */
 
-@Entity
+@Entity(name="PRODUCT")
 @Table(name="PRODUCT")
 public class Product implements Serializable {
     
     @Id
-    @NotNull
-    @Column(name="ID") 
+    @Column(name="ID", nullable = false) 
     private Long id;
     @Column(name="NAME") private String name; 
     @Column(name="PRICE") private Double price;
@@ -33,7 +32,7 @@ public class Product implements Serializable {
     }
     
     public Long getId(){
-        return this.id;
+        return id;
     }
     
     public String getName(){
@@ -46,6 +45,33 @@ public class Product implements Serializable {
     
     public String getDescription(){
         return description;
+    }
+    
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + getId() + ", name=" + name + ", price=" + price + ", description=" + getDescription() + '}';
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 113 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Product other = (Product) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
     
 }

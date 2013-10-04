@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dit126.group4.group4shop_admin.util;
+package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IGroup4Shop;

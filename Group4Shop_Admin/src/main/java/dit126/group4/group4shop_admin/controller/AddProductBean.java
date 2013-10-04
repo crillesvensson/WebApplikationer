@@ -2,10 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dit126.group4.group4shop_admin.beans;
+package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Product;
-import dit126.group4.group4shop_admin.util.Group4ShopBean;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;

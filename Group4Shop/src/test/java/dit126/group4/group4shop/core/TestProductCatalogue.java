@@ -60,7 +60,7 @@ public class TestProductCatalogue {
         
     }
 
-    @Test
+    //@Test
     public void testGetRange(){
         IProductCatalogue pc = shop.getProductCatalogue();
         

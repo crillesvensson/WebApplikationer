@@ -103,7 +103,7 @@ public class ProductCatalogue implements IProductCatalogue{
     public int getCount() {
         EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("SELECT COUNT(p) FROM " + clazz.getSimpleName().toUpperCase() + " p");
-        int count = query.getResultList().size();
+        int count = ((Long) query.getSingleResult()).intValue();
         return count;
     }
     

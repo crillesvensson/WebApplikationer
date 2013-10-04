@@ -2,60 +2,30 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dit126.group4.group4shop_admin;
+package dit126.group4.group4shop_admin.controller;
 
-import javax.ejb.Stateless;
+import dit126.group4.group4shop_admin.view.LoginBackingBean;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.inject.Named;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
-
-
 /**
  *
- * @author Group4
+ * @author emilbogren
  */
-
-@Stateless
-@Named
-public class LoginBean {
-    
-    private String username;
-    private String password;
+public class LoginController {
     
     
-    /**
-     * Getter and setters
-     *  
-     */
-    public String getUsername(){
-        return this.username;
-    }
-    
-    public void setUsername(String username){
-        this.username = username;
-    }
-    
-    public String getPassword(){
-        return this.password;
-    }
-    
-    public void setPassword(){
-        this.password = password;
-    }
-    
-    /**
-     * Login process 
-     * All code from http://docs.oracle.com/javaee/6/tutorial/doc/glxce.html#glxdh
-     */
+    @Inject
+    private LoginBackingBean loginBackingBean;
     
     public String login(){
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
-            request.login(this.username, this.password);
+            request.login(loginBackingBean.getUsername(), loginBackingBean.getPassword());
         } catch(ServletException e){
             /*
             */
@@ -77,7 +47,5 @@ public class LoginBean {
           context.addMessage(null, new FacesMessage("Logout failed."));
         }
   }
-
-    
     
 }

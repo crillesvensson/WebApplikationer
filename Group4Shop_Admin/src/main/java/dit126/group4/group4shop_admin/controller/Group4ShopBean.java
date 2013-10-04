@@ -18,7 +18,7 @@ import javax.inject.Singleton;
 public class Group4ShopBean implements Serializable{
     
     private final IGroup4Shop grou4shop;
-    private final String PU_NAME = "group4_test_shop";
+    private final String PU_NAME = "group4_shop";
     
     private Group4ShopBean(){
         this.grou4shop = Group4ShopFactory.getShop(PU_NAME);

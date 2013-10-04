@@ -18,7 +18,7 @@ import org.junit.BeforeClass;
  */
 public class TestProductCatalogue {
     
-    final static String PU = "group4_test_shop";
+   /* final static String PU = "group4_test_shop";
     static IGroup4Shop shop;
     
     @BeforeClass
@@ -73,5 +73,5 @@ public class TestProductCatalogue {
         
         assertTrue(pc.getCount() == 5);
         
-    }
+    }*/
 }

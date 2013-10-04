@@ -94,7 +94,7 @@ public class ProductCatalogue implements IProductCatalogue{
     @Override
     public List<Product> getRange(int first, int nItems) {
         EntityManager em = emf.createEntityManager();
-        Query query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName().toUpperCase() + " p");
+        Query query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName() + " p");
         List<Product> list = query.getResultList();
         return list.subList(first, nItems);
     }
@@ -102,7 +102,7 @@ public class ProductCatalogue implements IProductCatalogue{
     @Override
     public int getCount() {
         EntityManager em = emf.createEntityManager();
-        Query query = em.createQuery("SELECT COUNT(p) FROM " + clazz.getSimpleName().toUpperCase() + " p");
+        Query query = em.createQuery("SELECT COUNT(p) FROM " + clazz.getSimpleName() + " p");
         int count = ((Long) query.getSingleResult()).intValue();
         return count;
     }

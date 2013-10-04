@@ -36,7 +36,7 @@ public class TestDatabase {
             assertTrue(found!=null);
         }
         
-        @Test
+       @Test
         public void testAddProductImage(){
             Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
             shop.getProductCatalogue().add(p);

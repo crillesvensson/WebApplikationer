@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
 
 // Subclass - Same variables in both classes. 
 
-@Entity
+
 @Table(name="ADMINS")
 public class Admin implements Serializable {
     @Id

@@ -15,15 +15,15 @@ import javax.persistence.Persistence;
 public class UserRegister implements IUserRegister {
     
     private EntityManagerFactory emf;
-    private final Class<User> clazz;
+    private final Class<Users> clazz;
     
     public UserRegister(String puName){
         this.emf = Persistence.createEntityManagerFactory(puName);
-        this.clazz = User.class;
+        this.clazz = Users.class;
     }
     
     @Override
-    public void add(User user) {
+    public void add(Users user) {
         EntityManager em = this.emf.createEntityManager();
         try{
             em.getTransaction().begin();
@@ -37,7 +37,7 @@ public class UserRegister implements IUserRegister {
     @Override
     public void remove(String id) {
         EntityManager em = this.emf.createEntityManager();
-        User user = em.find(clazz, id);
+        Users user = em.find(clazz, id);
         try{
             em.getTransaction().begin();
             em.remove(user);
@@ -48,7 +48,7 @@ public class UserRegister implements IUserRegister {
     }
 
     @Override
-    public void update(User user) {
+    public void update(Users user) {
         EntityManager em = this.emf.createEntityManager();
         try{
             em.getTransaction().begin();
@@ -60,9 +60,9 @@ public class UserRegister implements IUserRegister {
     }
 
     @Override
-    public User find(String id) {
+    public Users find(String id) {
         EntityManager em = this.emf.createEntityManager();
-        User user = null;
+        Users user = null;
         try{
             em.getTransaction().begin();
             user = em.find(clazz, id);

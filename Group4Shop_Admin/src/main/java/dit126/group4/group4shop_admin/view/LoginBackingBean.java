@@ -12,7 +12,7 @@ import javax.inject.Named;
  * @author Group4
  */
 
-@Named
+@Named("auth")
 @RequestScoped
 public class LoginBackingBean {
     
@@ -32,8 +32,7 @@ public class LoginBackingBean {
         return this.password;
     }
     
-    public void setPassword(){
+    public void setPassword(String password){
         this.password = password;
     }
-    
 }

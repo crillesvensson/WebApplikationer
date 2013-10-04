@@ -16,8 +16,7 @@ import javax.validation.constraints.*;
 public class Rating implements Serializable {
     
     @Id
-    @NotNull
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     private Long id;
     @Column(name="USER_ID") private Long user_ID;
     @Column(name="RATING") private String rating;

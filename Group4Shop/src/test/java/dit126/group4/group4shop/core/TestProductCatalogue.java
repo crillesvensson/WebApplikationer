@@ -26,17 +26,32 @@ public class TestProductCatalogue {
         shop = Group4ShopFactory.getShop(PU);
     }
     
+    @Test
+    public void testGetRange(){
+        IProductCatalogue pc = shop.getProductCatalogue();
+        
+        for(int i = 0; i < 5; i++){
+            String desc = "Description for product " + i;
+            Double d = (double) i;
+            Long id = (long) i;
+            pc.add(new Product(id, String.valueOf(i), d, desc));
+        }
+        
+        List<Product> prods = pc.getRange(0, 2);
+        assertTrue(prods.size() == 2);
+    }
+    
     //Testing methods add(Product p), getCount(), update(Long id), find(Long id) and remove(Long id)
     @Test
     public void testProductCatalgoue(){
         IProductCatalogue pc = shop.getProductCatalogue();
-
+        
         // Test to add a product
         Long id = (long) 22000;
         Product p1 = new Product(id, "crocodile", 9000.00, "A fierce pet that only australians can have at home");
         pc.add(p1);
         
-        assertTrue(pc.getCount() == 1); //and testing that getCount() works as intended
+        assertTrue(pc.getCount() == 6); //and testing that getCount() works as intended
         
         // Test to find a product
         Product p2 = pc.find(id);
@@ -51,27 +66,12 @@ public class TestProductCatalogue {
         
         assertTrue(p1.equals(p2));
         assertFalse(p1.getName().equals(p2.getName()));
-        assertTrue(pc.getCount() == 1);
-  
+        assertTrue(pc.getCount() == 6);
+        
         // Test to remove a product
         pc.remove(p1.getId());
         
-        assertTrue(pc.getCount() == 0);
+        assertTrue(pc.getCount() == 5);
         
-    }
-
-    //@Test
-    public void testGetRange(){
-        IProductCatalogue pc = shop.getProductCatalogue();
-        
-        for(int i = 0; i < 5; i++){
-            String desc = "Description for product " + i;
-            Double d = (double) i;
-            Long id = (long) i;
-            pc.add(new Product(id, String.valueOf(i), d, desc));
-        }
-        
-        List<Product> prods = pc.getRange(0, 2);
-        assertTrue(prods.size() == 2);
     }
 }

@@ -22,8 +22,7 @@ public class User implements Serializable {
     @Column(name="PASSWORD") private String password; // shoule be changed to use a more secure method 
     
     @Id
-    @NotNull
-    @Column(name="EMAIL")
+    @Column(name="EMAIL", nullable = false)
     @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@\n" +
         "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Not a valid email!")
     private String email; // key when storing users in table.    

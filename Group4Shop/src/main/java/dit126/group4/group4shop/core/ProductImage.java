@@ -3,12 +3,8 @@ package dit126.group4.group4shop.core;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.Serializable;
-import java.nio.file.Files;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +21,7 @@ import javax.persistence.Table;
 public class ProductImage implements Serializable{
     
     @Id
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false)
     private String name;
     @Column(name = "PRODUCT")
     private Long productId;

@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.*;
 
 /**
  *
@@ -19,14 +18,18 @@ public class Rating implements Serializable {
     @Column(name = "ID", nullable = false)
     private Long id;
     @Column(name="USER_ID") private Long user_ID;
-    @Column(name="RATING") private String rating;
+    @Column(name="PRODUCT_ID") private Long product_ID;
+    @Column(name="RATING") private int rating;
+    @Column(name="COMMENT") private String comment;
     
     protected Rating(){}
     
-    protected Rating(Long id, Long user_ID, String rating){
+    protected Rating(Long id, Long user_ID, Long product_id, int rating, String comment){
         this.id = id;
         this.user_ID = user_ID;
+        this.product_ID = product_id;
         this.rating = rating; 
+        this.comment = comment; 
     }
     
 }

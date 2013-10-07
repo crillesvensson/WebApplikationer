@@ -4,22 +4,12 @@
  */
 package dit126.group4.group4shop.core;
 
-import java.util.List;
+import dit126.group4.group4shop.utils.IDAO;
 
 /**
  *
  * @author Christian
  */
-public interface IProductCatalogue {
-    public void add(Product t);
-
-    public void remove(Long id);
-
-    public void update(Product t);
-
-    public Product find(Long id);
-
-    public List<Product> getRange(int first, int nItems);
-
-    public int getCount();
+public interface IProductCatalogue extends IDAO<Product, Long>{
+    
 }

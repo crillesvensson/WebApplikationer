@@ -14,7 +14,7 @@ header {
     background-image:  url(../img/test-banner.jpg);
     margin-left: auto;
     margin-right: auto;
-    width: 600px;
+    width: 660px;
     background-position: center;
     border-radius:25px;
     box-shadow: 8px 8px 5px gainsboro
@@ -36,3 +36,30 @@ header h1{
 .input-group-addon {
 
 }
+body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 660px;
+}
+
+#tabsheader{
+    width: 660px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 25px;
+}
+
+#tabsheader ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+#tabsheader li{
+    display: inline;
+    padding:0;
+    margin:0;
+    margin: 0 0.5em 0 0;
+}
+

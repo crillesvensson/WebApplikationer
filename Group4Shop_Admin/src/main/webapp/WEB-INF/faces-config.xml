@@ -24,6 +24,14 @@
            <from-outcome>addProducts</from-outcome>
            <to-view-id>/views/products/addProduct.xhtml</to-view-id>
        </navigation-case>
+       <navigation-case>
+           <from-outcome>delete</from-outcome>
+           <to-view-id>/views/products/deleteProduct.xhtml</to-view-id>
+       </navigation-case>
+       <navigation-case>
+           <from-outcome>edit</from-outcome>
+           <to-view-id>/views/products/editProduct.xhtml</to-view-id>
+       </navigation-case>
     </navigation-rule>
     
     

@@ -8,10 +8,17 @@
          
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-               <h:button outcome="addProducts" value="Add Product" class="button" />          
+                <div id="productButtons" align="center">
+                    <h3>Products</h3>
+                    <h:button outcome="addProducts" value="Add Product" class="button" />
+                </div>
+
                  <h:form>
-                    <div class="product-table">
-                        <h:dataTable var="p" value="#{products.products}">
+                   <div id="product-table" align="center">
+                        <h:dataTable var="p" value="#{products.products}"
+                        styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
@@ -40,10 +47,10 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                <h:commandButton actionListener="#" 
-                                                 action="#" value="Edit"/>
-                                <h:commandButton actionListener="#"      
-                                                 action="#" value="Delete" />
+                                <h:commandButton actionListener="#{edit.selectedProduct(p.id)}" 
+                                                 action="edit" value="Edit" styleClass="commandB"/>
+                                <h:commandButton actionListener="#{delete.selectedProduct(p.id)}"      
+                                                 action="delete" value="Delete" styleClass="commandB" />
                             </h:column>
                         </h:dataTable>
                     </div>

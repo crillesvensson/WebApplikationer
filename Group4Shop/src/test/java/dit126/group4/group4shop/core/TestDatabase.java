@@ -42,7 +42,7 @@ public class TestDatabase {
             Users user = new Users("emil@test.se", "Emil", "B", "qwerty");
             Roles role = new Roles("Admin", "En admin");
             
-            shop.getUserregister().add(user);
+            shop.getUserRegister().add(user);
             System.out.println("  TEST:  " + shop.getRolesRegister()  );
             shop.getRolesRegister().add(role);
             

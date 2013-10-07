@@ -11,16 +11,22 @@ import javax.persistence.Table;
  * @author Group4
  */
 
-@Entity
+@Entity(name = "Product")
 @Table(name="PRODUCT")
 public class Product implements Serializable {
     
     @Id
     @Column(name="ID", nullable = false) 
     private Long id;
-    @Column(name="NAME") private String name; 
-    @Column(name="PRICE") private Double price;
-    @Column(name="DESCRIPTION") private String description;    
+    
+    @Column(name="NAME")
+    private String name;
+    
+    @Column(name="PRICE")
+    private Double price;
+    
+    @Column(name="DESCRIPTION")
+    private String description;    
     
     protected Product(){}
     

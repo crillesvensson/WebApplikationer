@@ -10,6 +10,8 @@
     <class>dit126.group4.group4shop.core.Roles</class>
     <class>dit126.group4.group4shop.core.UserRoles</class>
     <class>dit126.group4.group4shop.core.Users</class>
+    <class>dit126.group4.group4shop.core.OrderItem</class>
+    <class>dit126.group4.group4shop.core.PurchaseOrder</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/group4"/>
       <property name="javax.persistence.jdbc.password" value="group4"/>

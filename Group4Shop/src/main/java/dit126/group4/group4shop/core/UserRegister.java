@@ -1,20 +1,18 @@
 package dit126.group4.group4shop.core;
 
 import dit126.group4.group4shop.utils.AbstractDAO;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 
 /**
  *
  * @author Group4
  */
-public class UserRegister extends AbstractDAO<Users, Long> implements IUserRegister {
+public class UserRegister extends AbstractDAO<Users, String> implements IUserRegister {
     
     public UserRegister(String puName){
         super(Users.class, puName);
     }
     
-    @Override
+ /*   @Override
     public void remove(String id) {
         EntityManager em = emf.createEntityManager();
         try{
@@ -41,5 +39,5 @@ public class UserRegister extends AbstractDAO<Users, Long> implements IUserRegis
         EntityManager em = emf.createEntityManager();
         Users user = em.find(clazz, id);
         return user;
-    }
+    }*/
 }

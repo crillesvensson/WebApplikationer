@@ -18,7 +18,7 @@ import org.junit.BeforeClass;
  */
 public class TestProductCatalogue {
     
-   /* final static String PU = "group4_test_shop";
+    final static String PU = "group4_test_shop";
     static IGroup4Shop shop;
     
     @BeforeClass
@@ -49,9 +49,10 @@ public class TestProductCatalogue {
         // Test to add a product
         Long id = (long) 22000;
         Product p1 = new Product(id, "crocodile", 9000.00, "A fierce pet that only australians can have at home");
+        int i = pc.getCount();
         pc.add(p1);
         
-        assertTrue(pc.getCount() == 6); //and testing that getCount() works as intended
+        assertTrue((i+1) == pc.getCount()); //and testing that getCount() works as intended
         
         // Test to find a product
         Product p2 = pc.find(id);
@@ -66,12 +67,12 @@ public class TestProductCatalogue {
         
         assertTrue(p1.equals(p2));
         assertFalse(p1.getName().equals(p2.getName()));
-        assertTrue(pc.getCount() == 6);
+        assertTrue((i+1) == pc.getCount());
         
         // Test to remove a product
         pc.remove(p1.getId());
         
-        assertTrue(pc.getCount() == 5);
+        assertTrue(pc.getCount() == i);
         
-    }*/
+    }
 }

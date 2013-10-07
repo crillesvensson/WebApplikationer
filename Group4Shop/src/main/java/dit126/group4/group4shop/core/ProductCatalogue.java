@@ -10,6 +10,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -94,7 +95,7 @@ public class ProductCatalogue implements IProductCatalogue{
     @Override
     public List<Product> getRange(int first, int nItems) {
         EntityManager em = emf.createEntityManager();
-        Query query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName() + " p");
+        TypedQuery query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName() + " p", Product.class);
         List<Product> list = query.getResultList();
         return list.subList(first, nItems);
     }
@@ -102,7 +103,7 @@ public class ProductCatalogue implements IProductCatalogue{
     @Override
     public int getCount() {
         EntityManager em = emf.createEntityManager();
-        Query query = em.createQuery("SELECT COUNT(p) FROM " + clazz.getSimpleName() + " p");
+        TypedQuery query = em.createQuery("SELECT COUNT(p) FROM " + clazz.getSimpleName() + " p", Product.class);
         int count = ((Long) query.getSingleResult()).intValue();
         return count;
     }

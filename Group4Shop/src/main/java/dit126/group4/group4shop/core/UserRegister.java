@@ -1,76 +1,45 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package dit126.group4.group4shop.core;
 
+import dit126.group4.group4shop.utils.AbstractDAO;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.EntityTransaction;
 
 /**
  *
  * @author Group4
  */
-public class UserRegister implements IUserRegister {
-    
-    private EntityManagerFactory emf;
-    private final Class<Users> clazz;
+public class UserRegister extends AbstractDAO<Users, Long> implements IUserRegister {
     
     public UserRegister(String puName){
-        this.emf = Persistence.createEntityManagerFactory(puName);
-        this.clazz = Users.class;
-    }
-    
-    @Override
-    public void add(Users user) {
-        EntityManager em = this.emf.createEntityManager();
-        try{
-            em.getTransaction().begin();
-            em.persist(user);
-            em.getTransaction().commit();
-        }finally{
-            em.close();
-        }
+        super(Users.class, puName);
     }
     
     @Override
     public void remove(String id) {
-        EntityManager em = this.emf.createEntityManager();
-        Users user = em.find(clazz, id);
+        EntityManager em = emf.createEntityManager();
         try{
-            em.getTransaction().begin();
-            em.remove(user);
-            em.getTransaction().commit();
+            EntityTransaction t = em.getTransaction();
+            try{
+                t.begin();
+                Users user = find(id);
+                if(user != null){
+                    Users toBeRemoved = em.merge(user);
+                    em.remove(toBeRemoved);
+                    t.commit();
+                }
+            }finally{
+                if(t.isActive())
+                    t.rollback();
+            }
         }finally{
             em.close();
-        }
-    }
-
-    @Override
-    public void update(Users user) {
-        EntityManager em = this.emf.createEntityManager();
-        try{
-            em.getTransaction().begin();
-            em.merge(user);
-            em.getTransaction().commit();
-        }finally{
-            em.close();
-        }
-    }
-
-    @Override
-    public Users find(String id) {
-        EntityManager em = this.emf.createEntityManager();
-        Users user = null;
-        try{
-            em.getTransaction().begin();
-            user = em.find(clazz, id);
-            em.getTransaction().commit();
-        }finally{
-            em.close();
-            return user;
         }
     }
     
+    @Override
+    public Users find(String id) {
+        EntityManager em = emf.createEntityManager();
+        Users user = em.find(clazz, id);
+        return user;
+    }
 }

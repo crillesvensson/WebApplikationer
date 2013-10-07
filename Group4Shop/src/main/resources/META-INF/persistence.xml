@@ -7,7 +7,6 @@
     <class>dit126.group4.group4shop.core.Product</class>
     <class>dit126.group4.group4shop.core.ProductImage</class>
     <class>dit126.group4.group4shop.core.Rating</class>
-    <class>dit126.group4.group4shop.core.User</class>
     <class>dit126.group4.group4shop.core.Roles</class>
     <class>dit126.group4.group4shop.core.UserRoles</class>
     <class>dit126.group4.group4shop.core.Users</class>

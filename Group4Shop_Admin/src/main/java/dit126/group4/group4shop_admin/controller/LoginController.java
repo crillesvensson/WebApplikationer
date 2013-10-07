@@ -4,7 +4,6 @@
  */
 package dit126.group4.group4shop_admin.controller;
 
-import dit126.group4.group4shop_admin.model.NavigationController;
 import dit126.group4.group4shop_admin.view.LoginBackingBean;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;

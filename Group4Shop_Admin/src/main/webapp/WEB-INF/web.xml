@@ -37,33 +37,26 @@
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+   
+
     <!-- Security -->
     <login-config>
         <auth-method>FORM</auth-method>
-        <realm-name>file</realm-name>
+        <realm-name>authRealm</realm-name>
         <form-login-config>
-            <form-login-page>/jsf/login.xhtml</form-login-page>
-            <form-error-page>/jsf/login.xhtml</form-error-page>
+            <form-login-page>/views/login/login.xhtml</form-login-page>
+            <form-error-page>/views/login/loginerror.xhtml</form-error-page>
         </form-login-config>
     </login-config>
+     
     <security-role>
-        <role-name>user</role-name>
-        <description>...</description>
+        <role-name>Admin</role-name>
     </security-role>
     <security-role>
-        <role-name>admin</role-name>
-        <description></description>
+        <role-name>User</role-name>
     </security-role>
-    <security-constraint>
-        
-        <auth-constraint>
-            <role-name>user</role-name>
-        </auth-constraint>
-        <web-resource-collection>
-            
-            <url-pattern>...</url-pattern>
-        </web-resource-collection>
-    </security-constraint>
+    <!-- End of security  -->    
+    
     <error-page>
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>
         <location>/jsf/login.xhtml</location>

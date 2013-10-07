@@ -5,20 +5,19 @@
 package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Product;
-import javax.enterprise.context.RequestScoped;
-
-
-
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  *
  * @author Christian
  */
-@Named("add")
-@RequestScoped
-public class AddProductBean {
+@Named("edit")
+@SessionScoped
+public class EditProductBean  implements Serializable{
     
     private Long id;
     private String name; 
@@ -26,12 +25,19 @@ public class AddProductBean {
     private String description;
     
     @Inject
-    private Group4ShopBean group4shop;
+    private Provider<Group4ShopBean> group4shop;
     
-    public void saveProduct(){     
+    public void selectedProduct(String id){
+        Product p = group4shop.get().getProductCatalogue().find(Long.parseLong(id));
+        this.id = p.getId();
+        this.name = p.getName();
+        this.price = p.getPrice();
+        this.description = p.getDescription();
+    }
+    
+    public void editProduct(){  
        Product p = new Product(this.id, this.name, this.price, this.description);
-       //Product p = new Product(new Long(1), "bajs", 6.6, "bajsbajs");
-       this.group4shop.getProductCatalogue().add(p);
+       group4shop.get().getProductCatalogue().update(p);
     }
     
     public Long getId(){
@@ -65,6 +71,4 @@ public class AddProductBean {
     public void setDescription(String description){
         this.description = description;
     }
-
 }
-

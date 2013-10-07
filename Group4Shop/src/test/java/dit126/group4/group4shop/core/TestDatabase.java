@@ -33,6 +33,12 @@ public class TestDatabase {
             Product found = shop.getProductCatalogue().find(new Long(1));
 
             assertTrue(found!=null);
+            
+            shop.getProductCatalogue().remove(p.getId());
+            
+            Product removedProduct = shop.getProductCatalogue().find(new Long(1));
+            assertTrue(removedProduct==null);
+            
         }
         
        @Test

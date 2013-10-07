@@ -4,29 +4,31 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
+
     <h:body>
+
         <ui:composition template="/WEB-INF/template.xhtml">
+
             <ui:define name="content">
                 <div id="delete-table" align="center">
-                
-                <h3>Add new product</h3>
+                <h3>Edit product</h3>
                 <h:form>
                     <h:panelGrid columns="3">
                         <h:outputText value="Id" styleClass="formTextCustom"/>
-                        <h:inputText id="id" value="#{add.id}"/>
+                        <h:inputText id="id" value="#{edit.id}" disabled="true"/>
                         <h:message for="id" />
                         <h:outputText value="Name" styleClass="formTextCustom"/>
-                        <h:inputText id="name" value="#{add.name}"/>
+                        <h:inputText id="name" value="#{edit.name}"/>
                         <h:message for="name" />
                         <h:outputText value="Price" styleClass="formTextCustom"/>
-                        <h:inputText id="price" value="#{add.price}"/>
+                        <h:inputText id="price" value="#{edit.price}"/>
                         <h:message for="price" />
                         <h:outputText value="Description" styleClass="formTextCustom"/>
-                        <h:inputText id="description" value="#{add.description}"/>
+                        <h:inputText id="description" value="#{edit.description}"/>
                         <h:message for="description" />
                     </h:panelGrid>
                     <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
-                    <h:commandButton actionListener="#{add.saveProduct}" action="products" value="Save"  styleClass="commandB"/>
+                    <h:commandButton actionListener="#{edit.editProduct()}" action="products" value="Edit" styleClass="commandB"/>
                 </h:form>
                 </div>
             </ui:define>

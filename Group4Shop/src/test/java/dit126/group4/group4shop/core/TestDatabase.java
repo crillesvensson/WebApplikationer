@@ -41,6 +41,23 @@ public class TestDatabase {
             
         }
         
+        
+        
+        @Test
+        public void testAssignRolesToUsers(){
+            Users user = new Users("emil@test.se", "Emil", "B", "qwerty");
+            Roles role = new Roles("Admin", "En admin");
+            
+            shop.getUserregister().add(user);
+            System.out.println("  TEST:  " + shop.getRolesRegister()  );
+            shop.getRolesRegister().add(role);
+            
+            UserRoles ur = new UserRoles(user, role);
+            System.out.println("Added user roles");
+            shop.getUserRolesRegister().add(ur);
+            assertTrue(true);
+        }
+        
        @Test
         public void testAddProductImage(){
             Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
@@ -71,7 +88,7 @@ public class TestDatabase {
         }
 
 
-        @Test 
+        /*@Test 
         public void testAddAdmin(){
             Admin a = new Admin("emil@group.se", "Emil", "B", "password");
             
@@ -81,7 +98,7 @@ public class TestDatabase {
             Admin a1 = shop.getAdminRegister().find("emil@group.se");
             assertTrue(true); //see if equals
             assertTrue(1 != 2 );
-        }
+        }*/
         
         
 

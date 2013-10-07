@@ -1,0 +1,42 @@
+/* 
+    Document   : main
+    Created on : Oct 7, 2013, 3:52:19 PM
+    Author     : emilbogren
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+/*
+ * Reset all margin and paddings - Remove if making mess 
+ */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+header{
+    background: #FF6400;
+    
+}
+
+.headerstyle{
+    
+}
+
+.navigation{
+    /*background: var(main-bg-color);*/
+    background-color: #FFAA74;
+}
+
+.footerstyle{
+    background: #FFFFFF;
+    border: none;
+}
+
+
+a:link {color:#FFFFFF;}      /* unvisited link */
+a:visited {color:#FFFFFF;}  /* visited link */
+a:hover {color:#5ED1BA;}  /* mouse over link */
+a:active {color:#5ED1BA;}  /* selected link */

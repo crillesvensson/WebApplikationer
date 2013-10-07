@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -8,12 +7,12 @@
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
+                
                 <!-- INSERTED CODE -->
                     <h:form id="login-form">
-                    <h:outputText value="#{auth.loginMessage}" styleClass="warning"/>
                     <h:panelGrid columns="3">
                         <f:facet name="header">
-                            Admin login!
+                            Login as user or admin! 
                         </f:facet>
                         <h:outputText value="Username : "></h:outputText>
                         <h:inputText id="username" value="#{auth.username}"/>
@@ -22,11 +21,12 @@
                         <h:inputSecret id="password" value="#{auth.password}"/>
                         <h:message for="password" style="color:red"/>
                         <f:facet name="footer">
-                            <h:commandButton value="Login" action="#{auth.login}" type="submit"/>
+                            <h:commandButton value="Login" action="#{loginController.login}" type="submit"/>
                         </f:facet>   
                     </h:panelGrid>
                 </h:form>
                 <!-- END OF INSERT  -->
+            
             </ui:define>
         </ui:composition>
     </h:body>

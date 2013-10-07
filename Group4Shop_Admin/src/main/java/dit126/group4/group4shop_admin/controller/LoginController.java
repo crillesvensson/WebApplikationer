@@ -8,18 +8,22 @@ import dit126.group4.group4shop_admin.view.LoginBackingBean;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author emilbogren
+ * @author Group4
  */
+@Named("loginController")
 public class LoginController {
-    
     
     @Inject
     private LoginBackingBean loginBackingBean;
+    
+    @Inject 
+    private NavigationController navigationController;
     
     public String login(){
         FacesContext context = FacesContext.getCurrentInstance();
@@ -30,9 +34,9 @@ public class LoginController {
             /*
             */
             context.addMessage(null, new FacesMessage("Login Failed"));
-            return "error";
+            return navigationController.loginFailed();
         }
-        return "admin/index";
+        return navigationController.loginSuccess();
     }
     
     public void logout() {

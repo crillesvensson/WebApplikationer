@@ -20,4 +20,8 @@ public interface IGroup4Shop {
     
     public IUserRegister getUserregister();
     
+    public IRolesRegister getRolesRegister();
+    
+    public IUserRolesRegister getUserRolesRegister();
+    
 }

@@ -17,7 +17,7 @@
 
 
 header{
-    background: #FF6400;
+     background: #FF6400;
     
 }
 
@@ -27,7 +27,13 @@ header{
 
 .navigation{
     /*background: var(main-bg-color);*/
-    background-color: #FFAA74;
+    background: #FFFFFF;
+    
+    
+}
+
+.navigation li{
+    display: inline;
 }
 
 .footerstyle{
@@ -36,7 +42,7 @@ header{
 }
 
 
-a:link {color:#FFFFFF;}      /* unvisited link */
-a:visited {color:#FFFFFF;}  /* visited link */
+a:link {color:#000000;}      /* unvisited link */
+a:visited {color:#000000;}  /* visited link */
 a:hover {color:#5ED1BA;}  /* mouse over link */
 a:active {color:#5ED1BA;}  /* selected link */

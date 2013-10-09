@@ -39,10 +39,10 @@ public class ProductProxy {
         return product.getPrice();
     }
     
-    @XmlElement
+    /*@XmlElement
     public String getCategory(){
         return product.getCategory();
-    }
+    }*/
     
     @XmlElement
     public String getDescription() {

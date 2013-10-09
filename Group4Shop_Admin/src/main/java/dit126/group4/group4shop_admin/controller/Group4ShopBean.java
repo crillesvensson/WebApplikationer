@@ -7,6 +7,7 @@ package dit126.group4.group4shop_admin.controller;
 import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IProductCatalogue;
+import dit126.group4.group4shop.core.IProductImageContainer;
 import java.io.Serializable;
 import javax.inject.Singleton;
 
@@ -26,6 +27,10 @@ public class Group4ShopBean implements Serializable{
     
     public IProductCatalogue getProductCatalogue(){
         return this.grou4shop.getProductCatalogue();
+    }
+    
+    public IProductImageContainer getProductImageContainer(){
+        return this.grou4shop.getProductImageConatiner();
     }
     
 }

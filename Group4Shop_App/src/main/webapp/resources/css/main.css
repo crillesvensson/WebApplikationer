@@ -16,18 +16,13 @@ root {
 }
 
 header{
-<<<<<<< HEAD
     background: #f7f5ed;
-=======
-<<<<<<< HEAD
-    background: #FF6400;
     background-image:  url(../img/test-banner.jpg);
     margin-left: auto;
     margin-right: auto;
     width: 660px;
     background-position: center;
     border-radius:25px;
-    box-shadow: 8px 8px 5px gainsboro
 }
 
 header h1{  
@@ -40,11 +35,8 @@ header h1{
     text-align: left;
     margin-left: 0.5em;
     vertical-align: middle;
-=======
-     background: #FF6400;
->>>>>>> 68945d6db1072c76c9e913a8ba56a6d393da9798
+    background: #FF6400;
     
->>>>>>> f029aa2fe4b302e95618576940e6ee712dc6146b
 }
 
 .headerstyle{
@@ -129,9 +121,7 @@ body{
 }
 
 .navigation{
-<<<<<<< HEAD
     background-color: #FFFFFF;
-=======
     /*background: var(main-bg-color);*/
     background: #FFFFFF;
     
@@ -154,7 +144,6 @@ body{
     border-color: #F0F0F0;
     border-radius: 8px 8px 8px 8px;
     
->>>>>>> 68945d6db1072c76c9e913a8ba56a6d393da9798
 }
 
 /******************************/
@@ -181,7 +170,6 @@ tr:nth-child(even) { background-color:#eee; }
 
 
 
-<<<<<<< HEAD
 a {
     background: #FFFFFF;
     
@@ -202,9 +190,3 @@ a:hover {
      color:#5ED1BA;
      background: #FFFFFF;  /* selected link */
  }
-=======
-a:link {color:#000000; text-decoration: none;}      /* unvisited link */
-a:visited {color:#000000; text-decoration: none;}  /* visited link */
-a:hover {color:#bf0000;}  /* mouse over link */
-a:active {color:#bf0000;}  /* selected link */
->>>>>>> 68945d6db1072c76c9e913a8ba56a6d393da9798

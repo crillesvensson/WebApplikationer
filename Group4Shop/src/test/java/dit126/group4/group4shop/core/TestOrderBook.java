@@ -31,8 +31,8 @@ public class TestOrderBook {
         assertTrue(user.equals(user1));
         
         Long id = (long) 10001;
-        Product p1 = new Product(id, "Bat", 20.20, "A flying creature that navigates with its supersonic hearing");
-        Product p2 = new Product((id+1), "Ferret", 100.80, "Have become popular lately as a pet");
+        Product p1 = new Product(id, "Bat", 20.20, "Djur","A flying creature that navigates with its supersonic hearing");
+        Product p2 = new Product((id+1), "Ferret", 100.80,"Djur", "Have become popular lately as a pet");
         shop.getProductCatalogue().add(p1);
         shop.getProductCatalogue().add(p2);
         

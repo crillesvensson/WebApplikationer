@@ -19,22 +19,19 @@ header{
     background: #f7f5ed; 
     margin-left: auto;
     margin-right: auto;
-    width: 660px;
     background-position: center;
-    border-radius:25px;
+    
 }
 
 header h1{  
     padding-top: 0.5em;
     font-size: 40px;
-    font-family: fantasy;
-    font-style: italic;
     font-weight: 900;
     font-variant: small-caps;
     text-align: left;
     margin-left: 0.5em;
     vertical-align: middle;
-    background: #FF6400;
+    background: #f7f5ed;
     
 }
 
@@ -119,27 +116,7 @@ body{
     margin: auto;
 }
 
-.navigation{
-    background-color: #FFFFFF;
-    /*background: var(main-bg-color);*/
-    background: #FFFFFF;
-    
-    
-}
-.navigation ul{
-    margin-left: 20px;
-}
 
-.navigation li{
-    
-    display: inline;
-    margin: 0 0.5em 0 0;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #F0F0F0;
-    
-}
 
 /******************************/
 

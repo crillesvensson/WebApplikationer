@@ -40,7 +40,12 @@ public class ProductProxy {
     }
     
     @XmlElement
-    public String getDescroption() {
+    public String getCategory(){
+        return product.getCategory();
+    }
+    
+    @XmlElement
+    public String getDescription() {
         return product.getDescription();
     }
 }

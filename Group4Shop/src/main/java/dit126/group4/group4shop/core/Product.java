@@ -45,6 +45,16 @@ public class Product implements Serializable {
         this.name = name;
         this.price = price;
         this.category = category;
+<<<<<<< HEAD
+=======
+        this.description = description;
+    }
+    
+    public Product(Long id, String name, Double price, String description){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+>>>>>>> d68450fad4c51ffe361bff361d1a0ea24bfb1a2b
         this.description = description;
     }
     

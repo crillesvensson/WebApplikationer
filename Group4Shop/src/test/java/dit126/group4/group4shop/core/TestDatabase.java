@@ -27,7 +27,7 @@ public class TestDatabase {
         
         @Test
         public void testAddProduct(){
-            Product p = new Product(new Long(1),"Banan", 22.33, "En gul banan");
+            Product p = new Product(new Long(1),"Banan", 22.33,"Frukt", "En gul banan");
             
             shop.getProductCatalogue().add(p);
             Product found = shop.getProductCatalogue().find(new Long(1));
@@ -60,7 +60,7 @@ public class TestDatabase {
         
        @Test
         public void testAddProductImage(){
-            Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
+            Product p = new Product(new Long(2), "Banana", 22.22,"Frukt", "En gul banan");
             shop.getProductCatalogue().add(p);
             
             File image = new File("/Users/Christian/Documents/school/webbapplikationer/WebApplikationer/Group4Shop/src/resources/banan.png");

@@ -33,10 +33,11 @@ public class ProductImage implements Serializable{
         
     }
     
-    public ProductImage(String name, Long productId, File image){
+    public ProductImage(String name, Long productId, byte[] image){
         this.name = name;
         this.productId = productId;
-        this.imageData = this.getImageBytes(image);
+        //this.imageData = this.getImageBytes(image);
+        this.imageData = image;
     }
     
     public String getName(){

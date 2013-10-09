@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:body>
 
@@ -26,6 +27,8 @@
                         <h:outputText value="Description" styleClass="formTextCustom"/>
                         <h:inputText id="description" value="#{edit.description}"/>
                         <h:message for="description" />
+                        <h:outputText value="Image" styleClass="formTextCustom"/>
+                        <p:graphicImage value="#{edit.image}"/>
                     </h:panelGrid>
                     <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
                     <h:commandButton actionListener="#{edit.editProduct()}" action="products" value="Edit" styleClass="commandB"/>

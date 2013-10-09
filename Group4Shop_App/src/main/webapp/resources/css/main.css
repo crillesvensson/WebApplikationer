@@ -15,14 +15,40 @@
     padding: 0px;
 }
 
+root { 
+    display: block;
+}
 
 header{
     background: #FF6400;
-    
+    background-image:  url(../img/test-banner.jpg);
+    margin-left: auto;
+    margin-right: auto;
+    width: 660px;
+    background-position: center;
+    border-radius:25px;
+    box-shadow: 8px 8px 5px gainsboro
+}
+
+header h1{  
+    padding-top: 0.5em;
+    font-size: 40px;
+    font-family: fantasy;
+    font-style: italic;
+    font-weight: 900;
+    font-variant: small-caps;
+    text-align: left;
+    margin-left: 0.5em;
+    vertical-align: middle;
 }
 
 .headerstyle{
-    
+}
+
+body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 660px;
 }
 
 .navigation{
@@ -34,6 +60,18 @@ header{
     background: #FFFFFF;
     border: none;
 }
+
+div#products-contain { width: 350px; margin: 20px 0; }
+div#products-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+div#products-contain table td, div#products-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+
+tr:nth-child(odd) { background-color:#fff; }
+tr:nth-child(even) { background-color:#eee; }
+
+#prev-button #next-button {
+
+}
+
 
 
 a:link {color:#FFFFFF;}      /* unvisited link */

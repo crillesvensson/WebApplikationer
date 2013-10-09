@@ -34,7 +34,8 @@ public class TestProductCatalogue {
             String desc = "Description for product " + i;
             Double d = (double) i;
             Long id = (long) i;
-            pc.add(new Product(id, String.valueOf(i), d, desc));
+            String cat = "Category for " + i;
+            pc.add(new Product(id, String.valueOf(i), d, cat, desc));
         }
         
         List<Product> prods = pc.getRange(0, 2);
@@ -48,7 +49,7 @@ public class TestProductCatalogue {
         
         // Test to add a product
         Long id = (long) 22000;
-        Product p1 = new Product(id, "crocodile", 9000.00, "A fierce pet that only australians can have at home");
+        Product p1 = new Product(id, "crocodile", 9000.00,"Djur", "A fierce pet that only australians can have at home");
         int i = pc.getCount();
         pc.add(p1);
         
@@ -61,7 +62,7 @@ public class TestProductCatalogue {
         assertTrue(p1.equals(p2));
         
         // Test to update a product
-        Product p = new Product(p1.getId(), "alligator", 7000.00, "FOR REDNECKS ONLY");
+        Product p = new Product(p1.getId(), "alligator", 7000.00,"Djur", "FOR REDNECKS ONLY");
         pc.update(p);
         p1 = pc.find(p1.getId());
         

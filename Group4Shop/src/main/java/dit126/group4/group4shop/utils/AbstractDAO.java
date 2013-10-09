@@ -8,14 +8,14 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 /**
- * Contains CRUD operations for ProductCatalogue, OrderBook
+ * Contains CRUD operations for ProductCatalogue, OrderBook, UserRegister
  *
  * @author David
  */
 public abstract class AbstractDAO<T, K> implements IDAO<T, K>{
     
     protected EntityManagerFactory emf;
-    protected final Class<T> clazz;
+    private final Class<T> clazz;
     protected AbstractDAO(Class <T> clazz, String puName){
         this.clazz = clazz;
         emf = Persistence.createEntityManagerFactory(puName);

@@ -23,10 +23,9 @@ public class OrderItem implements Serializable{
     private Long id;
     
     @ManyToOne
-    @Column(name = "PRODUCT")
     private Product product;
     
-    @Column(name = "QUANTITY")
+    @Column(name = "QUANTITY", nullable = false)
     private int quantity;
     
     protected OrderItem(){

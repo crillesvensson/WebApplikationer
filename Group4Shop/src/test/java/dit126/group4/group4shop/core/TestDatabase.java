@@ -27,7 +27,7 @@ public class TestDatabase {
         
         @Test
         public void testAddProduct(){
-            Product p = new Product(new Long(1),"Banan", 22.33, "En gul banan");
+            Product p = new Product(new Long(1),"Banan", 22.33,"Frukt", "En gul banan");
             
             shop.getProductCatalogue().add(p);
             Product found = shop.getProductCatalogue().find(new Long(1));
@@ -48,7 +48,7 @@ public class TestDatabase {
             Users user = new Users("emil@test.se", "Emil", "B", "qwerty");
             Roles role = new Roles("Admin", "En admin");
             
-            shop.getUserregister().add(user);
+            shop.getUserRegister().add(user);
             System.out.println("  TEST:  " + shop.getRolesRegister()  );
             shop.getRolesRegister().add(role);
             
@@ -60,7 +60,11 @@ public class TestDatabase {
         
        @Test
         public void testAddProductImage(){
+<<<<<<< HEAD
            /* Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
+=======
+            Product p = new Product(new Long(2), "Banana", 22.22,"Frukt", "En gul banan");
+>>>>>>> 4b87088152e5d9db4656e739cd62f08944e59bd3
             shop.getProductCatalogue().add(p);
             
             File image = new File("/Users/Christian/Documents/school/webbapplikationer/WebApplikationer/Group4Shop/src/resources/banan.png");

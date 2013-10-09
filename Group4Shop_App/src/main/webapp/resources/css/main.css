@@ -10,33 +10,155 @@
 /*
  * Reset all margin and paddings - Remove if making mess 
  */
-* {
-    margin: 0px;
-    padding: 0px;
+
+root { 
+    display: block;
 }
 
-
 header{
-    background: #FF6400;
+    background: #f7f5ed; 
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    
+}
+
+header h1{  
+    padding-top: 0.5em;
+    font-size: 40px;
+    font-weight: 900;
+    font-variant: small-caps;
+    text-align: left;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    background: #f7f5ed;
     
 }
 
 .headerstyle{
-    
 }
 
-.navigation{
-    /*background: var(main-bg-color);*/
-    background-color: #FFAA74;
+body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 660px;
 }
+
+#content{
+    width: 660px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+   
+}
+
+#logodiv {
+    /*background: url("");*/
+    background: #f7f5ed;
+    height: 70px;
+    width: 300px;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#headerlinks{
+    background: #f7f5ed;
+    /*height: 70px;*/
+    width: 960px;
+    display: table;
+    margin: 0 auto;
+}
+.hlink ul{
+    list-style-type: none;
+    text-align: left;
+    padding: 0px;
+}
+
+.hlink li {
+    font: 500 12px/1.5 Helvetica, Verdana, sans-serif;
+    border-right: 1px solid #777;
+    display: inline;
+    text-align: center;
+    padding-right: 4px;
+    height: auto;
+}
+ 
+.hlink li:last-child {
+  border: none;
+}
+
+.hlink li a {
+     text-decoration: none;
+    /*color: #000;*/
+    /*display: block;*/
+    /*width: 200px;*/
+    color: #777;
+    background: #f7f5ed; /* unvisited link */
+}
+
+    /***********************/
+    /*  HEADER STYLE - END */
+    /***********************/
+
+    
+
+/************ Nav sTyle *************/    
+#tabs {
+    /*oklart*/
+}
+
+.navbar{
+    text-align: center;
+    width: 960px;
+    margin: auto;
+}
+
+
+
+/******************************/
+
 
 .footerstyle{
     background: #FFFFFF;
     border: none;
+    text-align: center;
+    font-size: 9px;
+    font-family: "Verdana" , sans-serif;
+}
+
+div#products-contain { width: 350px; margin: 20px 0; }
+div#products-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+div#products-contain table td, div#products-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+
+tr:nth-child(odd) { background-color:#fff; }
+tr:nth-child(even) { background-color:#eee; }
+
+#prev-button #next-button {
+
 }
 
 
-a:link {color:#FFFFFF;}      /* unvisited link */
-a:visited {color:#FFFFFF;}  /* visited link */
-a:hover {color:#5ED1BA;}  /* mouse over link */
-a:active {color:#5ED1BA;}  /* selected link */
+
+a {
+    background: #FFFFFF;
+    
+}
+a:link {
+    color:#000000;
+    background: #FFFFFF; /* unvisited link */
+}
+a:visited {
+    color:#000000;
+    background: #FFFFFF;  /* visited link */
+}
+a:hover {
+    color:#5ED1BA;
+    background: #FFFFFF;/* mouse over link */
+}
+ a:active {
+     color:#5ED1BA;
+     background: #FFFFFF;  /* selected link */
+ }

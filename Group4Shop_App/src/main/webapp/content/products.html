@@ -1,13 +1,49 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv">
+<html>
     <head>
-        <title></title>
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" href="resources/css/normalize.css" type="text/css"/>
+        <link rel="stylesheet" href="resources/css/main.css" type="text/css"/>
+
+        <script type="text/javascript" src="js/gui/products.js" ></script>
+    
+
+        <title>Products</title>
     </head>
     <body>
-        <div>TODO write content</div>   
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-offset-3">
+                        <h1> TODO Add content </h1>
+                </div>
+            </div>
+        </div> 
+        <div id="products-contain" class="ui-widget">
+            <button id="prev-button">Prev</button> 
+            <button id="next-button">Next</button>
+            <table id="products" class="ui-widget ui-widget-content">
+                <thead>
+                    <tr class="ui-widget-header ">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+        <div id="dialog-message" title="Set this in code" hidden="hidden">
+            <p>
+                <span class="ui-icon ui-icon-circle-check" 
+                      style="float: left; margin: 0 7px 50px 0;">
+                </span> 
+                <span id="msg">Set this in code </span>           
+            </p>
+        </div>  
     </body>
 </html>

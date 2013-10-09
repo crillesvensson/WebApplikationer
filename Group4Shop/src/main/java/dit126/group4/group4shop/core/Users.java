@@ -1,11 +1,12 @@
 package dit126.group4.group4shop.core;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.*;
+import javax.persistence.Transient;
 
 /**
  *
@@ -17,9 +18,17 @@ import javax.validation.constraints.*;
 public class Users implements Serializable {
     
     //private Long id; email could be id for each customer since we force them to log in 
-    @Column(name="FIRSTNAME") private String firstName;
-    @Column(name="LASTNAME") private String lastName;
-    @Column(name="PASSWORD") private String password; // shoule be changed to use a more secure method 
+    @Column(name="FIRSTNAME") 
+    private String firstName;
+    
+    @Column(name="LASTNAME") 
+    private String lastName;
+    
+    @Column(name="PASSWORD") 
+    private String password; // should be changed to use a more secure method 
+    
+    @Transient 
+    private transient ShoppingCart cart = new ShoppingCart(); //to private
     
     @Id
     @Column(name="EMAIL", nullable = false)
@@ -34,6 +43,32 @@ public class Users implements Serializable {
         this.firstName = firstname;
         this.lastName = lastname;
         this.password = password;
+    }
+    
+    public ShoppingCart getCart(){
+        return cart;
+    }
+    
+     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 113 * hash + Objects.hashCode(this.email);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Users other = (Users) obj;
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        return true;
     }
     
 }

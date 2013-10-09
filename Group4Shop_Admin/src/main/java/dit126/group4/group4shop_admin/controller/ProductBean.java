@@ -8,10 +8,7 @@ import dit126.group4.group4shop.core.Product;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
-
-
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -26,15 +23,17 @@ public class ProductBean implements Serializable{
     @Inject
     private Group4ShopBean group4shop;
     
-    public List<Product> getProducts(){
-        int count = group4shop.getProductCatalogue().getCount();
-        List<Product> productList = group4shop.getProductCatalogue().getRange(0, 1);
-        if(!productList.isEmpty()){
-            System.out.print("LIST IS EMPTY!!!!!!!!!");
-        }
-        return productList;
+    
+    @PostConstruct
+    public void post() {
+
     }
     
+    public List<Product> getProducts(){
+        int count = group4shop.getProductCatalogue().getCount();
+        List<Product> productList = group4shop.getProductCatalogue().getRange(0, count);     
+        return productList;
+    }
   
     
 }

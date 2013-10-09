@@ -1,13 +1,23 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv">
+<html>
     <head>
-        <title></title>
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" href="resources/css/normalize.css" type="text/css"/>
+<<<<<<< HEAD
+        <link rel="stylesheet" href="resources/css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="resources/css/twitterbootstrap/jquery-ui-1.10.2.custom.css" type="text/css" />
+
+        <script type="text/javascript" src="js/gui/products.js" ></script>
+    
+=======
+        <link rel="stylesheet" href="resources/css/style.css" type="text/css"/>
+
+>>>>>>> f029aa2fe4b302e95618576940e6ee712dc6146b
+        <title>Products</title>
     </head>
     <body>
+<<<<<<< HEAD
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-offset-3">
@@ -15,5 +25,33 @@ and open the template in the editor.
                 </div>
             </div>
         </div> 
+=======
+        <div id="products-contain" class="ui-widget">
+            <button id="prev-button">Prev</button> 
+            <button id="next-button">Next</button>
+            <table id="products" class="ui-widget ui-widget-content">
+                <thead>
+                    <tr class="ui-widget-header ">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+        <div id="dialog-message" title="Set this in code" hidden="hidden">
+            <p>
+                <span class="ui-icon ui-icon-circle-check" 
+                      style="float: left; margin: 0 7px 50px 0;">
+                </span> 
+                <span id="msg">Set this in code </span>           
+            </p>
+        </div>  
+>>>>>>> 68945d6db1072c76c9e913a8ba56a6d393da9798
     </body>
 </html>

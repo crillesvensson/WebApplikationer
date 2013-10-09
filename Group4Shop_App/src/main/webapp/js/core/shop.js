@@ -1,13 +1,7 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 var shop = (function(){
     
-    var baseUri = "http://localhost:8080/Group4Shop/";  
+    var baseUri = "http://localhost:8080/Group4Shop/";  //change when deciding pattern
     var products = new ProductCatalogue(baseUri + "products");
-    //var orderBook = new OrderBook(baseUri);
-    // etc ...
     
     return {
         getProductCatalogue : function(){

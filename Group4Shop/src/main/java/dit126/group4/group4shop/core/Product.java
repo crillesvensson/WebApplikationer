@@ -26,11 +26,14 @@ public class Product implements Serializable {
     private Double price;
     
     @Column(name="DESCRIPTION")
-    private String description;    
+    private String description;   
+    
+    @Column(name="CATEGORY")
+    private String category;
     
     protected Product(){}
     
-    public Product(Long id, String name, Double price, String description){
+    public Product(Long id, String name, Double price, String category, String description){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -53,9 +56,13 @@ public class Product implements Serializable {
         return description;
     }
     
+    public String getCategory(){
+        return category;
+    }
+    
     @Override
     public String toString() {
-        return "Product{" + "id=" + getId() + ", name=" + name + ", price=" + price + ", description=" + getDescription() + '}';
+        return "Product{" + "id=" + id + ", name=" + name + ", price=" + price + ", category=" + category + ", description=" + description + '}';
     }
     
     @Override

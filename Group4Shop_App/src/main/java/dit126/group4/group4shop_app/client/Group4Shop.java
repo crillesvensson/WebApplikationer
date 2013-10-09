@@ -23,4 +23,5 @@ public enum Group4Shop {
     public IProductCatalogue getProductCatalogue(){
         return shop.getProductCatalogue();
     }
+    
 }

@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Group4Shop
+ * @author Group4
  */
 
 @XmlRootElement(name="product")

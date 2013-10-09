@@ -33,10 +33,18 @@ public class Product implements Serializable {
     
     protected Product(){}
     
+    public Product(Long id, String name, Double price, String description){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+    
     public Product(Long id, String name, Double price, String category, String description){
         this.id = id;
         this.name = name;
         this.price = price;
+        this.category = category;
         this.description = description;
     }
     

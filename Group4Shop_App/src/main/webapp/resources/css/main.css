@@ -16,8 +16,7 @@ root {
 }
 
 header{
-    background: #f7f5ed;
-    background-image:  url(../img/test-banner.jpg);
+    background: #f7f5ed; 
     margin-left: auto;
     margin-right: auto;
     width: 660px;
@@ -139,10 +138,6 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     background-color: #F0F0F0;
-    border: solid;
-    border-width: 4px 4px 4px 4px;
-    border-color: #F0F0F0;
-    border-radius: 8px 8px 8px 8px;
     
 }
 

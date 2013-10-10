@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv">
     <head>
-        <title>Start Page</title>
+        <title>Group4Shop</title>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="resources/css/normalize.css" type="text/css"/>
+        <link rel="stylesheet" href="resources/css/twitterbootstrap/bootstrap.css" type="text/css"/>
         <link rel="stylesheet" href="resources/css/main.css" type="text/css"/>
-        <link rel="stylesheet" href="resources/css/twitterbootstrap/jquery-ui-1.10.2.custom.css" type="text/css"/>
-
-        <!--<link rel="stylesheet" type="text/css" href="resources/css/normalize.css" />-->
-        <!--<link rel="stylesheet" type="text/css" href="resources/css/style.css" />-->
-        <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
-        <link rel="stylesheet" type="text/css" href="resources/css/twitterbootstrap/bootstrap.css" />
+        
         <script type="text/javascript" src="lib/jquery-1.9.1.js"></script>
         <script type="text/javascript" src="js/gui/menu-navigation.js"></script>
         <script type="text/javascript" src="js/core/productCatalogue.js"></script>
@@ -18,42 +13,38 @@
         <script type="text/javascript" src="js/core/navigator.js"></script>
     </head>
     <body>
-        
-        <header class="headerstyle">
-            <div id="logodiv">
-                <h1>Logo</h1>
-                <p>A small webshop - 1337</p>
+        <div class="container">
+            <header class="headerstyle">
+                <div id="logodiv">
+                    <h1>Logo</h1>
+                    <p>A small webshop - 1337</p>
+                </div>
+                <div id="headerlinks" class="hlink">
+                    <ul>
+                        <li><a href="content/home.html">Blogg</a></li>
+                        <li><a href="content/products.html">Sök</a></li>
+                        <li><a href="content/help.html">Nyhetsbrev</a></li>
+                        <li><a href="content/contact.html">Jobb</a></li>
+                    </ul>
+                </div>
+            </header>
+            <nav id="tabs">
+                    <ul id="mainmenu" class="nav nav-pills nav-justified">
+                        <li><a href="content/home.html">Home</a></li>
+                        <li><a href="content/products.html">Products</a></li>
+                        <li><a href="content/help.html">Help</a></li>
+                        <li><a href="content/Contact.jsp">Contact</a></li>
+                    </ul>
+            </nav>
+            
+            <div id="content"> 
+                
             </div>
-            <div id="headerlinks" class="hlink">
-                <ul>
-                <li><a href="content/home.html">Blogg</a></li>
-                <li><a href="content/products.html">Sök</a></li>
-                <li><a href="content/help.html">Nyhetsbrev</a></li>
-                <li><a href="content/contact.html">Jobb</a></li>
-            </ul>
-            </div>
-        </header>
-        
-
-        <nav id="tabs" class="navbar" role="navigation">
-            <ul id="mainmenu" class="nav navbar-nav">
-                <li><a href="content/home.html">Home</a></li>
-                <li><a href="content/products.html">Products</a></li>
-                <li><a href="content/help.html">Help</a></li>
-                <li><a href="content/Contact.jsp">Contact</a></li>
-            </ul>
-        </nav>
-
-        
-        <div id="content"> 
-        
+            
+            <footer class="footerstyle">
+                <div> © Group4 DIT126 2013 | Terms And Conditions | Cookies | Policy | Other Links </div>
+            </footer>
         </div>
-        
-        
-
-        <footer class="footerstyle">
-            <div> © Group4 DIT126 2013 | Terms And Conditions | Cookies | Policy | Other Links </div>
-        </footer>
         
     </body>
 </html>

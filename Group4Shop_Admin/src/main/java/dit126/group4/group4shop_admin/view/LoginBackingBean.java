@@ -11,7 +11,6 @@ import javax.inject.Named;
  *
  * @author Group4
  */
-
 @Named("auth")
 @RequestScoped
 public class LoginBackingBean {

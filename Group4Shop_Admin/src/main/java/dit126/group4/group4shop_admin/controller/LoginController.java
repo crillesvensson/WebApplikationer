@@ -29,10 +29,15 @@ public class LoginController {
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
+            System.out.println("Emil testar och debuggar: " + loginBackingBean.getUsername() + " " +  loginBackingBean.getPassword() );
+            
+            /*if(request.isUserInRole("Admin")){
+                System.out.println("Emil testar och debuggar45 : " );
+            }*/
+            
             request.login(loginBackingBean.getUsername(), loginBackingBean.getPassword());
         } catch(ServletException e){
-            /*
-            */
+            System.out.println("YES SOMETHING IS BLOCKING ME FROM LEGO IN");
             context.addMessage(null, new FacesMessage("Login Failed"));
             return navigationController.loginFailed();
         }

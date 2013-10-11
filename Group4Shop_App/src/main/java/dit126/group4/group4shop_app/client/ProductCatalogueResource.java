@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 
-@Path ("/products")
+@Path ("products")
 public class ProductCatalogueResource {
     
     @GET
@@ -33,16 +33,19 @@ public class ProductCatalogueResource {
     
     @GET
     @Path("{id}")
-    @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response find(@PathParam("id") Long id){
-        Product found = Group4Shop.INSTANCE.getProductCatalogue().find(id);
-        ProductProxy pp = new ProductProxy(found);
-        return Response.ok(pp).build();
+        try{
+            Product prod = Group4Shop.INSTANCE.getProductCatalogue().find(id);
+            ProductProxy prox = new ProductProxy(prod);
+            return Response.ok(prox).status(Status.OK).build();
+        }catch(Exception e) {
+            return Response.status(Status.BAD_REQUEST).build();
+        }
     }
     
     @GET
-    //@Path("name")
-    @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getByName(@QueryParam("name") String name) {
         try{
             List<Product> rtn = Group4Shop.INSTANCE.getProductCatalogue().getByName(name);
@@ -53,7 +56,7 @@ public class ProductCatalogueResource {
             GenericEntity<List<ProductProxy>> ge = new GenericEntity<List<ProductProxy>>(ppList){};
             return Response.ok(ge).build();
         } catch(Exception e) {
-            return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            return Response.status(Status.NOT_FOUND).build();
         }
     }
     /*
@@ -76,20 +79,26 @@ public class ProductCatalogueResource {
     
     @GET
     @Path("range")
-    @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-    public Response getRange(@QueryParam("first")int first, @QueryParam("nItems") int nItems) {
-        List<Product> productRange = Group4Shop.INSTANCE.getProductCatalogue().getRange(first, nItems);
-        List<ProductProxy> ppList = new ArrayList<>();
-        for(Product product : productRange){
-            ppList.add(new ProductProxy(product));
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response getRange(@QueryParam("fst") int first, @QueryParam("max") int nItems) {
+        try{
+            List<Product> products = Group4Shop.INSTANCE.getProductCatalogue().getRange(first, nItems);
+            ArrayList<ProductProxy> proxyList = new ArrayList<>();
+            for (Product p : products){
+                ProductProxy pp = new ProductProxy(p);
+                proxyList.add(pp);
+            }
+            GenericEntity<List<ProductProxy>> genEnt = new GenericEntity<List<ProductProxy>>(proxyList){};
+            return Response.ok(genEnt).build();
+            
+        }catch(Exception e) {
+            return Response.status(Status.BAD_REQUEST).build();
         }
-        GenericEntity<List<ProductProxy>> ge = new GenericEntity<List<ProductProxy>>(ppList){};
-        return Response.ok(ge).build();
     }
     
     @GET
     @Path("count")
-    @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getCount() {
         try{
             Integer rtn = Group4Shop.INSTANCE.getProductCatalogue().getCount();

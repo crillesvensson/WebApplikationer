@@ -20,6 +20,7 @@ public class ProductProxy {
     
     protected ProductProxy(){
     }
+    
     public ProductProxy(Product product) {
         this.product = product;
     }

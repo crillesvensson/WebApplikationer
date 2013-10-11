@@ -22,7 +22,7 @@ import javax.ws.rs.core.Response.Status;
 
 @Path ("/products")
 public class ProductCatalogueResource {
-    /*
+    
     @GET
     @Path("all")
     @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
@@ -110,5 +110,5 @@ public class ProductCatalogueResource {
         }
     }
     
-    */
+    
 }

@@ -18,22 +18,30 @@ header h1{
     font-size: 40px;
     font-weight: 900;
     font-variant: small-caps;
-    text-align: left;
     margin-left: 0.5em;
     vertical-align: middle;
     background: #f5f5f5;
+    text-align: center;
 }
 
 .headerstyle{
     display: table;
     margin: 0 auto;
-    width: 100%;
+    width: 960px; 
+    padding-left: 10px;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
 }
 
 #content{
     width: 960px;
     height: 500px;
     margin: 0 auto;
+    padding-top: 20px;
+    
 }
 
 #logodiv {

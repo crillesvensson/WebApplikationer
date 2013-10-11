@@ -64,7 +64,7 @@ $(function() {
                 }
             }
         });
-        $('#dialog-message').dialog('option', 'title', 'Something went! wrong');
+        $('#dialog-message').dialog('option', 'title', 'Something went wrong!');
         $("#dialog-message #msg").text(message);
         return $('#dialog-message');
     }

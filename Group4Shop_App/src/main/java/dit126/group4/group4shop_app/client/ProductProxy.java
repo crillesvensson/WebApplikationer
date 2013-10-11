@@ -38,11 +38,11 @@ public class ProductProxy {
     public double getPrice() {
         return product.getPrice();
     }
-    /*
+    
     @XmlElement
     public String getCategory(){
         return product.getCategory();
-    }*/
+    }
     
     @XmlElement
     public String getDescription() {

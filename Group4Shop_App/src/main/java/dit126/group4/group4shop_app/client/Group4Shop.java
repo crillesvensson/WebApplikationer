@@ -17,7 +17,7 @@ public enum Group4Shop {
     private final String TEST_PU = "group4_test_shop";
     
     private Group4Shop(){
-        shop = Group4ShopFactory.getShop(TEST_PU);
+        shop = Group4ShopFactory.getShop(PU);
     }
     
     public IProductCatalogue getProductCatalogue(){

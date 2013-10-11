@@ -1,45 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv">
     <head>
         <meta charset="UTF-8" />
-
-        <link rel="stylesheet" href="resources/css/normalize.css" type="text/css"/>
-        <link rel="stylesheet" href="resources/css/main.css" type="text/css"/>
-
+        <link rel="stylesheet" href="../resources/css/twitterbootstrap/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="../resources/css/main.css" type="text/css"/>
+        
         <script type="text/javascript" src="js/gui/products.js" ></script>
-    
-
         <title>Products</title>
     </head>
+    
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-offset-3">
-                        <h1> TODO Add content </h1>
-                </div>
+        <div id="content">
+            <div id="products-contain" class="panel panel">
+                <div class="panel-heading">Products for sale</div>
+                <table id="products" class="table-striped" style="margin: 0 auto">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+                <ul class="pager">
+                    <li><button id="prev-button" class="btn btn-default">Previous</button></li>
+                    <li><button id="next-button" class="btn btn-default">Next</button></li>
+                </ul>
+                
             </div>
         </div> 
-        <div id="products-contain" class="ui-widget">
-            <button id="prev-button">Prev</button> 
-            <button id="next-button">Next</button>
-            <table id="products" class="ui-widget ui-widget-content">
-                <thead>
-                    <tr class="ui-widget-header ">
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-                <tfoot></tfoot>
-            </table>
-        </div>
+        
         <div id="dialog-message" title="Set this in code" hidden="hidden">
             <p>
-                <span class="ui-icon ui-icon-circle-check" 
+                <span class="modal" 
                       style="float: left; margin: 0 7px 50px 0;">
                 </span> 
                 <span id="msg">Set this in code </span>           

@@ -2563,7 +2563,7 @@ button.close {
 }
 
 .nav-pills > li > a {
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 .nav-pills > li + li {

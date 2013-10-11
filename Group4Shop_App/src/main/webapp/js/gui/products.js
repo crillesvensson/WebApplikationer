@@ -44,8 +44,7 @@ $(function() {
                     + "<td>" + prod.name + "</td>"
                     + "<td>" + prod.price + "</td>"
                     + "<td>" + prod.category + "</td>"
-                    + "<td>" + prod.description + "</td>").appendTo("#products tbody").click({product : prod}, function(event){
-                          createEditDeleteDialog(event.data.product)});
+                    + "<td>" + prod.description + "</td>").appendTo("#products tbody");
         });
     }
 
@@ -64,7 +63,7 @@ $(function() {
                 }
             }
         });
-        $('#dialog-message').dialog('option', 'title', 'Something went! wrong');
+        $('#dialog-message').dialog('option', 'title', 'Something went wrong!');
         $("#dialog-message #msg").text(message);
         return $('#dialog-message');
     }

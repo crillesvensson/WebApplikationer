@@ -6,19 +6,9 @@
         Purpose of the stylesheet follows.
 */
 
-
-/*
- * Reset all margin and paddings - Remove if making mess 
- */
-
-root { 
-    display: block;
-}
-
 header{
-    background: #f7f5ed; 
-    margin-left: auto;
-    margin-right: auto;
+    background: #f5f5f5;
+    margin: 0 auto;
     background-position: center;
     
 }
@@ -28,35 +18,35 @@ header h1{
     font-size: 40px;
     font-weight: 900;
     font-variant: small-caps;
-    text-align: left;
     margin-left: 0.5em;
     vertical-align: middle;
-    background: #f7f5ed;
-    
+    background: #f5f5f5;
+    text-align: center;
 }
 
 .headerstyle{
+    display: table;
+    margin: 0 auto;
+    width: 960px; 
+    padding-left: 10px;
 }
 
-body{
-    margin-left: auto;
-    margin-right: auto;
-    width: 660px;
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
 }
 
 #content{
-    width: 660px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 960px;
+    height: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
     
-    
-   
 }
 
 #logodiv {
     /*background: url("");*/
-    background: #f7f5ed;
+    background: #f5f5f5;
     height: 70px;
     width: 300px;
     display: table;
@@ -65,12 +55,13 @@ body{
 }
 
 #headerlinks{
-    background: #f7f5ed;
+    background: transparent;
     /*height: 70px;*/
-    width: 960px;
     display: table;
     margin: 0 auto;
+    width: 100%;
 }
+
 .hlink ul{
     list-style-type: none;
     text-align: left;
@@ -96,33 +87,22 @@ body{
     /*display: block;*/
     /*width: 200px;*/
     color: #777;
-    background: #f7f5ed; /* unvisited link */
+    background: #f5f5f5; /* unvisited link */
 }
 
     /***********************/
     /*  HEADER STYLE - END */
     /***********************/
 
-    
-
 /************ Nav sTyle *************/    
-#tabs {
-    /*oklart*/
+
+#tabs{
 }
-
-.navbar{
-    text-align: center;
-    width: 960px;
-    margin: auto;
-}
-
-
 
 /******************************/
 
-
 .footerstyle{
-    background: #FFFFFF;
+    background: #fff;
     border: none;
     text-align: center;
     font-size: 9px;
@@ -133,32 +113,5 @@ div#products-contain { width: 350px; margin: 20px 0; }
 div#products-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
 div#products-contain table td, div#products-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
 
-tr:nth-child(odd) { background-color:#fff; }
-tr:nth-child(even) { background-color:#eee; }
-
 #prev-button #next-button {
-
 }
-
-
-
-a {
-    background: #FFFFFF;
-    
-}
-a:link {
-    color:#000000;
-    background: #FFFFFF; /* unvisited link */
-}
-a:visited {
-    color:#000000;
-    background: #FFFFFF;  /* visited link */
-}
-a:hover {
-    color:#5ED1BA;
-    background: #FFFFFF;/* mouse over link */
-}
- a:active {
-     color:#5ED1BA;
-     background: #FFFFFF;  /* selected link */
- }

@@ -14,7 +14,7 @@
                     
                 <h3>Add new product</h3>
                 <h:form enctype="multipart/form-data" id="addForm" >
-                    <h:panelGrid columns="3" id="addPanel">
+                    <h:panelGrid columns="3" id="panelGrid">
                         <h:outputText value="Id" styleClass="formTextCustom"/>
                         <h:inputText id="id" value="#{add.id}"/>
                         <h:message for="id" />
@@ -27,13 +27,11 @@
                         <h:outputText value="Description" styleClass="formTextCustom"/>
                         <h:inputText id="description" value="#{add.description}"/>
                         <h:message for="description" />
-                        <h:outputText value="Image" styleClass="formTextCustom"/>
-                        <h:inputFile value="#{add.image}" id="Image"/>
+                        <h:outputText value="Image" styleClass="formTextCustom" id="imageText"/>
+                        <h:inputFile value="#{add.images}" id="Image"/>
                         <h:message for="Image"/>
-                        <h:outputText value="Add image" styleClass="formTextCustom"/>
-                        <h:button  value="Add another image" onclick="addFunction(); return false;" id="imageButton"/>
-                        <h:message for="newImage"/>
                     </h:panelGrid>
+                    <!--<h:button  value="New Image" onclick="addFunction(); return false;" id="imageButton" styleClass="newImageButton"/>-->
                     <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
                     <h:commandButton actionListener="#{add.saveProduct}" action="products" value="Save"  styleClass="commandB"/>
                 </h:form>

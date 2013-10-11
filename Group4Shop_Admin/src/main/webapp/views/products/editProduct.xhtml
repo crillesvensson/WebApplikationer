@@ -4,7 +4,8 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <h:body>
 
@@ -13,7 +14,7 @@
             <ui:define name="content">
                 <div id="delete-table" align="center">
                 <h3>Edit product</h3>
-                <h:form>
+                <h:form enctype="multipart/form-data">
                     <h:panelGrid columns="3">
                         <h:outputText value="Id" styleClass="formTextCustom"/>
                         <h:inputText id="id" value="#{edit.id}" disabled="true"/>
@@ -28,7 +29,11 @@
                         <h:inputText id="description" value="#{edit.description}"/>
                         <h:message for="description" />
                         <h:outputText value="Image" styleClass="formTextCustom"/>
-                        <p:graphicImage value="#{edit.image}"/>
+                        <p:graphicImage value="#{edit.image}" id="Image"/>
+                        <h:message for="Image" />
+                        <h:outputText value="Change Image" styleClass="formTextCustom" id="imageText"/>
+                        <h:inputFile value="#{edit.images}" id="ImageInput"/>
+                        <h:message for="ImageInput"/>
                     </h:panelGrid>
                     <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
                     <h:commandButton actionListener="#{edit.editProduct()}" action="products" value="Edit" styleClass="commandB"/>

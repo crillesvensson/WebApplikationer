@@ -9,6 +9,8 @@ import dit126.group4.group4shop.core.ProductImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
 
 
@@ -30,18 +32,30 @@ public class AddProductBean {
     private String name; 
     private double price;
     private String description;
+    
+    private List<Part> images = new ArrayList<Part>();
     private Part image;
     
     @Inject
     private Group4ShopBean group4shop;
     
     public void saveProduct() throws IOException{     
-       Product p = new Product(this.id, this.name, this.price, this.description);
-       InputStream stream = image.getInputStream();
-       byte[] imageByte = IOUtils.toByteArray(stream);
-       ProductImage pImage = new ProductImage("Test", this.id, imageByte);
+       Product p = new Product(this.id, this.name, this.price, this.description);     
        this.group4shop.getProductCatalogue().add(p);
-       this.group4shop.getProductImageContainer().add(pImage);
+       saveImages();
+    }
+    
+    
+    private void saveImages() throws IOException{
+        int i = 0;
+        for(Part p : images){
+            System.out.println("" + p.getName());
+            InputStream stream = p.getInputStream();
+            byte[] imageByte = IOUtils.toByteArray(stream);
+            ProductImage pImage = new ProductImage(p.getSubmittedFileName(), this.id, imageByte);
+            this.group4shop.getProductImageContainer().add(pImage);
+            i++;
+        }
     }
     
     public Long getId(){
@@ -76,12 +90,12 @@ public class AddProductBean {
         this.description = description;
     }
     
-    public Part getImage(){
+    public Part getImages(){
         return this.image;
     }
     
-    public void setImage(Part image){
-        this.image = image;
+    public void setImages(Part image){
+        this.images.add(image);
     }
 
 }

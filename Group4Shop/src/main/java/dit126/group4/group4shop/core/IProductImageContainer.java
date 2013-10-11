@@ -18,4 +18,7 @@ public interface IProductImageContainer {
     
     public List<ProductImage> find(Long id);
     
+    public ProductImage findImage(String id);
+    
+    public void update(ProductImage img);
 }

@@ -5,7 +5,9 @@
 package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Product;
+import dit126.group4.group4shop.core.ProductImage;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
@@ -35,6 +37,14 @@ public class DeleteProductBean implements Serializable{
         this.name = p.getName();
         this.price = p.getPrice();
         this.description = p.getDescription();
+        
+        List<ProductImage> imageList = group4shop.get().getProductImageContainer().find(this.id);
+        
+        for(ProductImage pI : imageList){
+            group4shop.get().getProductImageContainer().remove(pI.getName());
+        }
+        
+        
     }
     
     public void deleteProduct(){  

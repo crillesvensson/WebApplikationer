@@ -8,6 +8,7 @@ import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.ProductImage;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -21,6 +22,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
 import javax.servlet.http.Part;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
@@ -39,8 +41,6 @@ public class EditProductBean  implements Serializable{
     private String description;
     private byte[] imageData;
     private Part image;
-    //private List<BufferedImage> images;
-    //private List<byte[]> dataImages;
     
 
     
@@ -53,53 +53,28 @@ public class EditProductBean  implements Serializable{
         this.name = p.getName();
         this.price = p.getPrice();
         this.description = p.getDescription();
-        List<ProductImage> imageList = group4shop.get().getProductImageContainer().find(Long.parseLong(id));
-        //this.dataImages = new ArrayList<byte[]>();
-        
-        
+        List<ProductImage> imageList = group4shop.get().getProductImageContainer().find(this.id);
+
         if(!imageList.isEmpty()){
             this.imageData = imageList.get(0).getImageBytes();
         }
-        
-        if(image != null && !imageList.isEmpty()){
-            ProductImage img = imageList.get(0);
-            InputStream stream = image.getInputStream();
-            byte[] imageByte = IOUtils.toByteArray(stream);
-            ProductImage updateImg = new ProductImage(img.getName(), img.getProductId(), imageByte);
-            group4shop.get().getProductImageContainer().update(updateImg);
-            
-        }
-        
-        /*for(ProductImage pI : imageList){
-            dataImages.add(pI.getImageBytes());
-                    //images.add(ImageIO.read(new ByteArrayInputStream(pI.getImageBytes())));
-        }*/
-        
-        
-       /* if(!imageList.isEmpty() && imageList.size() == 3){
-            this.imageData0 = imageList.get(0).getImageBytes();
-            InputStream in0 = new ByteArrayInputStream(this.imageData0);
-            this.image0 = null;
-            
-            this.imageData1 = imageList.get(1).getImageBytes();
-            InputStream in1 = new ByteArrayInputStream(this.imageData1);
-            this.image1 = null;
-            
-            this.imageData2 = imageList.get(2).getImageBytes();
-            InputStream in2 = new ByteArrayInputStream(this.imageData2);
-            this.image2 = null;*/
-            
- 
-               /* this.image0 = ImageIO.read(in0);
-                this.image1 = ImageIO.read(in1);
-                this.image2 = ImageIO.read(in2);*/
-        
-
     }
     
-    public void editProduct(){  
+    public void editProduct() throws IOException{  
        Product p = new Product(this.id, this.name, this.price, this.description);
        group4shop.get().getProductCatalogue().update(p);
+       List<ProductImage> imageList = group4shop.get().getProductImageContainer().find(this.id);
+       if(!imageList.isEmpty() && image != null){
+           group4shop.get().getProductImageContainer().remove(imageList.get(0).getName());
+           saveImage();
+       }
+    }
+    
+    private void saveImage() throws IOException{
+        InputStream stream = this.image.getInputStream();
+        byte[] imageByte = IOUtils.toByteArray(stream);
+        ProductImage pImage = new ProductImage(this.image.getSubmittedFileName(), this.id, imageByte);
+        this.group4shop.get().getProductImageContainer().add(pImage);
     }
     
     public Long getId(){
@@ -134,7 +109,11 @@ public class EditProductBean  implements Serializable{
         this.description = description;
     }
     
-    public StreamedContent getImage(){
+    public StreamedContent getImage() throws IOException{
+        if(this.imageData == null){
+            String noImageString = "There is no image for this product";
+            this.imageData = noImageString.getBytes();
+        }
         StreamedContent blobImage = new DefaultStreamedContent(new ByteArrayInputStream(this.imageData), "image/jpg");
         return blobImage;
     }

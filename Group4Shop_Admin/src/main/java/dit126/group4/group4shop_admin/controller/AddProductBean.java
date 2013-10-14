@@ -42,19 +42,19 @@ public class AddProductBean {
     public void saveProduct() throws IOException{     
        Product p = new Product(this.id, this.name, this.price, this.description);     
        this.group4shop.getProductCatalogue().add(p);
-       saveImages();
+       if(!images.isEmpty()){
+         saveImages();
+       }
     }
     
     
     private void saveImages() throws IOException{
-        int i = 0;
         for(Part p : images){
             System.out.println("" + p.getName());
             InputStream stream = p.getInputStream();
             byte[] imageByte = IOUtils.toByteArray(stream);
             ProductImage pImage = new ProductImage(p.getSubmittedFileName(), this.id, imageByte);
             this.group4shop.getProductImageContainer().add(pImage);
-            i++;
         }
     }
     

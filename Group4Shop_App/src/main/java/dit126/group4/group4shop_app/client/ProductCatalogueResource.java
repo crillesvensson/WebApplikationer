@@ -19,7 +19,7 @@ public class ProductCatalogueResource {
     
     @GET
     @Path("all")
-    @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getAll(){
         List<Product> allP = Group4Shop.INSTANCE.getProductCatalogue().getRange(0,
                 Group4Shop.INSTANCE.getProductCatalogue().getCount());
@@ -48,35 +48,39 @@ public class ProductCatalogueResource {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getByName(@QueryParam("name") String name) {
         try{
-            List<Product> rtn = Group4Shop.INSTANCE.getProductCatalogue().getByName(name);
-            List<ProductProxy> ppList = new ArrayList<>();
-            for(Product p : rtn){
+            if (name == null){
+                return getAll();
+            }else{
+            List<Product> products = Group4Shop.INSTANCE.getProductCatalogue().getByName(name);
+            ArrayList<ProductProxy> proxyList = new ArrayList<>();
+            for (Product p : products){
                 ProductProxy pp = new ProductProxy(p);
-                ppList.add(pp);
+                proxyList.add(pp);
             }
-            GenericEntity<List<ProductProxy>> ge = new GenericEntity<List<ProductProxy>>(ppList){};
-            return Response.ok(ge).build();
-        } catch(Exception e) {
-            return Response.status(Status.GONE).build();
+            GenericEntity<List<ProductProxy>> genEnt = new GenericEntity<List<ProductProxy>>(proxyList){};
+            return Response.ok(genEnt).build();}
+        }catch(Exception e) {
+            return Response.ok(Status.GONE).build();
         }
     }
+    
     /*
-    @GET
-    //@Path("name")
-    @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-    public Response getByCategory(@QueryParam("category") String category) {
-        try{
-            List<Product> rtn = Group4Shop.INSTANCE.getProductCatalogue().getByCategory(category);
-            List<ProductProxy> ppList = new ArrayList<>();
-            for(Product p : rtn){
-                ppList.add(new ProductProxy(p));
-            }
-            GenericEntity<List<ProductProxy>> ge = new GenericEntity<List<ProductProxy>>(ppList){};
-            return Response.ok(ge).build();
-        } catch(Exception e) {
-            return Response.status(Status.INTERNAL_SERVER_ERROR).build();
-        }
-    }*/
+     * @GET
+     * //@Path("name")
+     * @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+     * public Response getByCategory(@QueryParam("category") String category) {
+     * try{
+     * List<Product> rtn = Group4Shop.INSTANCE.getProductCatalogue().getByCategory(category);
+     * List<ProductProxy> ppList = new ArrayList<>();
+     * for(Product p : rtn){
+     * ppList.add(new ProductProxy(p));
+     * }
+     * GenericEntity<List<ProductProxy>> ge = new GenericEntity<List<ProductProxy>>(ppList){};
+     * return Response.ok(ge).build();
+     * } catch(Exception e) {
+     * return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+     * }
+     * }*/
     
     @GET
     @Path("range")

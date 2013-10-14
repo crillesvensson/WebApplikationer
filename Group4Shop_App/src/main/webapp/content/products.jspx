@@ -13,7 +13,7 @@
             <title>Products</title>
             <link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
             <link rel="stylesheet" type="text/css" href="../resources/css/twitterbootstrap/bootstrap.css" />
-            
+                
             <script type="text/javascript" src="js/gui/products.js" />
         </head>
             
@@ -35,11 +35,8 @@
                         </tbody>
                         <tfoot></tfoot>
                     </table>
-                    <ul class="pager">
-                        <li><button id="prev-button" class="btn btn-default">Previous</button></li>
-                        <li><button id="next-button" class="btn btn-default">Next</button></li>
-                    </ul>
-                        
+                    <button id="prev-button" class="btn btn-default">Previous</button>
+                    <button id="next-button" class="btn btn-default">Next</button>
                 </div>
             </div> 
                 

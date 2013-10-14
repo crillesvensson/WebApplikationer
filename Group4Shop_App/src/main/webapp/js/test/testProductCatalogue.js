@@ -17,9 +17,9 @@ asyncTest("ProductCatalogue.count", function() {
 });
 
 asyncTest("ProductCatalogue.getRange", function() {
-    var deferred = shop.getProductCatalogue().getRange(0, 2);
+    var deferred = shop.getProductCatalogue().getRange(1, 3);
     deferred.done(function(products) {
-        ok(products.length === 2, ("Test passed, length=" + products.length));
+        ok(products.length === 3, ("Test passed, length=" + products.length));
         //ok( true, "Test passed");
         start();
     });

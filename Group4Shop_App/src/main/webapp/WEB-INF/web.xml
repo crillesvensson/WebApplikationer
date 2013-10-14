@@ -20,18 +20,18 @@
         <url-pattern>/rs/*</url-pattern>
     </servlet-mapping>
     
-    
+    <!-- Start page & Session settings -->
+    <welcome-file-list>
+        <welcome-file>index.jspx</welcome-file>
+    </welcome-file-list>   
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-    </welcome-file-list>   
 
-
-    <!--SMTP Settings-->
+    <!-- SMTP Settings-->
+    <!-- For Mail Contact Site - Enter pass -->
     <context-param>
         <param-name>host</param-name>
         <param-value>smtp.emilbogren.se</param-value>

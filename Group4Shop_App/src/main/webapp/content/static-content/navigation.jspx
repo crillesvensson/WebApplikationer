@@ -1,0 +1,8 @@
+<nav class="menu">
+    <ul>
+        <li><a href="index.jspx">Home</a></li>
+        <li><a href="products?view=this">Products</a></li>    
+        <li><a href="router.jspx?view=blog">Blog</a></li>
+        <li><a href="router.jspx?view=Contact">Contact</a></li>
+    </ul>
+</nav>

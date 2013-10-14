@@ -38,8 +38,8 @@ public class TestProductCatalogue {
             pc.add(new Product(id, String.valueOf(i), d, cat, desc));
         }
         
-        List<Product> prods = pc.getRange(0, 2);
-        assertTrue(prods.size() == 2);
+        List<Product> prods = pc.getRange(0, 3);
+        assertTrue(prods.size() == 3);
     }
     
     //Testing methods add(Product p), getCount(), update(Long id), find(Long id) and remove(Long id)

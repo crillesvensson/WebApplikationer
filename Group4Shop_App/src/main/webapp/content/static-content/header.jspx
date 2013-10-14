@@ -1,0 +1,14 @@
+<header>
+    <div id="logodiv">
+        <h1> LOGO GOES HERE!</h1>
+        <p>This is header add links and  logo</p>
+    </div>
+    <div id="headerlinks" class="hlink">
+        <ul>
+            <li>Blog</li>
+            <li>Jobb</li>
+            <li>Bob</li>
+            <li>Hej</li>
+        </ul>
+    </div>
+</header>

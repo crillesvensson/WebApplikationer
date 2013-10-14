@@ -1,0 +1,56 @@
+<jsp:root 
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns="http://www.w3.org/1999/xhtml"
+    version="2.0">
+        
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="true" />
+    <jsp:output doctype-root-element="HTML" 
+                doctype-system="about:legacy-compat" />
+    <html>
+        <head>
+            <title>Products</title>
+            <link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
+            <link rel="stylesheet" type="text/css" href="../resources/css/twitterbootstrap/bootstrap.css" />
+            
+            <script type="text/javascript" src="js/gui/products.js" />
+        </head>
+            
+        <body>
+            <div id="content">
+                <div id="products-contain" class="panel panel">
+                    <div class="panel-heading">Products for sale</div>
+                    <table id="products" class="table-striped" style="margin: 0 auto">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                    <ul class="pager">
+                        <li><button id="prev-button" class="btn btn-default">Previous</button></li>
+                        <li><button id="next-button" class="btn btn-default">Next</button></li>
+                    </ul>
+                        
+                </div>
+            </div> 
+                
+            <div id="dialog-message" title="Set this in code" hidden="hidden">
+                <p>
+                    <span class="modal" 
+                          style="float: left; margin: 0 7px 50px 0;">
+                    </span> 
+                    <span id="msg">Set this in code </span>           
+                </p>
+            </div>  
+        </body>
+    </html>
+</jsp:root>

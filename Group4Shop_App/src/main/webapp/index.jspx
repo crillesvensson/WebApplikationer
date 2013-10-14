@@ -14,8 +14,8 @@
         <head>
             <title>Group4 WebShop</title> 
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-            <link rel="stylesheet" type="text/css" href="resources/css/layout.css" />
-            <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+            <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+            <link rel="stylesheet" type="text/css" href="resources/css/twitterbootstrap/bootstrap.css" />
         </head>
         <body>
             <jsp:directive.include file="content/static-content/header.jspx" />

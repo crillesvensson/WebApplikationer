@@ -13,6 +13,8 @@
     <html>
         <head>
             <title>Contact Us!</title>
+            <link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
+            <link rel="stylesheet" type="text/css" href="../resources/css/twitterbootstrap/bootstrap.css" />
         </head>
         <body>
             <div class="container">

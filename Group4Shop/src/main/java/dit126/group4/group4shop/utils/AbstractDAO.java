@@ -92,7 +92,7 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K>{
         EntityManager em = emf.createEntityManager();
         TypedQuery query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName() + " p", clazz);
         List<T> list = query.getResultList();
-        return list.subList(first-1, nItems);
+        return list.subList(first, nItems);
     }
     
     @Override

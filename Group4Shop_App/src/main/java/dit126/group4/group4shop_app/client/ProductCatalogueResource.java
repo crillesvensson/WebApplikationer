@@ -51,12 +51,13 @@ public class ProductCatalogueResource {
             List<Product> rtn = Group4Shop.INSTANCE.getProductCatalogue().getByName(name);
             List<ProductProxy> ppList = new ArrayList<>();
             for(Product p : rtn){
-                ppList.add(new ProductProxy(p));
+                ProductProxy pp = new ProductProxy(p);
+                ppList.add(pp);
             }
             GenericEntity<List<ProductProxy>> ge = new GenericEntity<List<ProductProxy>>(ppList){};
             return Response.ok(ge).build();
         } catch(Exception e) {
-            return Response.status(Status.NOT_FOUND).build();
+            return Response.status(Status.GONE).build();
         }
     }
     /*

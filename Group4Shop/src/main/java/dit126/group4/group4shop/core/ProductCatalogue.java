@@ -21,7 +21,7 @@ public class ProductCatalogue extends AbstractDAO<Product, Long> implements IPro
     public List<Product> getByName(String name){
         EntityManager em = emf.createEntityManager();
         List<Product> result;
-        result = em.createQuery("SELECT p FROM PRODUCT p WHERE p.name='" + name + "'").getResultList();
+        result = em.createQuery("SELECT p FROM PRODUCT p WHERE p.name = '" + name + "'").getResultList();
         return result;
     }
     

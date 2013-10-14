@@ -56,16 +56,17 @@ header h1{
 
 #headerlinks{
     background: transparent;
-    /*height: 70px;*/
-    display: table;
-    margin: 0 auto;
+    margin-left: 0px;
+    margin: auto;
     width: 100%;
 }
 
-.hlink ul{
+.hlink{
     list-style-type: none;
     text-align: left;
     padding: 0px;
+    display: inline-block;
+    width: 50%;
 }
 
 .hlink li {
@@ -100,6 +101,32 @@ header h1{
 }
 
 
+.ulinks {
+    list-style-type: none;
+    text-align: right;
+    padding: 0px;
+    display: inline-block;
+    margin-right: 0px;
+    width: 50%;
+}
+.ulinks li{
+    font: 500 12px/1.5 Helvetica, Verdana, sans-serif;
+    display: inline;
+    text-align: center;
+    padding-right: 4px;
+    height: auto;
+}
+.hlink li a {
+     text-decoration: none;
+    color: #777;
+    background: #f5f5f5; 
+}
+
+.hlink li a:hover {
+     text-decoration: none;
+    color: #3BA3D0;
+    background: #f5f5f5;
+}
 /*****  HEADER STYLE - END *********/*
 
 

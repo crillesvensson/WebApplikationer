@@ -21,7 +21,7 @@
                 <jsp:forward page="content/product.jspx" />
             </c:if>
            <c:if test="${param['view'] eq 'blog'}" >
-                <jsp:forward page="content/blog.jspx" />
+               <jsp:forward page="content/blog.jspx" />
             </c:if>
             <c:if test="${param['view'] eq 'contact'}" >
                 <jsp:forward page="content/contact.jspx" />

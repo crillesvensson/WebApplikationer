@@ -3,6 +3,8 @@
     xmlns:jsp="http://java.sun.com/JSP/Page"
     xmlns:c="http://java.sun.com/jsp/jstl/core"
     xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
     version="2.0">
     <jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
     <jsp:output omit-xml-declaration="true" />
@@ -10,45 +12,39 @@
                 doctype-system="about:legacy-compat" />
     <html>
         <head>
-            <title>Contact Us!</title>
+            <title>Login or Sign up!</title>
             <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
             <link rel="stylesheet" type="text/css" href="resources/css/twitterbootstrap/bootstrap.css" />
         </head>
         <body>
-             
+            
             
             <div id="wrapper">
                 <jsp:directive.include file="../static-content/header.jspx" />
                 <jsp:directive.include file="../static-content/navigation.jspx"/>
+                    
+                    
                 <h1>Login!</h1>
                     
-                <form action="auth" method="post" id="login-form">
-                    <fieldset>
-                        <ol>
-                            <li>
-                                <label for="username">Username</label>
-                                <input id="username" type="text" name="secretCardCode" value="${auth.username}"/>
-                            </li>
-                            <li>
-                                <label for="password">Password</label>
-                                <input id="password" type="password" name="password" value="${auth.password}"/>
-                            </li>
-                            <li>
-                                
-                                <input class="button" type="submit" value="${loginController.login}"/>
-                            </li>
-                        </ol>
-                    </fieldset>
-                </form>
+                <h:form id="login-form">
+                    <h:panelGrid columns="3">
+                        <f:facet name="header">
+                            Login as user or admin! 
+                        </f:facet>
+                        <h:outputText value="Username : "></h:outputText>
+                        <h:inputText id="username" value="#{auth.username}"/>
+                        <h:message for="username" style="color:red"/>
+                        <h:outputText value="Password : "></h:outputText>
+                        <h:inputSecret id="password" value="#{auth.password}"/>
+                        <h:message for="password" style="color:red"/>
+                        <f:facet name="footer">
+                            <h:commandButton value="Login" action="#{loginController.login}" type="submit"/>
+                        </f:facet>   
+                    </h:panelGrid>
+                </h:form>  
+                
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        
                 <jsp:directive.include file="../static-content/footer.jspx" />
             </div>
         </body>

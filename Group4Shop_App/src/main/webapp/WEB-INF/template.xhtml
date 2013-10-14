@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="main.css"  />    
+        <h:outputStylesheet library="css" name="twitterbootstrap.css"  />    
+        <title>Group4 WebShop - 1337 </title>
+    </h:head>
+    <h:body>
+        <header>
+            <div id="logodiv">
+                <h1> LOGO GOES HERE!</h1>
+                <p>This is header add links and  logo</p>
+            </div>
+            <div id="headerlinks">
+                <ul class="hlink">
+                    <li>Blog</li>
+                    <li>Jobb</li>
+                    <li>Bob</li>
+                    <li>Hej</li>
+                </ul>
+                <ul class="ulinks">
+                    <li> 0 kr - Till kassa</li> 
+                    <li><a href="router.jspx?view=login">Login</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="wrapper">
+        <nav class="menu">
+            <ul id="mainmenu" class="nav nav-pills nav-justified">
+                <li><a href="index.jspx">Home</a></li>
+                <li><a href="router.jspx?view=products">Products</a></li>    
+                <li><a href="blog.jspx">Blog</a></li>
+                <li><a href="router.jspx?view=contact">Contact</a></li>
+                <li><a href="router.jspx?view=mypage">MyPage</a></li>
+            </ul>
+        </nav>
+        <div id="content" class="right_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+        
+        <footer>
+            <p>Group 4 webshop</p> 
+        </footer>
+    </h:body>
+    
+</html>

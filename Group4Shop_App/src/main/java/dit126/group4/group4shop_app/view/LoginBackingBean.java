@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dit126.group4.group4shop_app.client;
+package dit126.group4.group4shop_app.view;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;

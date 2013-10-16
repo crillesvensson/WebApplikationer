@@ -38,9 +38,10 @@ header h1{
 
 #content{
     width: 960px;
-    height: 500px;
+    height: 900px;
     margin: 0 auto;
     padding-top: 20px;
+    
     
 }
 
@@ -107,7 +108,7 @@ header h1{
     padding: 0px;
     display: inline-block;
     margin-right: 0px;
-    width: 50%;
+    float: right;
 }
 .ulinks li{
     font: 500 12px/1.5 Helvetica, Verdana, sans-serif;

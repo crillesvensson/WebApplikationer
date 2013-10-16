@@ -16,9 +16,9 @@
                         <h:outputLabel value="Mail" />
                         <h:inputText id="f" value="#{contactBean.from}" />
                         <h:outputLabel value="subject" />
-                        <h:inputText id="s" value="#{contactBean.s}" />
+                        <h:inputText id="s" value="#{contactBean.subject}" />
                         <h:outputLabel value="message" />
-                        <h:inputText id="c" value="#{contactBean.c}" />
+                        <h:inputText id="c" value="#{contactBean.content}" />
                         <h:commandButton type="submit" value="submit" action="#{emailController.sendEmail}"/>
                     </h:panelGrid>
                 </h:form>

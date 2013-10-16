@@ -27,10 +27,15 @@
                         <li> 0 kr - Till kassa</li> 
                         <li>
                             <h:link value="Login" outcome="login" rendered="#{empty request.remoteUser}" />
-                            
-                            <h:link value="Logut" outcome="logut" rendered="#{not empty request.remoteUser}" />
-                            
-                        </li>
+                        </li>    
+                            <!--<h:link value="Logut" outcome="logut" rendered="#{not empty request.remoteUser}" />-->
+                       <h:form>
+                            <h:panelGroup id="loginout">
+                                <h:outputText value="#Emil" rendered="#{not empty request.remoteUser}"/>
+                                <h:commandLink value="Logout" action="#{loginController.logout()}" rendered="#{not empty request.remoteUser}" />
+                            </h:panelGroup>         
+                       </h:form>    
+                        
                     </ul>
                 </div>
             </header>

@@ -1,7 +1,9 @@
 package dit126.group4.group4shop_app.controller;
 
 import dit126.group4.group4shop_app.view.LoginBackingBean;
+import java.io.IOException;
 import javax.faces.application.FacesMessage;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -21,32 +23,27 @@ public class LoginController {
     @Inject 
     private NavigationController navigationController;
     
-    public String login(){
+    public void login() throws IOException{
         FacesContext context = FacesContext.getCurrentInstance();
+        ExternalContext externalContext = context.getExternalContext();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
-            System.out.println("Emil testar och debuggar: " + loginBackingBean.getUsername() + " " +  loginBackingBean.getPassword() );     
             request.login(loginBackingBean.getUsername(), loginBackingBean.getPassword());
+            externalContext.redirect("../home.xhtml");
         } catch(ServletException e){
-            System.out.println("YES SOMETHING IS BLOCKING ME FROM LEGO IN");
             context.addMessage(null, new FacesMessage("Login Failed"));
-            return navigationController.loginFailed();
+            //return navigationController.loginFailed();
+            externalContext.redirect("loginerror.xhtml");
         }
-        return navigationController.loginSuccess();
+        //return "";
+        //null;
     }
     
-    public String logout() {
-        FacesContext context = FacesContext.getCurrentInstance();
-        HttpServletRequest request = (HttpServletRequest) 
-        context.getExternalContext().getRequest();
-        try {
-          request.logout();
-          return "SUCCESS";
-        } catch (ServletException e) {
-          /*
-           */
-          return "FAILED";
-        }
-  }
+    public void logout() throws IOException{
+        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+        externalContext.invalidateSession();
+        //externalContext.redirect("/content/home.xhtml");
+        externalContext.redirect("../home.xhtml");
+    }
     
 }

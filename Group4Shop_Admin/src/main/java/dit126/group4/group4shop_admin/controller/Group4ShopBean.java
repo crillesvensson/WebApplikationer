@@ -8,6 +8,7 @@ import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IProductCatalogue;
 import dit126.group4.group4shop.core.IProductImageContainer;
+import dit126.group4.group4shop.core.IUserRegister;
 import java.io.Serializable;
 import javax.inject.Singleton;
 
@@ -18,19 +19,23 @@ import javax.inject.Singleton;
 @Singleton
 public class Group4ShopBean implements Serializable{
     
-    private final IGroup4Shop grou4shop;
+    private final IGroup4Shop group4shop;
     private final String PU_NAME = "group4_shop";
     
     private Group4ShopBean(){
-        this.grou4shop = Group4ShopFactory.getShop(PU_NAME);
+        this.group4shop = Group4ShopFactory.getShop(PU_NAME);
     }
     
     public IProductCatalogue getProductCatalogue(){
-        return this.grou4shop.getProductCatalogue();
+        return this.group4shop.getProductCatalogue();
     }
     
     public IProductImageContainer getProductImageContainer(){
-        return this.grou4shop.getProductImageConatiner();
+        return this.group4shop.getProductImageConatiner();
+    }
+    
+    public IUserRegister getUserRegister(){
+        return this.group4shop.getUserRegister();
     }
     
 }

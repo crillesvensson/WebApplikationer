@@ -3,8 +3,11 @@ package dit126.group4.group4shop_app.model;
 import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IProductCatalogue;
-import dit126.group4.group4shop.core.IShoppingCart;
+//import dit126.group4.group4shop.core.IShoppingCart;
 import dit126.group4.group4shop.core.IUserRegister;
+import java.io.Serializable;
+import javax.inject.Singleton;
+
 
 /**
  * Singleton Group4Shop
@@ -12,32 +15,28 @@ import dit126.group4.group4shop.core.IUserRegister;
  * @author David
  */
 
-public class Group4Shop {
+@Singleton
+public class Group4Shop implements Serializable{
     
-    private static IGroup4Shop shop = null;
-    final static String PU = "group4_shop";
-
-    protected Group4Shop() {
-        }
+    private final String PU = "group4_shop";
+    private final IGroup4Shop shop; 
     
-    public static IGroup4Shop getInstance() {
-      if(shop == null) {
-         shop = Group4ShopFactory.getShop(PU);
-      }
-      return shop;
-   }
-
+    
+    private Group4Shop() {
+        this.shop = Group4ShopFactory.getShop(PU);
+    }
+    
     public IProductCatalogue getProductCatalogue() {
-        return shop.getProductCatalogue();
+        return this.shop.getProductCatalogue();
     }
 
     
-    public IUserRegister getIUserRegister(){
-        return shop.getUserRegister();
+    public IUserRegister getUserRegister(){
+        return this.shop.getUserRegister();
     }
     
-    public IShoppingCart getIShoppingCart(){
-        return shop.getShoppingCart();
-    } 
+//    public IShoppingCart getIShoppingCart(){
+//        return shop.getShoppingCart();
+//    } 
 }
 

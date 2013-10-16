@@ -15,7 +15,7 @@ public class AddressPK implements Serializable{
     private String region;
     private String postalCode;
     private String street;
-    private int streetNr;
+    private String streetNr;
     
     public AddressPK(){}
     
@@ -51,11 +51,11 @@ public class AddressPK implements Serializable{
         return this.street;
     }
     
-    public void setStreetNr(int streetNr){
+    public void setStreetNr(String streetNr){
         this.streetNr = streetNr;
     }
     
-   public int getStreetNr(){
+   public String getStreetNr(){
        return this.streetNr;
    }
    
@@ -74,6 +74,6 @@ public class AddressPK implements Serializable{
         AddressPK pk = (AddressPK) obj;
         return pk.country.equals(this.country) && pk.postalCode.equals(this.postalCode) &&
                 pk.region.equals(this.region) && pk.street.equals(this.street) &&
-                pk.streetNr == this.streetNr;
+                pk.streetNr.equals(this.streetNr);
     }
 }

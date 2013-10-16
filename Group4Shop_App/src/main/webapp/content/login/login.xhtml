@@ -37,9 +37,9 @@
                         <h:outputText value="Firstname : "></h:outputText>
                         <h:inputText id="firstname" value="#{newCustomer.firstname}"/>
                         <h:outputText value="Lastname : "></h:outputText>
-                        <h:inputSecret id="lastname" value="#{newCustomer.lastname}"/>
+                        <h:inputText id="lastname" value="#{newCustomer.lastname}"/>
                         <h:outputText value="Email : "></h:outputText>
-                        <h:inputSecret id="email" value="#{newCustomer.email}"/>
+                        <h:inputText id="email" value="#{newCustomer.email}"/>
                         <h:message for="email" style="color:red"/>
                         <h:outputText value="Password : "></h:outputText>
                         <h:inputSecret id="password" value="#{newCustomer.password}"/>
@@ -52,15 +52,15 @@
                         <h:outputText value="Address" class="h4"></h:outputText>
                         
                         <h:outputText value="Street : "></h:outputText>
-                        <h:inputSecret id="street" value="#{newCustomer.street}"/>
+                        <h:inputText id="street" value="#{newCustomer.street}"/>
                         <h:outputText value="Street Number : "></h:outputText>
-                        <h:inputSecret id="streetnumber" value="#{newCustomer.streetnumber}"/>
+                        <h:inputText id="streetnumber" value="#{newCustomer.streetnumber}"/>
                         <h:outputText value="Postal Code : "></h:outputText>
-                        <h:inputSecret id="postalcode" value="#{newCustomer.postalcode}"/>
+                        <h:inputText id="postalcode" value="#{newCustomer.postalcode}"/>
                         <h:outputText value="City : "></h:outputText>
-                        <h:inputSecret id="city" value="#{newCustomer.city}"/>
+                        <h:inputText id="city" value="#{newCustomer.city}"/>
                         <f:facet name="footer">
-                            <h:commandButton value="Register" action="#{registerController.register}" type="Register"/>
+                            <h:commandButton value="Register" action="#{newcustomerController.register}" type="Register" class="btn btn-default"/>
                         </f:facet>   
                     </h:panelGrid>
                 </h:form>

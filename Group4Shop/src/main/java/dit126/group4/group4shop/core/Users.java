@@ -36,7 +36,7 @@ public class Users implements Serializable {
       //  "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Not a valid email!")
     private String email; // key when storing users in table.    
     
-    protected Users(){}
+    public Users(){}
     
     public Users(String email, String firstname, String lastname, String password){
         this.email = email;

@@ -22,5 +22,6 @@ public class Group4ShopFactory {
         shop.getProductCatalogue().add(new Product(new Long(15), "Water", 42.00, "Freshly gathered since it rained last week"));
         shop.getProductCatalogue().add(new Product(new Long(25), "Fire", 82.00, "Order a fire online, we will deliver it to you around midnight when we are sure that you are asleep"));
         shop.getProductCatalogue().add(new Product(new Long(30), "Bench", 100.00, "The kind you sit on"));
+        shop.getProductCatalogue().add(new Product(new Long(35), "Air", 1000.00, "Luxury air"));
     }
 }

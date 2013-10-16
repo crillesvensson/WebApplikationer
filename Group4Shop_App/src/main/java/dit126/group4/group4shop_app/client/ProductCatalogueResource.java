@@ -21,8 +21,8 @@ public class ProductCatalogueResource {
     @Path("all")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getAll(){
-        List<Product> allP = Group4Shop.INSTANCE.getProductCatalogue().getRange(0,
-                Group4Shop.INSTANCE.getProductCatalogue().getCount());
+        List<Product> allP = Group4Shop.getInstance().getProductCatalogue().getRange(0,
+                Group4Shop.getInstance().getProductCatalogue().getCount());
         List<ProductProxy> ppList = new ArrayList<>();
         for(Product p : allP){
             ppList.add(new ProductProxy(p));
@@ -36,7 +36,7 @@ public class ProductCatalogueResource {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response find(@PathParam("id") Long id){
         try{
-            Product prod = Group4Shop.INSTANCE.getProductCatalogue().find(id);
+            Product prod = Group4Shop.getInstance().getProductCatalogue().find(id);
             ProductProxy prox = new ProductProxy(prod);
             return Response.ok(prox).status(Status.OK).build();
         }catch(Exception e) {
@@ -51,7 +51,7 @@ public class ProductCatalogueResource {
             if (name == null){
                 return getAll();
             }else{
-            List<Product> products = Group4Shop.INSTANCE.getProductCatalogue().getByName(name);
+            List<Product> products = Group4Shop.getInstance().getProductCatalogue().getByName(name);
             ArrayList<ProductProxy> proxyList = new ArrayList<>();
             for (Product p : products){
                 ProductProxy pp = new ProductProxy(p);
@@ -87,7 +87,7 @@ public class ProductCatalogueResource {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getRange(@QueryParam("fst") int first, @QueryParam("max") int nItems) {
         try{
-            List<Product> products = Group4Shop.INSTANCE.getProductCatalogue().getRange(first, nItems);
+            List<Product> products = Group4Shop.getInstance().getProductCatalogue().getRange(first, nItems);
             ArrayList<ProductProxy> proxyList = new ArrayList<>();
             for (Product p : products){
                 ProductProxy pp = new ProductProxy(p);
@@ -106,7 +106,7 @@ public class ProductCatalogueResource {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getCount() {
         try{
-            Integer rtn = Group4Shop.INSTANCE.getProductCatalogue().getCount();
+            Integer rtn = Group4Shop.getInstance().getProductCatalogue().getCount();
             PrimitiveJSONWrapper pjw = new PrimitiveJSONWrapper(rtn);
             return Response.ok(pjw).build();
         } catch (Exception e){

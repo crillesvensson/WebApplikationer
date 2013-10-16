@@ -15,7 +15,7 @@
                         <br/>
                     </div>
                     <div class="table-striped">
-                        <h:dataTable var="p" value="#{products.range}">
+                        <h:dataTable var="p" value="#{products.products}">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
@@ -36,9 +36,21 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
+                                    <h:outputText  value="Category"/>
+                                </f:facet>
+                                <h:outputText value="#{p.category}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Description"/>
+                                </f:facet>
+                                <h:outputText value="#{p.description}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                <h:commandButton actionListener="#{editProduct.setSelected(p.id)}" 
+                                <h:commandButton class="btn btn-default" actionListener="#{editProduct.setSelected(p.id)}" 
                                                  action="#{products.navigate('edit')}" value="Buy"/>
                             </h:column>
                         </h:dataTable>

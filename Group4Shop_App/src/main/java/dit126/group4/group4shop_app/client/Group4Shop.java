@@ -9,19 +9,24 @@ import dit126.group4.group4shop.core.IProductCatalogue;
  * 
  * @author David
  */
-public enum Group4Shop {
-    INSTANCE;
+
+public class Group4Shop {
     
-    private final IGroup4Shop shop;
-    private final String PU = "group4_shop";
-    private final String TEST_PU = "group4_test_shop";
+    private static IGroup4Shop shop = null;
+    final static String PU = "group4_shop";
+
+    protected Group4Shop() {
+        }
     
-    private Group4Shop(){
-        shop = Group4ShopFactory.getShop(PU);
-    }
-    
-    public IProductCatalogue getProductCatalogue(){
+    public static IGroup4Shop getInstance() {
+      if(shop == null) {
+         shop = Group4ShopFactory.getShop(PU);
+      }
+      return shop;
+   }
+
+    public IProductCatalogue getProductCatalogue() {
         return shop.getProductCatalogue();
     }
-    
 }
+

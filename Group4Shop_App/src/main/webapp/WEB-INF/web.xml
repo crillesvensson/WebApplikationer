@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     
+    <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+    <context-param> 
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+        <param-value>true</param-value>
+    </context-param>
     <servlet>
-        <servlet-name>ServletAdaptor</servlet-name>
-        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <description>Multiple packages, separated by semicolon(;), can be specified in param-value</description>
-            <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>dit126.group4.group4shop_app.client</param-value>
-              </init-param>
-        <init-param>
-            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-            <param-value>true</param-value>
-        </init-param>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ServletAdaptor</servlet-name>
-        <url-pattern>/rs/*</url-pattern>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
     
     <!-- Start page & Session settings -->
     <welcome-file-list>
-        <welcome-file>index.jspx</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>   
     <session-config>
         <session-timeout>
@@ -35,8 +46,8 @@
         <auth-method>FORM</auth-method>
         <realm-name>authRealm</realm-name>
         <form-login-config>
-            <form-login-page>/content/login/login.jspx</form-login-page>
-            <form-error-page>/content/login/loginerror.jspx</form-error-page>
+            <form-login-page>/content/login/login.xhtml</form-login-page>
+            <form-error-page>/content/login/loginerror.xhtml</form-error-page>
         </form-login-config>
     </login-config>
     <security-role>
@@ -60,11 +71,11 @@
     </context-param>
     <context-param>
         <param-name>user</param-name>
-        <param-value>info@emilbogren.se</param-value>
+        <param-value>group4@emilbogren.se</param-value>
     </context-param>
     <context-param>
         <param-name>pass</param-name>
-        <param-value>...</param-value>
+        <param-value>admingroup4</param-value>
     </context-param>
 
 </web-app>

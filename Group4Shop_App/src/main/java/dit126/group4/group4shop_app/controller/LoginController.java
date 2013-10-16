@@ -1,5 +1,6 @@
-package dit126.group4.group4shop_app.client;
+package dit126.group4.group4shop_app.controller;
 
+import dit126.group4.group4shop_app.view.LoginBackingBean;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -34,16 +35,17 @@ public class LoginController {
         return navigationController.loginSuccess();
     }
     
-    public void logout() {
+    public String logout() {
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) 
         context.getExternalContext().getRequest();
         try {
           request.logout();
+          return "SUCCESS";
         } catch (ServletException e) {
           /*
            */
-          context.addMessage(null, new FacesMessage("Logout failed."));
+          return "FAILED";
         }
   }
     

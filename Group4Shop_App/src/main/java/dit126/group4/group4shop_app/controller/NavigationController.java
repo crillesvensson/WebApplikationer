@@ -1,4 +1,4 @@
-package dit126.group4.group4shop_app.client;
+package dit126.group4.group4shop_app.controller;
 
 /**
  *

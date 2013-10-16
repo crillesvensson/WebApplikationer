@@ -5,46 +5,54 @@
       xmlns:h="http://java.sun.com/jsf/html">
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet library="css" name="main.css"  />    
-        <h:outputStylesheet library="css" name="twitterbootstrap.css"  />    
+        <h:outputStylesheet library="css" name="main.css" />    
+        <h:outputStylesheet library="css/twitterbootstrap" name="bootstrap.css"/>    
         <title>Group4 WebShop - 1337 </title>
     </h:head>
     <h:body>
-        <header>
-            <div id="logodiv">
-                <h1> LOGO GOES HERE!</h1>
-                <p>This is header add links and  logo</p>
-            </div>
-            <div id="headerlinks">
-                <ul class="hlink">
-                    <li>Blog</li>
-                    <li>Jobb</li>
-                    <li>Bob</li>
-                    <li>Hej</li>
-                </ul>
-                <ul class="ulinks">
-                    <li> 0 kr - Till kassa</li> 
-                    <li><a href="router.jspx?view=login">Login</a></li>
-                </ul>
-            </div>
-        </header>
         <div id="wrapper">
-        <nav class="menu">
-            <ul id="mainmenu" class="nav nav-pills nav-justified">
-                <li><a href="index.jspx">Home</a></li>
-                <li><a href="router.jspx?view=products">Products</a></li>    
-                <li><a href="blog.jspx">Blog</a></li>
-                <li><a href="router.jspx?view=contact">Contact</a></li>
-                <li><a href="router.jspx?view=mypage">MyPage</a></li>
-            </ul>
-        </nav>
-        <div id="content" class="right_content">
-            <ui:insert name="content">Content</ui:insert>
+            <header>
+                <div id="logodiv">
+                    <h1> LOGO GOES HERE!</h1>
+                    <p>This is header add links and  logo</p>
+                </div>
+                <div id="headerlinks">
+                    <ul class="hlink">
+                        <li>Blog</li>
+                        <li>Jobb</li>
+                        <li>Bob</li>
+                        <li>Hej</li>
+                    </ul>
+                    <ul class="ulinks">
+                        <li> 0 kr - Till kassa</li> 
+                        <li>
+                            <h:link value="Login" outcome="login" rendered="#{empty request.remoteUser}" />
+                            
+                            <h:link value="Logut" outcome="logut" rendered="#{not empty request.remoteUser}" />
+                            
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            
+            <nav class="menu">
+                <ul id="mainmenu" class="nav nav-pills nav-justified">
+                    <li><h:link value="Home" outcome="home" /></li>
+                    <li><h:link value="Products" outcome="products" /></li>    
+                    <li><h:link value="Blog" outcome="blog" /></li>
+                    <li><h:link value="Contact" outcome="contact" /></li>
+                    <li><h:link value="My Page" outcome="login" /></li>
+                </ul>
+            </nav>
+            
+            <!-- Add style  --> 
+            <div id="content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+            
+            <footer class="footerstyle">
+                <p>This is footer include some link | © Group4 DIT126 </p>    
+            </footer>
         </div>
-        
-        <footer>
-            <p>Group 4 webshop</p> 
-        </footer>
     </h:body>
-    
 </html>

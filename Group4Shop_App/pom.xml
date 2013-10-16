@@ -23,6 +23,12 @@
             <type>jar</type>
         </dependency>
         <dependency>
+            <groupId>dit126</groupId>
+            <artifactId>group4</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -52,7 +58,7 @@
         </dependency>
         
         <!-- Adding a lot of dependencies because the servlet wont deploy -->
-        <dependency>
+   <!--     <dependency>
             <groupId>org.glassfish.hk2.external</groupId>
             <artifactId>asm-all-repackaged</artifactId>
             <version>1.1.15</version>
@@ -91,12 +97,12 @@
             <artifactId>jersey-grizzly</artifactId>
             <version>1.11.1</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
         
         <!-- End of adding dependencies because of deployment -->
         <!-- Adding dependencies because backend not found -->
         
-        <dependency>
+     <!--   <dependency>
             <groupId>com.sun.jersey.contribs</groupId>
             <artifactId>jersey-moxy</artifactId>
             <version>1.11.1</version>
@@ -154,6 +160,7 @@
             <artifactId>jersey-simple-server</artifactId>
             <version>1.13</version>
         </dependency>
+        -->
         
         <!-- End of dependencies because backend not found -->
         

@@ -2,10 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dit126.group4.group4shop_app.client;
+package dit126.group4.group4shop_app.view;
 
 import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.Product;
+import dit126.group4.group4shop_app.client.Group4Shop;
 import dit126.group4.group4shop_app.controller.ContainerNavigator;
 import java.io.Serializable;
 import java.util.List;

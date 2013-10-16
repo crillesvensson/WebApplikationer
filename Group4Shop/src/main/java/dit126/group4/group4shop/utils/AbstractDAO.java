@@ -96,7 +96,7 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K>{
         List<T> list = new ArrayList<>();
         int i = first;
         while (i < (first+nItems) && i < result.size()){
-            list.add(result.get(first));
+            list.add(result.get(i));
             i++;
         }
         return list;

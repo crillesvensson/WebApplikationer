@@ -69,5 +69,10 @@ public class Group4Shop implements IGroup4Shop{
     public IOrderBook getOrderBook() {
         return this.orderBook;
     }
+
+    @Override
+    public IShoppingCart getShoppingCart() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

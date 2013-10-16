@@ -10,30 +10,11 @@
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                <h1>Login or Register</h1>
-                <!--Sign in form -->
-                <h:form id="login-form">
-                    <h:panelGrid columns="3">
-                        <f:facet name="header" class="h1">
-                            Already Customer 
-                        </f:facet>
-                        <h:outputText value="Username : "></h:outputText>
-                        <h:inputText id="username" value="#{auth.username}"/>
-                        <h:message for="username" style="color:red"/>
-                        <h:outputText value="Password : "></h:outputText>
-                        <h:inputSecret id="password" value="#{auth.password}"/>
-                        <h:message for="password" style="color:red"/>
-                        <f:facet name="footer">
-                            <h:commandButton value="Login" class="btn btn-default" action="#{loginController.login}" type="submit"/>
-                        </f:facet>   
-                    </h:panelGrid>
-                </h:form>
-              
+                
                 <h:form id="register-newcustomer-form">
                     <h:panelGrid>
-                        <f:facet name="header" class="h1">
-                            New Customer, Register here! 
-                        </f:facet>
+                        <h:outputText value="User Details" class="h3"></h:outputText>
+                        
                         <h:outputText value="Firstname : "></h:outputText>
                         <h:inputText id="firstname" value="#{newCustomer.firstname}"/>
                         <h:outputText value="Lastname : "></h:outputText>
@@ -49,7 +30,7 @@
                         <h:message for="email" style="color:red"/>-->
                         
                         
-                        <h:outputText value="Address" class="h4"></h:outputText>
+                        <h:outputText value="Address" class="h3"></h:outputText>
                         
                         <h:outputText value="Street : "></h:outputText>
                         <h:inputSecret id="street" value="#{newCustomer.street}"/>

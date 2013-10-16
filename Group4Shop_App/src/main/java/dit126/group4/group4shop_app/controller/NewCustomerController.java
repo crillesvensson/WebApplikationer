@@ -4,6 +4,7 @@
  */
 package dit126.group4.group4shop_app.controller;
 
+//import dit126.group4.group4shop.core.User;
 import dit126.group4.group4shop_app.view.NewCustomerBackingBean;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,18 +19,15 @@ public class NewCustomerController {
     @Inject
     private NewCustomerBackingBean newCustomerBackingBean;
     
-    public void register(){
-        /**
-         * Add user and register.
-         * 
-         */
-        try{
-            
-        } catch(Exception e){
-            /**
-             * if something went wrong ? 
-             */
-        }
+    //@Inject
+    //private Shop shop;
+    
+    public String register(){
+        //User customer = new User();
+        //Address address = new Address();
+        //Add address to user
+        //shop.getCustomerRegister().add(c)
+        return "SUCCESS"; // Else something went wrong. 
     }
     
 }

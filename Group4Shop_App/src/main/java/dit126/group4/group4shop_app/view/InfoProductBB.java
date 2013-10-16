@@ -1,12 +1,12 @@
 package dit126.group4.group4shop_app.view;
 
-import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IProductCatalogue;
 import dit126.group4.group4shop.core.Product;
-import dit126.group4.group4shop_app.client.Group4Shop;
+import dit126.group4.group4shop_app.model.Group4Shop;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 /**
  *
@@ -23,7 +23,8 @@ public class InfoProductBB {
     private String price;
     private String category;
     private String description;
-    private IGroup4Shop shop = Group4Shop.getInstance();
+    @Inject
+    private Group4Shop shop;
     
     public void setSelected(String id) {
         Logger.getAnonymousLogger().log(Level.INFO, "setSelected id={0}", id);

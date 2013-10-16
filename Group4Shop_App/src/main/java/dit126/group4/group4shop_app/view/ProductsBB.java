@@ -4,14 +4,14 @@
  */
 package dit126.group4.group4shop_app.view;
 
-import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.Product;
-import dit126.group4.group4shop_app.client.Group4Shop;
+import dit126.group4.group4shop_app.model.Group4Shop;
 import dit126.group4.group4shop_app.controller.ContainerNavigator;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -23,7 +23,8 @@ import javax.inject.Named;
 public class ProductsBB implements Serializable{
 
     private ContainerNavigator cn;
-    private IGroup4Shop shop = Group4Shop.getInstance();
+    @Inject
+    private Group4Shop shop;
 
     @PostConstruct
     public void post() {

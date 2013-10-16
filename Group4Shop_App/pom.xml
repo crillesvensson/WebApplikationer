@@ -26,10 +26,7 @@
             <groupId>dit126</groupId>
             <artifactId>group4</artifactId>
             <version>1.0-SNAPSHOT</version>
-<<<<<<< HEAD
             <type>jar</type>
-=======
->>>>>>> c30e2cae2af694557a151b8dee09f9a49ad13082
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -59,115 +56,6 @@
             <scope>test</scope>
             <type>jar</type>
         </dependency>
-        
-        <!-- Adding a lot of dependencies because the servlet wont deploy -->
-   <!--     <dependency>
-            <groupId>org.glassfish.hk2.external</groupId>
-            <artifactId>asm-all-repackaged</artifactId>
-            <version>1.1.15</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-core</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.glassfish.v3.osgi</groupId>
-            <artifactId>jersey-gf-server</artifactId>
-            <version>1.11.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.glassfish.v3.osgi</groupId>
-            <artifactId>jersey-gf-servlet</artifactId>
-            <version>1.11.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.glassfish.v3.osgi</groupId>
-            <artifactId>jersey-gf-statsproviders</artifactId>
-            <version>1.11.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-grizzly</artifactId>
-            <version>1.11.1</version>
-            <scope>provided</scope>
-        </dependency>-->
-        
-        <!-- End of adding dependencies because of deployment -->
-        <!-- Adding dependencies because backend not found -->
-        
-     <!--   <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-moxy</artifactId>
-            <version>1.11.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-multipart</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jettison</groupId>
-            <artifactId>jettison</artifactId>
-            <version>1.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jvnet.mimepull</groupId>
-            <artifactId>mimepull</artifactId>
-            <version>1.8</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>jsr311-api</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-atom</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-atom-abdera</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-apache-client</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-spring</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-guice</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-simple-server</artifactId>
-            <version>1.13</version>
-        </dependency>
-        -->
-        
-        <!-- End of dependencies because backend not found -->
-        
-        
     </dependencies>
 
     <build>

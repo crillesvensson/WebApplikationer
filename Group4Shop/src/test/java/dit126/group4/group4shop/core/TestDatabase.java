@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
  */
 public class TestDatabase {
 
-        final static String PU = "group4_test_shop";
+      /*  final static String PU = "group4_test_shop";
         static IGroup4Shop shop;
         
         @BeforeClass
@@ -39,7 +39,7 @@ public class TestDatabase {
             Product removedProduct = shop.getProductCatalogue().find(new Long(1));
             assertTrue(removedProduct==null);
             
-        }
+       }
         
         
         
@@ -58,7 +58,7 @@ public class TestDatabase {
             assertTrue(true);
         }
         
-       /*@Test
+       @Test
         public void testAddProductImage(){
 <<<<<<< HEAD
            /* Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
@@ -86,7 +86,7 @@ public class TestDatabase {
             List<ProductImage> list = shop.getProductImageConatiner().find(p.getId());
             assertTrue(list.size() == 1);
             assertTrue(list.get(0).getName().equals("Test-image"));
-        }*/
+        }
         
         @Test
         public void testAddAddress(){
@@ -101,7 +101,7 @@ public class TestDatabase {
         }
 
 
-        /*@Test 
+        @Test 
         public void testAddAdmin(){
             Admin a = new Admin("emil@group.se", "Emil", "B", "password");
             

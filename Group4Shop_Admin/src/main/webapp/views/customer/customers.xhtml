@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+         
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content">
+                <div id="productButtons" align="center">
+                    <h3>Customers</h3>
+                </div>
+                
+                 <h:form>
+                   <div id="product-table" align="center">
+                       <h:dataTable var="u" value="#{customers.customers}"
+                        styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="E-mail"/>
+                                </f:facet>
+                                <h:outputText value="#{u.email}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="First Name"/> 
+                                </f:facet>
+                                <h:outputText value="#{u.firstName}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Last Name"/>
+                                </f:facet>
+                                <h:outputText value="#{u.lastName}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Action"/>
+                                </f:facet>
+                                <h:commandButton actionListener="#" 
+                                                 action="Show" value="Show" styleClass="commandB"/>
+                            </h:column>
+                        </h:dataTable>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

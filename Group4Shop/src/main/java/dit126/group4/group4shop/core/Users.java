@@ -28,7 +28,7 @@ public class Users implements Serializable {
     private String password; // should be changed to use a more secure method 
     
     @Transient 
-    private transient ShoppingCart cart = new ShoppingCart(); //to private
+    private transient ShoppingCart cart = new ShoppingCart(); //to private  
     
     @Id
     @Column(name="EMAIL", nullable = false)
@@ -38,7 +38,7 @@ public class Users implements Serializable {
     
     protected Users(){}
     
-    protected Users(String email, String firstname, String lastname, String password){
+    public Users(String email, String firstname, String lastname, String password){
         this.email = email;
         this.firstName = firstname;
         this.lastName = lastname;
@@ -47,6 +47,28 @@ public class Users implements Serializable {
     
     public ShoppingCart getCart(){
         return cart;
+    }
+    
+    public String getEmail(){
+        return email;
+    }
+    
+    public String getFirstName(){
+        return firstName;
+    }
+    
+    public String getLastName(){
+        return lastName;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return "User{" + "firstName=" + firstName + ", lastName=" + lastName + ", email" + email + '}';
     }
     
      @Override
@@ -71,4 +93,5 @@ public class Users implements Serializable {
         return true;
     }
     
+
 }

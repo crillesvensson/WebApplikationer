@@ -33,7 +33,5 @@ public class ProductBean implements Serializable{
         int count = group4shop.getProductCatalogue().getCount();
         List<Product> productList = group4shop.getProductCatalogue().getRange(0, count);     
         return productList;
-    }
-  
-    
+    }  
 }

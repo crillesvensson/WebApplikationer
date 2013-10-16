@@ -19,7 +19,7 @@
                         <h:inputText id="s" value="#{contactBean.subject}" />
                         <h:outputLabel value="message" />
                         <h:inputText id="c" value="#{contactBean.content}" />
-                        <h:commandButton type="submit" value="submit" action="#{emailController.sendEmail}"/>
+                        <h:commandButton type="submit" class="btn btn-default" value="Submit" action="#{emailController.sendEmail}"/>
                     </h:panelGrid>
                 </h:form>
                 

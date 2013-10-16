@@ -23,7 +23,7 @@
                         <h:inputSecret id="password" value="#{auth.password}"/>
                         <h:message for="password" style="color:red"/>
                         <f:facet name="footer">
-                            <h:commandButton value="Login" action="#{loginController.login}" type="submit"/>
+                            <h:commandButton value="Login" class="btn btn-default" action="#{loginController.login}" type="submit"/>
                         </f:facet>   
                     </h:panelGrid>
                 </h:form>

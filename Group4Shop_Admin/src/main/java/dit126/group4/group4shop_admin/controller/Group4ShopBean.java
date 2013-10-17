@@ -6,8 +6,10 @@ package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IGroup4Shop;
+import dit126.group4.group4shop.core.IOrderBook;
 import dit126.group4.group4shop.core.IProductCatalogue;
 import dit126.group4.group4shop.core.IProductImageContainer;
+import dit126.group4.group4shop.core.IRatingCatalogue;
 import dit126.group4.group4shop.core.IUserRegister;
 import java.io.Serializable;
 import javax.inject.Singleton;
@@ -36,6 +38,14 @@ public class Group4ShopBean implements Serializable{
     
     public IUserRegister getUserRegister(){
         return this.group4shop.getUserRegister();
+    }
+    
+    public IOrderBook getOrderBook(){
+        return this.group4shop.getOrderBook();
+    }
+    
+    public IRatingCatalogue getRatingCatalogue(){
+        return this.group4shop.getRatingCatalogue();
     }
     
 }

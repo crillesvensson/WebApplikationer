@@ -16,9 +16,10 @@ import org.junit.BeforeClass;
  *
  * @author David
  */
+
 public class TestProductCatalogue {
     
-    final static String PU = "group4_test_shop";
+    /*final static String PU = "group4_test_shop";
     static IGroup4Shop shop;
     
     @BeforeClass
@@ -40,8 +41,8 @@ public class TestProductCatalogue {
         
         List<Product> prods = pc.getRange(1, 3);
         assertTrue(prods.size() == 3);
-    }
-    
+    }*/
+    /*
     //Testing methods add(Product p), getCount(), update(Long id), find(Long id) and remove(Long id)
     //@Test
     public void testProductCatalgoue(){
@@ -75,5 +76,5 @@ public class TestProductCatalogue {
         
         assertTrue(pc.getCount() == i);
         
-    }
+    }*/
 }

@@ -33,7 +33,7 @@ import org.primefaces.model.StreamedContent;
  */
 @Named("edit")
 @SessionScoped
-public class EditProductBean  implements Serializable{
+public class EditProductBean implements Serializable{
     
     private Long id;
     private String name; 

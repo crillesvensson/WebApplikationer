@@ -24,12 +24,28 @@ public class Rating implements Serializable {
     
     protected Rating(){}
     
-    protected Rating(Long id, Long user_ID, Long product_id, int rating, String comment){
+    public Rating(Long id, Long user_ID, Long product_id, int rating, String comment){
         this.id = id;
         this.user_ID = user_ID;
         this.product_ID = product_id;
         this.rating = rating; 
         this.comment = comment; 
+    }
+    
+    public Long getId(){
+        return this.id;
+    }
+    
+    public Long getUserId(){
+        return this.user_ID;
+    }
+    
+    public int getRating(){
+        return this.rating;
+    }
+    
+    public Long getProductId(){
+        return this.product_ID;
     }
     
 }

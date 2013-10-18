@@ -21,10 +21,7 @@ public interface IGroup4Shop {
     public IOrderBook getOrderBook();
     
     public IRatingCatalogue getRatingCatalogue();
-<<<<<<< HEAD
 
-=======
->>>>>>> 04438fefedd983934e74597f5470d1632aa6d40d
     public IShoppingCart getShoppingCart();
     
 }

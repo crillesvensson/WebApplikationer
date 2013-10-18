@@ -1,8 +1,11 @@
 package dit126.group4.group4shop_app.model;
 
 import dit126.group4.group4shop.core.Group4ShopFactory;
+import dit126.group4.group4shop.core.IAddressCatalogue;
 import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IProductCatalogue;
+import dit126.group4.group4shop.core.IRolesRegister;
+import dit126.group4.group4shop.core.IUserRolesRegister;
 //import dit126.group4.group4shop.core.IShoppingCart;
 import dit126.group4.group4shop.core.IUserRegister;
 import java.io.Serializable;
@@ -35,8 +38,22 @@ public class Group4Shop implements Serializable{
         return this.shop.getUserRegister();
     }
     
+    public IRolesRegister getRolesRegister(){
+        return this.shop.getRolesRegister();
+    }
+    
+    public IUserRolesRegister getUserRoleRegister(){
+        return this.shop.getUserRolesRegister();
+    }
+    
+    public IAddressCatalogue getAddressCatalogue(){
+        return this.shop.getAddressCatalogue();
+    }
+    
 //    public IShoppingCart getIShoppingCart(){
 //        return shop.getShoppingCart();
 //    } 
+    
+    
 }
 

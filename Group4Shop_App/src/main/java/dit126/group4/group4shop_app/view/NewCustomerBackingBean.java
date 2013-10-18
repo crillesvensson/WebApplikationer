@@ -6,6 +6,8 @@ package dit126.group4.group4shop_app.view;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -15,14 +17,17 @@ import javax.inject.Named;
 @RequestScoped
 public class NewCustomerBackingBean {
     
+    //@Pattern(regexp="", message="Not a valid email")
     private String email;
     private String firstname;
     private String lastname;
+    @Size(min=6, max=20 , message="Password should be 6-20 characters")
     private String password;
     
     private String street;
     private String streetnumber;
     private String city;
+    @Pattern(regexp="^(s-|S-){0,1}[0-9]{3}\\s?[0-9]{2}$", message="Must consist of digits")
     private String postalcode;
     private String country;
 

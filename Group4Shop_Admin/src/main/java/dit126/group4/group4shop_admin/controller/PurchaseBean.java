@@ -10,6 +10,7 @@ import dit126.group4.group4shop.core.OrderItem;
 import dit126.group4.group4shop.core.PurchaseOrder;
 import dit126.group4.group4shop.core.Users;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
@@ -28,11 +29,15 @@ public class PurchaseBean implements Serializable{
 
     private Long id;
     private Users user;
-    private List<OrderItem> items;
+    //private List<OrderItem> items;
     private Date date;
     
     @Inject
     private Provider<Group4ShopBean> group4shop;
+    
+    public List<PurchaseOrder> getNewPurchaseOrders(){
+        return null;
+    }
     
     public List<PurchaseOrder> getPurchaseOrders(String email){
         Users user = group4shop.get().getUserRegister().find(email);
@@ -43,8 +48,13 @@ public class PurchaseBean implements Serializable{
         PurchaseOrder po = group4shop.get().getOrderBook().find(id);
         this.id = po.getId();
         this.user = po.getUser();
-        this.items = po.getOrderItems();
+        //this.items = po.getOrderItems();
         this.date = po.getDate();
+    }
+    
+    public List<OrderItem> getPurchaseOrderItems(Long id){
+        List<OrderItem> orderItemList = group4shop.get().getOrderItemCatalgoue().getForPurchaseOrder(id);
+        return orderItemList;
     }
     
     public Long getId(){
@@ -55,9 +65,9 @@ public class PurchaseBean implements Serializable{
         return this.user.getFirstName() + " " + this.user.getLastName();
     }
     
-    public List<OrderItem> getOrderItems(){
+    /*public List<OrderItem> getOrderItems(){
         return this.items;
-    }
+    }*/
     
     public String getDate(){
         return this.date.toString();

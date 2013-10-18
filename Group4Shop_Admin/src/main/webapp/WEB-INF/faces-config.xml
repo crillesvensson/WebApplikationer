@@ -24,6 +24,10 @@
             <from-outcome>news</from-outcome>
             <to-view-id>/views/news/sendNews.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>purchases</from-outcome>
+            <to-view-id>/views/purchase/purchases.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>

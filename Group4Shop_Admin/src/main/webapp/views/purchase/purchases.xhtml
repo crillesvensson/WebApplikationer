@@ -8,20 +8,13 @@
          
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                
-                <div id="delete-table" align="center">
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
-                        <h2>#{showcustomer.firstName} #{showcustomer.lastName}</h2>
-                        <p>#{showcustomer.email}</p>
-                    </div>
-                </h:form>
-                    
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
-                        <h2>Purchase Orders</h2>
-                    </div>
-                    <h:dataTable var="po" value="#{purchase.getPurchaseOrders(showcustomer.email)}"
+                <div id="productButtons" align="center">
+                    <h3>Purchases</h3>
+                </div>
+
+                 <h:form>
+                   <div id="product-table" align="center">
+                        <h:dataTable var="#" value="#"
                         styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row">
@@ -29,30 +22,28 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
                                 </f:facet>
-                                <h:outputText value="#{po.id}"/>
+                                <h:outputText value="#"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText  value="Date"/>
+                                    <h:outputText  value="User"/> 
                                 </f:facet>
-                                <h:outputText value="#{po.date}"/>
+                                <h:outputText value="#"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText  value="Handled"/>
+                                    <h:outputText  value="Price"/>
                                 </f:facet>
-                                <h:outputText value="#{po.handled}"/>
+                                <h:outputText value="#"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                <h:commandButton actionListener="#{purchase.selectedPurchase(po.id)}" 
-                                                 action="showPurchase" value="Show" styleClass="commandB"/>
                             </h:column>
                         </h:dataTable>
+                    </div>
                 </h:form>
-                </div>
             </ui:define>
         </ui:composition>
     </h:body>

@@ -10,7 +10,7 @@ import org.junit.BeforeClass;
  */
 public class TestDatabase {
 
-        final static String PU = "group4_test_shop";
+       /* final static String PU = "group4_test_shop";
         static IGroup4Shop shop;
         
         @BeforeClass
@@ -61,7 +61,7 @@ public class TestDatabase {
             assertTrue(true);
         }
         
-       /*@Test
+       @Test
         public void testAddProductImage(){
             Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
             Product p = new Product(new Long(2), "Banana", 22.22,"Frukt", "En gul banan");

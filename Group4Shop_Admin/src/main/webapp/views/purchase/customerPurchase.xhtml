@@ -13,7 +13,7 @@
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <div class="formTitle">
                         <h2>Purchase Order</h2>
-                        <p>ID: ###########</p>
+                        <p>ID: #{purchase.id}</p>
                     </div>
                 </h:form>
                     
@@ -21,7 +21,7 @@
                     <div class="formTitle">
                         <h2>Order items</h2>
                     </div>
-                        <h:dataTable var="#" value="#"
+                    <h:dataTable var="poi" value="#{purchase.getPurchaseOrderItems(purchase.id)}"
                         styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row">
@@ -29,19 +29,19 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                <h:outputText value="#{poi.id}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Product"/> 
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                <h:outputText value="#{poi.product.name}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Quantity"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                <h:outputText value="#{poi.quantity}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">

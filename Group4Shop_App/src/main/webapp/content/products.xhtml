@@ -8,8 +8,19 @@
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
+              <!--  <h:form>
+                    KAN NÅN FIXA DENNA SKITEN?!??!?!?!?!?!??!?!??!?!?!?!?!?!??
+                   <h:panelGrid columns="3">
+                        <h:outputText value="Filter by: "/>
+                        <h:selectOneMenu value="#{products.setProductfilter}">  
+                            <f:selectItem value="all" itemLabel="Show all" />
+                            <f:selectItem value="shirt" itemLabel="Shirts" />
+                            <f:selectItem value="pants" itemLabel="Pants" />
+                            <f:selectItem value="Other" itemLabel="Other" />
+                        </h:selectOneMenu>
+                    </h:panelGrid>
+                </h:form> -->
                 <h:form>
-                    
                     <div class="table table-striped">
                         <h:dataTable var="p" value="#{products.products}">
                             <h:column>
@@ -41,11 +52,11 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                 <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
+                                <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
                                                  action="#{products.navigate('info')}" value="Info"/>
                                 <h:commandButton class="btn btn-default" actionListener="#{editProduct.setSelected(p.id)}" 
                                                  action="#{products.navigate('edit')}" value="Buy"/>
-                               
+                                
                             </h:column>
                         </h:dataTable>
                     </div>

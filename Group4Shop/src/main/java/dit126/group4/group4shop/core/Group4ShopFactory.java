@@ -16,7 +16,7 @@ public class Group4ShopFactory {
         return shop;
     }
     
-    private static void init(Group4Shop shop){
+   private static void init(Group4Shop shop){
         shop.getProductCatalogue().add(new Product(new Long(5), "Rock", 22.00, "Hard"));
         shop.getProductCatalogue().add(new Product(new Long(10), "Feather", 30.00, "We had.. eh.. have a hen in our backyard that sometimes drops these.. by itself"));
         shop.getProductCatalogue().add(new Product(new Long(15), "Water", 42.00, "Freshly harvested from last weeks rain"));

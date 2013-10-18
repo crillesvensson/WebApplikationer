@@ -5,6 +5,7 @@
 package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Group4ShopFactory;
+import dit126.group4.group4shop.core.IAddressCatalogue;
 import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IOrderBook;
 import dit126.group4.group4shop.core.IOrderItemCatalogue;
@@ -51,6 +52,10 @@ public class Group4ShopBean implements Serializable{
     
    public IOrderItemCatalogue getOrderItemCatalgoue(){
        return this.group4shop.getOrderItemCatalogue();
+   }
+   
+   public IAddressCatalogue getAddressCatalogue(){
+       return this.group4shop.getAddressCatalogue();
    }
             
     

@@ -39,10 +39,29 @@ public class PurchaseBean implements Serializable{
         return null;
     }
     
-    public List<PurchaseOrder> getPurchaseOrders(String email){
+    public List<PurchaseOrder> getPurchaseOrdersForUser(String email){
         Users user = group4shop.get().getUserRegister().find(email);
         return group4shop.get().getOrderBook().getByUser(user);
     }
+    
+    public List<PurchaseOrder> getPurchaseOrdersNotHandled(){
+        int count = group4shop.get().getOrderBook().getCount();
+        List<PurchaseOrder> notHandled = new ArrayList<>();
+        List<PurchaseOrder> orderItemList = group4shop.get().getOrderBook().getRange(0, count);
+        for(PurchaseOrder po : orderItemList){
+            if(!po.getHandled()){
+                notHandled.add(po);
+            }
+        }
+        return  notHandled;
+    }
+    
+    public void handlePurchaseOrder(Long id){
+        PurchaseOrder po = group4shop.get().getOrderBook().find(id);
+        po.setHandled(true);
+        group4shop.get().getOrderBook().update(po);
+    }
+    
     
     public void selectedPurchase(Long id){
         PurchaseOrder po = group4shop.get().getOrderBook().find(id);
@@ -63,6 +82,10 @@ public class PurchaseBean implements Serializable{
     
     public String getUserName(){
         return this.user.getFirstName() + " " + this.user.getLastName();
+    }
+    
+    public Users getUser(){
+        return this.user;
     }
     
     /*public List<OrderItem> getOrderItems(){

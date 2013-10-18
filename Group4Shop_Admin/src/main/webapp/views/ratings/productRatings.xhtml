@@ -48,6 +48,13 @@
                                 </f:facet>
                                 <p:rating value="#{r.rating}" readonly="true" />
                             </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Action"/>
+                                </f:facet>
+                                <h:commandButton actionListener="#{showcustomer.selectedCustomer(r.userId)}"      
+                                                 action="showUser" value="Show User" class="smallButton" />
+                            </h:column>
                         </h:dataTable>
                 </h:form>
                 </div>

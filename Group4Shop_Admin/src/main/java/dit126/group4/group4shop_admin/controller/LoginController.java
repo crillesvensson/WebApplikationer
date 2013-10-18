@@ -5,6 +5,8 @@
 package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop_admin.view.LoginBackingBean;
+import java.io.IOException;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -17,16 +19,15 @@ import javax.servlet.http.HttpServletRequest;
  * @author Group4
  */
 @Named("loginController")
-public class LoginController {
+@RequestScoped
+public class LoginController{
     
     @Inject
     private LoginBackingBean loginBackingBean;
     
-    @Inject 
-    private NavigationController navigationController;
-    
-    public String login(){
+    public String login() throws IOException{
         FacesContext context = FacesContext.getCurrentInstance();
+        
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
             System.out.println("Emil testar och debuggar: " + loginBackingBean.getUsername() + " " +  loginBackingBean.getPassword() );
@@ -36,12 +37,14 @@ public class LoginController {
             }*/
             
             request.login(loginBackingBean.getUsername(), loginBackingBean.getPassword());
+            context.getExternalContext().redirect("../../index.xhtml");
         } catch(ServletException e){
             System.out.println("YES SOMETHING IS BLOCKING ME FROM LEGO IN");
             context.addMessage(null, new FacesMessage("Login Failed"));
-            return navigationController.loginFailed();
+            return null;
         }
-        return navigationController.loginSuccess();
+       
+        return null;
     }
     
     public void logout() {

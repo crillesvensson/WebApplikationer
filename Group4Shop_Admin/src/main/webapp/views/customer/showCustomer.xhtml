@@ -12,6 +12,7 @@
                 <div id="delete-table" align="center">
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <div class="formTitle">
+                        <p>Customer: </p>
                         <h2>#{showcustomer.firstName} #{showcustomer.lastName}</h2>
                         <p>#{showcustomer.email}</p>
                     </div>
@@ -19,9 +20,20 @@
                     
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <div class="formTitle">
+                        <h2>Address:</h2>
+                        <p>Country: #{showcustomer.address.country}</p>
+                        <p>Region: #{showcustomer.address.region}</p>
+                        <p>Postal Code: #{showcustomer.address.postalCode}</p>
+                        <p>Street: #{showcustomer.address.street}</p>
+                        <p>Street Nr: #{showcustomer.address.streetNr}</p>
+                    </div>
+                </h:form>    
+                    
+                <h:form enctype="multipart/form-data" class="inputForm">
+                    <div class="formTitle">
                         <h2>Purchase Orders</h2>
                     </div>
-                    <h:dataTable var="po" value="#{purchase.getPurchaseOrders(showcustomer.email)}"
+                    <h:dataTable var="po" value="#{purchase.getPurchaseOrdersForUser(showcustomer.email)}"
                         styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row">

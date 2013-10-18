@@ -12,6 +12,9 @@
                 <div id="delete-table" align="center">
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <div class="formTitle">
+                        <p>#{purchase.userName}</p>
+                        <h:commandButton actionListener="#{showcustomer.selectedCustomer(purchase.user.email)}"  
+                                                 action="ShowUser" value="Show User" class="button"/>
                         <h2>Purchase Order</h2>
                         <p>ID: #{purchase.id}</p>
                     </div>
@@ -47,8 +50,8 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                <h:commandButton actionListener="#"  
-                                                 action="Show" value="Show Product" class="button"/>
+                                <h:commandButton actionListener="#{showProduct.selectedProduct(poi.product.id)}"  
+                                                 action="ShowProduct" value="Show Product" class="button"/>
                             </h:column>
                         </h:dataTable>
                 </h:form>

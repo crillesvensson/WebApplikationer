@@ -74,6 +74,10 @@ public class PurchaseOrder implements Serializable{
         return this.handled;
     }
     
+    public void setHandled(boolean handled){
+        this.handled = handled;
+    }
+    
     @Override
     public String toString() {
         return "PurchaseOrder{" + "id=" + getId() + ", date=" + date

@@ -29,8 +29,9 @@ public class LoginController {
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
             request.login(loginBackingBean.getUsername(), loginBackingBean.getPassword());
-            //externalContext.redirect("../home.xhtml");
-            System.out.println("SUCCESS :D");
+            
+            // Send get-request ?? ?? 
+            externalContext.redirect("../user/customerhome.xhtml");
             return "success";
         } catch(ServletException e){
             context.addMessage(null, new FacesMessage("Login Failed"));

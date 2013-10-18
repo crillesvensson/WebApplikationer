@@ -22,6 +22,7 @@ public interface IGroup4Shop {
     
     public IRatingCatalogue getRatingCatalogue();
     
+
     public IShoppingCart getShoppingCart();
     
 }

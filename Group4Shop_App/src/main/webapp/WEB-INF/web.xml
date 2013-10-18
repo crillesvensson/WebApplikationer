@@ -47,7 +47,7 @@
         <realm-name>authRealm</realm-name>
         <form-login-config>
             <form-login-page>/content/login/login.xhtml</form-login-page>
-            <form-error-page>/content/login/loginerror.xhtml</form-error-page>
+            <form-error-page>/content/login/login.xhtml</form-error-page>
         </form-login-config>
     </login-config>
     <security-role>
@@ -58,7 +58,18 @@
         <description/>
         <role-name>user</role-name>
     </security-role>
-
+    
+    <security-constraint>
+        <web-resource-collection>    
+            <web-resource-name>user</web-resource-name>
+            <url-pattern>/content/user/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
     <!-- SMTP Settings-->
     <!-- For Mail Contact Site - Enter pass -->
     <context-param>

@@ -32,4 +32,12 @@ public class RolesRegister implements IRolesRegister{
             em.close();
         }
     }
+    
+    @Override
+    public Roles get(String role){
+        EntityManager em = emf.createEntityManager();
+        Roles fetchedRole;
+        fetchedRole = (Roles)em.createQuery("SELECT r FROM Roles r WHERE r.rolename='" + role + "'").getSingleResult();
+        return fetchedRole;
+    }
 }

@@ -5,6 +5,7 @@
 package dit126.group4.group4shop.core;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -22,6 +23,7 @@ public class UserRoles implements Serializable {
     @Id
     @OneToOne
     @JoinColumn(name="EMAIL")
+    
     private Users username; 
     
     @OneToOne

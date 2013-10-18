@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+=======
+>>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03
 package dit126.group4.group4shop.core;
 
 import java.util.List;
@@ -18,8 +21,8 @@ import org.junit.BeforeClass;
  */
 
 public class TestProductCatalogue {
-    
-    /*final static String PU = "group4_test_shop";
+   /* 
+    final static String PU = "group4_test_shop";
     static IGroup4Shop shop;
     
     @BeforeClass
@@ -41,8 +44,8 @@ public class TestProductCatalogue {
         
         List<Product> prods = pc.getRange(1, 3);
         assertTrue(prods.size() == 3);
-    }*/
-    /*
+    }
+    
     //Testing methods add(Product p), getCount(), update(Long id), find(Long id) and remove(Long id)
     //@Test
     public void testProductCatalgoue(){
@@ -77,6 +80,7 @@ public class TestProductCatalogue {
         assertTrue(pc.getCount() == i);
         
     }*/
+<<<<<<< HEAD
 }
 ///*
 // * To change this template, choose Tools | Templates
@@ -157,3 +161,6 @@ public class TestProductCatalogue {
 //        
 //    }
 //}
+=======
+}
+>>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03

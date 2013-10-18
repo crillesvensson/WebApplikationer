@@ -52,4 +52,24 @@ public class Address implements Serializable{
     public String getCountry(){
         return this.country;
     }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getStreetNr() {
+        return streetNr;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
 }

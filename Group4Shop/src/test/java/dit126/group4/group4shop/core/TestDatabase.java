@@ -43,8 +43,8 @@ public class TestDatabase {
         
         @Test
         public void testAssignRolesToUsers(){
-            Users user1 = new Users("emil@test.se", "Emil", "B", "qwerty");
-            Users user2 = new Users("emilb@test2.se", "Bo", "Botest", "qwerty");
+            Users user1 = new Users("emil@tes.se", "Emil", "B", "qwerty");
+            Users user2 = new Users("emilb@tes.se", "Bo", "Botest", "qwerty");
             Roles role1 = new Roles("admin", "En admin");
             Roles role2 = new Roles("user", "En user");
             
@@ -61,7 +61,26 @@ public class TestDatabase {
             assertTrue(true);
         }
         
+<<<<<<< HEAD
        @Test
+=======
+        
+        @Test
+        public void testCompleteUserAdd(){
+            //Create user
+            Users user1 = new Users("emil@dumt34.se", "Eb", "Eb", "qwerty");
+            shop.getUserRegister().add(user1);
+            
+            Roles role = shop.getRolesRegister().get("user");
+            
+            UserRoles ur1 = new UserRoles(user1, role);
+            
+            shop.getUserRolesRegister().add(ur1);
+            assertTrue(true);
+        }
+        
+       /*@Test
+>>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03
         public void testAddProductImage(){
             Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
             Product p = new Product(new Long(2), "Banana", 22.22,"Frukt", "En gul banan");

@@ -12,61 +12,59 @@
             <ui:define name="content">
                 <h1>Login or Register</h1>
                 <div class="inner-2part">
-                
-                <!--Sign in form -->
-                <h:form id="login-form">
-                    <h:panelGrid columns="3">
-                        <f:facet name="header" class="h1">
-                            Already Customer 
-                        </f:facet>
-                        <h:outputText value="Username : "></h:outputText>
-                        <h:inputText id="username" value="#{auth.username}"/>
-                        <h:message for="username" style="color:red"/>
-                        <h:outputText value="Password : "></h:outputText>
-                        <h:inputSecret id="password" value="#{auth.password}"/>
-                        <h:message for="password" style="color:red"/>
-                        <f:facet name="footer">
-                            <h:commandButton value="Login" class="btn btn-default" action="#{loginController.login}" type="submit"/>
-                        </f:facet>   
-                    </h:panelGrid>
-                </h:form>
+                    
+                    <!--Sign in form -->
+                    <h:form id="login-form">
+                        <h:panelGrid columns="3">
+                            <f:facet name="header" class="h1">
+                                Already Customer 
+                            </f:facet>
+                            <h:outputText value="Username : "></h:outputText>
+                            <h:inputText id="username" value="#{auth.username}"/>
+                            <h:message for="username" style="color:red"/>
+                            <h:outputText value="Password : "></h:outputText>
+                            <h:inputSecret id="password" value="#{auth.password}"/>
+                            <h:message for="password" style="color:red"/>
+                            <f:facet name="footer">
+                                <h:commandButton value="Login" class="btn btn-default" action="#{loginController.login}" type="submit"/>
+                            </f:facet>   
+                        </h:panelGrid>
+                    </h:form>
                 </div>
-                <h:form id="register-newcustomer-form">
-                    <h:panelGrid>
-                        <f:facet name="header" class="h1">
-                            New Customer, Register here! 
-                        </f:facet>
-                        <h:outputText value="Firstname : "></h:outputText>
-                        <h:inputText id="firstname" value="#{newCustomer.firstname}"/>
-                        <h:outputText value="Lastname : "></h:outputText>
-                        <h:inputText id="lastname" value="#{newCustomer.lastname}"/>
-                        <h:outputText value="Email : "></h:outputText>
-                        <h:inputText id="email" value="#{newCustomer.email}"/>
-                        <h:message for="email" style="color:red"/>
-                        <h:outputText value="Password : "></h:outputText>
-                        <h:inputSecret id="password" value="#{newCustomer.password}"/>
-                        <h:message for="password" style="color:red"/>
-<!--     Check email    <h:outputText value="Confirm Password : "></h:outputText>
-                        <h:inputSecret id="cpassword" value="#{newCustomer.password}"/>
-                        <h:message for="email" style="color:red"/>-->
-                        
-                        
-                        <h:outputText value="Address" class="h4"></h:outputText>
-                        
-                        <h:outputText value="Street : "></h:outputText>
-                        <h:inputText id="street" value="#{newCustomer.street}"/>
-                        <h:outputText value="Street Number : "></h:outputText>
-                        <h:inputText id="streetnumber" value="#{newCustomer.streetnumber}"/>
-                        <h:outputText value="Postal Code : "></h:outputText>
-                        <h:inputText id="postalcode" value="#{newCustomer.postalcode}"/>
-                        <h:outputText value="City : "></h:outputText>
-                        <h:inputText id="city" value="#{newCustomer.city}"/>
-                        <f:facet name="footer">
-                            <h:commandButton value="Register" action="#{newcustomerController.register}" type="Register" class="btn btn-default"/>
-                        </f:facet>   
-                    </h:panelGrid>
-                </h:form>
-               
+                <div class="inner-2part">
+                    <h:form id="register-newcustomer-form">
+                        <h:panelGrid>
+                            <f:facet name="header" class="h1">
+                                New Customer, Register here! 
+                            </f:facet>
+                            <h:outputText value="Firstname : "></h:outputText>
+                            <h:inputText id="firstname" value="#{newCustomer.firstname}"/>
+                            <h:outputText value="Lastname : "></h:outputText>
+                            <h:inputText id="lastname" value="#{newCustomer.lastname}"/>
+                            <h:outputText value="Email : "></h:outputText>
+                            <h:inputText id="email" value="#{newCustomer.email}"/>
+                            <h:message for="email" style="color:red"/>
+                            <h:outputText value="Password : "></h:outputText>
+                            <h:inputSecret id="password" value="#{newCustomer.password}"/>
+                            <h:message for="password" style="color:red"/>
+                            
+                            <h:outputText value="Street : "></h:outputText>
+                            <h:inputText id="street" value="#{newCustomer.street}"/>
+                            <h:outputText value="Street Number : "></h:outputText>
+                            <h:inputText id="streetnumber" value="#{newCustomer.streetnumber}"/>
+                            <h:outputText value="Postal Code : "></h:outputText>
+                            <h:inputText id="postalcode" value="#{newCustomer.postalcode}"/>
+                            <h:message for="postalcode" style="color:red" />
+                            <h:outputText value="City : "></h:outputText>
+                            <h:inputText id="city" value="#{newCustomer.city}"/>
+                            <h:outputText value="Country : "></h:outputText>
+                            <h:inputText id="country" value="#{newCustomer.country}"/>
+                            <f:facet name="footer">
+                                <h:commandButton value="Register" action="#{newcustomerController.register}" type="Register" class="btn btn-default"/>
+                            </f:facet>   
+                        </h:panelGrid>
+                    </h:form>
+                </div>
             </ui:define>
         </ui:composition>
     </h:body>

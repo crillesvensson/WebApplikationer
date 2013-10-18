@@ -1,9 +1,0 @@
-<nav class="menu">
-    <ul id="mainmenu" class="nav nav-pills nav-justified">
-        <li><a href="index.jspx">Home</a></li>
-        <li><a href="router.jspx?view=products">Products</a></li>    
-        <li><a href="router.jspx?view=blog">Blog</a></li>
-        <li><a href="router.jspx?view=contact">Contact</a></li>
-        <li><a href="router.jspx?view=mypage">MyPage</a></li>
-    </ul>
-</nav>

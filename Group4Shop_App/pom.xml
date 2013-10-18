@@ -26,7 +26,11 @@
             <groupId>dit126</groupId>
             <artifactId>group4</artifactId>
             <version>1.0-SNAPSHOT</version>
+<<<<<<< HEAD
             <type>jar</type>9
+=======
+            <type>jar</type>
+>>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03
         </dependency>
         <dependency>
             <groupId>javax</groupId>

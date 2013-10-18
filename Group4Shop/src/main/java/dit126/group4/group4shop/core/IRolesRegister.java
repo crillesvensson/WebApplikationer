@@ -10,6 +10,7 @@ package dit126.group4.group4shop.core;
  */
 public interface IRolesRegister {
       
-    public void add(Roles r);
+    public void add(Roles role);
     
+    public Roles get(String role);
 }

@@ -30,7 +30,7 @@
                         </li>    
                        <h:form>
                             <h:panelGroup id="loginout">
-                                <h:outputText value="#Emil" rendered="#{not empty request.remoteUser}"/>
+                                <h:outputText value="#{currentUserBean.currentUser.firstName}" rendered="#{not empty request.remoteUser}"/>
                                 <h:commandLink value="Logout" action="#{loginController.logout()}" rendered="#{not empty request.remoteUser}" />
                             </h:panelGroup>         
                        </h:form>    

@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-=======
->>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03
 package dit126.group4.group4shop.core;
 
 import java.util.List;
@@ -80,7 +77,6 @@ public class TestProductCatalogue {
         assertTrue(pc.getCount() == i);
         
     }*/
-<<<<<<< HEAD
 }
 ///*
 // * To change this template, choose Tools | Templates
@@ -161,6 +157,3 @@ public class TestProductCatalogue {
 //        
 //    }
 //}
-=======
-}
->>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03

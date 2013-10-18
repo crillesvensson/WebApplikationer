@@ -62,8 +62,11 @@ public class TestDatabase {
         }
         
 <<<<<<< HEAD
+<<<<<<< HEAD
        @Test
 =======
+=======
+>>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03
         
         @Test
         public void testCompleteUserAdd(){

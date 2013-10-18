@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;

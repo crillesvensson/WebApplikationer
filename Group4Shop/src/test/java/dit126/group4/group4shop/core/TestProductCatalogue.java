@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -79,7 +78,6 @@ public class TestProductCatalogue {
         
     }*/
 }
-=======
 ///*
 // * To change this template, choose Tools | Templates
 // * and open the template in the editor.
@@ -159,4 +157,3 @@ public class TestProductCatalogue {
 //        
 //    }
 //}
->>>>>>> b0e2ff5a65f95bb25e2f7a2121b785d78244ec19

@@ -4,7 +4,6 @@ import dit126.group4.group4shop.core.Address;
 import dit126.group4.group4shop.core.Users;
 import dit126.group4.group4shop_app.model.Group4Shop;
 import dit126.group4.group4shop_app.view.NewCustomerBackingBean;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 

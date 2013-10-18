@@ -6,9 +6,8 @@ package dit126.group4.group4shop.core;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,17 +21,25 @@ public class UserRoles implements Serializable {
     
     @Id
     @OneToOne
-    private Users user_name; 
+    @JoinColumn(name="USERNAME")
+    private Users username; 
     
     @OneToOne
+    @JoinColumn(name="ROLE")
     private Roles role;
     
     public UserRoles(){}
     
     public UserRoles(Users user, Roles role){
-        this.user_name = user;
+        this.username = user;
         this.role = role;
     }
+    
+    public Users getUsername(){
+        return this.username;
+    }
 
-
+    public Roles getRole(){
+        return this.role;
+    }
 }

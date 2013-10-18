@@ -1,7 +1,5 @@
 package dit126.group4.group4shop.core;
 
-import java.io.File;
-import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -12,7 +10,7 @@ import org.junit.BeforeClass;
  */
 public class TestDatabase {
 
-      /*  final static String PU = "group4_test_shop";
+        final static String PU = "group4_test_shop";
         static IGroup4Shop shop;
         
         @BeforeClass
@@ -45,36 +43,36 @@ public class TestDatabase {
         
         @Test
         public void testAssignRolesToUsers(){
-            Users user = new Users("emil@test.se", "Emil", "B", "qwerty");
-            Roles role = new Roles("Admin", "En admin");
+            Users user1 = new Users("emil@test.se", "Emil", "B", "qwerty");
+            Users user2 = new Users("emilb@test2.se", "Bo", "Botest", "qwerty");
+            Roles role1 = new Roles("admin", "En admin");
+            Roles role2 = new Roles("user", "En user");
             
-            shop.getUserRegister().add(user);
+            shop.getUserRegister().add(user1);
+            shop.getUserRegister().add(user2);
             System.out.println("  TEST:  " + shop.getRolesRegister()  );
-            shop.getRolesRegister().add(role);
+            shop.getRolesRegister().add(role1);
+            shop.getRolesRegister().add(role2);
             
-            UserRoles ur = new UserRoles(user, role);
-            System.out.println("Added user roles");
-            shop.getUserRolesRegister().add(ur);
+            UserRoles ur1 = new UserRoles(user1, role1);
+            UserRoles ur2 = new UserRoles(user2, role2);
+            shop.getUserRolesRegister().add(ur1);
+            shop.getUserRolesRegister().add(ur2);            
             assertTrue(true);
         }
         
-       @Test
+       /*@Test
         public void testAddProductImage(){
-<<<<<<< HEAD
-           /* Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
+            Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
             Product p = new Product(new Long(2), "Banana", 22.22,"Frukt", "En gul banan");
-=======
-<<<<<<< HEAD
 
-           /* Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
+
+            Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
 
             Product p = new Product(new Long(2), "Banana", 22.22,"Frukt", "En gul banan");
 
-=======
             Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
             Product p = new Product(new Long(2), "Banana", 22.22, "Frukt", "En gul banan");
->>>>>>> 39beeb520aaec293533daca5245309dfaf806ac8
->>>>>>> c8641b42f7ad481f94b9a2782e862d41ee9e455a
             shop.getProductCatalogue().add(p);
             
             File image = new File("/Users/Christian/Documents/school/webbapplikationer/WebApplikationer/Group4Shop/src/resources/banan.png");
@@ -86,9 +84,9 @@ public class TestDatabase {
             List<ProductImage> list = shop.getProductImageConatiner().find(p.getId());
             assertTrue(list.size() == 1);
             assertTrue(list.get(0).getName().equals("Test-image"));
-        }
+        }*/
         
-        @Test
+        /*@Test
         public void testAddAddress(){
             Address a = new Address("SWE", "GBG", "fdjbn", "dskgndgs", 2, new Long(2));
             
@@ -98,21 +96,8 @@ public class TestDatabase {
             
             assertTrue(list.size() == 1);
             assertTrue(list.get(0).getCountry().equals("SWE"));
-        }
-
-
-        @Test 
-        public void testAddAdmin(){
-            Admin a = new Admin("emil@group.se", "Emil", "B", "password");
-            
-            shop.getAdminRegister().add(a);
-            System.out.println("Test Admin");
-            
-            Admin a1 = shop.getAdminRegister().find("emil@group.se");
-            assertTrue(true); //see if equals
-            assertTrue(1 != 2 );
         }*/
-        
+
         
 
 }

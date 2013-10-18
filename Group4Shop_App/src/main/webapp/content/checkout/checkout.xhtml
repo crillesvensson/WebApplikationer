@@ -38,18 +38,18 @@
                         <h:form>
                             <h:panelGrid columns="2" >
                                 <h:outputText value="Cardnumber: " />
-                                <h:inputText id="cardnumber" value="#{paymentservice.setCardnumber}"/>
+                                <h:inputText id="cardnumber" value="#{paymentservice.cardnumber}"/>
                                 <h:outputText value="Cardholder " />
-                                <h:inputText id="cardholder" value="#{paymentservice.setCardHolder}"/>
+                                <h:inputText id="cardholder" value="#{paymentservice.cardHolder}"/>
                                 <h:outputText value="Valid: " />
-                                <h:inputText id="cardvalid" value="#{paymentservice.setValidUntil}"/>
+                                <h:inputText id="cardvalid" value="#{paymentservice.validUntil}"/>
                                 <h:outputText value="CVC " />
-                                <h:inputText id="cardcvc" value="#{paymentservice.setCvc}"/>
+                                <h:inputText id="cardcvc" value="#{paymentservice.cvc}"/>
                             </h:panelGrid>
+                            <h:commandButton value="Pay - Complete Order" style="color:green" action="#{paymentservice.doPayment}"/>
                         </h:form>
                         
-                        <h:commandButton value="Pay - Complete Order" style="color:green">
-                        </h:commandButton>
+                        
                     </h:panelGroup>
                     
                     

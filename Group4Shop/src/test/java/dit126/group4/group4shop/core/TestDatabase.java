@@ -10,7 +10,7 @@ import org.junit.BeforeClass;
  */
 public class TestDatabase {
 
-       /* final static String PU = "group4_test_shop";
+        final static String PU = "group4_test_shop";
         static IGroup4Shop shop;
         
         @BeforeClass
@@ -57,18 +57,14 @@ public class TestDatabase {
             UserRoles ur1 = new UserRoles(user1, role1);
             UserRoles ur2 = new UserRoles(user2, role2);
             shop.getUserRolesRegister().add(ur1);
-            shop.getUserRolesRegister().add(ur2);            
-            assertTrue(true);
+            shop.getUserRolesRegister().add(ur2); 
+            
+            //Now find user!
+            Users found = shop.getUserRegister().find("emil@tes.se");
+            assertTrue(found.getFirstName().equals("Emil"));
         }
         
-<<<<<<< HEAD
-<<<<<<< HEAD
        @Test
-=======
-=======
->>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03
-        
-        @Test
         public void testCompleteUserAdd(){
             //Create user
             Users user1 = new Users("emil@dumt34.se", "Eb", "Eb", "qwerty");
@@ -83,7 +79,6 @@ public class TestDatabase {
         }
         
        /*@Test
->>>>>>> 325f4f8ea06f444c65b96441f6758f038ec80c03
         public void testAddProductImage(){
             Product p = new Product(new Long(2), "Banana", 22.22, "En gul banan");
             Product p = new Product(new Long(2), "Banana", 22.22,"Frukt", "En gul banan");

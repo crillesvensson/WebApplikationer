@@ -24,9 +24,9 @@ public class PaymentService {
     
     
     public String doPayment(){
-        System.out.println("Payment reached paymentservice with info: " + cardnumber + 
-                " " + validUntil + " " + cardHolder + " " + cvc );
-        if(cardnumber != null && cvc != null){
+        System.out.println("Payment reached paymentservice with info: " + getCardnumber() + 
+                " " + getValidUntil() + " " + getCardHolder() + " " + getCvc() );
+        if(getCardnumber() != null && getCvc() != null){
             try {
                 int random = 2 + (int)(Math.random() * (10 - 4));
                 System.out.println("Pending payment for: " + random + " seconds!");
@@ -34,6 +34,7 @@ public class PaymentService {
             } catch (InterruptedException ex) {
                 Logger.getLogger(PaymentService.class.getName()).log(Level.SEVERE, null, ex);
             }
+            System.out.println("KLARRR!!!");
             return "SUCCESS";
         } else{
             return "FAILED";
@@ -55,6 +56,22 @@ public class PaymentService {
 
     public void setCvc(String cvc) {
         this.cvc = cvc;
+    }
+
+    public String getCardnumber() {
+        return cardnumber;
+    }
+
+    public String getValidUntil() {
+        return validUntil;
+    }
+
+    public String getCardHolder() {
+        return cardHolder;
+    }
+
+    public String getCvc() {
+        return cvc;
     }
     
     

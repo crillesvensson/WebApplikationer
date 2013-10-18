@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class Roles implements Serializable {
     
     @Id
-    @Column(name="ROLE_NAME", nullable = false) 
+    @Column(name="ROLENAME", nullable = false) 
     private String rolename;
     @Column(name="DESCRIPTION") 
     private String description;
@@ -31,6 +31,11 @@ public class Roles implements Serializable {
         this.rolename = rolename;
         this.description = description;
     }
+    public String getRolename(){
+        return this.rolename;
+    }
     
-    
+    public String getDescription(){
+        return this.description;
+    }
 }

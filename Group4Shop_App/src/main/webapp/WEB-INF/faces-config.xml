@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <faces-config version="2.0"
               xmlns="http://java.sun.com/xml/ns/javaee" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -30,16 +29,27 @@
         </navigation-case>
     </navigation-rule>
     
+    <!-- Product pages -->
+    <navigation-rule>
+        <from-view-id>/content/products.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>info</from-outcome>
+            <to-view-id>/content/infoProduct.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
     <!-- From login -->
     <navigation-rule>
         <from-view-id>/content/login/login.xhtml</from-view-id> 
         <navigation-case>
-            <from-outcome>SUCCESS</from-outcome>
-            <to-view-id>/content/home.xhtml</to-view-id>
+            <!--<from-action>#{loginController.login}</from-action>-->
+            <from-outcome>success</from-outcome>
+            <to-view-id>/content/userpage/mypage.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>FAILED</from-outcome>
-            <to-view-id>/content/login/loginerror.xhtml</to-view-id>
+            <!--<from-action>#{loginController.login}</from-action>-->
+            <from-outcome>failed</from-outcome>
+            <to-view-id>/content/login/login.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

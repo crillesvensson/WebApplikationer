@@ -12,8 +12,6 @@ public interface IGroup4Shop {
     
     public IAddressCatalogue getAddressCatalogue();
     
-    public IAdminRegister getAdminRegister();
-    
     public IUserRegister getUserRegister();
     
     public IRolesRegister getRolesRegister();
@@ -22,6 +20,10 @@ public interface IGroup4Shop {
     
     public IOrderBook getOrderBook();
     
+<<<<<<< HEAD
     public IRatingCatalogue getRatingCatalogue();
+=======
+    public IShoppingCart getShoppingCart();
+>>>>>>> b0e2ff5a65f95bb25e2f7a2121b785d78244ec19
     
 }

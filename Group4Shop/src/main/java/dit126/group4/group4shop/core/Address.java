@@ -30,17 +30,17 @@ public class Address implements Serializable{
     private String street;
     @Id
     @Column(name = "STREETNR")
-    private int streetNr;
+    private String streetNr;
     //@ManyToMany(cascade = CascadeType.ALL)
     @Column(name = "USERID")
-    private Long userId;
+    private String userId;
     
     
     protected Address(){}
     
     public Address(String country, String region,
                    String postalCode, String street,
-                   int streetNr, Long userId){
+                   String streetNr, String userId){
         this.country = country;
         this.region = region;
         this.postalCode = postalCode;

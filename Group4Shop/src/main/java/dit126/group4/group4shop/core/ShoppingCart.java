@@ -10,10 +10,11 @@ import java.util.Map;
  * 
  * @author hajo
  */
-public class ShoppingCart {
+public class ShoppingCart implements IShoppingCart{
  
     private final Map<Product, Integer> productFreq = new HashMap<>();
 
+    @Override
     public void add(Product product) {
         int i = 1;
         if( productFreq.containsKey(product)) {
@@ -22,6 +23,7 @@ public class ShoppingCart {
         productFreq.put(product, i);
     }
 
+    @Override
     public void remove(Product product) {       
         int i = productFreq.get(product);
         if( i > 1){
@@ -31,7 +33,8 @@ public class ShoppingCart {
         }
     }
 
-     public List<OrderItem> getAsOrderItems() {
+    @Override
+    public List<OrderItem> getAsOrderItems() {
         List<OrderItem> items = new ArrayList<>();
         for (Map.Entry<Product, Integer> e : productFreq.entrySet()) {
             Long id = e.getKey().getId();

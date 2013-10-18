@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content">
+                
+                <h:form id="register-newcustomer-form">
+                    <h:panelGrid>
+                        <h:outputText value="User Details" class="h3"></h:outputText>
+                        
+                        <h:outputText value="Firstname : "></h:outputText>
+                        <h:inputText id="firstname" value="#{newCustomer.firstname}"/>
+                        <h:outputText value="Lastname : "></h:outputText>
+                        <h:inputSecret id="lastname" value="#{newCustomer.lastname}"/>
+                        <h:outputText value="Email : "></h:outputText>
+                        <h:inputSecret id="email" value="#{newCustomer.email}"/>
+                        <h:message for="email" style="color:red"/>
+                        <h:outputText value="Password : "></h:outputText>
+                        <h:inputSecret id="password" value="#{newCustomer.password}"/>
+                        <h:message for="password" style="color:red"/>
+<!--     Check email    <h:outputText value="Confirm Password : "></h:outputText>
+                        <h:inputSecret id="cpassword" value="#{newCustomer.password}"/>
+                        <h:message for="email" style="color:red"/>-->
+                        
+                        
+                        <h:outputText value="Address" class="h3"></h:outputText>
+                        
+                        <h:outputText value="Street : "></h:outputText>
+                        <h:inputSecret id="street" value="#{newCustomer.street}"/>
+                        <h:outputText value="Street Number : "></h:outputText>
+                        <h:inputSecret id="streetnumber" value="#{newCustomer.streetnumber}"/>
+                        <h:outputText value="Postal Code : "></h:outputText>
+                        <h:inputSecret id="postalcode" value="#{newCustomer.postalcode}"/>
+                        <h:outputText value="City : "></h:outputText>
+                        <h:inputSecret id="city" value="#{newCustomer.city}"/>
+                        <f:facet name="footer">
+                            <h:commandButton value="Register" action="#{registerController.register}" type="Register"/>
+                        </f:facet>   
+                    </h:panelGrid>
+                </h:form>
+               
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

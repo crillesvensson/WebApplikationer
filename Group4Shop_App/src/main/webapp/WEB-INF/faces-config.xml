@@ -27,6 +27,10 @@
             <from-outcome>login</from-outcome>
             <to-view-id>/content/login/login.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>customerhome</from-outcome>
+            <to-view-id>/content/user/customerhome.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <!-- Product pages -->
@@ -42,12 +46,17 @@
     <navigation-rule>
         <from-view-id>/content/login/login.xhtml</from-view-id> 
         <navigation-case>
-            <from-outcome>SUCCESS</from-outcome>
-            <to-view-id>/content/home.xhtml</to-view-id>
+            
+            <from-outcome>success</from-outcome>
+            <to-view-id>/content/user/customerhome.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>FAILED</from-outcome>
-            <to-view-id>/content/login/loginerror.xhtml</to-view-id>
+            <!--<from-action>#{loginController.login}</from-action>-->
+            <from-outcome>failed</from-outcome>
+            <to-view-id>/content/login/login.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
+
+    
 </faces-config>

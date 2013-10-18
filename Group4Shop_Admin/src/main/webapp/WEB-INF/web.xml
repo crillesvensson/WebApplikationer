@@ -56,4 +56,24 @@
         <role-name>user</role-name>
     </security-role>
     <!-- End of security  -->
+    
+    
+    <!-- SMTP Settings-->
+    <!-- For Mail Contact Site - Enter pass -->
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.emilbogren.se</param-value>
+    </context-param>
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>group4@emilbogren.se</param-value>
+    </context-param>
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>group4admin</param-value>
+    </context-param>
 </web-app>

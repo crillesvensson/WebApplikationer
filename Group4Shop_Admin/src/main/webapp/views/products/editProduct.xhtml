@@ -12,21 +12,21 @@
         <ui:composition template="/WEB-INF/template.xhtml">
 
             <ui:define name="content">
-                <div id="delete-table" align="center">
-                <h3>Edit product</h3>
-                <h:form enctype="multipart/form-data">
+               
+                <h:form enctype="multipart/form-data" class="editInputForm">
+                    <h2>Edit product</h2>
                     <h:panelGrid columns="3">
                         <h:outputText value="Id" styleClass="formTextCustom"/>
-                        <h:inputText id="id" value="#{edit.id}" disabled="true"/>
+                        <h:inputText id="id" value="#{edit.id}" disabled="true" class="inputText"/>
                         <h:message for="id" />
                         <h:outputText value="Name" styleClass="formTextCustom"/>
-                        <h:inputText id="name" value="#{edit.name}"/>
+                        <h:inputText id="name" value="#{edit.name}" class="inputText"/>
                         <h:message for="name" />
                         <h:outputText value="Price" styleClass="formTextCustom"/>
-                        <h:inputText id="price" value="#{edit.price}"/>
+                        <h:inputText id="price" value="#{edit.price}" class="inputText"/>
                         <h:message for="price" />
                         <h:outputText value="Description" styleClass="formTextCustom"/>
-                        <h:inputText id="description" value="#{edit.description}"/>
+                        <h:inputText id="description" value="#{edit.description}" class="inputText"/>
                         <h:message for="description" />
                         <h:outputText value="Image" styleClass="formTextCustom"/>
                         <p:graphicImage value="#{edit.image}" id="Image"/>
@@ -38,7 +38,7 @@
                     <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
                     <h:commandButton actionListener="#{edit.editProduct()}" action="products" value="Edit" styleClass="commandB"/>
                 </h:form>
-                </div>
+              
             </ui:define>
         </ui:composition>
     </h:body>

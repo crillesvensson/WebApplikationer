@@ -8,24 +8,23 @@
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
                 <div id="delete-table" align="center">
-                    
-                    
-                    <p id="textP">HEJ</p>
-                    
-                <h3>Add new product</h3>
-                <h:form enctype="multipart/form-data" id="addForm" >
+                
+                <h:form enctype="multipart/form-data" id="addForm"  class="inputForm">
+                    <div class="formTitle">
+                        <h2>Add new product</h2>
+                    </div>
                     <h:panelGrid columns="3" id="panelGrid">
                         <h:outputText value="Id" styleClass="formTextCustom"/>
-                        <h:inputText id="id" value="#{add.id}"/>
+                        <h:inputText id="id" value="#{add.id}" class="inputText"/>
                         <h:message for="id" />
                         <h:outputText value="Name" styleClass="formTextCustom"/>
-                        <h:inputText id="name" value="#{add.name}"/>
+                        <h:inputText id="name" value="#{add.name}" class="inputText"/>
                         <h:message for="name" />
                         <h:outputText value="Price" styleClass="formTextCustom"/>
-                        <h:inputText id="price" value="#{add.price}"/>
+                        <h:inputText id="price" value="#{add.price}" class="inputText"/>
                         <h:message for="price" />
                         <h:outputText value="Description" styleClass="formTextCustom"/>
-                        <h:inputText id="description" value="#{add.description}"/>
+                        <h:inputText id="description" value="#{add.description}" class="inputText"/>
                         <h:message for="description" />
                         <h:outputText value="Image" styleClass="formTextCustom" id="imageText"/>
                         <h:inputFile value="#{add.images}" id="Image"/>

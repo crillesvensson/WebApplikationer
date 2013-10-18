@@ -20,6 +20,8 @@ public interface IGroup4Shop {
     
     public IOrderBook getOrderBook();
     
+    public IRatingCatalogue getRatingCatalogue();
+
     public IShoppingCart getShoppingCart();
     
 }

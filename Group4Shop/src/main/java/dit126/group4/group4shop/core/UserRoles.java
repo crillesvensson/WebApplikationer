@@ -21,11 +21,11 @@ public class UserRoles implements Serializable {
     
     @Id
     @OneToOne
-    @JoinColumn(name="USERNAME")
+    @JoinColumn(name="EMAIL")
     private Users username; 
     
     @OneToOne
-    @JoinColumn(name="ROLE")
+    @JoinColumn(name="ROLENAME")
     private Roles role;
     
     public UserRoles(){}

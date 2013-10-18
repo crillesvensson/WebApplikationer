@@ -38,9 +38,8 @@ header h1{
 
 #content{
     width: 960px;
-    height: 900px;
+    height: 900px; /* Auto */
     margin: 0 auto;
-    padding-top: 20px;
     
     
 }
@@ -131,10 +130,19 @@ header h1{
 /*****  HEADER STYLE - END *********/*
 
 
-/************ Nav sTyle *************/    
+/* Inner content */ 
 
-#tabs{
+#innerdiv {
+    
 }
+
+.inner-2part{
+    background-color: #f7f8f9;
+    padding: 10px;
+}
+
+
+
 
 /******************************/
 

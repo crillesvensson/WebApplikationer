@@ -20,6 +20,10 @@
             <from-outcome>customers</from-outcome>
             <to-view-id>/views/customer/customers.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>news</from-outcome>
+            <to-view-id>/views/news/sendNews.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -36,8 +40,34 @@
            <from-outcome>edit</from-outcome>
            <to-view-id>/views/products/editProduct.xhtml</to-view-id>
        </navigation-case>
+       <navigation-case>
+           <from-outcome>productRating</from-outcome>
+           <to-view-id>/views/ratings/productRatings.xhtml</to-view-id>
+       </navigation-case>
     </navigation-rule>
     
+    <navigation-rule>
+        <from-view-id>/views/news/sendNews.xhtml</from-view-id>
+        <navigation-case>
+           <from-outcome>Submit</from-outcome>
+           <to-view-id>/views/news/newsDelivered.xhtml</to-view-id>
+       </navigation-case>
+    </navigation-rule>
     
+    <navigation-rule>
+        <from-view-id>/views/customer/customers.xhtml</from-view-id>
+        <navigation-case>
+           <from-outcome>Show</from-outcome>
+           <to-view-id>/views/customer/showCustomer.xhtml</to-view-id>
+       </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/views/customer/showCustomer.xhtml</from-view-id>
+        <navigation-case>
+           <from-outcome>showPurchase</from-outcome>
+           <to-view-id>/views/purchase/customerPurchase.xhtml</to-view-id>
+       </navigation-case>
+    </navigation-rule>
     
 </faces-config>

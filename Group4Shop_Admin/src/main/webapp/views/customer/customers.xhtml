@@ -40,7 +40,7 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                <h:commandButton actionListener="#" 
+                                <h:commandButton actionListener="#{showcustomer.selectedCustomer(u.email)}"  
                                                  action="Show" value="Show" styleClass="commandB"/>
                             </h:column>
                         </h:dataTable>

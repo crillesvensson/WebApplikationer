@@ -34,11 +34,19 @@
                         
                         <h3>Payment - How would you like to pay</h3>
                         <input type="checkbox" name="Paymentmethod" value="Visa / Mastercard" checked="checked" />
-                        <input type="checkbox" name="Paymentmethod" value="PayPal" />
-                        <h:panelGroup id="cardpayment" >
-                            
-                        </h:panelGroup>
                         
+                        <h:form>
+                            <h:panelGrid columns="2" >
+                                <h:outputText value="Cardnumber: " />
+                                <h:inputText id="cardnumber" value="#{paymentservice.setCardnumber}"/>
+                                <h:outputText value="Cardholder " />
+                                <h:inputText id="cardholder" value="#{paymentservice.setCardHolder}"/>
+                                <h:outputText value="Valid: " />
+                                <h:inputText id="cardvalid" value="#{paymentservice.setValidUntil}"/>
+                                <h:outputText value="CVC " />
+                                <h:inputText id="cardcvc" value="#{paymentservice.setCvc}"/>
+                            </h:panelGrid>
+                        </h:form>
                         
                         <h:commandButton value="Pay - Complete Order" style="color:green">
                         </h:commandButton>

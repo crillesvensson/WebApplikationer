@@ -9,7 +9,6 @@ import dit126.group4.group4shop.core.Users;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -30,7 +29,6 @@ public class CurrentUserBackingBean implements Serializable{
     //private Users user = shop.getUserRegister().find(username);
     
     public Users getCurrentUser(){
-        System.out.println("EMil TESTAR OCH DEBUGGAR : " + username + " " + shop.getUserRegister().find(username) );
         return shop.getUserRegister().find(username);
     }     
     

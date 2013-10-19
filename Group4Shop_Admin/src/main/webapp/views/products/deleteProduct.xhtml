@@ -11,21 +11,23 @@
 
             <ui:define name="content">
                 <div id="delete-table" align="center">
-                <h3>Delete product</h3>
                 
-                <h:form>
+                <h:form class="inputForm">
+                    <div class="formTitle">
+                        <h2>Delete Product</h2>
+                    </div>
                     <h:panelGrid columns="3" styleClass="editP">
-                        <h:outputText value="Id" styleClass="formTextCustom"/>
-                        <h:inputText id="id" value="#{delete.id}" disabled="true"/>
+                        <h:outputText value="Id:" styleClass="formTextCustom"/>
+                        <h:inputText id="id" value="#{delete.id}" disabled="true" class="inputText"/>
                         <h:message for="id" />
-                        <h:outputText value="Name" styleClass="formTextCustom"/>
-                        <h:inputText id="name" value="#{delete.name}" disabled="true"/>
+                        <h:outputText value="Name:" styleClass="formTextCustom"/>
+                        <h:inputText id="name" value="#{delete.name}" disabled="true" class="inputText"/>
                         <h:message for="name" />
-                        <h:outputText value="Price" styleClass="formTextCustom"/>
-                        <h:inputText id="price" value="#{delete.price}" disabled="true"/>
+                        <h:outputText value="Price:" styleClass="formTextCustom"/>
+                        <h:inputText id="price" value="#{delete.price}" disabled="true" class="inputText"/>
                         <h:message for="price" />
-                        <h:outputText value="Description" styleClass="formTextCustom"/>
-                        <h:inputText id="description" value="#{delete.description}" disabled="true"/>
+                        <h:outputText value="Description:" styleClass="formTextCustom"/>
+                        <h:inputTextarea id="description" value="#{delete.description}" disabled="true" class="inputText"/>
                         <h:message for="description" />
                     </h:panelGrid>
                     <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   

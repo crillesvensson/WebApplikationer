@@ -1,5 +1,7 @@
 package dit126.group4.group4shop.core;
 
+import javax.management.relation.Role;
+
 /**
  *
  * @author Christian
@@ -12,10 +14,11 @@ public class Group4ShopFactory {
     
     public static IGroup4Shop getShop(String puName) {
         Group4Shop shop = new Group4Shop(puName);
-        init(shop);
+        //init(shop);
         return shop;
     }
     
+<<<<<<< HEAD
    private static void init(Group4Shop shop){
         shop.getProductCatalogue().add(new Product(new Long(5), "Rock", 22.00, "Hard"));
         shop.getProductCatalogue().add(new Product(new Long(10), "Feather", 30.00, "We had.. eh.. have a hen in our backyard that sometimes drops these.. by itself"));
@@ -26,5 +29,8 @@ public class Group4ShopFactory {
        // shop.getRatingCatalogue().add(new Rating(new Long(1), new Long(1), new Long(5), 3, "Best ever"));
         shop.getRatingCatalogue().add(new Rating(new Long(1), new Long(1), new Long(5), 3, "Best ever"));
         shop.getProductCatalogue().add(new Product(new Long(35), "Air", 1000.00, "Luxury air"));
+=======
+    private static void init(Group4Shop shop){
+>>>>>>> 2573e92d058ae39c094ef5c6faf67e7163fc8438
     }
 }

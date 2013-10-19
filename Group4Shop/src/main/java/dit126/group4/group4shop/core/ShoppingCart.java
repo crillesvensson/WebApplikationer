@@ -10,9 +10,9 @@ import java.util.Map;
  * 
  * @author hajo
  */
-public class ShoppingCart implements IShoppingCart{
+public class ShoppingCart /*implements IShoppingCart*/{
  
-    private final Map<Product, Integer> productFreq = new HashMap<>();
+   /* private final Map<Product, Integer> productFreq = new HashMap<>();
 
     @Override
     public void add(Product product) {
@@ -47,6 +47,6 @@ public class ShoppingCart implements IShoppingCart{
     @Override
     public String toString() {
         return "ShoppingCart{" + "productFreq=" + productFreq.toString() + "}";
-    }
+    }*/
     
 }

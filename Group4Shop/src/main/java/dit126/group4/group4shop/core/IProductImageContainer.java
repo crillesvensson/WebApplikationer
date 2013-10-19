@@ -4,21 +4,13 @@
  */
 package dit126.group4.group4shop.core;
 
+import dit126.group4.group4shop.utils.IDAO;
 import java.util.List;
 
 /**
  *
  * @author emilbogren
  */
-public interface IProductImageContainer {
-    
-    public void add(ProductImage img);
-    
-    public void remove(String id);
-    
-    public List<ProductImage> find(Long id);
-    
-    public ProductImage findImage(String id);
-    
-    public void update(ProductImage img);
+public interface IProductImageContainer extends IDAO<ProductImage, String>{
+    public List<ProductImage> getForProduct(Long id);
 }

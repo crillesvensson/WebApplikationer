@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:body>
+
+        <ui:composition template="/WEB-INF/template.xhtml">
+
+            <ui:define name="content">
+               <div id="delete-table" align="center">
+                <h:form enctype="multipart/form-data" class="inputForm">
+                    <div class="formTitle">
+                        <h2>Product</h2>
+                    </div>
+                    <h:panelGrid columns="3">
+                        <h:outputText value="Id" styleClass="formTextCustom"/>
+                        <h:outputText id="id" value="#{showProduct.id}" styleClass="formTextCustom"/>
+                        <h:message for="id" />
+                        <h:outputText value="Name" styleClass="formTextCustom"/>
+                        <h:outputText id="name" value="#{showProduct.name}" styleClass="formTextCustom"/>
+                        <h:message for="name" />
+                        <h:outputText value="Price" styleClass="formTextCustom"/>
+                        <h:outputText id="price" value="#{showProduct.price}" styleClass="formTextCustom"/>
+                        <h:message for="price" />
+                        <h:outputText value="Description" styleClass="formTextCustom"/>
+                        <h:outputText id="description" value="#{showProduct.description}" styleClass="formTextCustom"/>
+                        <h:message for="description" />
+                        <h:outputText value="Image" styleClass="formTextCustom"/>
+                        <p:graphicImage value="#{showProduct.imageData}" id="Image"/>
+                        <h:message for="Image" />
+                    </h:panelGrid>
+                </h:form>
+               </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

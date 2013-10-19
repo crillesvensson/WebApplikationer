@@ -13,7 +13,18 @@
                 <div id="delete-table" align="center">
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <div class="formTitle">
-                        <h2>Product: ######</h2>
+                        <h2>Name: #{ratings.productName}</h2>
+                        <h2>ID: #{ratings.productId}</h2>
+                        <div class="totalRating">
+                        <h:dataTable var="#" value="#">
+                        <h:column>
+                               <f:facet name="header">
+                                    <h:outputText  value="Total Rating" class="formTextCustom"/>
+                                </f:facet>
+                            <p:rating value="#{ratings.getRating(ratings.productId)}" readonly="true" />
+                        </h:column>
+                        </h:dataTable>
+                        </div>
                     </div>
                 </h:form>
                     
@@ -29,13 +40,20 @@
                                 <f:facet name="header">
                                     <h:outputText  value="User"/>
                                 </f:facet>
-                                <h:outputText value="#{r.id}"/>
+                                <h:outputText value="#{r.userId}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Rating"/>
                                 </f:facet>
                                 <p:rating value="#{r.rating}" readonly="true" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Action"/>
+                                </f:facet>
+                                <h:commandButton actionListener="#{showcustomer.selectedCustomer(r.userId)}"      
+                                                 action="showUser" value="Show User" class="smallButton" />
                             </h:column>
                         </h:dataTable>
                 </h:form>

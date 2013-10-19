@@ -17,16 +17,16 @@ public class Rating implements Serializable {
     @Id
     @Column(name = "ID", nullable = false)
     private Long id;
-    @Column(name="USER_ID") private Long user_ID;
+    @Column(name="USER_ID") private String user_Email;
     @Column(name="PRODUCT_ID") private Long product_ID;
     @Column(name="RATING") private int rating;
     @Column(name="COMMENT") private String comment;
     
     protected Rating(){}
     
-    public Rating(Long id, Long user_ID, Long product_id, int rating, String comment){
+    public Rating(Long id, String user_Email, Long product_id, int rating, String comment){
         this.id = id;
-        this.user_ID = user_ID;
+        this.user_Email = user_Email;
         this.product_ID = product_id;
         this.rating = rating; 
         this.comment = comment; 
@@ -36,8 +36,8 @@ public class Rating implements Serializable {
         return this.id;
     }
     
-    public Long getUserId(){
-        return this.user_ID;
+    public String getUserId(){
+        return this.user_Email;
     }
     
     public int getRating(){

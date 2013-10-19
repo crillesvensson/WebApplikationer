@@ -6,6 +6,7 @@
 
 package dit126.group4.group4shop_admin.controller;
 
+import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.Rating;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ import javax.inject.Provider;
 public class RatingsBean implements Serializable{
     
     private Long product_id;
+    private String product_name;
    /* private Long user_ID;
     private Long product_ID;
     private int rating;
@@ -38,12 +40,33 @@ public class RatingsBean implements Serializable{
         return ratingList;
     }
     
+    
+    public int getRating(Long id){
+        List<Rating> ratingList = group4shop.get().getRatingCatalogue().getforProduct(id);
+        int ratingCount = ratingList.size();
+        int rate = 0;
+        if(ratingCount != 0){
+            for(Rating r : ratingList){
+                rate += r.getRating();
+            }
+            return rate/ratingCount;
+        }
+        return rate;
+    }
+    
+    
     public void selectedProduct(Long id){
-        this.product_id = id;
+        Product p = group4shop.get().getProductCatalogue().find(id);
+        this.product_name = p.getName();
+        this.product_id = p.getId();
     }
     
     public Long getProductId(){
         return this.product_id;
+    }
+    
+    public String getProductName(){
+        return this.product_name;
     }
     
 }

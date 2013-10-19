@@ -12,6 +12,7 @@
                 <div id="delete-table" align="center">
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <div class="formTitle">
+                        <p>Customer: </p>
                         <h2>#{showcustomer.firstName} #{showcustomer.lastName}</h2>
                         <p>#{showcustomer.email}</p>
                     </div>
@@ -19,9 +20,20 @@
                     
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <div class="formTitle">
+                        <h2>Address:</h2>
+                        <p>Country: #{showcustomer.address.country}</p>
+                        <p>Region: #{showcustomer.address.region}</p>
+                        <p>Postal Code: #{showcustomer.address.postalCode}</p>
+                        <p>Street: #{showcustomer.address.street}</p>
+                        <p>Street Nr: #{showcustomer.address.streetNr}</p>
+                    </div>
+                </h:form>    
+                    
+                <h:form enctype="multipart/form-data" class="inputForm">
+                    <div class="formTitle">
                         <h2>Purchase Orders</h2>
                     </div>
-                        <h:dataTable var="#" value="#"
+                    <h:dataTable var="po" value="#{purchase.getPurchaseOrdersForUser(showcustomer.email)}"
                         styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row">
@@ -29,31 +41,25 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Name"/> 
-                                </f:facet>
-                                <h:outputText value="#"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Price"/>
-                                </f:facet>
-                                <h:outputText value="#"/>
+                                <h:outputText value="#{po.id}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Date"/>
                                 </f:facet>
-                                <h:outputText value="#"/>
+                                <h:outputText value="#{po.date}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Handled"/>
+                                </f:facet>
+                                <h:outputText value="#{po.handled}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                <h:commandButton actionListener="#" 
+                                <h:commandButton actionListener="#{purchase.selectedPurchase(po.id)}" 
                                                  action="showPurchase" value="Show" styleClass="commandB"/>
                             </h:column>
                         </h:dataTable>

@@ -38,7 +38,7 @@ public class DeleteProductBean implements Serializable{
         this.price = p.getPrice();
         this.description = p.getDescription();
         
-        List<ProductImage> imageList = group4shop.get().getProductImageContainer().find(this.id);
+        List<ProductImage> imageList = group4shop.get().getProductImageContainer().getForProduct(this.id);
         
         for(ProductImage pI : imageList){
             group4shop.get().getProductImageContainer().remove(pI.getName());

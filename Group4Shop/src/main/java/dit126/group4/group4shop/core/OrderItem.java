@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="ORDERITEMS")
+@Table(name="ORDERITEM")
 public class OrderItem implements Serializable{
     
     @Id
@@ -28,13 +28,21 @@ public class OrderItem implements Serializable{
     @Column(name = "QUANTITY", nullable = false)
     private int quantity;
     
+    @Column(name ="PURCHASE_ORDER_ID", nullable = false)
+    private Long purchase_order;
+    
     protected OrderItem(){
     }
     
-    public OrderItem(Long id, Product prod, int quantity){
+    public OrderItem(Long id, Product prod, int quantity, Long purchase_order){
         this.id = id;
         product = prod;
         this.quantity = quantity;
+        this.purchase_order = purchase_order;
+    }
+    
+    public Long getId(){
+        return this.id;
     }
     
     public Product getProduct(){
@@ -43,6 +51,10 @@ public class OrderItem implements Serializable{
     
     public int getQuantity(){
         return quantity;
+    }
+    
+    public Long getPurchaseOrderId(){
+        return this.purchase_order;
     }
     
     @Override

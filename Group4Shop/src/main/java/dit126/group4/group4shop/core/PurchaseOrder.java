@@ -32,22 +32,26 @@ public class PurchaseOrder implements Serializable{
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Users user;
     
-    @OneToMany(cascade = CascadeType.ALL)
+    /*@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "ORDERITEMS")
-    private List<OrderItem> items;
+    private List<OrderItem> items;*/
     
     @Column(name = "DATE")
     @Temporal(TemporalType.DATE)
     private Date date;
     
+    @Column(name="HANDLED")
+    private boolean handled;
+    
     protected PurchaseOrder(){
     }
     
-    public PurchaseOrder(Long id, Users user, List<OrderItem> items){
+    public PurchaseOrder(Long id, Users user/*, List<OrderItem> items*/){
         this.id = id;
         this.user = user;
-        this.items = items;
-        date = new Date();
+        //this.items = items;
+        this.date = new Date();
+        this.handled = false;
     }
     
     public Long getId(){
@@ -58,18 +62,26 @@ public class PurchaseOrder implements Serializable{
         return user;
     }
     
-    public List<OrderItem> getOrderItems(){
+    /*public List<OrderItem> getOrderItems(){
         return items;
-    }
+    }*/
     
     public Date getDate(){
         return date;
     }
     
+    public boolean getHandled(){
+        return this.handled;
+    }
+    
+    public void setHandled(boolean handled){
+        this.handled = handled;
+    }
+    
     @Override
     public String toString() {
         return "PurchaseOrder{" + "id=" + getId() + ", date=" + date
-                + ", items=" + items + ", user=" + user +"}";
+                + ", items=" /*+ items*/ + ", user=" + user +"}";
     }
     
     @Override

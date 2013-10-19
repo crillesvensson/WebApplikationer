@@ -24,13 +24,15 @@
                         <li>Hej</li>
                     </ul>
                     <ul class="ulinks">
-                        <li> 0 kr - Till kassa</li> 
+                        <li> 
+                            <h:link value="0 kr - Cart" outcome="cart" />
+                        </li> 
                         <li>
                             <h:link value="Login" outcome="login" rendered="#{empty request.remoteUser}" />
                         </li>    
                        <h:form>
                             <h:panelGroup id="loginout">
-                                <h:outputText value="#Emil" rendered="#{not empty request.remoteUser}"/>
+                                <h:outputText value="#{currentUserBean.currentUser.firstName}" rendered="#{not empty request.remoteUser}"/>
                                 <h:commandLink value="Logout" action="#{loginController.logout()}" rendered="#{not empty request.remoteUser}" />
                             </h:panelGroup>         
                        </h:form>    

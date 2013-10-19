@@ -8,23 +8,13 @@
          
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                
-                <div id="delete-table" align="center">
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
-                        <p>#{purchase.userName}</p>
-                        <h:commandButton actionListener="#{showcustomer.selectedCustomer(purchase.user.email)}"  
-                                                 action="ShowUser" value="Show User" class="button"/>
-                        <h2>Purchase Order</h2>
-                        <p>ID: #{purchase.id}</p>
-                    </div>
-                </h:form>
-                    
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
-                        <h2>Order items</h2>
-                    </div>
-                    <h:dataTable var="poi" value="#{purchase.getPurchaseOrderItems(purchase.id)}"
+                <div id="productButtons" align="center">
+                    <h3>Purchases</h3>
+                </div>
+
+                 <h:form>
+                   <div id="product-table" align="center">
+                       <h:dataTable var="po" value="#{purchase.purchaseOrdersNotHandled}"
                         styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row">
@@ -32,30 +22,32 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
                                 </f:facet>
-                                <h:outputText value="#{poi.id}"/>
+                                <h:outputText value="#{po.id}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText  value="Product"/> 
+                                    <h:outputText  value="Date"/> 
                                 </f:facet>
-                                <h:outputText value="#{poi.product.name}"/>
+                                <h:outputText value="#{po.date}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText  value="Quantity"/>
+                                    <h:outputText  value="User"/>
                                 </f:facet>
-                                <h:outputText value="#{poi.quantity}"/>
+                                <h:outputText value="#{po.user.email}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                <h:commandButton actionListener="#{showProduct.selectedProduct(poi.product.id)}"  
-                                                 action="ShowProduct" value="Show Product" class="button"/>
+                                <h:commandButton actionListener="#{purchase.handlePurchaseOrder(po.id)}"      
+                                                 action="handle" value="Handled" styleClass="commandB" />
+                                <h:commandButton actionListener="#{purchase.selectedPurchase(po.id)}" 
+                                                 action="showUnhandledPurchase" value="Show" styleClass="commandB"/>
                             </h:column>
                         </h:dataTable>
+                    </div>
                 </h:form>
-                </div>
             </ui:define>
         </ui:composition>
     </h:body>

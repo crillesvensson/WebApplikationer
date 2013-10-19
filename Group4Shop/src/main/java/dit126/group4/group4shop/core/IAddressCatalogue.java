@@ -15,6 +15,6 @@ public interface IAddressCatalogue {
     
     public void remove(AddressPK addressPK);
     
-    public List<Address> find(Long id);
+    public List<Address> find(String id);
     
 }

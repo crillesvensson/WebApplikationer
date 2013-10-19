@@ -46,7 +46,7 @@ public class AddressCatalogue implements IAddressCatalogue{
     }
 
     @Override
-    public List<Address> find(Long id) {
+    public List<Address> find(String id) {
         EntityManager em = this.emf.createEntityManager();
         return em.createQuery("SELECT p FROM Address p WHERE p.userId = ?1")
                 .setParameter(1, id).getResultList();

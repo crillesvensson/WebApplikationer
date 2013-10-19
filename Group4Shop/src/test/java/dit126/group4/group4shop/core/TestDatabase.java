@@ -43,8 +43,8 @@ public class TestDatabase {
         
         @Test
         public void testAssignRolesToUsers(){
-            Users user1 = new Users("emil@test.se", "Emil", "B", "qwerty");
-            Users user2 = new Users("emilb@test2.se", "Bo", "Botest", "qwerty");
+            Users user1 = new Users("emil@tes.se", "Emil", "B", "qwerty");
+            Users user2 = new Users("emilb@tes.se", "Bo", "Botest", "qwerty");
             Roles role1 = new Roles("admin", "En admin");
             Roles role2 = new Roles("user", "En user");
             
@@ -57,7 +57,24 @@ public class TestDatabase {
             UserRoles ur1 = new UserRoles(user1, role1);
             UserRoles ur2 = new UserRoles(user2, role2);
             shop.getUserRolesRegister().add(ur1);
-            shop.getUserRolesRegister().add(ur2);            
+            shop.getUserRolesRegister().add(ur2); 
+            
+            //Now find user!
+            Users found = shop.getUserRegister().find("emil@tes.se");
+            assertTrue(found.getFirstName().equals("Emil"));
+        }
+        
+       @Test
+        public void testCompleteUserAdd(){
+            //Create user
+            Users user1 = new Users("emil@dumt34.se", "Eb", "Eb", "qwerty");
+            shop.getUserRegister().add(user1);
+            
+            Roles role = shop.getRolesRegister().get("user");
+            
+            UserRoles ur1 = new UserRoles(user1, role);
+            
+            shop.getUserRolesRegister().add(ur1);
             assertTrue(true);
         }
         

@@ -10,6 +10,7 @@ import dit126.group4.group4shop_app.controller.ContainerNavigator;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -62,12 +63,15 @@ public class ProductsBB implements Serializable{
      * }
      */
     
-    public void next() {
-        cn.next();
+    public List<Product> next() {
+       // inte säker på att ny cn behöver skapas
+       cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
+       return cn.next();
     }
     
-    public void prev() {
-        cn.previous();
+    public List<Product> prev() {
+       cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
+       return cn.previous();
     }
     
     public String navigate(String target) {

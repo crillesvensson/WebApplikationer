@@ -8,10 +8,21 @@
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
+           <!--    <h:form>
+                
+                   <h:panelGrid columns="3">
+                        <h:outputText value="Filter by: "/>
+                        <h:selectOneMenu id="filter">  
+                            <f:selectItem itemValue="#{products.setProductfilter("all")}" itemLabel="Show all" />
+                            <f:selectItem itemValue="#{products.setProductfilter("shirt")}" itemLabel="Shirts" />
+                            <f:selectItem itemValue="#{products.setProductfilter("pants")}" itemLabel="Pants" />
+                            <f:selectItem itemValue="#{products.setProductfilter("other")}" itemLabel="Other" />
+                        </h:selectOneMenu>
+                    </h:panelGrid>
+                </h:form>-->
                 <h:form>
-                    
                     <div class="table table-striped">
-                        <h:dataTable var="p" value="#{products.products}">
+                        <h:dataTable var="p" value="#{products.next}">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
@@ -41,11 +52,10 @@
                                 <f:facet name="header">
                                     <h:outputText  value="Action"/>
                                 </f:facet>
-                                 <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
+                                <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
                                                  action="#{products.navigate('info')}" value="Info"/>
-                                <h:commandButton class="btn btn-default" actionListener="#{editProduct.setSelected(p.id)}" 
-                                                 action="#{products.navigate('edit')}" value="Buy"/>
-                               
+                                <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
+                                                 action="#{infoProduct.actOnSelected}" value="Buy"/>
                             </h:column>
                         </h:dataTable>
                     </div>

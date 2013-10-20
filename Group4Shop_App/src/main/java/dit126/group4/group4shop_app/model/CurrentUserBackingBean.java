@@ -9,6 +9,7 @@ import dit126.group4.group4shop.core.Users;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,21 +19,40 @@ import javax.inject.Named;
  * @author emilbogren
  */
 @Named("currentUserBean")
-@RequestScoped
+@SessionScoped
 public class CurrentUserBackingBean implements Serializable{
     
     @Inject
     private Group4Shop shop;
     
-    private String username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
+    private String username =  FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
     
-    //private Users user = shop.getUserRegister().find(username);
+    /*private String firstname;
+    private String lastname;
+    
+    private String street;
+    private String streetnr;
+    private String postalcode;
+    private String region;
+    private String country;*/
+    private Users currentuser;
+    private List<Address> currentAddress;
+
+    public void initUser(){
+        this.currentuser = shop.getUserRegister().find(username);
+        this.currentAddress = shop.getAddressCatalogue().find(username);
+        
+        /*this.firstname = currentuser.getFirstName();
+        this.lastname = currentuser.getLastName();
+        
+        this.street = */
+    }
     
     public Users getCurrentUser(){
-        return shop.getUserRegister().find(username);
+        return this.currentuser;
     }     
     
     public List<Address> getCurrentAddress(){
-        return shop.getAddressCatalogue().find(username);
+        return this.currentAddress;
     } 
 }

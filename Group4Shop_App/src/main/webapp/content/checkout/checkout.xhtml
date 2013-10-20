@@ -27,7 +27,7 @@
                         </h:column>
                     </h:dataTable>  
                     <h:button value="Checkout" style="color:green" outcome="login" rendered="#{empty request.remoteUser}"/>
-                                    
+                    
                     <h:panelGroup rendered="#{not empty request.remoteUser}">
                         <h3>Delivery - Correct address</h3>
                         <p>Choose other address</p>
@@ -48,13 +48,13 @@
                             </h:panelGrid>
                             <h:commandButton value="Pay - Complete Order" style="color:green" action="#{paymentservice.doPayment}"/>
                         </h:form>
-                        
-                        
                     </h:panelGroup>
                     
-                    
-                    
                 </div>
+                <h:form>            <h:commandButton value="Create PDF" action="#{pdfbean.createPDF()}"/>
+</h:form>
+
+                
             </ui:define>
         </ui:composition>
     </h:body>

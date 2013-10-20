@@ -1,69 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+    
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-           <!--    <h:form>
-                
-                   <h:panelGrid columns="3">
-                        <h:outputText value="Filter by: "/>
-                        <h:selectOneMenu id="filter">  
-                            <f:selectItem itemValue="#{products.setProductfilter("all")}" itemLabel="Show all" />
-                            <f:selectItem itemValue="#{products.setProductfilter("shirt")}" itemLabel="Shirts" />
-                            <f:selectItem itemValue="#{products.setProductfilter("pants")}" itemLabel="Pants" />
-                            <f:selectItem itemValue="#{products.setProductfilter("other")}" itemLabel="Other" />
-                        </h:selectOneMenu>
-                    </h:panelGrid>
-                </h:form>-->
                 <h:form>
-                    <div class="table table-striped">
-                        <h:dataTable var="p" value="#{products.next}">
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Id"/>
-                                </f:facet>
-                                <h:outputText value="#{p.id}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Name"/> 
-                                </f:facet>
-                                <h:outputText value="#{p.name}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Price"/>
-                                </f:facet>
-                                <h:outputText value="#{p.price}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Category"/>
-                                </f:facet>
-                                <h:outputText value="#{p.category}"/>
-                            </h:column>
-                            
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Action"/>
-                                </f:facet>
-                                <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
-                                                 action="#{products.navigate('info')}" value="Info"/>
-                                <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
-                                                 action="#{infoProduct.actOnSelected}" value="Buy"/>
-                            </h:column>
-                        </h:dataTable>
-                    </div>
-                    <div class="btn btn-group">
-                        <h:commandButton actionListener="#{products.prev}" value="Prev" class="btn btn-default"/>
-                        <h:commandButton actionListener="#{products.next}" value="Next" class="btn btn-default"/>
-                        <br/>
-                    </div>
+                    <p:dataTable id="productsDT" var="p" value="#{products.products}" paginator="true"
+                                 paginatorAlwaysVisible="false" rows="4">
+                        <p:column headerText="Id">
+                            <h:outputText value="#{p.id}"/>
+                        </p:column>
+                        <p:column id="nameColumn" sortBy="name" filterBy="name" headerText="Name">
+                            <h:outputText value="#{p.name}"/>
+                        </p:column>
+                        <p:column sortBy="price" headerText="Price">
+                            <h:outputText class="text-right" value="#{p.price}"/>
+                        </p:column>
+                        <p:column sortBy="category" filterBy="category" headerText="Category">
+                            <h:outputText value="#{p.category}"/>
+                        </p:column>
+                        <p:column headerText="Action">
+                            <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
+                                             action="#{products.navigate('info')}" value="Info"/>
+                            <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
+                                             action="#{infoProduct.actOnSelected}" value="Buy"/>
+                        </p:column>
+                    </p:dataTable>
                 </h:form>
             </ui:define>
         </ui:composition>

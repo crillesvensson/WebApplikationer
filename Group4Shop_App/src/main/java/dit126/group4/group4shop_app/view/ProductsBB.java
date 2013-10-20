@@ -8,12 +8,18 @@ import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop_app.model.Group4Shop;
 import dit126.group4.group4shop_app.controller.ContainerNavigator;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.component.UIColumn;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import org.primefaces.model.SortMeta;
+import org.primefaces.model.SortOrder;
 import javax.inject.Provider;
 
 /**
@@ -26,13 +32,34 @@ public class ProductsBB implements Serializable{
     
     private ContainerNavigator cn;
 
+    @Inject
     private Group4Shop shop;
     private String productfilter = "all";
+    private List<SortMeta> preSortOrder = new ArrayList();
     
     @PostConstruct
     public void post() {
         // We know all injection are done so shop not null (hopefully)
-        //cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
+        cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
+        buildSortOrder();
+    }
+    
+           /*
+     * method to build initial sort order for multisort
+     */
+    private void buildSortOrder() {
+        UIViewRoot viewRoot =  FacesContext.getCurrentInstance().getViewRoot();
+        UIComponent column = viewRoot.findComponent("productsDT:nameColumn"); 
+
+        SortMeta sm1 = new SortMeta();
+        sm1.setSortBy((org.primefaces.component.api.UIColumn)(UIColumn)column);
+        sm1.setSortField("nameColumn");
+        sm1.setSortOrder(SortOrder.DESCENDING);
+        preSortOrder.add(sm1);          
+    }
+
+    public List<SortMeta> getPreSortOrder(){
+        return preSortOrder;
     }
     
      public void setProductfilter(String filter){
@@ -44,21 +71,10 @@ public class ProductsBB implements Serializable{
         return this.productfilter;
     }
     
-   
-    
     public List<Product> getProducts(){
         int count = shop.getProductCatalogue().getCount();
         List<Product> productList = shop.getProductCatalogue().getRange(0, count);     
         return productList;
-        if(productfilter.equals("all")){
-            int count = shop.getProductCatalogue().getCount();
-            List<Product> productList = shop.getProductCatalogue().getRange(0, count);
-            return productList;
-        } else {
-            List<Product> productList = shop.getProductCatalogue().getByCategory(productfilter);
-            return productList;
-        }
-        
     }
     /*
      * public List<Product> getByCategory(String cat){

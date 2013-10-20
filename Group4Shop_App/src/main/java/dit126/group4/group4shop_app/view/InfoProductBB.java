@@ -39,7 +39,7 @@ public class InfoProductBB {
     }
     
     public String actOnSelected() {
-        OrderItem orderI = new OrderItem(id, (Product) shop.getProductCatalogue().getByName(name), 1);
+        //OrderItem orderI = new OrderItem(id, (Product) shop.getProductCatalogue().getByName(name), 1);
         //lägg till OrderItem till PurchaseOrder
         return "banan";
     }

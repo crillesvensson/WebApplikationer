@@ -18,12 +18,9 @@ import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-<<<<<<< HEAD
 import org.primefaces.model.SortMeta;
 import org.primefaces.model.SortOrder;
-=======
 import javax.inject.Provider;
->>>>>>> 29b1e52e50025d6362e0af86e3fb4f3099037015
 
 /**
  * Must have in session scope, has state (in ContainerNavigator)!
@@ -35,6 +32,7 @@ public class ProductsBB implements Serializable{
     
     private ContainerNavigator cn;
 
+    @Inject
     private Group4Shop shop;
     private String productfilter = "all";
     private List<SortMeta> preSortOrder = new ArrayList();
@@ -42,7 +40,6 @@ public class ProductsBB implements Serializable{
     @PostConstruct
     public void post() {
         // We know all injection are done so shop not null (hopefully)
-<<<<<<< HEAD
         cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
         buildSortOrder();
     }
@@ -63,9 +60,6 @@ public class ProductsBB implements Serializable{
 
     public List<SortMeta> getPreSortOrder(){
         return preSortOrder;
-=======
-        //cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
->>>>>>> 29b1e52e50025d6362e0af86e3fb4f3099037015
     }
     
      public void setProductfilter(String filter){
@@ -77,21 +71,10 @@ public class ProductsBB implements Serializable{
         return this.productfilter;
     }
     
-   
-    
     public List<Product> getProducts(){
         int count = shop.getProductCatalogue().getCount();
         List<Product> productList = shop.getProductCatalogue().getRange(0, count);     
         return productList;
-        if(productfilter.equals("all")){
-            int count = shop.getProductCatalogue().getCount();
-            List<Product> productList = shop.getProductCatalogue().getRange(0, count);
-            return productList;
-        } else {
-            List<Product> productList = shop.getProductCatalogue().getByCategory(productfilter);
-            return productList;
-        }
-        
     }
     /*
      * public List<Product> getByCategory(String cat){

@@ -3,38 +3,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                <div id="delete-table" align="center">
+                <div id="content-header" align="center">
+                    <h2>Add new product</h2>
+                </div>
                 
                 <h:form enctype="multipart/form-data" id="addForm"  class="inputForm">
-                    <div class="formTitle">
-                        <h2>Add new product</h2>
-                    </div>
-                    <h:panelGrid columns="3" id="panelGrid">
-                        <h:outputText value="Id" styleClass="formTextCustom"/>
+                    <h:panelGrid columns="1" id="panelGrid">
                         <h:inputText id="id" value="#{add.id}" class="inputText"/>
-                        <h:message for="id" />
-                        <h:outputText value="Name" styleClass="formTextCustom"/>
+                        <p:watermark for="id" value="Id" />
                         <h:inputText id="name" value="#{add.name}" class="inputText"/>
-                        <h:message for="name" />
-                        <h:outputText value="Price" styleClass="formTextCustom"/>
+                        <p:watermark for="name" value="Name" />
                         <h:inputText id="price" value="#{add.price}" class="inputText"/>
-                        <h:message for="price" />
-                        <h:outputText value="Description" styleClass="formTextCustom"/>
+                        <p:watermark for="price" value="Price" />
                         <h:inputText id="description" value="#{add.description}" class="inputText"/>
-                        <h:message for="description" />
-                        <h:outputText value="Image" styleClass="formTextCustom" id="imageText"/>
+                        <p:watermark for="description" value="Description" />
                         <h:inputFile value="#{add.images}" id="Image"/>
                         <h:message for="Image"/>
                     </h:panelGrid>
-                    <!--<h:button  value="New Image" onclick="addFunction(); return false;" id="imageButton" styleClass="newImageButton"/>-->
-                    <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
-                    <h:commandButton actionListener="#{add.saveProduct}" action="products" value="Save"  styleClass="commandB"/>
+                    <h:button outcome="products" value="Cancel" styleClass="button"/>                   
+                    <h:commandButton actionListener="#{add.saveProduct}" action="products" value="Save"  styleClass="button"/>
                 </h:form>
-                </div>
+                
             </ui:define>
         </ui:composition>
     </h:body>

@@ -1,0 +1,137 @@
+#header{
+    width: 70%;
+    margin: 0 auto;
+} 
+
+#header h1{
+    font-family: 'Zapf Chancery', cursive;
+    color: white;
+    text-align: left;
+}
+
+#header #signOut{
+    text-align: right;
+    float: right;
+    margin-top: -50px;
+    margin-right: 10px;
+}
+
+.signOut{
+    color: white;
+}
+
+#subheader p{
+    margin-left: 42%;
+}
+
+#menu{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin: 0 auto;
+}
+
+#menu ul{
+    margin-left: 20%;
+    list-style-type: none;
+
+}
+
+#menu ul li { 
+    display: inline; 
+}
+
+#subheader{
+    width: 70%;
+    height: 35px;
+    margin: 0 auto;
+}
+
+#content{
+    width: 70%;
+    margin: 0 auto;
+    height: 100%;
+    margin-top: -29px;
+    padding-bottom: 50px;
+}
+
+.inputForm{
+    margin-top: -25px;
+    margin-left: 35%;
+}
+
+.inputForm input[type=button],
+.inputForm input[type=commanButton]{
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#margin-fix{
+    margin-top: 3%;
+}
+
+#customer-info{
+    padding-top: 5px;
+    margin-top: 3%;
+    margin-left: 8%;
+    width: 200px;
+}
+
+#total-rating{
+    padding-top: 5px;
+    margin-top: 3%;
+    margin-left: 8%;
+    width: 200px;
+}
+
+#rating-info{
+    margin-left: 8%;
+    margin-top: 10%;
+    width: 200px;
+}
+
+#purchase-customer-info{
+    padding-top: 5px;
+    margin-top: 3%;
+    margin-left: 8%;
+    width: 200px;
+}
+
+#customer-address{
+    margin-left: 8%;
+    margin-top: 10%;
+    width: 200px;
+}
+
+#purchase-order-info{
+    margin-left: 8%;
+    margin-top: 10%;
+    width: 200px;
+}
+
+#customer-purchase-orders{
+    margin-left: 40%;
+    margin-top: -400px;
+    width: 500px;
+    height: 450px;
+    border-left: 1px solid black;
+}
+
+#product-ratings-table{
+    margin-left: 40%;
+    margin-top: -275px;
+    width: 500px;
+    height: 450px;
+    border-left: 1px solid black;
+}
+
+#order-items{
+    margin-left: 40%;
+    margin-top: -270px;
+    width: 500px;
+    height: 450px;
+    border-left: 1px solid black;
+}
+
+

@@ -2,20 +2,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
     <h:head>
         <title>Group4 WebShop - 1337</title>
     </h:head>
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content"> 
-                Emil spånar och funderar! 
-                
-                En karusell med några bilder ? 
-                
-                Två tre divar med ev information ? Typ bildlänk till del av sida 
-                
-                eller en sammanfattning av bloggen ? 
+                <p:carousel numVisible="1" itemStyle="width:960px;height:262px;" autoPlayInterval="3000" effect="easeInStrong" circular="true">
+                    <p:tab title="The Beginning I">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage value="http://placehold.it/200x200" />	
+                            <h:outputText value="It all started with a HUGE bang..." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="The Beginning II">
+                        <h:panelGrid columns="2" cellpadding="10">	
+                            <p:graphicImage value="http://placehold.it/200x200" />
+                            <h:outputText value="Then there was someone called God"/>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="The Beginning III">
+                        <h:panelGrid columns="2" cellpadding="10">	
+                            <p:graphicImage value="http://placehold.it/200x200" />
+                            <h:outputText value="Who took all the credit..." />
+                        </h:panelGrid>
+                    </p:tab>
+                </p:carousel>
             </ui:define>
         </ui:composition>
     </h:body>

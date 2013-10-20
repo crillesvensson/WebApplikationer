@@ -8,8 +8,8 @@
          
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                <div id="productButtons" align="center">
-                    <h3>Purchases</h3>
+                <div id="purchase-header" align="center">
+                    <h2>Purchases</h2>
                 </div>
 
                  <h:form>
@@ -17,7 +17,8 @@
                        <h:dataTable var="po" value="#{purchase.purchaseOrdersNotHandled}"
                         styleClass="order-table"
     			headerClass="order-table-header"
-    			rowClasses="order-table-odd-row,order-table-even-row">
+    			rowClasses="order-table-odd-row,order-table-even-row"
+                        columnClasses="pId ,date , user, pAction">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
@@ -41,9 +42,9 @@
                                     <h:outputText  value="Action"/>
                                 </f:facet>
                                 <h:commandButton actionListener="#{purchase.handlePurchaseOrder(po.id)}"      
-                                                 action="handle" value="Handled" styleClass="commandB" />
+                                                 action="handle" value="Handled" styleClass="table-button" />
                                 <h:commandButton actionListener="#{purchase.selectedPurchase(po.id)}" 
-                                                 action="showUnhandledPurchase" value="Show" styleClass="commandB"/>
+                                                 action="showUnhandledPurchase" value="Show" styleClass="table-button"/>
                             </h:column>
                         </h:dataTable>
                     </div>

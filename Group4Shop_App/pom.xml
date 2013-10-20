@@ -10,7 +10,7 @@
 
     <name>Group4Shop_App</name>
     
-     <properties>
+    <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -61,7 +61,22 @@
             <scope>test</scope>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>4.0</version>
+        </dependency>
     </dependencies>
+    
+    <!-- Repo for PrimeFaces -->
+    <repositories>
+        <repository>  
+            <id>prime-repo</id>  
+            <name>PrimeFaces Maven Repository</name>  
+            <url>http://repository.primefaces.org</url>  
+            <layout>default</layout>  
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

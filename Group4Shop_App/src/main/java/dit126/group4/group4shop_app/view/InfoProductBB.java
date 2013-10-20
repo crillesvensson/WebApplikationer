@@ -1,6 +1,7 @@
 package dit126.group4.group4shop_app.view;
 
 import dit126.group4.group4shop.core.IProductCatalogue;
+import dit126.group4.group4shop.core.OrderItem;
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop_app.model.Group4Shop;
 import java.util.logging.Level;
@@ -37,9 +38,11 @@ public class InfoProductBB {
         this.description = p.getDescription();
     }
     
-      public String actOnSelected() {
-      return "banan";
-      }
+    public String actOnSelected() {
+        //OrderItem orderI = new OrderItem(id, (Product) shop.getProductCatalogue().getByName(name), 1);
+        //lägg till OrderItem till PurchaseOrder
+        return "banan";
+    }
     
     protected IProductCatalogue getProductCatalogue() {
         return shop.getProductCatalogue();

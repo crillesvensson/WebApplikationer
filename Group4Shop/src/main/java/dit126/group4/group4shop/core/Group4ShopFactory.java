@@ -12,7 +12,7 @@ public class Group4ShopFactory {
     
     public static IGroup4Shop getShop(String puName) {
         Group4Shop shop = new Group4Shop(puName);
-        //init(shop);
+        init(shop);
         return shop;
     }
     

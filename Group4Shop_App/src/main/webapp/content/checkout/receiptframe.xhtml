@@ -8,68 +8,64 @@
         <ui:composition template="/WEB-INF/template-receipt.xhtml">
             <ui:define name="receipt-content">
                 <div class="page">
-                <div class="subpage">
-                            <h1>Receipt</h1>
-                            <p>#3478654 <br/>
-                                2013-04-05</p>
-                            <div class="logo">Webshop</div>
-                            <div class="customerinfo">
-                                <h3> Customer </h3>
-                                   Emil Bogren 
-                                   <br/>
-                                   kilatan 11
-                                    
-<!-- <h:outputText value="#{currentUserBean.currentUser.firstName}"/> <br/> 
-<h:outputText value="#{currentUserBean.currentUser.lastName}"/> <br/>
-<h:dataTable var="address" value="#{currentUserBean.currentAddress}">
-                        <h:column>
-                            <h:outputText  value="Street: "/>
-                            <h:outputText value="#{address.street}"/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Street number: "/>
-                            <h:outputText value="#{address.streetNr}"/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Postal Code: "/>
-                            <h:outputText value="#{address.postalCode}"/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="City: "/>
-                            <h:outputText value="#{address.region}"/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Country: "/>
-                            <h:outputText value="#{address.country}"/>
-                        </h:column>
-                    </h:dataTable>-->
-    
-                            </div>
-                            <div class="productcontent">
-                                <table>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>3</td>
-                                        <td>Pris</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product2</td>
-                                        <td>32</td>
-                                        <td>Pris2</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="price">Totalt: 
-                                        </td>
-                                        <td>3000</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="contactfooter">
-                                <h3>Kund: </h3> Company
-                                <h3>Address</h3> Kilgatan
-                            </div>
+                    <div class="subpage">
+                        <h1>Receipt</h1>
+                        <p>#3478654 <br/>
+                            2013-04-05</p>
+                        <div class="logo">Webshop</div>
+                        <div class="customerinfo">
+                            <h3> Customer </h3>
+                            <h:outputText id="firstname" value="#{currentUserBean.currentUser.firstName}"/> <br/> 
+                            <h:outputText id="lastname" value="#{currentUserBean.currentUser.lastName}"/> <br/>
+                            <h:dataTable var="address" value="#{currentUserBean.currentAddress}">
+                                <h:column>
+                                    <h:outputText  value="Street: "/>
+                                    <h:outputText value="#{address.street}"/>
+                                </h:column>
+                                <h:column>
+                                    <h:outputText  value="Street number: "/>
+                                    <h:outputText value="#{address.streetNr}"/>
+                                </h:column>
+                                <h:column>
+                                    <h:outputText  value="Postal Code: "/>
+                                    <h:outputText value="#{address.postalCode}"/>
+                                </h:column>
+                                <h:column>
+                                    <h:outputText  value="City: "/>
+                                    <h:outputText value="#{address.region}"/>
+                                </h:column>
+                                <h:column>
+                                    <h:outputText  value="Country: "/>
+                                    <h:outputText value="#{address.country}"/>
+                                </h:column>
+                            </h:dataTable>
+                            
+                        </div>
+                        <div class="productcontent">
+                            <table>
+                                <tr>
+                                    <td>Product</td>
+                                    <td>3</td>
+                                    <td>Pris</td>
+                                </tr>
+                                <tr>
+                                    <td>Product2</td>
+                                    <td>32</td>
+                                    <td>Pris2</td>
+                                </tr>
+                                <tr>
+                                    <td class="price">Totalt: 
+                                    </td>
+                                    <td>3000</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="contactfooter">
+                            <h3>Kund: </h3> Company
+                            <h3>Address</h3> Kilgatan
                         </div>
                     </div>
+                </div>
             </ui:define>
         </ui:composition>
     </h:body>

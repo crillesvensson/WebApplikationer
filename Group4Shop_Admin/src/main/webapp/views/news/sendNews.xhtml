@@ -10,21 +10,19 @@
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content"> 
-                
-                <div class="contactFormPosition"  align="center">
-                <h:form class="inputForm">
-                    <div class="formTitle">
+                <div id="news-header" align="center">
                         <h2>Send news</h2>
-                    </div>
+                </div>
+                
+                <h:form class="inputForm">               
                     <h:panelGrid columns="2">                      
-                        <h:outputLabel value="Subject:" styleClass="formTextCustom"/>
                         <h:inputText id="s" value="#{contactBean.subject}" class="inputText"/>
-                        <h:outputLabel value="Message:" styleClass="formTextCustom"/>
-                        <h:inputTextarea value="#{contactBean.content}" class="inputTextArea"/>
+                        <p:watermark for="s" value="Subject" />
+                        <h:inputTextarea id="m" value="#{contactBean.content}" class="inputTextArea"/>
+                        <p:watermark for="m" value="Message" />
                     </h:panelGrid>
                     <h:commandButton actionListener="#{emailController.sendEmail}" value="Send" action="Submit" class="button"/>
                 </h:form>            
-                </div>
             </ui:define>
         </ui:composition>
     </h:body>

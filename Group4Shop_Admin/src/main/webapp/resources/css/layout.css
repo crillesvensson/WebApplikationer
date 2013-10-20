@@ -8,7 +8,8 @@
 
 body { 
     text-align:center;
-    background-image: url("#{resource['img:background-image2.jpg']}"); 
+    //background-image: url("#{resource['img:background-image2.jpg']}"); 
+    background-color: #FFFAFA;
     height: 100%;
 }
 #product-table{
@@ -73,6 +74,7 @@ h1{
     margin-left: auto;
     margin-right: auto;
     font-size: 35px;
+    font-family: 'Verdana';
 }
 
 .totalRating{ 

@@ -12,31 +12,29 @@
         <ui:composition template="/WEB-INF/template.xhtml">
 
             <ui:define name="content">
+                
+                <div id="edit-header" align="center">
+                    <h2>Edit Product</h2>
+                </div>
                
-                <h:form enctype="multipart/form-data" class="editInputForm">
-                    <h2>Edit product</h2>
-                    <h:panelGrid columns="3">
-                        <h:outputText value="Id" styleClass="formTextCustom"/>
+                <h:form enctype="multipart/form-data" class="inputForm">
+                    <h:panelGrid columns="1">
                         <h:inputText id="id" value="#{edit.id}" disabled="true" class="inputText"/>
-                        <h:message for="id" />
-                        <h:outputText value="Name" styleClass="formTextCustom"/>
+                        <p:watermark for="id" value="Id" />
                         <h:inputText id="name" value="#{edit.name}" class="inputText"/>
-                        <h:message for="name" />
-                        <h:outputText value="Price" styleClass="formTextCustom"/>
+                        <p:watermark for="name" value="Name" />
                         <h:inputText id="price" value="#{edit.price}" class="inputText"/>
-                        <h:message for="price" />
-                        <h:outputText value="Description" styleClass="formTextCustom"/>
+                        <p:watermark for="price" value="Price" />
                         <h:inputText id="description" value="#{edit.description}" class="inputText"/>
-                        <h:message for="description" />
+                        <p:watermark for="description" value="Description" />
                         <h:outputText value="Image" styleClass="formTextCustom"/>
                         <p:graphicImage value="#{edit.image}" id="Image"/>
                         <h:message for="Image" />
-                        <h:outputText value="Change Image" styleClass="formTextCustom" id="imageText"/>
                         <h:inputFile value="#{edit.images}" id="ImageInput"/>
                         <h:message for="ImageInput"/>
                     </h:panelGrid>
-                    <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
-                    <h:commandButton actionListener="#{edit.editProduct()}" action="products" value="Edit" styleClass="commandB"/>
+                    <h:button outcome="products" value="Cancel" styleClass="button"/>                   
+                    <h:commandButton actionListener="#{edit.editProduct()}" action="products" value="Edit" styleClass="button"/>
                 </h:form>
               
             </ui:define>

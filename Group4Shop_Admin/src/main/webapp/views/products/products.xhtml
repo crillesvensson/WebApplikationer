@@ -9,9 +9,9 @@
          
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                <div id="productButtons" align="center">
-                    <h3>Products</h3>
-                    <h:button outcome="addProducts" value="Add Product" class="button" />
+                <div id="content-header" align="center">
+                    <h2>Products</h2>
+                    <h:button outcome="addProducts" value="Add Product" class="button" id="add-product-button" />
                 </div>
 
                  <h:form>
@@ -19,41 +19,42 @@
                         <h:dataTable var="p" value="#{products.products}"
                         styleClass="order-table"
     			headerClass="order-table-header"
-    			rowClasses="order-table-odd-row,order-table-even-row">
+    			rowClasses="order-table-odd-row,order-table-even-row"
+                        columnClasses="id,name, price, rating, action">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Id"/>
                                 </f:facet>
-                                <h:outputText value="#{p.id}"/>
+                                <h:outputText value="#{p.id}" styleClass="table-entry"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Name"/> 
                                 </f:facet>
-                                <h:outputText value="#{p.name}"/>
+                                <h:outputText value="#{p.name}" styleClass="table-entry"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText  value="Price"/>
                                 </f:facet>
-                                <h:outputText value="#{p.price}"/>
+                                <h:outputText value="#{p.price}" styleClass="table-entry"/>
                             </h:column>
                             <h:column>
                                <f:facet name="header">
                                     <h:outputText  value="Rating" class="formTextCustom"/>
                                 </f:facet>
-                                <p:rating value="#{ratings.getRating(p.id)}" readonly="true" />
+                                <p:rating value="#{ratings.getRating(p.id)}" readonly="true" styleClass="table-entry"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText  value="Action"/>
+                                    <h:outputText  value=""/>
                                 </f:facet>
                                 <h:commandButton actionListener="#{ratings.selectedProduct(p.id)}"      
-                                                 action="productRating" value="Ratings" styleClass="commandB" />
+                                                 action="productRating" value="Ratings" styleClass="table-button"/>
                                 <h:commandButton actionListener="#{edit.selectedProduct(p.id)}" 
-                                                 action="edit" value="Edit" styleClass="commandB"/>
+                                                 action="edit" value="Edit" styleClass="table-button" />
                                 <h:commandButton actionListener="#{delete.selectedProduct(p.id)}"      
-                                                 action="delete" value="Delete" styleClass="commandB" />
+                                                 action="delete" value="Delete" styleClass="table-button"/>
                             </h:column>
                         </h:dataTable>
                     </div>

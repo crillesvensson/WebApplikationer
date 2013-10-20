@@ -7,29 +7,39 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Administration</title>
     </h:head>
     <h:body>
         <ui:composition template="/WEB-INF/login-template.xhtml">
             <ui:define name="login-content"> 
-                <!-- INSERTED CODE -->
-                    <h:form class="inputForm">
-                    <h:panelGrid columns="3">
-                        <f:facet name="header">
-                            Login as admin! 
-                        </f:facet>
-                        <h:outputText value="Username : "></h:outputText>
-                        <h:inputText id="username" value="#{auth.username}"/>
-                        <h:message for="username" style="color:red"/>
-                        <h:outputText value="Password : "></h:outputText>
-                        <h:inputSecret id="password" value="#{auth.password}"/>
-                        <h:message for="password" style="color:red"/>
-                        <f:facet name="footer">
-                            <h:commandButton value="Login" action="#{loginController.login}" type="submit"/>
-                        </f:facet>   
-                    </h:panelGrid>
+                
+                    <!-- INSERTED CODE -->
+                    <h:form class="loginForm">
+               
+                        <h2>Sign in</h2>
+                        <p>
+                            <p class="field"/>
+                            
+                            <h:inputText id="username" value="#{auth.username}"/>
+                            <!--<i class="icon-user icon-large"></i>-->
+                            <p:watermark for="username" value="Admin" />
+                            
+                        </p>    
+                        <p>
+                            <p class="field"/>
+                            
+                            <h:inputSecret id="password" value="#{auth.password}"/>
+                            <!--<i class="icon-lock icon-large"></i>-->
+                            <p:watermark for="password" value="Password" />
+                        </p>
+                        <p>
+                            <p class="submit"/>
+                            <h:commandButton value="Sign in" action="#{loginController.login}" type="submit" class="submitButton"/>
+                        </p>
+                  
                 </h:form>
                 <!-- END OF INSERT  -->
             </ui:define>

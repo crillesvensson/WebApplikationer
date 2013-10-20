@@ -10,32 +10,31 @@
     <h:body>
 
         <ui:composition template="/WEB-INF/template.xhtml">
-
             <ui:define name="content">
-               <div id="delete-table" align="center">
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
-                        <h2>Product</h2>
-                    </div>
+                
+                <div id="product-info-header" align="center">
+                    <h2>Product</h2>
+                </div>
+                
+                <h:form class="product-info-form">
                     <h:panelGrid columns="3">
-                        <h:outputText value="Id" styleClass="formTextCustom"/>
-                        <h:outputText id="id" value="#{showProduct.id}" styleClass="formTextCustom"/>
+                        <h:outputText value="Id" styleClass="product-info-text"/>
+                        <h:outputText id="id" value="#{showProduct.id}" styleClass="product-info-text"/>
                         <h:message for="id" />
-                        <h:outputText value="Name" styleClass="formTextCustom"/>
-                        <h:outputText id="name" value="#{showProduct.name}" styleClass="formTextCustom"/>
+                        <h:outputText value="Name" styleClass="product-info-text"/>
+                        <h:outputText id="name" value="#{showProduct.name}" styleClass="product-info-text"/>
                         <h:message for="name" />
-                        <h:outputText value="Price" styleClass="formTextCustom"/>
-                        <h:outputText id="price" value="#{showProduct.price}" styleClass="formTextCustom"/>
+                        <h:outputText value="Price" styleClass="product-info-text"/>
+                        <h:outputText id="price" value="#{showProduct.price}" styleClass="product-info-text"/>
                         <h:message for="price" />
-                        <h:outputText value="Description" styleClass="formTextCustom"/>
-                        <h:outputText id="description" value="#{showProduct.description}" styleClass="formTextCustom"/>
+                        <h:outputText value="Description" styleClass="product-info-text"/>
+                        <h:outputText id="description" value="#{showProduct.description}" styleClass="product-info-text"/>
                         <h:message for="description" />
-                        <h:outputText value="Image" styleClass="formTextCustom"/>
+                        <h:outputText value="Image" styleClass="product-info-text"/>
                         <p:graphicImage value="#{showProduct.imageData}" id="Image"/>
                         <h:message for="Image" />
                     </h:panelGrid>
                 </h:form>
-               </div>
             </ui:define>
         </ui:composition>
     </h:body>

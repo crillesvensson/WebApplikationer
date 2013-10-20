@@ -11,7 +11,9 @@
     -->
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet library="css" name="layout.css"  />    
+        <!--<h:outputStylesheet library="css" name="layout.css"  />  -->
+        <h:outputStylesheet library="css" name="site-style.css" />
+        <h:outputStylesheet library="css" name="site-layout.css" />
         <h:outputScript library="js" name="jquery-1.9.1.js" target="head"/>
         <h:outputScript library="js" name="jquery-ui-1.10.2.custom.js" target="head"/>
         <h:outputScript library="js" name="jquery-ui-1.10.2.custom.min.js" target="head"/>
@@ -19,24 +21,34 @@
         <title>Group 4 Administration</title>
     </h:head>
     <h:body>
-        <header>
-            <hgroup>
-                <h:button outcome="home" value="Log out" class="loginButton" />  
-                <h1>Administrate webshop</h1>                      
-            </hgroup>
-        </header>
-        <nav class="menu"> 
-            <ul>          
-                <li><h:button outcome="home" value="Home" class="button" /></li> 
-                <li><h:button outcome="products" value="Products" class="button" /></li>  
-                <li><h:button outcome="customers" value="Customer" class="button" /></li>
-                <li><h:button outcome="purchases" value="Purchases" class="button" /></li>
-                <li><h:button outcome="news" value="News" class="button" /></li>
-            </ul>
-        </nav>
-        <div id="content" class="right_content">
-            <ui:insert name="content">Content</ui:insert>
-        </div>
+                <!--<h:form>
+                    <h:commandLink value="Log out" action="#{loginController.logout()}" class="loginButton" />
+                </h:form>-->
+                
+                <div id="header">
+                    <h1>Administrate webshop</h1>
+                        <h:form id="signOut">
+                            <h:commandLink action="#{loginController.logout()}" value="Sign out" styleClass="signOut"/>
+                        </h:form>
+                </div>
+                
+                <div id="menu">  
+                    <ul>
+                        <li><h:button outcome="home" value="Home" class="button" /></li> 
+                        <li><h:button outcome="products" value="Products" class="button" /></li>  
+                        <li><h:button outcome="customers" value="Customer" class="button" /></li>
+                        <li><h:button outcome="purchases" value="Purchases" class="button" /></li>
+                        <li><h:button outcome="news" value="News" class="button" /></li>
+                    </ul>
+                </div>
+                
+                <div id="subheader">
+                    <p></p>
+                </div>
+                
+                <div id="content">
+                    <ui:insert name="content">Content</ui:insert>
+                </div>
 
        <footer>
             

@@ -9,18 +9,6 @@
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                <!--    <h:form>       
-                    
-                        <h:panelGrid columns="3">
-                             <h:outputText value="Filter by: "/>
-                             <h:selectOneMenu id="filter">  
-                                 <f:selectItem itemValue="#{products.setProductfilter("all")}" itemLabel="Show all" />
-                                 <f:selectItem itemValue="#{products.setProductfilter("shirt")}" itemLabel="Shirts" />
-                                 <f:selectItem itemValue="#{products.setProductfilter("pants")}" itemLabel="Pants" />
-                                 <f:selectItem itemValue="#{products.setProductfilter("other")}" itemLabel="Other" />
-                             </h:selectOneMenu>
-                         </h:panelGrid>
-                     </h:form>-->
                 <h:form>
                     <p:dataTable id="productsDT" var="p" value="#{products.products}" paginator="true"
                                  paginatorAlwaysVisible="false" rows="4">

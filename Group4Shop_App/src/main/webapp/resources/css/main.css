@@ -1,9 +1,9 @@
-    /* 
-    Document   : main
-    Created on : Oct 7, 2013, 3:52:19 PM
-    Author     : emilbogren
-    Description:
-        Purpose of the stylesheet follows.
+/* 
+Document   : main
+Created on : Oct 7, 2013, 3:52:19 PM
+Author     : emilbogren
+Description:
+    Purpose of the stylesheet follows.
 */
 
 header{
@@ -77,13 +77,13 @@ header h1{
     padding-right: 4px;
     height: auto;
 }
- 
+
 .hlink li:last-child {
-  border: none;
+    border: none;
 }
 
 .hlink li a {
-     text-decoration: none;
+    text-decoration: none;
     /*color: #000;*/
     /*display: block;*/
     /*width: 200px;*/
@@ -92,7 +92,7 @@ header h1{
 }
 
 .hlink li a:hover {
-     text-decoration: none;
+    text-decoration: none;
     /*color: #000;*/
     /*display: block;*/
     /*width: 200px;*/
@@ -117,13 +117,13 @@ header h1{
     height: auto;
 }
 .hlink li a {
-     text-decoration: none;
+    text-decoration: none;
     color: #777;
     background: #f5f5f5; 
 }
 
 .hlink li a:hover {
-     text-decoration: none;
+    text-decoration: none;
     color: #3BA3D0;
     background: #f5f5f5;
 }
@@ -159,4 +159,20 @@ div#products-contain table { margin: 1em 0; border-collapse: collapse; width: 10
 div#products-contain table td, div#products-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
 
 #prev-button #next-button {
+}
+
+
+/**** Overriding Primefaces CSS ****/
+
+.ui-carousel .ui-carousel-header{
+    height: 35px!important;
+}
+
+.ui-corner-all{
+    border-radius: 0px!important;
+}
+
+.ui-carousel .ui-carousel-viewport{
+    width: 940px!important;
+    height: 225px!important;
 }

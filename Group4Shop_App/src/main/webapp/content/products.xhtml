@@ -43,8 +43,8 @@
                                 </f:facet>
                                  <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
                                                  action="#{products.navigate('info')}" value="Info"/>
-                                <h:commandButton class="btn btn-default" actionListener="#{editProduct.setSelected(p.id)}" 
-                                                 action="#{products.navigate('edit')}" value="Buy"/>
+                                <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
+                                                 action="#{infoProduct.actOnSelected}" value="Buy"/>
                                
                             </h:column>
                         </h:dataTable>

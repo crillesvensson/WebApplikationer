@@ -36,6 +36,10 @@
     
     <navigation-rule>
         <from-view-id>/views/products/products.xhtml</from-view-id>
+        <navigation-case>
+           <from-outcome>filter</from-outcome>
+           <to-view-id>/views/products/products.xhtml</to-view-id>
+       </navigation-case>  
        <navigation-case>
            <from-outcome>addProducts</from-outcome>
            <to-view-id>/views/products/addProduct.xhtml</to-view-id>
@@ -43,14 +47,17 @@
        <navigation-case>
            <from-outcome>delete</from-outcome>
            <to-view-id>/views/products/deleteProduct.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
        <navigation-case>
            <from-outcome>edit</from-outcome>
            <to-view-id>/views/products/editProduct.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
        <navigation-case>
            <from-outcome>productRating</from-outcome>
            <to-view-id>/views/ratings/productRatings.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
     </navigation-rule>
     
@@ -59,6 +66,7 @@
         <navigation-case>
            <from-outcome>Submit</from-outcome>
            <to-view-id>/views/news/newsDelivered.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
     </navigation-rule>
     
@@ -67,6 +75,7 @@
         <navigation-case>
            <from-outcome>Show</from-outcome>
            <to-view-id>/views/customer/showCustomer.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
     </navigation-rule>
     
@@ -75,10 +84,7 @@
         <navigation-case>
            <from-outcome>showPurchase</from-outcome>
            <to-view-id>/views/purchase/customerPurchase.xhtml</to-view-id>
-       </navigation-case>
-       <navigation-case>
-           <from-outcome>showPurchase</from-outcome>
-           <to-view-id>/views/purchase/customerPurchase.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
     </navigation-rule>
     
@@ -91,6 +97,7 @@
        <navigation-case>
            <from-outcome>showUnhandledPurchase</from-outcome>
            <to-view-id>/views/purchase/customerPurchase.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
     </navigation-rule>
     
@@ -99,10 +106,12 @@
        <navigation-case>
            <from-outcome>ShowUser</from-outcome>
            <to-view-id>/views/customer/showCustomer.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
        <navigation-case>
            <from-outcome>ShowProduct</from-outcome>
            <to-view-id>/views/products/showProduct.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
     </navigation-rule>
     
@@ -111,6 +120,7 @@
        <navigation-case>
            <from-outcome>showUser</from-outcome>
            <to-view-id>/views/customer/showCustomer.xhtml</to-view-id>
+           <redirect/> 
        </navigation-case>
     </navigation-rule>
     

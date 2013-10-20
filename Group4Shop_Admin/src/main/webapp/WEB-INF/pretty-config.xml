@@ -1,0 +1,86 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+
+    
+        <!-- Home -->
+	<url-mapping id="home">
+		<pattern value="/home/" />
+		<view-id value="/index.xhtml" />
+	</url-mapping>
+        
+        <!--   Products      -->
+        
+        <url-mapping id="products">
+                <pattern value="/products/"/>
+                <view-id value="/views/products/products.xhtml"/>
+        </url-mapping>
+        
+        <url-mapping id="show-product">
+                <pattern value="/products/show/"/>
+                <view-id value="/views/products/showProduct.xhtml"/>
+        </url-mapping>
+        
+        
+        <url-mapping id="add-product">
+                <pattern value="/products/add/"/>
+                <view-id value="/views/products/addProduct.xhtml"/>
+        </url-mapping>
+        
+        <url-mapping id="edit-product">
+                <pattern value="/products/edit/"/>
+                <view-id value="/views/products/editProduct.xhtml"/>
+        </url-mapping>
+        
+        <url-mapping id="delete-product">
+                <pattern value="/products/delete/"/>
+                <view-id value="/views/products/deleteProduct.xhtml"/>
+        </url-mapping>
+        
+        <!--   Customers -->
+        
+        <url-mapping id="customers">
+                <pattern value="/customers/"/>
+                <view-id value="/views/customer/customers.xhtml"/>
+        </url-mapping>
+        
+        <url-mapping id="show-customer">
+                <pattern value="/customers/show/"/>
+                <view-id value="/views/customer/showCustomer.xhtml"/>
+        </url-mapping>
+        
+        
+        <!--   Purchases -->
+        
+        <url-mapping id="purchases">
+                <pattern value="/purchases/"/>
+                <view-id value="/views/purchase/purchases.xhtml"/>
+        </url-mapping>
+        
+        <url-mapping id="customer-purchases">
+                <pattern value="/purchases/customer/"/>
+                <view-id value="/views/purchase/customerPurchase.xhtml"/>
+        </url-mapping>
+        
+        <!--   News     -->
+        
+        <url-mapping id="news">
+                <pattern value="/send-news/"/>
+                <view-id value="/views/news/sendNews.xhtml"/>
+        </url-mapping>
+        
+        <url-mapping id="news-delivered">
+                <pattern value="/send-news/delivered/"/>
+                <view-id value="/views/news/newsDelivered.xhtml"/>
+        </url-mapping>
+        
+        <!-- Ratings -->
+
+        <url-mapping id="product-ratings">
+                <pattern value="/products/ratings/"/>
+                <view-id value="/views/ratings/productRatings.xhtml"/>
+        </url-mapping>
+
+</pretty-config>

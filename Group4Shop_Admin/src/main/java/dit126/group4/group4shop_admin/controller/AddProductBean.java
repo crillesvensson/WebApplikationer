@@ -10,7 +10,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import javax.enterprise.context.RequestScoped;
 
 
@@ -32,6 +34,7 @@ public class AddProductBean {
     private String name; 
     private double price;
     private String description;
+    private String category;
     
     private List<Part> images = new ArrayList<Part>();
     private Part image;
@@ -40,7 +43,7 @@ public class AddProductBean {
     private Group4ShopBean group4shop;
     
     public void saveProduct() throws IOException{     
-       Product p = new Product(this.id, this.name, this.price, this.description);     
+       Product p = new Product(this.id, this.name, this.price, this.category, this.description);     
        this.group4shop.getProductCatalogue().add(p);
        if(!images.isEmpty()){
          saveImages();
@@ -56,6 +59,18 @@ public class AddProductBean {
             ProductImage pImage = new ProductImage(p.getSubmittedFileName(), this.id, imageByte);
             this.group4shop.getProductImageContainer().add(pImage);
         }
+    }
+
+    private static Map<String,Object> productCategories;
+	static{
+		productCategories = new LinkedHashMap<String,Object>();
+		productCategories.put("Other", "Other"); //label, value
+		productCategories.put("Pants", "Pants");
+		productCategories.put("Shirts", "Shirts");
+	}
+ 
+    public Map<String,Object> getProductCategories() {
+	return productCategories;
     }
     
     public Long getId(){
@@ -88,6 +103,14 @@ public class AddProductBean {
     
     public void setDescription(String description){
         this.description = description;
+    }
+    
+    public String getCategory(){
+        return this.category;
+    }
+    
+    public void setCategory(String category){
+        this.category = category;
     }
     
     public Part getImages(){

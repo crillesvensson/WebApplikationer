@@ -6,7 +6,8 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet library="css" name="main.css" />    
-        <h:outputStylesheet library="css/twitterbootstrap" name="bootstrap.css"/>    
+        <h:outputStylesheet library="css/twitterbootstrap" name="bootstrap.css"/>
+        
         <title>Group4 WebShop - 1337 </title>
     </h:head>
     <h:body>
@@ -30,12 +31,12 @@
                         <li>
                             <h:link value="Login" outcome="login" rendered="#{empty request.remoteUser}" />
                         </li>    
-                       <h:form>
+                        <h:form>
                             <h:panelGroup id="loginout">
                                 <h:outputText value="#{currentUserBean.currentUser.firstName}" rendered="#{not empty request.remoteUser}"/>
                                 <h:commandLink value="Logout" action="#{loginController.logout()}" rendered="#{not empty request.remoteUser}" />
                             </h:panelGroup>         
-                       </h:form>    
+                        </h:form>    
                         
                     </ul>
                 </div>

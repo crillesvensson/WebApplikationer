@@ -8,29 +8,27 @@
          
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
+                <div id="margin-fix">
+                    <p></p> 
+                </div>
                 
-                <div id="delete-table" align="center">
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
-                        <p>Customer: </p>
-                        <h2>#{showcustomer.firstName} #{showcustomer.lastName}</h2>
+                <div id="customer-info">
+                        <h2>Customer: </h2>
+                        <p>#{showcustomer.firstName} #{showcustomer.lastName}</p>
                         <p>#{showcustomer.email}</p>
-                    </div>
-                </h:form>
-                    
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
+                </div>
+                <div id="customer-address">
                         <h2>Address:</h2>
                         <p>Country: #{showcustomer.address.country}</p>
                         <p>Region: #{showcustomer.address.region}</p>
                         <p>Postal Code: #{showcustomer.address.postalCode}</p>
                         <p>Street: #{showcustomer.address.street}</p>
-                        <p>Street Nr: #{showcustomer.address.streetNr}</p>
-                    </div>
-                </h:form>    
-                    
-                <h:form enctype="multipart/form-data" class="inputForm">
-                    <div class="formTitle">
+                        <p>Street Nr: #{showcustomer.address.streetNr}</p>   
+                </div>
+                
+                <div id="customer-purchase-orders">
+                <h:form>
+                    <div id="customer-purchase-header">
                         <h2>Purchase Orders</h2>
                     </div>
                     <h:dataTable var="po" value="#{purchase.getPurchaseOrdersForUser(showcustomer.email)}"
@@ -57,14 +55,14 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText  value="Action"/>
+                                    <h:outputText  value=""/>
                                 </f:facet>
                                 <h:commandButton actionListener="#{purchase.selectedPurchase(po.id)}" 
-                                                 action="showPurchase" value="Show" styleClass="commandB"/>
+                                                 action="showPurchase" value="Show" styleClass="table-button"/>
                             </h:column>
                         </h:dataTable>
                 </h:form>
-                </div>
+            </div>
             </ui:define>
         </ui:composition>
     </h:body>

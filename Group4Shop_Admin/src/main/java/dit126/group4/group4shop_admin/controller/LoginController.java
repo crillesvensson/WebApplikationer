@@ -8,6 +8,7 @@ import dit126.group4.group4shop_admin.view.LoginBackingBean;
 import java.io.IOException;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -47,17 +48,11 @@ public class LoginController{
         return null;
     }
     
-    public void logout() {
-        FacesContext context = FacesContext.getCurrentInstance();
-        HttpServletRequest request = (HttpServletRequest) 
-        context.getExternalContext().getRequest();
-        try {
-          request.logout();
-        } catch (ServletException e) {
-          /*
-           */
-          context.addMessage(null, new FacesMessage("Logout failed."));
-        }
-  }
+    public void logout() throws IOException{
+        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+        externalContext.invalidateSession();
+        //externalContext.redirect("/content/home.xhtml");
+        externalContext.redirect("/Group4Shop_Admin/views/login/login.xhtml");
+    }
     
 }

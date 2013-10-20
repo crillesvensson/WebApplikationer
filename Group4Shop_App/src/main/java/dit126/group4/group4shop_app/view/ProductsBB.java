@@ -13,6 +13,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  * Must have in session scope, has state (in ContainerNavigator)!
@@ -24,17 +25,18 @@ public class ProductsBB implements Serializable{
 
     private ContainerNavigator cn;
     @Inject
-    private Group4Shop shop;
+    //private Group4Shop shop;
+    private Provider<Group4Shop> shop;
 
     @PostConstruct
     public void post() {
         // We know all injection are done so shop not null (hopefully)
-        cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
+        //cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
     }
 
     public List<Product> getProducts(){
-        int count = shop.getProductCatalogue().getCount();
-        List<Product> productList = shop.getProductCatalogue().getRange(0, count);     
+        int count = shop.get().getProductCatalogue().getCount();
+        List<Product> productList = shop.get().getProductCatalogue().getRange(0, count);     
         return productList;
     }
 

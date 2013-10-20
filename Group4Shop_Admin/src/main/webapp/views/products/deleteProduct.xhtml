@@ -10,30 +10,26 @@
         <ui:composition template="/WEB-INF/template.xhtml">
 
             <ui:define name="content">
-                <div id="delete-table" align="center">
+                <div id="delete-header" align="center">
+                    <h2>Delete Product</h2>
+                </div>
                 
-                <h:form class="inputForm">
-                    <div class="formTitle">
-                        <h2>Delete Product</h2>
-                    </div>
+                <h:form class="product-info-form">
+                    
                     <h:panelGrid columns="3" styleClass="editP">
-                        <h:outputText value="Id:" styleClass="formTextCustom"/>
-                        <h:inputText id="id" value="#{delete.id}" disabled="true" class="inputText"/>
+                        <h:outputText value="Id:" styleClass="product-info-text"/>
+                        <h:outputText id="id" value="#{delete.id}" styleClass="product-info-text"/>
                         <h:message for="id" />
-                        <h:outputText value="Name:" styleClass="formTextCustom"/>
-                        <h:inputText id="name" value="#{delete.name}" disabled="true" class="inputText"/>
+                        <h:outputText value="Name:" styleClass="product-info-text"/>
+                        <h:outputText id="name" value="#{delete.name}" styleClass="product-info-text"/>
                         <h:message for="name" />
-                        <h:outputText value="Price:" styleClass="formTextCustom"/>
-                        <h:inputText id="price" value="#{delete.price}" disabled="true" class="inputText"/>
+                        <h:outputText value="Price:" styleClass="product-info-text"/>
+                        <h:outputText id="price" value="#{delete.price}" styleClass="product-info-text"/>
                         <h:message for="price" />
-                        <h:outputText value="Description:" styleClass="formTextCustom"/>
-                        <h:inputTextarea id="description" value="#{delete.description}" disabled="true" class="inputText"/>
-                        <h:message for="description" />
                     </h:panelGrid>
-                    <h:button outcome="products" value="Cancel" styleClass="commandB"/>                   
-                    <h:commandButton actionListener="#{delete.deleteProduct}" action="products" value="Delete" styleClass="commandB" />
-                </h:form>
-                </div>     
+                    <h:button outcome="products" value="Cancel" styleClass="button"/>                   
+                    <h:commandButton actionListener="#{delete.deleteProduct}" action="products" value="Delete" styleClass="button" />
+                </h:form>   
             </ui:define>
         </ui:composition>
     </h:body>

@@ -21,31 +21,55 @@ import javax.inject.Named;
 @Named("products")
 @SessionScoped  // NOTE enterprise package, else disaster!!!
 public class ProductsBB implements Serializable{
-
+    
     private ContainerNavigator cn;
     @Inject
     private Group4Shop shop;
-
+    private String productfilter = "all";
+    
     @PostConstruct
     public void post() {
         // We know all injection are done so shop not null (hopefully)
         cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
     }
-
-    public List<Product> getProducts(){
-        int count = shop.getProductCatalogue().getCount();
-        List<Product> productList = shop.getProductCatalogue().getRange(0, count);     
-        return productList;
+    
+     public void setProductfilter(String filter){
+        this.productfilter = filter;
     }
-
-    public void next() { 
+    
+    
+    public String getProductfilter(){
+        return this.productfilter;
+    }
+    
+   
+    
+    public List<Product> getProducts(){
+        if(productfilter.equals("all")){
+            int count = shop.getProductCatalogue().getCount();
+            List<Product> productList = shop.getProductCatalogue().getRange(0, count);
+            return productList;
+        } else {
+            List<Product> productList = shop.getProductCatalogue().getByCategory(productfilter);
+            return productList;
+        }
+        
+    }
+    /*
+     * public List<Product> getByCategory(String cat){
+     * List<Product> productList = shop.getProductCatalogue().getByCategory(cat);
+     * return productList;
+     * }
+     */
+    
+    public void next() {
         cn.next();
     }
-
+    
     public void prev() {
-       cn.previous();
+        cn.previous();
     }
-
+    
     public String navigate(String target) {
         return target;
     }

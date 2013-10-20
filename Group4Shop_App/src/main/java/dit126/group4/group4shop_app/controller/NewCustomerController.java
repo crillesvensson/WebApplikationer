@@ -35,13 +35,8 @@ public class NewCustomerController {
         shop.getAddressCatalogue().add(address);
         
         Roles role = shop.getRolesRegister().get("user");
-        System.out.println("Emil testar och debggar: " + role);
-        
         UserRoles newCustomerWithRole = new UserRoles(newCustomer, role);
-        System.out.println("Emil testar och debggar22: " + newCustomerWithRole);
-        
         shop.getUserRoleRegister().add(newCustomerWithRole);
-        System.out.println("SUCCESS");
     }
     
 }

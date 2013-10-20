@@ -53,17 +53,19 @@ public class EditProductBean implements Serializable{
         this.name = p.getName();
         this.price = p.getPrice();
         this.description = p.getDescription();
-        List<ProductImage> imageList = group4shop.get().getProductImageContainer().find(this.id);
+        List<ProductImage> imageList = group4shop.get().getProductImageContainer().getForProduct(this.id);
 
-        if(!imageList.isEmpty()){
+        if(!imageList.isEmpty() && imageList.get(0).getProductId() == this.id){
             this.imageData = imageList.get(0).getImageBytes();
+        }else{
+            this.imageData = null;
         }
     }
     
     public void editProduct() throws IOException{  
        Product p = new Product(this.id, this.name, this.price, this.description);
        group4shop.get().getProductCatalogue().update(p);
-       List<ProductImage> imageList = group4shop.get().getProductImageContainer().find(this.id);
+       List<ProductImage> imageList = group4shop.get().getProductImageContainer().getForProduct(p.getId());
        if(!imageList.isEmpty() && image != null){
            group4shop.get().getProductImageContainer().remove(imageList.get(0).getName());
            saveImage();

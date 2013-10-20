@@ -57,12 +57,14 @@ public class TestDatabase {
             UserRoles ur1 = new UserRoles(user1, role1);
             UserRoles ur2 = new UserRoles(user2, role2);
             shop.getUserRolesRegister().add(ur1);
-            shop.getUserRolesRegister().add(ur2);            
-            assertTrue(true);
+            shop.getUserRolesRegister().add(ur2); 
+            
+            //Now find user!
+            Users found = shop.getUserRegister().find("emil@tes.se");
+            assertTrue(found.getFirstName().equals("Emil"));
         }
         
-        
-        @Test
+       @Test
         public void testCompleteUserAdd(){
             //Create user
             Users user1 = new Users("emil@dumt34.se", "Eb", "Eb", "qwerty");

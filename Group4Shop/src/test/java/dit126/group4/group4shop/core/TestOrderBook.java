@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  * @author David
  */
 public class TestOrderBook {
-    
+    /*
     final static String PU = "group4_test_shop";
     static IGroup4Shop shop;
     
@@ -48,5 +48,5 @@ public class TestOrderBook {
         PurchaseOrder po1 = shop.getOrderBook().find(id);
         assertTrue(po != po1);
         assertTrue(po.equals(po1));
-    }
+    }*/
 }

@@ -107,7 +107,7 @@ header h1{
     padding: 0px;
     display: inline-block;
     margin-right: 0px;
-    float: right;
+    width: 475px;
 }
 .ulinks li{
     font: 500 12px/1.5 Helvetica, Verdana, sans-serif;

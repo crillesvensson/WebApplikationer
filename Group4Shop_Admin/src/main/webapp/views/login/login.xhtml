@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Administration</title>
+    </h:head>
     <h:body>
-        <ui:composition template="/WEB-INF/template.xhtml">
-            <ui:define name="content">
-                
+        <ui:composition template="/WEB-INF/login-template.xhtml">
+            <ui:define name="login-content"> 
                 <!-- INSERTED CODE -->
-                    <h:form id="login-form">
+                    <h:form class="inputForm">
                     <h:panelGrid columns="3">
                         <f:facet name="header">
-                            Login as user or admin! 
+                            Login as admin! 
                         </f:facet>
                         <h:outputText value="Username : "></h:outputText>
                         <h:inputText id="username" value="#{auth.username}"/>
@@ -26,7 +32,6 @@
                     </h:panelGrid>
                 </h:form>
                 <!-- END OF INSERT  -->
-            
             </ui:define>
         </ui:composition>
     </h:body>

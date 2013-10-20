@@ -18,6 +18,7 @@ public class Group4Shop implements IGroup4Shop{
     private IUserRolesRegister userRolesRegister;
     private IOrderBook orderBook;
     private IRatingCatalogue ratingCatalogue;
+    private IOrderItemCatalogue orderItemCatalogue;
     
     public Group4Shop(String puName){
         this.productCatalogue = new ProductCatalogue(puName);
@@ -28,6 +29,7 @@ public class Group4Shop implements IGroup4Shop{
         this.userRolesRegister = new UserRolesRegister(puName);
         this.orderBook = new OrderBook(puName);
         this.ratingCatalogue = new RatingCatalogue(puName);
+        this.orderItemCatalogue = new OrderItemCatalogue(puName);
     }
     
     @Override
@@ -73,6 +75,11 @@ public class Group4Shop implements IGroup4Shop{
     @Override
     public IRatingCatalogue getRatingCatalogue(){
         return this.ratingCatalogue;
+    }
+    
+    @Override
+    public IOrderItemCatalogue getOrderItemCatalogue(){
+        return this.orderItemCatalogue;
     }
     
 }

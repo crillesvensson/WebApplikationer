@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Check Out!</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content"> 
+                <div class="inner-2part">
+                    <h1>Checkout</h1>
+                    <h:dataTable var="cart" value="">
+                        <h:column>
+                            <h:outputText  value="Product"/>
+                        </h:column>
+                        <h:column>
+                            <h:outputText  value="Price "/>
+                        </h:column>
+                        <h:column>
+                            <h:outputText  value="Quantity "/>
+                            
+                        </h:column>
+                        <h:column>
+                            <h:outputText  value="Total"/>
+                        </h:column>
+                    </h:dataTable>  
+                    <h:button value="Checkout" style="color:green" outcome="login" rendered="#{empty request.remoteUser}"/>
+                                    
+                    <h:panelGroup rendered="#{not empty request.remoteUser}">
+                        <h3>Delivery - Correct address</h3>
+                        <p>Choose other address</p>
+                        
+                        <h3>Payment - How would you like to pay</h3>
+                        <input type="checkbox" name="Paymentmethod" value="Visa / Mastercard" checked="checked" />
+                        
+                        <h:form>
+                            <h:panelGrid columns="2" >
+                                <h:outputText value="Cardnumber: " />
+                                <h:inputText id="cardnumber" value="#{paymentservice.cardnumber}"/>
+                                <h:outputText value="Cardholder " />
+                                <h:inputText id="cardholder" value="#{paymentservice.cardHolder}"/>
+                                <h:outputText value="Valid: " />
+                                <h:inputText id="cardvalid" value="#{paymentservice.validUntil}"/>
+                                <h:outputText value="CVC " />
+                                <h:inputText id="cardcvc" value="#{paymentservice.cvc}"/>
+                            </h:panelGrid>
+                            <h:commandButton value="Pay - Complete Order" style="color:green" action="#{paymentservice.doPayment}"/>
+                        </h:form>
+                        
+                        
+                    </h:panelGroup>
+                    
+                    
+                    
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

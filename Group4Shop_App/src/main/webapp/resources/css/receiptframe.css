@@ -6,7 +6,73 @@
         Purpose of the stylesheet follows.
 */
 
-#frame{
+.page{
+    position: relative;
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 2cm;
+    background: #ffffff;
+    border: #red dotted;
+}
+
+.subpage{
+    position: relative;
+    padding: 1cm;
+    height: 29.7cm;
+}
+
+.logo{
+    float: right;
+    width: 5cm;
+    height: 2.5cm;
+    background: #444;
+}
+
+.customerinfo{
+    float:left;
     
+}
+
+.customerinfo h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.productcontent{
+    margin-top: 25%;
+    border: 1px solid;
+    
+    border-color: #444;
+    padding: 3px;
+}
+
+.productcontent h3{
+    font-size: 12px;
+    font-weight: 600;
+}
+    
+
+.contactfooter{
+    width: 90%;
+    position: absolute;
+    bottom: 0cm;
+    margin-bottom: 0px;
+    border-top: #444 1px solid;
+}
+
+.contactfooter h3{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@page{
+    size: A4;
+    margin: 0px;
+}
+@media print {
+    #page{
+        margin: 0px;
+        background: initial;
+    }
 }
 

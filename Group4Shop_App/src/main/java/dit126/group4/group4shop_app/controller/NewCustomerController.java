@@ -6,6 +6,7 @@ import dit126.group4.group4shop.core.UserRoles;
 import dit126.group4.group4shop.core.Users;
 import dit126.group4.group4shop_app.model.Group4Shop;
 import dit126.group4.group4shop_app.view.NewCustomerBackingBean;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -14,7 +15,7 @@ import javax.inject.Named;
  * @author Group4
  */
 @Named("newcustomerController")
-
+@RequestScoped
 public class NewCustomerController {
     
     @Inject

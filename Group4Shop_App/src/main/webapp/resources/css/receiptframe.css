@@ -6,19 +6,24 @@
         Purpose of the stylesheet follows.
 */
 
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+
 .page{
     position: relative;
-    width: 21cm;
-    min-height: 29.7cm;
+    width: 19cm;
+    min-height: 23.7cm;
     padding: 2cm;
     background: #ffffff;
-    border: #red dotted;
 }
 
 .subpage{
     position: relative;
-    padding: 1cm;
-    height: 29.7cm;
+    height: 23.7cm;
+    width: 19cm;
 }
 
 .logo{
@@ -26,6 +31,7 @@
     width: 5cm;
     height: 2.5cm;
     background: #444;
+    margin-right:2cm;
 }
 
 .customerinfo{
@@ -39,7 +45,9 @@
 }
 
 .productcontent{
+    
     margin-top: 25%;
+    margin-right: 2cm;
     border: 1px solid;
     
     border-color: #444;
@@ -55,8 +63,7 @@
 .contactfooter{
     width: 90%;
     position: absolute;
-    bottom: 0cm;
-    margin-bottom: 0px;
+    bottom: -2cm;
     border-top: #444 1px solid;
 }
 

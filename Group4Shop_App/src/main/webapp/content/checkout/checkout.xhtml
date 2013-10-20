@@ -4,7 +4,6 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <link type="text/css" rel="stylesheet" href="/resources/css/receiptframe.css" />
         <title>Check Out!</title>
     </h:head>
     <h:body>
@@ -52,59 +51,9 @@
                     </h:panelGroup>
                     
                 </div>
-                
-                <!-- Hidden receipt builder -->
-                <h:panelGroup rendered="#{null}">
-                <div class="page">
-                    <div class="subpage">
-                        <h1>Receipt</h1>
-                        <p>#3478654 <br/>
-                            2013-04-05</p>
-                        <div class="logo">Webshop</div>
-                        <div class="customerinfo">
-                            <h3> Customer </h3>
-                            <h:dataTable var="#{address}" value="#{currentUserBean.currentAddress}">
-                                <h:column>
-                                    <h:outputText  value="#{currentUserBean.currentUser.firstName} #{currentUserBean.currentUser.lastName} "/>
-                                </h:column>
-                                <h:column>
-                                    <h:outputText  value="#{address.street} #{address.streetNr}"/>
-                                </h:column>
-                                <h:column>
-                                    <h:outputText  value="#{address.postalCode} #{address.region}"/>
-                                </h:column>
-                                <h:column>
-                                    <h:outputText  value="#{address.country}"/>
-                                </h:column>
-                            </h:dataTable>
-                            
-                        </div>
-                        <div class="productcontent">
-                            <table>
-                                <tr>
-                                    <td>Product</td>
-                                    <td>3</td>
-                                    <td>Pris</td>
-                                </tr>
-                                <tr>
-                                    <td>Product2</td>
-                                    <td>32</td>
-                                    <td>Pris2</td>
-                                </tr>
-                                <tr>
-                                    <td class="price">Totalt: 
-                                    </td>
-                                    <td>3000</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="contactfooter">
-                            <h3>Kund: </h3> Company
-                            <h3>Address</h3> Kilgatan
-                        </div>
-                    </div>
-                </div>
-                    </h:panelGroup>
+                <h:form>            <h:commandButton value="Create PDF" action="#{pdfbean.createPDF()}"/>
+</h:form>
+
                 
             </ui:define>
         </ui:composition>

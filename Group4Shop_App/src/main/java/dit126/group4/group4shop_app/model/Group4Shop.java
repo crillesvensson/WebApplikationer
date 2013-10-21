@@ -4,6 +4,7 @@ import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IAddressCatalogue;
 import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IProductCatalogue;
+import dit126.group4.group4shop.core.IProductImageContainer;
 import dit126.group4.group4shop.core.IRolesRegister;
 import dit126.group4.group4shop.core.IUserRolesRegister;
 //import dit126.group4.group4shop.core.IShoppingCart;
@@ -48,6 +49,10 @@ public class Group4Shop implements Serializable{
     
     public IAddressCatalogue getAddressCatalogue(){
         return this.shop.getAddressCatalogue();
+    }
+    
+    public IProductImageContainer getProductImageContainer(){
+        return this.shop.getProductImageConatiner();
     }
     
 //    public IShoppingCart getIShoppingCart(){

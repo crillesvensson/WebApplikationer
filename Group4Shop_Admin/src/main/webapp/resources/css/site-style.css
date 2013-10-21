@@ -522,6 +522,7 @@ background: #9fa8b0;
 /*Input Form ------------------------------------------------------*/
 
 .inputForm input[type=text],
+.inputForm input[type=password],
 .inputForm .inputTextArea{
     font-family: 'Lato', Calibri, Arial, sans-serif;
     font-size: 13px;
@@ -544,17 +545,26 @@ background: #9fa8b0;
     transition: color 0.3s ease-out;
 }
 
-.inputForm input[type=text]:hover ~ i{
+.inputForm input[type=text]:hover ~ i,
+.inputForm input[type=password]:hover ~ i{
     color: #52cfeb;
 }
  
-.inputForm input[type=text]:focus ~ i{
+.inputForm input[type=text]:focus ~ i,
+.inputForm input[type=password]:focus ~ i{
     color: #42A2BC;
 }
  
 .inputForm input[type=text]:focus,
+.inputForm input[type=password]:focus,
 .inputForm .inputTextArea:focus{
     outline: none;
+}
+
+.inputFormText{
+    font-family: 'Verdana';
+    color: #757575;
+    text-align: center;
 }
 
 /*-------------------------------------------------------------------------*/

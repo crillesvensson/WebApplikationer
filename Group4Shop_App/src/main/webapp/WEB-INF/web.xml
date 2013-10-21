@@ -96,7 +96,7 @@
     </context-param>
     <context-param>
         <param-name>pass</param-name>
-        <param-value>admingroup4</param-value>
+        <param-value>group4admin</param-value>
     </context-param>
 
 </web-app>

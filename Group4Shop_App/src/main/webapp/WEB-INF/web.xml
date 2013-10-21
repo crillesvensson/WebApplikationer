@@ -63,7 +63,7 @@
     <security-constraint>
         <web-resource-collection>    
             <web-resource-name>user</web-resource-name>
-            <url-pattern>/content/user/*</url-pattern>
+            <url-pattern>/customer/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>user</role-name>

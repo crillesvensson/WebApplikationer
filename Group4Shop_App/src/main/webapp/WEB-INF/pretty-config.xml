@@ -5,46 +5,46 @@
 
         <!-- Home -->
 	<url-mapping id="home">
-		<pattern value="/home/" />
+		<pattern value="/home" />
 		<view-id value="/index.xhtml" />
 	</url-mapping>
         
         <!-- Products -->
         <url-mapping id="products">
-		<pattern value="/products/" />
+		<pattern value="/products" />
 		<view-id value="/content/products.xhtml" />
 	</url-mapping>
         
         <url-mapping id="products-info">
-		<pattern value="/product/info/" />
+		<pattern value="/product/info" />
 		<view-id value="/content/infoProduct.xhtml" />
 	</url-mapping>
         
         <!-- Blog -->
         
         <url-mapping id="blog">
-		<pattern value="/blog/" />
+		<pattern value="/blog" />
 		<view-id value="/content/blog.xhtml" />
 	</url-mapping>
         
         <!-- Contact -->
         
         <url-mapping id="contact">
-		<pattern value="/contact/" />
+		<pattern value="/contact" />
 		<view-id value="/content/contact.xhtml" />
 	</url-mapping>
         
         <!-- Customer -->
         
         <url-mapping id="customer-home">
-		<pattern value="/customer/home/" />
+		<pattern value="/customer/home" />
 		<view-id value="/content/user/customerhome.xhtml" />
 	</url-mapping>
         
         <!--  Checkout -->
     
         <url-mapping id="checkout">
-		<pattern value="/customer/checkout/" />
+		<pattern value="/checkout" />
 		<view-id value="/content/checkout/checkout.xhtml" />
 	</url-mapping>
     

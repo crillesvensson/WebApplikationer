@@ -19,23 +19,14 @@
                             <h:outputText id="lastname" value="#{currentUserBean.currentUser.lastName}"/> <br/>
                             <h:dataTable var="address" value="#{currentUserBean.currentAddress}">
                                 <h:column>
-                                    <h:outputText value="Street: "/>
-                                    <h:outputText value="#{address.street}"/>
-                                </h:column>
-                                <h:column>
-                                    <h:outputText  value="Street number: "/>
-                                    <h:outputText value="#{address.streetNr}"/>
-                                </h:column>
-                                <h:column>
-                                    <h:outputText  value="Postal Code: "/>
-                                    <h:outputText value="#{address.postalCode}"/>
-                                </h:column>
-                                <h:column>
-                                    <h:outputText  value="City: "/>
-                                    <h:outputText value="#{address.region}"/>
-                                </h:column>
-                                <h:column>
-                                    <h:outputText  value="Country: "/>
+                                    <h:panelGrid>
+                                        <h:outputText value="#{address.street}"/>
+                                        <h:outputText value="#{address.streetNr}"/>
+                                        </h:panelGrid>
+                                    <h:panelGrid>
+                                        <h:outputText value="#{address.postalCode}"/>
+                                        <h:outputText value="#{address.region}"/>
+                                    </h:panelGrid>
                                     <h:outputText value="#{address.country}"/>
                                 </h:column>
                             </h:dataTable>
@@ -61,8 +52,9 @@
                             </table>
                         </div>
                         <div class="contactfooter">
-                            <h3>Kund: </h3> Company
-                            <h3>Address</h3> Kilgatan
+                            <h3>Group4 </h3> 
+                            Åvägen 41250 <br/>
+                            Göteborg<br/>
                         </div>
                     </div>
                 </div>

@@ -26,7 +26,7 @@ public class CurrentUserBackingBean implements Serializable{
     @Inject
     private Group4Shop shop;
     
-    private String username =  FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
+    private String username;  
     
     /*private String firstname;
     private String lastname;
@@ -40,6 +40,7 @@ public class CurrentUserBackingBean implements Serializable{
     private List<Address> currentAddress;
 
     public void initUser(){
+        this.username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
         this.currentuser = shop.getUserRegister().find(username);
         this.currentAddress = shop.getAddressCatalogue().find(username);
         

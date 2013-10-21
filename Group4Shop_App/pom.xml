@@ -65,6 +65,7 @@
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>4.0</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.ocpsoft.rewrite</groupId>

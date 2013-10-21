@@ -29,8 +29,6 @@ public class LoginController {
         ExternalContext externalContext = context.getExternalContext();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
-            System.out.println("EMIL TETSRA OCJ DEBUGA: " + loginBackingBean.getPassword() + "  " + loginBackingBean.getUsername());
-            
             request.login(loginBackingBean.getUsername(), loginBackingBean.getPassword());
             
             currentUserBackingBean.initUser();

@@ -1,0 +1,51 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+        <!-- Home -->
+	<url-mapping id="home">
+		<pattern value="/home/" />
+		<view-id value="/index.xhtml" />
+	</url-mapping>
+        
+        <!-- Products -->
+        <url-mapping id="products">
+		<pattern value="/products/" />
+		<view-id value="/content/products.xhtml" />
+	</url-mapping>
+        
+        <url-mapping id="products-info">
+		<pattern value="/product/info/" />
+		<view-id value="/content/infoProduct.xhtml" />
+	</url-mapping>
+        
+        <!-- Blog -->
+        
+        <url-mapping id="blog">
+		<pattern value="/blog/" />
+		<view-id value="/content/blog.xhtml" />
+	</url-mapping>
+        
+        <!-- Contact -->
+        
+        <url-mapping id="contact">
+		<pattern value="/contact/" />
+		<view-id value="/content/contact.xhtml" />
+	</url-mapping>
+        
+        <!-- Customer -->
+        
+        <url-mapping id="customer-home">
+		<pattern value="/customer/home/" />
+		<view-id value="/content/user/customerhome.xhtml" />
+	</url-mapping>
+        
+        <!--  Checkout -->
+    
+        <url-mapping id="checkout">
+		<pattern value="/customer/checkout/" />
+		<view-id value="/content/checkout/checkout.xhtml" />
+	</url-mapping>
+    
+</pretty-config>

@@ -1,55 +1,11 @@
+/*GLOBAL//////////////////*/
 body{
      background-image: url("#{resource['img:background-dark.jpg']}"); 
 }
+/*//////////////////////////*/
 
-#subheader p{
-    color: white;
-    font-weight: bold;
-    text-shadow: 1px 1px #1f272b;
-}
 
-#header{
-
-}
-
-#menu{
-
-}
-
-#content-header h2{
-    font-family: 'Verdana';
-    font-size: 35px;
-    text-align: center;
-    color: #757575;
-}
-
-#news-header h2{
-    padding-top: 10%;
-    font-family: 'Verdana';
-    font-size: 35px;
-    color: #757575;
-}
-
-#product-info-header h2{
-    padding-top: 3%;
-    font-family: 'Verdana';
-    font-size: 35px;
-    color: #757575;
-}
-
-#customers-header h2{
-    font-family: 'Verdana';
-    font-size: 35px;
-    text-align: center;
-    color: #757575;
-}
-
-#purchase-header h2{
-    font-family: 'Verdana';
-    font-size: 35px;
-    text-align: center;
-    color: #757575;
-}
+/********************************Template***********************************/
 
 #subheader{
     color: #9fa8b0;
@@ -76,6 +32,348 @@ body{
     border-radius: 5px;
     background: linear-gradient(#eeefef, #ffffff 10%);
 }
+
+/**********************************END TEMPLATE*********************************************/
+
+
+/*********************************PRODUCT***********************************/
+
+/* Add Product--------------------------------*/
+
+#content-header h2{
+    font-family: 'Verdana';
+    font-size: 35px;
+    text-align: center;
+    color: #757575;
+}
+
+
+/* Show Product--------------------------------*/
+#product-info-header h2{
+    padding-top: 3%;
+    font-family: 'Verdana';
+    font-size: 35px;
+    color: #757575;
+}
+
+.product-info-form{
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.product-info-text{
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    margin-top: 30px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    color: #757575;   
+}
+
+/* Edit Product ---------------------------------------*/
+
+#edit-header h2{
+    font-family: 'Verdana';
+    font-size: 35px;
+    text-align: center;
+    color: #757575;
+}
+
+
+/*Delete Product--------------------------------------*/
+
+#delete-header h2{
+    font-family: 'Verdana';
+    font-size: 35px;
+    text-align: center;
+    color: #757575;
+}
+
+
+/* Products  -----------------------------------------*/
+
+.customStyle.ui-datatable{
+    margin-left: 5%;
+    width: 90%;
+}
+
+.customStyle.ui-datatable .ui-datatable-header{
+background: none !important;
+
+}
+
+.customStyle.ui-datatable .ui-datatable-header{
+background: none !important;
+
+}
+
+.customStyle.ui-datatable .ui-datatable-even{
+    color: #9fa8b0;
+    height: 45px;
+    width: 120px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 5px solid #eeefef;
+    background: #232B30; /* old browsers */
+    background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#3D4850), color-stop(4%,#313d45), color-stop(100%,#232B30)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D4850', endColorstr='#232B30',GradientType=0 ); /* ie */
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* CSS3 */
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Firefox */
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Safari, Chrome */ 
+
+}
+
+.customStyle.ui-datatable .ui-datatable-odd{
+    color: #9fa8b0;
+    height: 45px;
+    width: 120px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 5px solid #eeefef;
+    background: #232B30; /* old browsers */
+    background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#3D4850), color-stop(4%,#313d45), color-stop(100%,#232B30)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D4850', endColorstr='#232B30',GradientType=0 ); /* ie */
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* CSS3 */
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Firefox */
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Safari, Chrome */ 
+
+}
+
+.customStyle.ui-datatable .ui-datatable-odd.ui-state-hover{
+background: #F4E7C1 ;
+
+}
+
+.customStyle.ui-datatable .ui-datatable-even.ui-state-hover{
+background: #F4E7C1 ;
+
+}
+
+.customStyle.ui-datatable .ui-datatable-even.ui-state-highlight{
+background: #fff9e5 ;
+
+}
+
+.customStyle.ui-datatable .ui-datatable-odd.ui-state-highlight{
+background: #fff9e5 ;
+
+}
+
+.customStyle.ui-datatable .ui-datatable-data-empty td {
+color:red;
+font-weight:normal;
+}
+.ui-datatable.customStyle th {
+    color: #9fa8b0;
+    height: 45px;
+    width: 120px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 16px;
+    font-family:"Times New Roman", Times, serif;
+    font-weight:normal;
+    font-style:normal;
+    background: #232B30; /* old browsers */
+    background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#3D4850), color-stop(4%,#313d45), color-stop(100%,#232B30)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D4850', endColorstr='#232B30',GradientType=0 ); /* ie */
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* CSS3 */
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Firefox */
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Safari, Chrome */
+}
+
+
+.customStyle.ui-datatable .ui-expanded-row-content{
+background: #9fa8b0;
+}
+
+#add-product-button {
+    width: 110px;
+}
+
+/*******************************END PRODUCT*************************************/
+
+
+/*******************************NEWS*************************************/
+/* Send News---------------------------------*/
+
+#news-header h2{
+    padding-top: 10%;
+    font-family: 'Verdana';
+    font-size: 35px;
+    color: #757575;
+}
+
+/*******************************END NEWS*************************************/
+
+
+/*******************************PURCHASE*************************************/
+
+/* Purchases------------------------------------*/
+
+#purchase-header h2{
+    font-family: 'Verdana';
+    font-size: 35px;
+    text-align: center;
+    color: #757575;
+}
+
+.pAction{
+    width: 150px;
+}
+
+
+/* Customer Purchase -----------------------------------------------------------*/
+#purchase-customer-info h2{
+    font-family: 'Verdana';
+    color: #757575;
+}
+
+#purchase-order-info h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    color: #757575;
+}
+
+#purchase-order-info p{
+    font-family: 'Verdana';
+    color: #757575;
+}
+
+#order-items-header h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    text-align: center;
+    color: #757575;
+    margin-top: 10px;
+}
+
+/*******************************END PURCHASE*************************************/
+
+
+/*******************************CUSTOMER*************************************/
+
+
+
+/*Show Customer--------------------------------------------------*/
+
+#customer-info h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    color: #757575;
+}
+
+#customer-info p{
+    font-family: 'Verdana';
+    color: #757575;
+}
+
+
+
+#customer-address h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    color: #757575;
+}
+
+#customer-address p{
+    font-family: 'Verdana';
+    color: #757575;
+}
+
+#customer-purchase-header h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    text-align: center;
+    color: #757575;
+}
+
+
+/* Customers  ----------------------------------------------*/
+
+.email{
+    padding-right: 5px;
+    width: 200px;
+}
+
+.fname{
+    padding-left: 5px;
+    width: 200px;
+}
+
+.lname{
+    width: 200px;
+}
+
+.showc{
+    width: 200px;
+}
+
+#customers-header h2{
+    font-family: 'Verdana';
+    font-size: 35px;
+    text-align: center;
+    color: #757575;
+}
+
+
+/*******************************END CUSTOMER*************************************/
+
+/*******************************ADMIN*************************************/
+
+#admins-header h2{
+    font-family: 'Verdana';
+    font-size: 35px;
+    text-align: center;
+    color: #757575;
+}
+
+#new-admin-header h2{
+    font-family: 'Verdana';
+    font-size: 35px;
+    text-align: center;
+    color: #757575;
+}
+
+/*******************************END ADMIN*************************************/
+
+/*******************************RATING*************************************/
+
+/* Product Ratings------------------------------------*/
+
+#total-rating h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    color: #757575;
+}
+
+#rating-info h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    color: #757575;
+}
+
+#rating-info p{
+    font-family: 'Verdana';
+    color: #757575;
+}
+
+#rating-header h2{
+    font-family: 'Verdana';
+    font-size: 20px;
+    text-align: center;
+    color: #757575;
+}
+
+/*******************************END RATING*************************************/
+
+
+
+/* Button Style --------------------------------------------------*/
 
 .button {
     outline: 0;
@@ -118,33 +416,6 @@ body{
     -moz-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Firefox */
     -webkit-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Safari, Chrome */
     box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* CSS3 */
-}
-
-#add-product-button {
-    width: 110px;
-}
-
-.order-table{   
-	border-collapse:collapse;
-        margin: 15px;
-}
-
-.action {
-    
-   width: 210px;
-
-}
-
-.id{
-    padding: 5px;
-}
-
-.fname{
-    padding-left: 5px;
-}
-
-.pAction{
-    width: 150px;
 }
 
 .table-button {
@@ -191,6 +462,16 @@ body{
     box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* CSS3 */
 }
 
+/* -------------------------------------------------------------------------------*/
+
+
+/* ALL TABLES ----------------------------------------------------*/
+
+.order-table{   
+	border-collapse:collapse;
+        width: 100%;
+}
+
 .order-table-header{
     color: #9fa8b0;
     height: 45px;
@@ -235,6 +516,11 @@ body{
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Safari, Chrome */
 }
 
+/* ------------------------------------------------------------------------- */
+
+
+/*Input Form ------------------------------------------------------*/
+
 .inputForm input[type=text],
 .inputForm .inputTextArea{
     font-family: 'Lato', Calibri, Arial, sans-serif;
@@ -258,122 +544,6 @@ body{
     transition: color 0.3s ease-out;
 }
 
-.product-info-form{
-    margin-left: 40%;
-    margin-top: 5%;
-}
-
-.product-info-text{
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    font-size: 25px;
-    font-weight: 400;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-    margin-top: 30px;
-    margin-bottom: 35px;
-    padding-bottom: 25px;
-    color: #757575;
-  
-    
-}
-
-#customer-purchase-header h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    text-align: center;
-    color: #757575;
-}
-
-#rating-header h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    text-align: center;
-    color: #757575;
-}
-
-#edit-header h2{
-    font-family: 'Verdana';
-    font-size: 35px;
-    text-align: center;
-    color: #757575;
-}
-
-#delete-header h2{
-    font-family: 'Verdana';
-    font-size: 35px;
-    text-align: center;
-    color: #757575;
-}
-
-#order-items-header h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    text-align: center;
-    color: #757575;
-    margin-top: 10px;
-}
-
-#customer-info h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    color: #757575;
-}
-
-#customer-info p{
-    font-family: 'Verdana';
-    color: #757575;
-}
-
-#rating-header h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    text-align: center;
-    color: #757575;
-}
-
-#total-rating h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    color: #757575;
-}
-
-#rating-info h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    color: #757575;
-}
-
-#rating-info p{
-    font-family: 'Verdana';
-    color: #757575;
-}
-
-#customer-address h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    color: #757575;
-}
-
-#customer-address p{
-    font-family: 'Verdana';
-    color: #757575;
-}
-
-#purchase-customer-info h2{
-    font-family: 'Verdana';
-    color: #757575;
-}
-
-#purchase-order-info h2{
-    font-family: 'Verdana';
-    font-size: 20px;
-    color: #757575;
-}
-
-#purchase-order-info p{
-    font-family: 'Verdana';
-    color: #757575;
-}
-
 .inputForm input[type=text]:hover ~ i{
     color: #52cfeb;
 }
@@ -387,5 +557,15 @@ body{
     outline: none;
 }
 
+/*-------------------------------------------------------------------------*/
 
 
+/*****************INDEX**********************/
+
+#index-header p{
+    font-family: 'Verdana';
+    font-size: 20px;
+    color: #757575;
+}
+
+/*****************END INDEX**********************/

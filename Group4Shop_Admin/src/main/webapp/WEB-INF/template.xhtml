@@ -18,7 +18,7 @@
         <h:outputScript library="js" name="jquery-ui-1.10.2.custom.js" target="head"/>
         <h:outputScript library="js" name="jquery-ui-1.10.2.custom.min.js" target="head"/>
         <h:outputScript library="js" name="jquery.js" target="head"/>
-        <title>Group 4 Administration</title>
+        <title>Group 4</title>
     </h:head>
     <h:body>
                 <!--<h:form>
@@ -26,20 +26,23 @@
                 </h:form>-->
                 
                 <div id="header">
-                    <h1>Administrate webshop</h1>
+                    <h1>Administrate web-shop</h1>
                         <h:form id="signOut">
                             <h:commandLink action="#{loginController.logout()}" value="Sign out" styleClass="signOut"/>
                         </h:form>
                 </div>
                 
-                <div id="menu">  
-                    <ul>
+                <div id="menu"> 
+                    <div id="sub-menu">
+                    <ul id="menu-list">
                         <li><h:button outcome="home" value="Home" class="button" /></li> 
                         <li><h:button outcome="products" value="Products" class="button" /></li>  
-                        <li><h:button outcome="customers" value="Customer" class="button" /></li>
+                        <li><h:button outcome="customers" value="Customers" class="button" /></li>
                         <li><h:button outcome="purchases" value="Purchases" class="button" /></li>
                         <li><h:button outcome="news" value="News" class="button" /></li>
+                        <li><h:button outcome="admins" value="Admins" class="button" /></li>
                     </ul>
+                    </div>
                 </div>
                 
                 <div id="subheader">

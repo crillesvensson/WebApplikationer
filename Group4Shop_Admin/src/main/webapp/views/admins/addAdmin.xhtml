@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content">
+                <div id="new-admin-header" align="center">
+                    <h2>Add new admin</h2>
+                </div>
+                
+                <h:form enctype="multipart/form-data" class="inputForm">
+                    <h:panelGrid columns="1" id="panelGrid">
+                        <h:inputText id="email" value="#" class="inputText"/>
+                        <p:watermark for="email" value="E-mail" />
+                        <h:inputText id="fname" value="#" class="inputText"/>
+                        <p:watermark for="fname" value="First Name" />
+                        <h:inputText id="lname" value="#" class="inputText"/>
+                        <p:watermark for="lname" value="Last Name" />
+                        <h:inputText id='password' value="#" class='inputText'/>
+                        <p:watermark for="password" value="Password" />
+                    </h:panelGrid>
+                    <h:button outcome="products" value="Cancel" styleClass="button"/>                   
+                    <h:commandButton actionListener="#" action="products" value="Save"  styleClass="button"/>
+                </h:form>
+                
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

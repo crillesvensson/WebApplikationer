@@ -8,12 +8,15 @@
          
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
-                <div id="customers-header" align="center">
-                    <h2>Customers</h2>
+                <div id="admins-header" align="center">
+                    <h2>Admins</h2>
+                    <h:button outcome="addAdmin" value="Add Admin" class="button" id="add-product-button" />
                 </div>
                 
-                 <h:form id="customers-table">
-                       <h:dataTable var="u" value="#{customers.customers}"
+                
+                
+                 <h:form id="admins-table">
+                     <h:dataTable var="u" value="#{customers.admins}"
                         styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row"
@@ -41,7 +44,7 @@
                                     <h:outputText  value=""/>
                                 </f:facet>
                                 <h:commandButton actionListener="#{showcustomer.selectedCustomer(u.email)}"  
-                                                 action="Show" value="Show" styleClass="button"/>
+                                                 action="showadmin" value="Show" styleClass="button"/>
                             </h:column>
                         </h:dataTable>
  

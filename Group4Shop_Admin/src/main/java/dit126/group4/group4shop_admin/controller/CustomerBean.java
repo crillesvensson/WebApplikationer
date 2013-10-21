@@ -28,12 +28,23 @@ public class CustomerBean implements Serializable{
     
     
    public List<Users> getCustomers(){
-        int count = group4shop.getUserRegister().getCount();
-        List<Users> usersList = new ArrayList<>();
-        if(count > 0){
-            usersList = group4shop.getUserRegister().getRange(0, count);
-        }
-        System.out.println(usersList.get(0).getEmail());
-        return usersList;
+        return getUsers("user");
     }
+   
+   public List<Users> getAdmins(){
+       return getUsers("admin");
+   }
+   
+   
+   private List<Users> getUsers(String role){
+       int count = group4shop.getUserRegister().getCount();
+        List<Users> chosenUsers = new ArrayList<>();
+        if(count > 0){
+            for(Users u : group4shop.getUserRegister().getRange(0, count)){
+                if(group4shop.getUserRolesRegister().get(u.getEmail()).getRole().getRolename().equals(role))
+                    chosenUsers.add(u);
+            }  
+        }
+        return chosenUsers;
+   }
 }

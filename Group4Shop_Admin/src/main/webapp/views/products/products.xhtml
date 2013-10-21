@@ -14,90 +14,37 @@
                     <h:button outcome="addProducts" value="Add Product" class="button" id="add-product-button" />
                     
                 </div>
-
-                 <h:form>
-                   <div id="product-table" align="center">
-                        <h:dataTable var="p" value="#{products.products}"
-                        styleClass="order-table"
-    			headerClass="order-table-header"
-    			rowClasses="order-table-odd-row,order-table-even-row"
-                        columnClasses="id,name, price, rating, action">
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Id"/>
-                                </f:facet>
-                                <h:outputText value="#{p.id}" styleClass="table-entry"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Name"/> 
-                                </f:facet>
-                                <h:outputText value="#{p.name}" styleClass="table-entry"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Price"/>
-                                </f:facet>
-                                <h:outputText value="#{p.price}" styleClass="table-entry"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Category"/>
-                                </f:facet>
-                                <h:outputText value="#{p.category}" styleClass="table-entry"/>
-                            </h:column>
-                            <h:column>
-                               <f:facet name="header">
-                                    <h:outputText  value="Rating" class="formTextCustom"/>
-                                </f:facet>
-                                <p:rating value="#{ratings.getRating(p.id)}" readonly="true" styleClass="table-entry"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value=""/>
-                                </f:facet>
+                     
+                     <h:form>
+                    <p:dataTable id="productsDT" var="p" value="#{products.products}" paginator="true"
+                                 styleClass="customStyle" paginatorAlwaysVisible="false" 
+                                 rowStyleClass="order-table-odd-row,order-table-even-row"
+                                 emptyMessage="No products found">
+                        <p:column headerText="Id" style="width: 40px">
+                            <h:outputText value="#{p.id}"/>
+                        </p:column>
+                        <p:column id="nameColumn" filterBy="name" headerText="Name">
+                            <h:outputText value="#{p.name}"/>
+                        </p:column>
+                        <p:column headerText="Price" style="width: 90px">
+                            <h:outputText class="text-right" value="#{p.price}"/>
+                        </p:column>
+                        <p:column  filterBy="category"  headerText="Category">
+                            <h:outputText value="#{p.category}"/>
+                        </p:column>
+                        <p:column headerText="Rating" style="width: 89px">
+                            <p:rating value="#{ratings.getRating(p.id)}" readonly="true"/>      
+                        </p:column>
+                        <p:column style="width: 250px">
                                 <h:commandButton actionListener="#{ratings.selectedProduct(p.id)}"      
-                                                 action="productRating" value="Ratings" styleClass="table-button"/>
+                                                 action="productRating" value="Ratings" styleClass="button"/>
                                 <h:commandButton actionListener="#{edit.selectedProduct(p.id)}" 
                                                  action="edit" value="Edit" styleClass="table-button" />
                                 <h:commandButton actionListener="#{delete.selectedProduct(p.id)}"      
                                                  action="delete" value="Delete" styleClass="table-button"/>
-                            </h:column>
-                        </h:dataTable>
-                    </div>
-                     </h:form>
-                     
-                     <!--<h:form>  
-  
-                         <p:dataTable id="dataTable" var="p" value="#{products.products}" widgetVar="productTable"   
-                        emptyMessage="No cars found with given criteria">  
-                        <f:facet name="header">  
-                            <p:outputPanel>  
-                                <h:outputText value="Search all fields:" />  
-                                <p:inputText id="globalFilter" onkeyup="productTable.filter()" style="width:150px" />  
-                            </p:outputPanel>  
-                            </f:facet>
-  
-                        <p:column id="modelColumn" filterBy="model"   
-                                headerText="Id" footerText="contains"  
-                                filterMatchMode="contains">  
-                            <h:outputText value="#{p.id}" />  
-                        </p:column>  
-  
-                        <p:column id="yearColumn" filterBy="year"  
-                            headerText="Name" footerText="startsWith">  
-                            <h:outputText value="#{p.name}" />  
-                        </p:column>  
-  
-                        <p:column id="manufacturerColumn" filterBy="category"   
-                                headerText="Category" footerText="exact"  
-                                filterOptions="#{products.createFilterOptions}"  
-                                     filterMatchMode="exact">  
-                            <h:outputText value="#{p.category}" />  
-                        </p:column>   
-                        </p:dataTable>  
-      
-                        </h:form>-->
+                       </p:column>
+                    </p:dataTable>
+                </h:form>
                 
             </ui:define>
         </ui:composition>

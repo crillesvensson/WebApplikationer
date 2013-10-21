@@ -33,4 +33,17 @@ public class UserRolesRegister implements IUserRolesRegister{
             em.close();
         }
     }
+    
+    public UserRoles get(String email){
+        EntityManager em = this.emf.createEntityManager();
+        UserRoles ur = null;
+        try{
+            em.getTransaction().begin();
+            ur = em.find(clazz, email);
+            em.getTransaction().commit();
+        }finally{
+            em.close();
+            return ur;
+        }
+    }
 }

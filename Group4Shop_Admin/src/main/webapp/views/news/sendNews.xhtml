@@ -12,8 +12,8 @@
             <ui:define name="content"> 
                 <div id="news-header" align="center">
                         <h2>Send news</h2>
-                </div>
                 
+                </div>
                 <h:form class="inputForm">               
                     <h:panelGrid columns="2">                      
                         <h:inputText id="s" value="#{contactBean.subject}" class="inputText"/>
@@ -22,7 +22,8 @@
                         <p:watermark for="m" value="Message" />
                     </h:panelGrid>
                     <h:commandButton actionListener="#{emailController.sendEmail}" value="Send" action="Submit" class="button"/>
-                </h:form>            
+                </h:form> 
+                        
             </ui:define>
         </ui:composition>
     </h:body>

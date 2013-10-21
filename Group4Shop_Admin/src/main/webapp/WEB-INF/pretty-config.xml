@@ -4,7 +4,12 @@
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
 
-    
+        <!-- Sign in -->              
+        <url-mapping id="sign-in">
+		<pattern value="/sign-in/" />
+		<view-id value="/Group4Shop_Admin/views/login/login.xhtml" />
+	</url-mapping>
+        
         <!-- Home -->
 	<url-mapping id="home">
 		<pattern value="/home/" />
@@ -82,5 +87,12 @@
                 <pattern value="/products/ratings/"/>
                 <view-id value="/views/ratings/productRatings.xhtml"/>
         </url-mapping>
+        
+        <!-- Admins -->
+        <url-mapping id="admins">
+                <pattern value="/admins/"/>
+                <view-id value="/views/admins/admins.xhtml"/>
+        </url-mapping>
+        
 
 </pretty-config>

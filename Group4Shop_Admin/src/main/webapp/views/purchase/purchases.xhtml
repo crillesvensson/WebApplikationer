@@ -12,8 +12,7 @@
                     <h2>Purchases</h2>
                 </div>
 
-                 <h:form>
-                   <div id="product-table" align="center">
+                 <h:form id="purchases-table">
                        <h:dataTable var="po" value="#{purchase.purchaseOrdersNotHandled}"
                         styleClass="order-table"
     			headerClass="order-table-header"
@@ -38,16 +37,12 @@
                                 <h:outputText value="#{po.user.email}"/>
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Action"/>
-                                </f:facet>
                                 <h:commandButton actionListener="#{purchase.handlePurchaseOrder(po.id)}"      
                                                  action="handle" value="Handled" styleClass="table-button" />
                                 <h:commandButton actionListener="#{purchase.selectedPurchase(po.id)}" 
                                                  action="showUnhandledPurchase" value="Show" styleClass="table-button"/>
                             </h:column>
                         </h:dataTable>
-                    </div>
                 </h:form>
             </ui:define>
         </ui:composition>

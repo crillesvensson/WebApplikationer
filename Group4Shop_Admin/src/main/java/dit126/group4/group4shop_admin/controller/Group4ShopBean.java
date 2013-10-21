@@ -13,6 +13,7 @@ import dit126.group4.group4shop.core.IProductCatalogue;
 import dit126.group4.group4shop.core.IProductImageContainer;
 import dit126.group4.group4shop.core.IRatingCatalogue;
 import dit126.group4.group4shop.core.IUserRegister;
+import dit126.group4.group4shop.core.IUserRolesRegister;
 import java.io.Serializable;
 import javax.inject.Singleton;
 
@@ -56,6 +57,10 @@ public class Group4ShopBean implements Serializable{
    
    public IAddressCatalogue getAddressCatalogue(){
        return this.group4shop.getAddressCatalogue();
+   }
+   
+   public IUserRolesRegister getUserRolesRegister(){
+       return this.group4shop.getUserRolesRegister();
    }
             
     

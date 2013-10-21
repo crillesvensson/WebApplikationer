@@ -32,6 +32,10 @@
             <from-outcome>login</from-outcome>
             <to-view-id>/views/login/login.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>admins</from-outcome>
+            <to-view-id>/views/admins/admins.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -119,6 +123,16 @@
         <from-view-id>/views/ratings/productRatings.xhtml</from-view-id>
        <navigation-case>
            <from-outcome>showUser</from-outcome>
+           <to-view-id>/views/customer/showCustomer.xhtml</to-view-id>
+           <redirect/> 
+       </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/views/admins/admins.xhtml</from-view-id>
+       <navigation-case>
+           <from-outcome>showadmin</from-outcome>
            <to-view-id>/views/customer/showCustomer.xhtml</to-view-id>
            <redirect/> 
        </navigation-case>

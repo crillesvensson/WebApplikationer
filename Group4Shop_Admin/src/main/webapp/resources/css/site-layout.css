@@ -1,3 +1,4 @@
+/*****************TEMPLATE**********************/
 #header{
     width: 70%;
     margin: 0 auto;
@@ -28,7 +29,6 @@
     width: 70%;
     margin: 0 auto;
     margin-top: 2%;
-    margin: 0 auto;
 }
 
 #menu ul{
@@ -47,6 +47,20 @@
     margin: 0 auto;
 }
 
+
+#menu-list{
+    margin:0;
+    padding: 0;
+    width: 80%;
+    margin-left: 10%;
+ 
+}
+
+#sub-menu{
+    width: 80%;
+    margin-left: 10%;
+}
+
 #content{
     width: 70%;
     margin: 0 auto;
@@ -55,21 +69,11 @@
     padding-bottom: 50px;
 }
 
-.inputForm{
-    margin-top: -25px;
-    margin-left: 35%;
-}
+/*****************END TEMPLATE**********************/
 
-.inputForm input[type=button],
-.inputForm input[type=commanButton]{
-    margin-top: 4%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
+/*****************CUSTOMER**********************/
 
-#margin-fix{
-    margin-top: 3%;
-}
+/* Show Customer --------------------------------*/
 
 #customer-info{
     padding-top: 5px;
@@ -78,6 +82,79 @@
     width: 200px;
 }
 
+#customer-address{
+    margin-left: 8%;
+    margin-top: 10%;
+    width: 200px;
+}
+
+#customer-purchase-orders{
+    margin-left: 40%;
+    margin-top: -400px;
+    width: 500px;
+    height: 450px;
+}
+
+
+/* Customers -------------------------------------------------------*/
+
+#customers-table{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#customer-data-table{
+    width: 100%;
+}
+
+
+/*****************END CUSTOMER**********************/
+
+#admins-table{
+    width: 90%;
+    margin-left: 5%;
+}
+
+/*****************ADMIN**********************/
+
+/*****************END ADMIN**********************/
+
+/*****************PURCHASE**********************/
+
+
+/* Customer Purchase-----------------------------*/
+#purchase-customer-info{
+    padding-top: 5px;
+    margin-top: 3%;
+    margin-left: 8%;
+    width: 200px;
+}
+
+#purchase-order-info{
+    margin-left: 8%;
+    margin-top: 10%;
+    width: 200px;
+}
+
+#order-items{
+    margin-left: 40%;
+    margin-top: -270px;
+    width: 500px;
+    height: 450px;
+}
+
+
+/*Purchases -------------------------------------------------------*/
+#purchases-table{
+    width: 90%;
+    margin-left: 5%;
+}
+
+/*****************END PURCHASE**********************/
+
+/*****************RATING**********************/
+
+/*Product Ratings-------------------------------*/
 #total-rating{
     padding-top: 5px;
     margin-top: 3%;
@@ -91,47 +168,53 @@
     width: 200px;
 }
 
-#purchase-customer-info{
-    padding-top: 5px;
-    margin-top: 3%;
-    margin-left: 8%;
-    width: 200px;
-}
-
-#customer-address{
-    margin-left: 8%;
-    margin-top: 10%;
-    width: 200px;
-}
-
-#purchase-order-info{
-    margin-left: 8%;
-    margin-top: 10%;
-    width: 200px;
-}
-
-#customer-purchase-orders{
-    margin-left: 40%;
-    margin-top: -400px;
-    width: 500px;
-    height: 450px;
-    border-left: 1px solid black;
-}
-
 #product-ratings-table{
     margin-left: 40%;
     margin-top: -275px;
     width: 500px;
     height: 450px;
-    border-left: 1px solid black;
 }
 
-#order-items{
+/*****************END RATING**********************/
+
+/*****************NEWS**********************/
+
+/*Send news*/
+#send-news{
     margin-left: 40%;
-    margin-top: -270px;
-    width: 500px;
-    height: 450px;
-    border-left: 1px solid black;
+}
+
+/*****************END NEWS**********************/
+
+/*Input Form------------------------------------------*/
+.inputForm{
+    margin-top: -25px;
+    margin-left: 35%;
+}
+
+.inputForm input[type=button],
+.inputForm input[type=commanButton]{
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 
+/*Margin fix------------*/
+#margin-fix{
+    margin-top: 3%;
+}
+
+
+/*****************INDEX**********************/
+
+#index-header{
+    margin-top: 3%;
+}
+
+#index-header p{
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+/*****************END INDEX**********************/

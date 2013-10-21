@@ -6,14 +6,20 @@ package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Product;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.component.UIColumn;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
+import org.primefaces.model.SortOrder;
 
 /**
  *
@@ -25,7 +31,6 @@ public class ProductBean implements Serializable{
     
     
     private final static String[] categories = {"Other", "Pants", "Shirts"};
-    
     @Inject
     private Group4ShopBean group4shop;
     
@@ -34,7 +39,7 @@ public class ProductBean implements Serializable{
     
     @PostConstruct
     public void post() {
-
+        //buildSortOrder();
     }
     
     public List<Product> getProducts(){
@@ -42,6 +47,20 @@ public class ProductBean implements Serializable{
         List<Product> productList = group4shop.getProductCatalogue().getRange(0, count);     
         return productList;
     } 
+    
+    /*     /*
+     * method to build initial sort order for multisort
+     */
+   /* private void buildSortOrder() {
+        UIViewRoot viewRoot =  FacesContext.getCurrentInstance().getViewRoot();
+        UIComponent column = viewRoot.findComponent("productsDT:nameColumn"); 
+
+        SortMeta sm1 = new SortMeta();
+        sm1.setSortBy((org.primefaces.component.api.UIColumn)(UIColumn)column);
+        sm1.setSortField("nameColumn");
+        sm1.setSortOrder(SortOrder.DESCENDING);
+        preSortOrder.add(sm1);          
+    }*/
     
  
     
@@ -68,5 +87,7 @@ public class ProductBean implements Serializable{
   
         return null;  
     }
+    
+    
     
 }

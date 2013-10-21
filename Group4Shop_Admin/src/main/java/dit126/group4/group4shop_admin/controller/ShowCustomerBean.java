@@ -36,6 +36,9 @@ public class ShowCustomerBean implements Serializable{
         List<Address> addresses = group4shop.get().getAddressCatalogue().find(user.getEmail());
         if(!addresses.isEmpty())
             address = addresses.get(0);
+        else{
+            address = null;
+        }
         this.email = user.getEmail();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();

@@ -10,43 +10,44 @@
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content"> 
                 <div class="inner-2part"> 
-                    <h1>Greetings!</h1>
+                    
+                    <h1>Personal information</h1>
+                    <p> On this page you can do changes to your address:es <br/> 
+                        
+                    </p>
                     
                     <h:dataTable var="user" value="#{currentUserBean.currentUser}">
                         <h:column>
-                            <h:outputText  value="Name: "/>
-                            <h:outputText value="#{user.firstName}"/>
+                            <h:panelGrid columns="2"> 
+                                <h:outputText value="#{user.firstName}"/>
+                                <h:outputText value="#{user.lastName}"/>
+                            </h:panelGrid>
+                            <h:panelGrid>
+                                <h:outputText value="#{user.email}"/>
+                            </h:panelGrid>
                         </h:column>
-                        <h:column>
-                            <h:outputText  value="Lastname: "/>
-                            <h:outputText value="#{user.lastName}"/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Email: "/>
-                            <h:outputText value="#{user.email}"/>
-                        </h:column>
+                        
                     </h:dataTable>  
-                    <h3>Address</h3>
+                    <h4>Address</h4>
                     <h:dataTable var="address" value="#{currentUserBean.currentAddress}">
                         <h:column>
+                            <h:panelGrid columns="2">
                             <h:outputText  value="Street: "/>
                             <h:outputText value="#{address.street}"/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Street number: "/>
+                        
+                            
+                            <h:outputText  value="Street nr: "/>
                             <h:outputText value="#{address.streetNr}"/>
-                        </h:column>
-                        <h:column>
+                        
                             <h:outputText  value="Postal Code: "/>
                             <h:outputText value="#{address.postalCode}"/>
-                        </h:column>
-                        <h:column>
+                       
                             <h:outputText  value="City: "/>
                             <h:outputText value="#{address.region}"/>
-                        </h:column>
-                        <h:column>
+                        
                             <h:outputText  value="Country: "/>
                             <h:outputText value="#{address.country}"/>
+                            </h:panelGrid>
                         </h:column>
                     </h:dataTable>  
                     

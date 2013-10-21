@@ -26,7 +26,7 @@
                             <h:outputText  value="Total"/>
                         </h:column>
                     </h:dataTable>  
-                    <h:button value="Checkout" style="color:green" outcome="login" rendered="#{empty request.remoteUser}"/>
+                    <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
                     
                     <h:panelGroup rendered="#{not empty request.remoteUser}">
                         <h3>Delivery - Correct address</h3>

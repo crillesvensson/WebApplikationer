@@ -34,7 +34,6 @@ public class ProductsBB implements Serializable{
 
     @Inject
     private Group4Shop shop;
-    private String productfilter = "all";
     private List<SortMeta> preSortOrder = new ArrayList();
     
     @PostConstruct
@@ -62,14 +61,7 @@ public class ProductsBB implements Serializable{
         return preSortOrder;
     }
     
-     public void setProductfilter(String filter){
-        this.productfilter = filter;
-    }
-    
-    
-    public String getProductfilter(){
-        return this.productfilter;
-    }
+ 
     
     public List<Product> getProducts(){
         int count = shop.getProductCatalogue().getCount();

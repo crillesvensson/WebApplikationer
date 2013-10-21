@@ -24,6 +24,7 @@ public class PaymentService {
     
     
     public String doPayment(){
+        
         System.out.println("Payment reached paymentservice with info: " + getCardnumber() + 
                 " " + getValidUntil() + " " + getCardHolder() + " " + getCvc() );
         if(getCardnumber() != null && getCvc() != null){
@@ -34,7 +35,6 @@ public class PaymentService {
             } catch (InterruptedException ex) {
                 Logger.getLogger(PaymentService.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.out.println("KLARRR!!!");
             return "SUCCESS";
         } else{
             return "FAILED";

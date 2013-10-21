@@ -32,7 +32,7 @@
             <to-view-id>/content/checkout/checkout.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>customerhome</from-outcome>
+            <from-outcome>customer</from-outcome>
             <to-view-id>/content/user/customerhome.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>

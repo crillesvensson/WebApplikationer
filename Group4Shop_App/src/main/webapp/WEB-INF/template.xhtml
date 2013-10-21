@@ -14,8 +14,8 @@
         <div id="wrapper">
             <header>
                 <div id="logodiv">
-                    <h1> LOGO GOES HERE!</h1>
-                    <p>This is header add links and  logo</p>
+                   <!-- <h1> LOGO GOES HERE!</h1>
+                    <p>This is header add links and  logo</p>-->
                 </div>
                 <div id="headerlinks">
                     <ul class="hlink">
@@ -29,7 +29,7 @@
                             <h:link value="0 kr - Cart" outcome="cart" />
                         </li> 
                         <li>
-                            <h:link value="Login" outcome="login" rendered="#{empty request.remoteUser}" />
+                            <h:link value="Login" outcome="customer" rendered="#{empty request.remoteUser}" />
                         </li>    
                         <h:form>
                             <h:panelGroup id="loginout">
@@ -48,7 +48,7 @@
                     <li><h:link value="Products" outcome="products" /></li>    
                     <li><h:link value="Blog" outcome="blog" /></li>
                     <li><h:link value="Contact" outcome="contact" /></li>
-                    <li><h:link value="My Page" outcome="customerhome" /></li>
+                    <li><h:link value="My Page" outcome="customer" /></li>
                 </ul>
             </nav>
             

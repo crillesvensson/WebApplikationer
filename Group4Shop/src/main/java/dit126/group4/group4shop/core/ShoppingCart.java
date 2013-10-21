@@ -44,8 +44,7 @@ public class ShoppingCart /*implements IShoppingCart*/{
     public String getTotalPrice(){
         Double total = 0.0;
         for (OrderItem item : getAsOrderItems()){
-            Double subTotal = item.getQuantity() * item.getProduct().getPrice();
-            total = total + subTotal;
+            total = total + item.getTotal();
         }
         return total.toString();
     }

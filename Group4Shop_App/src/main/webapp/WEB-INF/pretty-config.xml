@@ -37,7 +37,7 @@
         <!-- Customer -->
         
         <url-mapping id="customer-home">
-		<pattern value="/customer/home" />
+		<pattern value="/customer" />
 		<view-id value="/content/user/customerhome.xhtml" />
 	</url-mapping>
         

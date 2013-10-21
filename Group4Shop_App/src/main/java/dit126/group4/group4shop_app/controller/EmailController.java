@@ -13,7 +13,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 /**
  *
@@ -30,7 +32,7 @@ public class EmailController implements Serializable{
     private String user = FacesContext.getCurrentInstance().getExternalContext().getInitParameter("user");
     private String pass = FacesContext.getCurrentInstance().getExternalContext().getInitParameter("pass");
    
-    private String recipient = "info@emilbogren.se";
+    private String recipient = "group4@emilbogren.se";
    
     public void sendEmail(){
         Properties properties = new Properties();
@@ -64,4 +66,45 @@ public class EmailController implements Serializable{
             // Catch exception.
         }
     }
+    
+    public void sendEmail(String customer, String subject, String filepath){
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", port);
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        
+        Authenticator auth = new Authenticator() {
+            @Override
+            public PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(user, pass);
+            }
+        };
+        Session session = Session.getInstance(properties, auth);
+        
+        Message msg = new MimeMessage(session);
+        Multipart multipart = new MimeMultipart();
+        MimeBodyPart attachPart = new MimeBodyPart();
+        try {
+            msg.setFrom(new InternetAddress(user));
+            InternetAddress[] toAddresses = { new InternetAddress(customer) };
+            InternetAddress[] fromAddresses = { new InternetAddress(user) };
+            msg.setRecipients(Message.RecipientType.TO, toAddresses);
+            msg.setReplyTo(fromAddresses);
+            msg.setSubject(subject);
+            msg.setSentDate(new Date());
+            
+            String attachFile = filepath;
+            
+            attachPart.attachFile(attachFile);
+            multipart.addBodyPart(attachPart);
+            
+             msg.setContent(multipart);
+             
+            Transport.send(msg);
+        } catch (Exception e) {
+            System.out.println("Failed to send receipt " + e.getMessage());
+        }
+    }
+    
 }

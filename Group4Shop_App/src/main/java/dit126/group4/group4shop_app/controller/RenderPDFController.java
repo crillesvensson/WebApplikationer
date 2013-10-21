@@ -10,6 +10,7 @@ import java.net.URL;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,7 +25,10 @@ import org.xhtmlrenderer.pdf.ITextUserAgent;
 @RequestScoped
 public class RenderPDFController {
     
+    @Inject
+    private EmailController emailController;
     
+    private String filepath;
     
     public void createPDF(){
         FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -41,6 +45,7 @@ public class RenderPDFController {
             //ITextUserAgent callback = new ITextUserAgent(renderer.getOutputDevice());
             //callback.
             
+            filepath = "";
             OutputStream filepath = new FileOutputStream("/Users/emilbogren/Documents/"
                     + "WebbApp/Project/WebApplikationer/Group4Shop_App/src/main/webapp/"
                     + "content/checkout/receipts/Receipt#"+"orderID"+ ".pdf");
@@ -50,8 +55,16 @@ public class RenderPDFController {
             
             System.out.println("SUCCESS FILE IS CREATED");
             
+            sendReceiptAsMail();
+            
         } catch (Exception ex) {
             System.out.println("FAILED : " + ex.getMessage());
         }
     }
+    
+    private void sendReceiptAsMail(){
+        emailController.sendEmail(" ", "SPAM", filepath);
+        
+    }
+    
 }

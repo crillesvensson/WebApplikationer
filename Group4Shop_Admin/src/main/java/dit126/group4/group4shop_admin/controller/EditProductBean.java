@@ -122,7 +122,7 @@ public class EditProductBean implements Serializable{
         return blobImage;
     }
     
-        public Part getImages(){
+    public Part getImages(){
         return this.image;
     }
     

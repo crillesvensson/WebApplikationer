@@ -14,17 +14,30 @@
                 
                 <h:form enctype="multipart/form-data" class="inputForm">
                     <h:panelGrid columns="1" id="panelGrid">
-                        <h:inputText id="email" value="#" class="inputText"/>
+                        <h:outputText value="Info" styleClass="inputFormText"/>
+                        <h:inputText id="email" value="#{newAdmin.email}" class="inputText"/>
                         <p:watermark for="email" value="E-mail" />
-                        <h:inputText id="fname" value="#" class="inputText"/>
+                        <h:inputText id="fname" value="#{newAdmin.firstname}" class="inputText"/>
                         <p:watermark for="fname" value="First Name" />
-                        <h:inputText id="lname" value="#" class="inputText"/>
+                        <h:inputText id="lname" value="#{newAdmin.lastname}" class="inputText"/>
                         <p:watermark for="lname" value="Last Name" />
-                        <h:inputText id='password' value="#" class='inputText'/>
+                        <h:inputSecret id='password' value="#{newAdmin.password}" class='inputText'/>
                         <p:watermark for="password" value="Password" />
+                        
+                        <h:outputText value="Address" styleClass="inputFormText"/>
+                        <h:inputText id="country" value="#{newAdmin.country}" class="inputText"/>
+                        <p:watermark for="country" value="Country" />
+                        <h:inputText id="city" value="#{newAdmin.city}" class="inputText"/>
+                        <p:watermark for="city" value="City" />
+                        <h:inputText id="postal" value="#{newAdmin.postalcode}" class="inputText"/>
+                        <p:watermark for="postal" value="Postal code" />
+                        <h:inputText id='street' value="#{newAdmin.street}" class='inputText'/>
+                        <p:watermark for="street" value="Street" />
+                        <h:inputText id='streetnr' value="#{newAdmin.streetnumber}" class='inputText'/>
+                        <p:watermark for="streetnr" value="Street Nr" />
                     </h:panelGrid>
-                    <h:button outcome="products" value="Cancel" styleClass="button"/>                   
-                    <h:commandButton actionListener="#" action="products" value="Save"  styleClass="button"/>
+                    <h:button outcome="cancel" value="Cancel" styleClass="button"/>                   
+                    <h:commandButton actionListener="#{newadmincontroller.addAdmin}" action="addAdmin" value="Add"  styleClass="button"/>
                 </h:form>
                 
             </ui:define>

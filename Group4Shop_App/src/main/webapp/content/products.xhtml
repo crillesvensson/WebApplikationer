@@ -28,7 +28,7 @@
                             <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
                                              action="#{products.navigate('info')}" value="Info"/>
                             <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
-                                             action="#{infoProduct.actOnSelected}" value="Buy"/>
+                                             action="#{shoppingCart.buyProduct(p.id)}" value="Buy"/>
                         </p:column>
                     </p:dataTable>
                 </h:form>

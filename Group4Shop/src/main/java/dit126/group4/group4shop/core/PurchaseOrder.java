@@ -27,14 +27,14 @@ public class PurchaseOrder implements Serializable{
     
     @Id
     @Column(name="ID", nullable = false)
-            Long id;
+    Long id;
     
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Users user;
     
-    /*@OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "ORDERITEMS")
-    private List<OrderItem> items;*/
+    private List<OrderItem> items;
     
     @Column(name = "DATE")
     @Temporal(TemporalType.DATE)
@@ -46,10 +46,10 @@ public class PurchaseOrder implements Serializable{
     protected PurchaseOrder(){
     }
     
-    public PurchaseOrder(Long id, Users user/*, List<OrderItem> items*/){
+    public PurchaseOrder(Long id, Users user, List<OrderItem> items){
         this.id = id;
         this.user = user;
-        //this.items = items;
+        this.items = items;
         this.date = new Date();
         this.handled = false;
     }
@@ -62,9 +62,9 @@ public class PurchaseOrder implements Serializable{
         return user;
     }
     
-    /*public List<OrderItem> getOrderItems(){
+    public List<OrderItem> getOrderItems(){
         return items;
-    }*/
+    }
     
     public Date getDate(){
         return date;

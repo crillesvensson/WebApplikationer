@@ -1,7 +1,6 @@
 package dit126.group4.group4shop_app.view;
 
 import dit126.group4.group4shop.core.IProductCatalogue;
-import dit126.group4.group4shop.core.OrderItem;
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.ProductImage;
 import dit126.group4.group4shop_app.model.Group4Shop;
@@ -13,7 +12,6 @@ import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.servlet.http.Part;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 /**
@@ -52,12 +50,6 @@ public class InfoProductBB {
         }else{
             this.imageData = null;
         }
-    }
-    
-    public String actOnSelected() {
-        //OrderItem orderI = new OrderItem(id, (Product) shop.getProductCatalogue().getByName(name), 1);
-        //lägg till OrderItem till PurchaseOrder
-        return "banan";
     }
     
     protected IProductCatalogue getProductCatalogue() {

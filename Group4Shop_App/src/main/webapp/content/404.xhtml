@@ -4,16 +4,18 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <title>Contact us!</title>
     </h:head>
     <h:body>
-        <ui:composition template="/WEB-INF/template.xhtml">
-            <ui:define name="content"> 
+        <ui:composition template="/WEB-INF/template-404.xhtml">
+            <ui:define name="content-error"> 
                 
-                <h1>404</h1>
-                <p>The page you looking for doesn't exist</p>
+                <div class="error-message">
+                    <h1>404</h1>
+                    <p> The page you looking for doesn't exist<br/>
                 
-                
+                        Go back to <h:link value="Home" outcome="home" />.
+                    </p>
+                </div>
             </ui:define>
         </ui:composition>
     </h:body>

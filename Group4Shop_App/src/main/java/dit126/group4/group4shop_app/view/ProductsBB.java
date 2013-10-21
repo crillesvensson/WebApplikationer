@@ -75,7 +75,7 @@ public class ProductsBB implements Serializable{
      * }
      */
     
-    public List<Product> next() {
+  /*  public List<Product> next() {
        // inte säker på att ny cn behöver skapas
        cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
        return cn.next();
@@ -84,7 +84,7 @@ public class ProductsBB implements Serializable{
     public List<Product> prev() {
        cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
        return cn.previous();
-    }
+    }*/
     
     public String navigate(String target) {
         return target;

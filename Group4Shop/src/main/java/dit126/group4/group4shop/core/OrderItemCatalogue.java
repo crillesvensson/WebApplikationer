@@ -24,12 +24,13 @@ public class OrderItemCatalogue extends AbstractDAO<OrderItem, Long> implements 
     @Override
     public List<OrderItem> getForPurchaseOrder(Long id) {
         List<OrderItem> found = new ArrayList<>();
-        for (OrderItem oi : getRange(0, getCount())) {
+   /*     for (OrderItem oi : getRange(0, getCount())) {
             if (oi.getPurchaseOrderId().equals(id)) {
                 
                 found.add(oi);
             }
         }
-        return found;
+*/        return found;
     }
+    
 }

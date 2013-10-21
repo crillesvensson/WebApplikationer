@@ -24,7 +24,7 @@ public class LoginController {
     @Inject 
     private CurrentUserBackingBean currentUserBackingBean;
     
-    public String login() throws IOException{
+    public void login() throws IOException{
         FacesContext context = FacesContext.getCurrentInstance();
         ExternalContext externalContext = context.getExternalContext();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
@@ -32,25 +32,23 @@ public class LoginController {
             request.login(loginBackingBean.getUsername(), loginBackingBean.getPassword());
             
             currentUserBackingBean.initUser();
-            externalContext.redirect("../user/customerhome.xhtml");
+            externalContext.redirect("../../customer");
             
-            return "success";
+            //return "customer";
            
         } catch(ServletException e){
             context.addMessage(null, new FacesMessage("Login Failed"));
             //return navigationController.loginFailed();
             //externalContext.redirect("loginerror.xhtml");
-            return "failed";
+            //return "failed";
         }
-        //return "";
-        //null;
     }
     
     public void logout() throws IOException{
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
         externalContext.invalidateSession();
-        //externalContext.redirect("/content/home.xhtml");
-        externalContext.redirect("../home.xhtml");
+        externalContext.redirect("home");
+        
     }
     
 }

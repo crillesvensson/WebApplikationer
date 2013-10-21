@@ -31,6 +31,15 @@
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
     
+    <!-- Error navigation -->
+        <error-page>
+            <error-code>404</error-code>
+            <location>/content/404.xhtml</location>
+        </error-page>
+        <error-page>
+            <error-code>500</error-code>
+            <location>/content/404.xhtml</location>
+        </error-page>
     
     <!-- Start page & Session settings -->
     <welcome-file-list>

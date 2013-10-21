@@ -134,7 +134,19 @@
        <navigation-case>
            <from-outcome>showadmin</from-outcome>
            <to-view-id>/views/customer/showCustomer.xhtml</to-view-id>
+       </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/views/admins/addAdmin.xhtml</from-view-id>
+       <navigation-case>
+           <from-outcome>addAdmin</from-outcome>
+           <to-view-id>/views/admins/admins.xhtml</to-view-id>
            <redirect/> 
+       </navigation-case>
+       <navigation-case>
+           <from-outcome>cancel</from-outcome>
+           <to-view-id>/views/admins/admins.xhtml</to-view-id>
        </navigation-case>
     </navigation-rule>
     

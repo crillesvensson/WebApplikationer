@@ -34,6 +34,7 @@ public class UserRolesRegister implements IUserRolesRegister{
         }
     }
     
+    @Override
     public UserRoles get(String email){
         EntityManager em = this.emf.createEntityManager();
         UserRoles ur = null;

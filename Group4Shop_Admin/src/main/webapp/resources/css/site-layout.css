@@ -105,17 +105,34 @@
 
 #customer-data-table{
     width: 100%;
+    margin-right: 5%;
 }
 
 
 /*****************END CUSTOMER**********************/
+
+
+
+/*****************ADMIN**********************/
 
 #admins-table{
     width: 90%;
     margin-left: 5%;
 }
 
-/*****************ADMIN**********************/
+#new-admin-info{
+    background: blue;
+    margin-left: 55%;
+    margin-top: 7%;
+    width: 30%;
+}
+
+#new-admin-address{
+    background: yellow;
+    margin-left: 10%;
+    margin-top: -47%;
+    width: 30%;
+}
 
 /*****************END ADMIN**********************/
 

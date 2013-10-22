@@ -1,17 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package dit126.group4.group4shop_app.view;
 
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop_app.model.Group4Shop;
-import dit126.group4.group4shop_app.controller.ContainerNavigator;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIColumn;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
@@ -27,11 +22,9 @@ import javax.inject.Provider;
  * @author hajo
  */
 @Named("products")
-@RequestScoped  // NOTE enterprise package, else disaster!!!
+@SessionScoped  // NOTE enterprise package, else disaster!!!
 public class ProductsBB implements Serializable{
     
-    private ContainerNavigator cn;
-
     @Inject
     private Group4Shop shop;
     private List<SortMeta> preSortOrder = new ArrayList();
@@ -39,7 +32,6 @@ public class ProductsBB implements Serializable{
     @PostConstruct
     public void post() {
         // We know all injection are done so shop not null (hopefully)
-        cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
         buildSortOrder();
     }
     
@@ -74,18 +66,7 @@ public class ProductsBB implements Serializable{
      * return productList;
      * }
      */
-    
-  /*  public List<Product> next() {
-       // inte säker på att ny cn behöver skapas
-       cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
-       return cn.next();
-    }
-    
-    public List<Product> prev() {
-       cn = new ContainerNavigator(0, 3, shop.getProductCatalogue());
-       return cn.previous();
-    }*/
-    
+
     public String navigate(String target) {
         return target;
     }

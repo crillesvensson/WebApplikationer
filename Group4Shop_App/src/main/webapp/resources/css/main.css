@@ -45,7 +45,7 @@ header h1{
 }
 
 #logodiv {
-    background-image: url("#{resource['img:group4shop.jpg']}");
+    background-image: url("#{resource['img:g4s.jpg']}");
     width: 960px;
     height: 200px;  
     display: table;

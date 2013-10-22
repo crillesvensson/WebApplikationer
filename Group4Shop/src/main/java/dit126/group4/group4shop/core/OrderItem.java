@@ -53,6 +53,10 @@ public class OrderItem implements Serializable{
         return quantity;
     }
     
+    public Double getTotal(){
+        return quantity*product.getPrice();
+    }
+    
  /*   public Long getPurchaseOrderId(){
         return this.purchase_order;
     }

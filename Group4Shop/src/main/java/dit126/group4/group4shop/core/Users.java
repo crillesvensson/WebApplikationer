@@ -28,7 +28,7 @@ public class Users implements Serializable {
     private String password; // should be changed to use a more secure method 
     
     @Transient 
-    private transient ShoppingCart cart = new ShoppingCart(); //to private  
+    private transient ShoppingCart cart = new ShoppingCart();
     
     @Id
     @Column(name="EMAIL", nullable = false)

@@ -15,6 +15,8 @@ import javax.persistence.Table;
 /**
  *
  * @author Group4
+ * 
+ * Class for pairing users with a userrole
  */
 @Entity
 @Table(name="USERROLES")

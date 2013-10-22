@@ -11,6 +11,8 @@ import javax.persistence.Persistence;
 /**
  *
  * @author emilbogren
+ * 
+ * Accessing methods for userroles register
  */
 public class UserRolesRegister implements IUserRolesRegister{
     

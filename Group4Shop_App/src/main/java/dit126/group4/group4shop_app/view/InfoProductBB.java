@@ -29,6 +29,7 @@ public class InfoProductBB {
     private String price;
     private String category;
     private String description;
+    private String imageId;
     private byte[] imageData;
     
     @Inject
@@ -43,13 +44,12 @@ public class InfoProductBB {
         this.price = String.valueOf(p.getPrice());
         this.category = p.getCategory();
         this.description = p.getDescription();
-        List<ProductImage> imageList = shop.getProductImageContainer().getForProduct(this.id);
-
-        if(!imageList.isEmpty() && imageList.get(0).getProductId() == this.id){
-            this.imageData = imageList.get(0).getImageBytes();
+        
+   /*     if (p.getImage() != null){
+            this.imageId = p.getImage();
         }else{
-            this.imageData = null;
-        }
+            this.imageId = null;
+        }*/
     }
     
     protected IProductCatalogue getProductCatalogue() {
@@ -84,5 +84,4 @@ public class InfoProductBB {
         StreamedContent blobImage = new DefaultStreamedContent(new ByteArrayInputStream(this.imageData), "image/jpg");
         return blobImage;
     }
-    
 }

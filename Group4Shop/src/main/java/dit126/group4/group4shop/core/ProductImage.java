@@ -15,6 +15,8 @@ import javax.persistence.Table;
 /**
  *
  * @author Christian
+ * 
+ * An image for a product is defined here
  */
 @Entity
 @Table(name= "PRODUCTIMAGE")
@@ -57,20 +59,9 @@ public class ProductImage implements Serializable{
         return this.imageData;
     }
     
-    
+    //Returns the images as an bytearray.
     
     private byte[] getImageBytes(File image){
-      /*  FileInputStream fileInputStream=null;
-        byte[] imageBytes = new byte[(int) image.length()];
-        try {
-            fileInputStream = new FileInputStream(image);
-            fileInputStream.read(imageBytes);
-            fileInputStream.close();
-        } catch (Exception ex) {
-            Logger.getLogger(ProductImage.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            return imageBytes;
-        }*/
         byte[] imageInByte = null;
            try{
  

@@ -23,7 +23,7 @@
                     </ul>
                     <ul class="ulinks">
                         <li> 
-                            <h:link id="cart" value="0 kr - Cart" outcome="cart" />
+                            <h:link id="cart" value="#{shoppingCart.totalPrice}" outcome="cart" rendered="#{not empty request.remoteUser}"/>
                         </li> 
                         <li>
                             <h:link value="Login" outcome="customer" rendered="#{empty request.remoteUser}" />

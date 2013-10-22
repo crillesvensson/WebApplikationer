@@ -32,21 +32,30 @@ public class ShoppingCartBB implements Serializable{
     
     public void buyProduct(Long id) {
         Users currentUser = userBB.getCurrentUser();
-        Product prod = shop.getProductCatalogue().find(id);
-        currentUser.getCart().add(prod);
-        updateCart();
+        if(currentUser != null){
+            Product prod = shop.getProductCatalogue().find(id);
+            currentUser.getCart().add(prod);
+        }
+        // updateCart();
     }
     
-    private void updateCart(){
-        UIViewRoot viewRoot =  FacesContext.getCurrentInstance().getViewRoot();
-        UIComponent link = viewRoot.findComponent("cart");
-        String price = userBB.getCurrentUser().getCart().getTotalPrice();
-        link.getAttributes().put("value", (price + " kr - Cart"));
+    /* private void updateCart(){
+     * UIViewRoot viewRoot =  FacesContext.getCurrentInstance().getViewRoot();
+     * UIComponent link = viewRoot.findComponent("cart");
+     * String price = userBB.getCurrentUser().getCart().getTotalPrice();
+     * link.getAttributes().put("value", (price + " kr - Cart"));
+     * }*/
+    
+    public String getTotalPrice(){
+        String cart = "";
+        if(userBB.getCurrentUser() != null){
+            cart = userBB.getCurrentUser().getCart().getTotalPrice() + " kr - Cart";
+        }
+        return cart;
     }
     
-        public List<OrderItem> getOrderItems(){
-        int count = shop.getProductCatalogue().getCount();
-        List<OrderItem> oiList = userBB.getCurrentUser().getCart().getAsOrderItems();     
+    public List<OrderItem> getOrderItems(){
+        List<OrderItem> oiList = userBB.getCurrentUser().getCart().getAsOrderItems();
         return oiList;
     }
 }

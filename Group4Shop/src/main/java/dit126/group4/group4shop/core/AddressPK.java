@@ -8,6 +8,10 @@ import java.io.Serializable;
 
 /**
  * @author Christian
+ * 
+ *  Primary Key class for addresses, to be able to handle them as Entitys
+ * 
+ * 
  */
 public class AddressPK implements Serializable{
     

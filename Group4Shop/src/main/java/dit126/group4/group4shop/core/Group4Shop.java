@@ -7,6 +7,9 @@ package dit126.group4.group4shop.core;
 /**
  *
  * @author Christian
+ * 
+ * Shop is defined here
+ * 
  */
 public class Group4Shop implements IGroup4Shop{
     
@@ -31,6 +34,8 @@ public class Group4Shop implements IGroup4Shop{
         this.ratingCatalogue = new RatingCatalogue(puName);
         this.orderItemCatalogue = new OrderItemCatalogue(puName);
     }
+    
+    // Methods for interface access
     
     @Override
     public IProductCatalogue getProductCatalogue() {

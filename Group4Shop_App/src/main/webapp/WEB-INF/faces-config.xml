@@ -24,6 +24,10 @@
             <to-view-id>/content/contact.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-outcome>about</from-outcome>
+            <to-view-id>/content/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>login</from-outcome>
             <to-view-id>/content/login/login.xhtml</to-view-id>
         </navigation-case>

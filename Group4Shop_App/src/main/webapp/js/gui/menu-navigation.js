@@ -1,11 +1,8 @@
 $(function(){
-    $('#content').load("content/home.html");
-    
-    $('#mainmenu li a').on('click', function(e){
+    $('#aboutmenu li a').on('click', function(e){
         e.preventDefault();
         var page_url=$(this).prop('href');
-        $('#content').load(page_url);
-
+        $('#info-text-box').load(page_url);
     });
 });
 

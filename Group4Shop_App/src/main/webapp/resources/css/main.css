@@ -38,14 +38,14 @@ header h1{
 
 #content{
     width: 960px;
-    height: 900px; /* Auto */
+    height: 600px; /* Auto */
     margin: 0 auto;
     
     
 }
 
 #logodiv {
-    background-image: url("#{resource['img:group4shop.jpg']}");
+    background-image: url("#{resource['img:g4s.jpg']}");
     width: 960px;
     height: 200px;  
     display: table;
@@ -172,6 +172,6 @@ div#products-contain table td, div#products-contain table th { border: 1px solid
 }
 
 .ui-carousel .ui-carousel-viewport{
-    width: 940px!important;
-    height: 225px!important;
+    width: 960px!important;
+    height: 373px!important;
 }

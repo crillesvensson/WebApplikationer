@@ -34,7 +34,11 @@
     <!-- Error navigation -->
         <error-page>
             <error-code>404</error-code>
-            <location>/404.xhtml</location>
+            <location>/content/404.xhtml</location>
+        </error-page>
+        <error-page>
+            <error-code>500</error-code>
+            <location>/content/404.xhtml</location>
         </error-page>
     
     <!-- Start page & Session settings -->
@@ -92,7 +96,7 @@
     </context-param>
     <context-param>
         <param-name>pass</param-name>
-        <param-value>admingroup4</param-value>
+        <param-value>group4admin</param-value>
     </context-param>
 
 </web-app>

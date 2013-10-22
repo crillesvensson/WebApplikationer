@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Check Out!</title>
     </h:head>
@@ -11,21 +12,20 @@
             <ui:define name="content"> 
                 <div class="inner-2part">
                     <h1>Checkout</h1>
-                    <h:dataTable var="cart" value="">
-                        <h:column>
-                            <h:outputText  value="Product"/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Price "/>
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Quantity "/>
-                            
-                        </h:column>
-                        <h:column>
-                            <h:outputText  value="Total"/>
-                        </h:column>
-                    </h:dataTable>  
+                    <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
+                        <p:column headerText="Product">
+                            <h:outputText  value="#{cart.product.name}"/>
+                        </p:column>
+                        <p:column headerText="Price">
+                            <h:outputText  value="#{cart.product.price} "/>
+                        </p:column>
+                        <p:column headerText="Quantity">
+                            <h:outputText  value="#{cart.quantity} "/>
+                        </p:column>
+                        <p:column headerText="Total">
+                            <h:outputText  value="#{cart.total}"/>
+                        </p:column>
+                    </p:dataTable>  
                     <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
                     
                     <h:panelGroup rendered="#{not empty request.remoteUser}">

@@ -14,5 +14,4 @@ public class Group4ShopFactory {
         Group4Shop shop = new Group4Shop(puName);
         return shop;
     }
-    
 }

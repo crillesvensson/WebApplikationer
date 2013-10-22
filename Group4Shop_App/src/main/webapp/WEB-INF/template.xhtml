@@ -8,25 +8,22 @@
         <h:outputStylesheet library="css" name="main.css" />    
         <h:outputStylesheet library="css/twitterbootstrap" name="bootstrap.css"/>
         
+        <!--<h:outputScript library="js/core" name="bootstrap.js" />-->
+
         <title>Group4 WebShop - 1337 </title>
     </h:head>
     <h:body>
         <div id="wrapper">
             <header>
                 <div id="logodiv">
-                   <!-- <h1> LOGO GOES HERE!</h1>
-                    <p>This is header add links and  logo</p>-->
+                   <!-- Used for background-image -->
                 </div>
                 <div id="headerlinks">
                     <ul class="hlink">
-                        <li>Blog</li>
-                        <li>Jobb</li>
-                        <li>Bob</li>
-                        <li>Hej</li>
                     </ul>
                     <ul class="ulinks">
                         <li> 
-                            <h:link value="0 kr - Cart" outcome="cart" />
+                            <h:link id="cart" value="0 kr - Cart" outcome="cart" />
                         </li> 
                         <li>
                             <h:link value="Login" outcome="customer" rendered="#{empty request.remoteUser}" />
@@ -47,6 +44,7 @@
                     <li><h:link value="Home" outcome="home" /></li>
                     <li><h:link value="Products" outcome="products" /></li>    
                     <li><h:link value="Blog" outcome="blog" /></li>
+                    <li><h:link value="About" outcome="about" /></li>                    
                     <li><h:link value="Contact" outcome="contact" /></li>
                     <li><h:link value="My Page" outcome="customer" /></li>
                 </ul>

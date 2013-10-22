@@ -10,25 +10,26 @@
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
                 <h:form>
-                    <p:dataTable id="productsDT" var="p" value="#{products.products}" paginator="true"
-                                 paginatorAlwaysVisible="false" rows="4">
+                    <p:dataTable id="productsDT" var="p" value="#{products.products}" filteredValue="#{products.filteredProducts}"
+                                 paginator="true" rows="4" emptyMessage="No products found with current criteria">
                         <p:column headerText="Id">
                             <h:outputText value="#{p.id}"/>
                         </p:column>
-                        <p:column id="nameColumn" sortBy="name" filterBy="name" headerText="Name">
+                        <p:column id="nameColumn" sortBy="name" filterBy="name" filterMatchMode="contains" headerText="Name">
                             <h:outputText value="#{p.name}"/>
                         </p:column>
                         <p:column sortBy="price" headerText="Price">
                             <h:outputText class="text-right" value="#{p.price}"/>
                         </p:column>
-                        <p:column sortBy="category" filterBy="category" headerText="Category">
+                        <p:column sortBy="category" filterBy="category" filterOptions="#{products.categoryOptions}" 
+                                  filterMatchMode="exact" headerText="Category">
                             <h:outputText value="#{p.category}"/>
                         </p:column>
                         <p:column headerText="Action">
                             <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
                                              action="#{products.navigate('info')}" value="Info"/>
                             <h:commandButton class="btn btn-default" actionListener="#{infoProduct.setSelected(p.id)}" 
-                                             action="#{infoProduct.actOnSelected}" value="Buy"/>
+                                             action="#{shoppingCart.buyProduct(p.id)}" value="Buy"/>
                         </p:column>
                     </p:dataTable>
                 </h:form>

@@ -33,6 +33,13 @@
 		<pattern value="/contact" />
 		<view-id value="/content/contact.xhtml" />
 	</url-mapping>
+       
+        <!-- About -->
+        
+        <url-mapping id="about">
+		<pattern value="/about" />
+		<view-id value="/content/about/about.xhtml" />
+	</url-mapping>
         
         <!-- Customer -->
         

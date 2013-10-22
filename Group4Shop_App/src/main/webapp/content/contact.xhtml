@@ -9,16 +9,19 @@
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content"> 
-                
-                
+                <h1>Contact</h1>
+                <h4>CUSTOMER SUPPORT</h4>
+                <p> Contact us on info@email.se or by phone 070787878. <br/>
+                    Fill in the form and we will do our best..  
+                </p>
                 <h:form>
                     <h:panelGrid columns="2">
-                        <h:outputLabel value="Mail" />
+                        <h:outputLabel value="Your email" />
                         <h:inputText id="f" value="#{contactBean.from}" />
-                        <h:outputLabel value="subject" />
+                        <h:outputLabel value="Subject" />
                         <h:inputText id="s" value="#{contactBean.subject}" />
-                        <h:outputLabel value="message" />
-                        <h:inputText id="c" value="#{contactBean.content}" />
+                        <h:outputLabel value="Message" />
+                        <h:inputTextarea style="width: 350px; height: 200px;" id="c" value="#{contactBean.content}" />
                         <h:commandButton type="submit" class="btn btn-default" value="Submit" action="#{emailController.sendEmail}"/>
                     </h:panelGrid>
                 </h:form>

@@ -49,8 +49,8 @@ public class TestLogin {
         Rating rating4 = new Rating(new Long(4), user.getEmail(), product4.getId(), 2, "Ok");
         Rating rating5 = new Rating(new Long(5), user.getEmail(), product5.getId(), 4, "Best");
         Rating rating6 = new Rating(new Long(6), user.getEmail(), product6.getId(), 1, "Not good");
-        PurchaseOrder purchaseOrder = new PurchaseOrder(new Long(1), user);
-        OrderItem orderItem = new OrderItem(new Long(1), product, 2, purchaseOrder.getId());
+   //     PurchaseOrder purchaseOrder = new PurchaseOrder(new Long(1), user);
+   //     OrderItem orderItem = new OrderItem(new Long(1), product, 2, purchaseOrder.getId());
         //Roles role = new Roles("admin", "admin role");
         //shop.getRolesRegister().add(role);
         Roles adminRole = shop.getRolesRegister().get("admin");
@@ -75,9 +75,9 @@ public class TestLogin {
         shop.getRatingCatalogue().add(rating5);
         shop.getRatingCatalogue().add(rating6);
         
-        shop.getOrderBook().add(purchaseOrder);
+   //     shop.getOrderBook().add(purchaseOrder);
         
-        shop.getOrderItemCatalogue().add(orderItem);
+   //     shop.getOrderItemCatalogue().add(orderItem);
         
         shop.getUserRolesRegister().add(adminUserRole);
         

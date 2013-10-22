@@ -12,9 +12,8 @@ import java.util.Map;
  */
 public class ShoppingCart /*implements IShoppingCart*/{
  
-   /* private final Map<Product, Integer> productFreq = new HashMap<>();
+    private final Map<Product, Integer> productFreq = new HashMap<>();
 
-    @Override
     public void add(Product product) {
         int i = 1;
         if( productFreq.containsKey(product)) {
@@ -23,7 +22,6 @@ public class ShoppingCart /*implements IShoppingCart*/{
         productFreq.put(product, i);
     }
 
-    @Override
     public void remove(Product product) {       
         int i = productFreq.get(product);
         if( i > 1){
@@ -33,7 +31,6 @@ public class ShoppingCart /*implements IShoppingCart*/{
         }
     }
 
-    @Override
     public List<OrderItem> getAsOrderItems() {
         List<OrderItem> items = new ArrayList<>();
         for (Map.Entry<Product, Integer> e : productFreq.entrySet()) {
@@ -43,10 +40,17 @@ public class ShoppingCart /*implements IShoppingCart*/{
         productFreq.clear();
         return items;
     }
+    
+    public String getTotalPrice(){
+        Double total = 0.0;
+        for (OrderItem item : getAsOrderItems()){
+            total = total + item.getTotal();
+        }
+        return total.toString();
+    }
 
     @Override
     public String toString() {
         return "ShoppingCart{" + "productFreq=" + productFreq.toString() + "}";
-    }*/
-    
+    }
 }

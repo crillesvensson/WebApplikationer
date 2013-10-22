@@ -29,17 +29,17 @@ public class OrderItem implements Serializable{
     @Column(name = "QUANTITY", nullable = false)
     private int quantity;
     
-    @Column(name ="PURCHASE_ORDER_ID", nullable = false)
+   /* @Column(name ="PURCHASE_ORDER_ID", nullable = false)
     private Long purchase_order;
-    
+    */
     protected OrderItem(){
     }
     
-    public OrderItem(Long id, Product prod, int quantity, Long purchase_order){
+    public OrderItem(Long id, Product prod, int quantity){
         this.id = id;
         product = prod;
         this.quantity = quantity;
-        this.purchase_order = purchase_order;
+        //this.purchase_order = purchase_order;
     }
     
     public Long getId(){
@@ -54,10 +54,14 @@ public class OrderItem implements Serializable{
         return quantity;
     }
     
-    public Long getPurchaseOrderId(){
-        return this.purchase_order;
+    public Double getTotal(){
+        return quantity*product.getPrice();
     }
     
+ /*   public Long getPurchaseOrderId(){
+        return this.purchase_order;
+    }
+   */ 
     @Override
     public String toString(){
         return "OrderItem{" + "product=" + product + ", quantity=" + quantity + "}";

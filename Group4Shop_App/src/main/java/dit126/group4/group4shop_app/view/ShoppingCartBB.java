@@ -2,6 +2,7 @@ package dit126.group4.group4shop_app.view;
 
 import dit126.group4.group4shop.core.OrderItem;
 import dit126.group4.group4shop.core.Product;
+import dit126.group4.group4shop.core.ShoppingCart;
 import dit126.group4.group4shop.core.Users;
 import dit126.group4.group4shop_app.model.CurrentUserBackingBean;
 import dit126.group4.group4shop_app.model.Group4Shop;
@@ -30,13 +31,20 @@ public class ShoppingCartBB implements Serializable{
     @Inject
     private CurrentUserBackingBean userBB;
     
+    private ShoppingCart cart;
+    
     public void buyProduct(Long id) {
         Users currentUser = userBB.getCurrentUser();
         if(currentUser != null){
+            if(cart == null){
+                cart = currentUser.getCart();
+            }
             Product prod = shop.getProductCatalogue().find(id);
-            currentUser.getCart().add(prod);
+            cart.add(prod);
+            /*     if (currentUser.getCart() != null){
+             * currentUser.getCart().add(prod);
+             * }*/
         }
-        // updateCart();
     }
     
     /* private void updateCart(){
@@ -47,15 +55,18 @@ public class ShoppingCartBB implements Serializable{
      * }*/
     
     public String getTotalPrice(){
-        String cart = "";
+        String cartTotal = "0";
         if(userBB.getCurrentUser() != null){
-            cart = userBB.getCurrentUser().getCart().getTotalPrice() + " kr - Cart";
+            if(cart == null){
+                cart = userBB.getCurrentUser().getCart();
+            }
+            cartTotal = cart.getTotalPrice();
         }
-        return cart;
+        return cartTotal;
     }
     
     public List<OrderItem> getOrderItems(){
-        List<OrderItem> oiList = userBB.getCurrentUser().getCart().getAsOrderItems();
+        List<OrderItem> oiList = cart.getAsOrderItems();
         return oiList;
     }
 }

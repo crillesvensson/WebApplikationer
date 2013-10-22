@@ -11,7 +11,7 @@ import javax.persistence.Transient;
 /**
  *
  * @author Group4
- * 
+ *
  * Class representing the users in database
  */
 
@@ -19,24 +19,24 @@ import javax.persistence.Transient;
 @Table(name="USERS")
 public class Users implements Serializable {
     
-    //private Long id; email could be id for each customer since we force them to log in 
-    @Column(name="FIRSTNAME") 
+    //private Long id; email could be id for each customer since we force them to log in
+    @Column(name="FIRSTNAME")
     private String firstName;
     
-    @Column(name="LASTNAME") 
+    @Column(name="LASTNAME")
     private String lastName;
     
-    @Column(name="PASSWORD") 
-    private String password; // should be changed to use a more secure method 
+    @Column(name="PASSWORD")
+    private String password; // should be changed to use a more secure method
     
-    @Transient 
-    private transient ShoppingCart cart = new ShoppingCart();
+    @Transient
+    private transient ShoppingCart cart;
     
     @Id
     @Column(name="EMAIL", nullable = false)
     //@Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@\n" +
-      //  "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Not a valid email!")
-    private String email; // key when storing users in table.    
+    //  "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Not a valid email!")
+    private String email; // key when storing users in table.
     
     public Users(){}
     
@@ -48,6 +48,9 @@ public class Users implements Serializable {
     }
     
     public ShoppingCart getCart(){
+        if (cart == null){
+            cart = new ShoppingCart();
+        }
         return cart;
     }
     
@@ -73,13 +76,13 @@ public class Users implements Serializable {
         return "User{" + "firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ",password=" + password + '}';
     }
     
-     @Override
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 113 * hash + Objects.hashCode(this.email);
         return hash;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -94,6 +97,4 @@ public class Users implements Serializable {
         }
         return true;
     }
-    
-
 }

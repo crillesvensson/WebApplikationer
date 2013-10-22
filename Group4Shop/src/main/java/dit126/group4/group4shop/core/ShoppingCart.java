@@ -37,7 +37,7 @@ public class ShoppingCart /*implements IShoppingCart*/{
             Long id = e.getKey().getId();
             items.add(new OrderItem(id, e.getKey(), e.getValue()));
         }
-        productFreq.clear();
+        //productFreq.clear();
         return items;
     }
     

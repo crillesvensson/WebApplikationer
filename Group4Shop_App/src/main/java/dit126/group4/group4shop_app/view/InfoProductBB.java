@@ -6,7 +6,6 @@ import dit126.group4.group4shop.core.ProductImage;
 import dit126.group4.group4shop_app.model.Group4Shop;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
@@ -29,12 +28,11 @@ public class InfoProductBB {
     private String price;
     private String category;
     private String description;
-    private String imageId;
     private byte[] imageData;
     
     @Inject
     private Group4Shop shop;
-     
+    
     public void setSelected(String id) {
         Logger.getAnonymousLogger().log(Level.INFO, "setSelected id={0}", id);
         Product p = shop.getProductCatalogue().find(Long.valueOf(id));
@@ -45,11 +43,10 @@ public class InfoProductBB {
         this.category = p.getCategory();
         this.description = p.getDescription();
         
-   /*     if (p.getImage() != null){
-            this.imageId = p.getImage();
-        }else{
-            this.imageId = null;
-        }*/
+        if (p.getImage() != null){
+          //  ProductImage productImage = shop.getProductImageContainer().find(p.getImage());
+            this.imageData = p.getImage().getImageBytes();
+        }
     }
     
     protected IProductCatalogue getProductCatalogue() {
@@ -80,6 +77,7 @@ public class InfoProductBB {
         if(this.imageData == null){
             String noImageString = "There is no image for this product";
             this.imageData = noImageString.getBytes();
+            return null;
         }
         StreamedContent blobImage = new DefaultStreamedContent(new ByteArrayInputStream(this.imageData), "image/jpg");
         return blobImage;

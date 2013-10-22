@@ -25,6 +25,13 @@
                         <p:column headerText="Total">
                             <h:outputText  value="#{cart.total}"/>
                         </p:column>
+                        <p:columnGroup type="footer">  
+                            <p:row>  
+                                <p:column colspan="3" footerText="Totals:"  
+                                          style="text-align:right"  />  
+                                <p:column footerText="#{shoppingCart.totalPrice} SEK" />  
+                            </p:row>  
+                        </p:columnGroup> 
                     </p:dataTable>  
                     <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
                     
@@ -52,11 +59,10 @@
                     
                 </div>
                 <h:form>            <h:commandButton value="Create PDF" action="#{pdfbean.createPDF()}"/>
-</h:form>
-
+                </h:form>
+                
                 
             </ui:define>
         </ui:composition>
     </h:body>
 </html>
-

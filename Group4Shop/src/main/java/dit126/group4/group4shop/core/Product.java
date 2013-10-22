@@ -31,6 +31,9 @@ public class Product implements Serializable {
     @Column(name="CATEGORY")
     private String category;
     
+    @Column(name="IMAGE")
+    private String image_id;
+    
     protected Product(){}
     
     public Product(Long id, String name, Double price, String description){
@@ -47,6 +50,15 @@ public class Product implements Serializable {
         this.price = price;
         this.category = category;
         this.description = description;
+    }
+    
+    public Product(Long id, String name, Double price, String categorie, String description, String image){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = categorie;
+        this.description = description;
+        this.image_id = image;
     }
     
     public Long getId(){
@@ -67,6 +79,10 @@ public class Product implements Serializable {
     
     public String getCategory(){
         return category;
+    }
+    
+    public String getImage(){
+        return this.image_id;
     }
     
     @Override

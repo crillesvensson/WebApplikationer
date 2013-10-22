@@ -16,5 +16,5 @@ import java.util.List;
 public interface IOrderItemCatalogue extends IDAO<OrderItem, Long>{
     
     public List<OrderItem> getForPurchaseOrder(Long id);
-    
+
 }

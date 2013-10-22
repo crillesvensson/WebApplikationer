@@ -23,8 +23,6 @@ public class ProductImage implements Serializable{
     @Id
     @Column(name = "NAME", nullable = false)
     private String name;
-    @Column(name = "PRODUCT")
-    private Long productId;
     @Lob
     @Column(name = "IMAGEDATA")
     private byte[] imageData;
@@ -35,17 +33,24 @@ public class ProductImage implements Serializable{
     
     public ProductImage(String name, Long productId, byte[] image){
         this.name = name;
-        this.productId = productId;
+        //this.productId = productId;
         //this.imageData = this.getImageBytes(image);
         this.imageData = image;
     }
+    
+    public ProductImage(String name, byte[] image){
+        this.name = name;
+        this.imageData= image;
+    }
+    
+    
     
     public String getName(){
         return this.name;
     }
     
     public Long getProductId(){
-        return this.productId;
+        return null;
     }
     
     public byte[] getImageBytes(){

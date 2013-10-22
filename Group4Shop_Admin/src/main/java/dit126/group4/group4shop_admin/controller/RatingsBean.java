@@ -9,7 +9,6 @@ package dit126.group4.group4shop_admin.controller;
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.Rating;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -26,10 +25,6 @@ public class RatingsBean implements Serializable{
     
     private Long product_id;
     private String product_name;
-   /* private Long user_ID;
-    private Long product_ID;
-    private int rating;
-    private String comment;*/
     
     @Inject
     private Provider<Group4ShopBean> group4shop;

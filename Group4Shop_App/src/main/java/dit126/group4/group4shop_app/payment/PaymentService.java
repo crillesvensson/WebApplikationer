@@ -40,12 +40,8 @@ public class PaymentService {
     private Group4Shop shop;
     
     public String doPayment(){
-<<<<<<< HEAD
-        System.out.println("Payment reached paymentservice with info: " + getCardnumber() +
-=======
         pendingPayment = true;
         System.out.println("Payment reached paymentservice with info: " + getCardnumber() + 
->>>>>>> 0779f620ada8f700692b19fa5d32115d3013c9ad
                 " " + getValidUntil() + " " + getCardHolder() + " " + getCvc() );
         if(getCardnumber() != null && getCvc() != null){
             try {

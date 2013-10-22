@@ -1,7 +1,6 @@
 package dit126.group4.group4shop.core;
 
 import dit126.group4.group4shop.utils.AbstractDAO;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 

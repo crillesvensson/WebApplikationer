@@ -70,7 +70,7 @@ public class PurchaseBean implements Serializable{
     }
     
     public List<OrderItem> getPurchaseOrderItems(Long id){
-        List<OrderItem> orderItemList = group4shop.get().getOrderItemCatalgoue().getForPurchaseOrder(id);
+        List<OrderItem> orderItemList = group4shop.get().getOrderBook().find(this.id).getOrderItems();
         return orderItemList;
     }
     

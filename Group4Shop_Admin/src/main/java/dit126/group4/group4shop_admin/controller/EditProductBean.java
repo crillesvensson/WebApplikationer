@@ -35,7 +35,7 @@ public class EditProductBean implements Serializable{
     private double price;
     private String category;
     private String description;
-    private String image_id;
+    private ProductImage productimage;
     private byte[] imageData;
     private Part image;
     
@@ -51,11 +51,10 @@ public class EditProductBean implements Serializable{
         this.price = p.getPrice();
         this.category = p.getCategory();
         this.description = p.getDescription();
-        this.image_id = p.getImage();
+        this.productimage = p.getImage();
         
-        if(image_id != null){
-            ProductImage productImage = group4shop.get().getProductImageContainer().find(this.image_id);
-            this.imageData = productImage.getImageBytes();
+        if(productimage != null){
+            this.imageData = this.productimage.getImageBytes();
             //List<ProductImage> imageList = group4shop.get().getProductImageContainer().getForProduct(this.id);
         }else{
             imageData = null;
@@ -67,15 +66,12 @@ public class EditProductBean implements Serializable{
         }*/
     }
     
-    public void editProduct() throws IOException{  
-        if(this.image != null){
-            Product product = new Product(this.id, this.name, this.price,this.category, this.description, this.image.getSubmittedFileName());
-            group4shop.get().getProductCatalogue().update(product);
-            saveImage();
-        }else{
-            Product product = new Product(this.id, this.name, this.price, this.category, this.description,this.image_id);
-            group4shop.get().getProductCatalogue().update(product);
-        }
+    public void editProduct() throws IOException{ 
+        ProductImage newproductImage = this.productimage;
+        if(this.image != null)
+            newproductImage = createProductImage();            
+        Product product = new Product(this.id, this.name, this.price,this.category, this.description,newproductImage);
+        group4shop.get().getProductCatalogue().update(product);
         //if(!imageList.)
        /*Product p = new Product(this.id, this.name, this.price, this.description);
        group4shop.get().getProductCatalogue().update(p);
@@ -86,14 +82,10 @@ public class EditProductBean implements Serializable{
        }*/
     }
     
-    private void saveImage() throws IOException{
-            if(this.image_id != null){
-                group4shop.get().getProductImageContainer().remove(this.image_id);
-            }
-            InputStream stream = this.image.getInputStream();
-            byte[] imageByte = IOUtils.toByteArray(stream);
-            ProductImage pImage = new ProductImage(this.image.getSubmittedFileName(), imageByte);
-            this.group4shop.get().getProductImageContainer().add(pImage);
+    private ProductImage createProductImage() throws IOException{   
+        InputStream stream = this.image.getInputStream();
+        byte[] imageBytes = IOUtils.toByteArray(stream);
+        return  new ProductImage(this.image.getSubmittedFileName(), imageBytes);
     }
     
     public Long getId(){

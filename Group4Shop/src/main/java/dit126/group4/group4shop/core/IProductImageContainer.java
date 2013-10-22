@@ -12,5 +12,4 @@ import java.util.List;
  * @author emilbogren
  */
 public interface IProductImageContainer extends IDAO<ProductImage, String>{
-    public List<ProductImage> getForProduct(Long id);
 }

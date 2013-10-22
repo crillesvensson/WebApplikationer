@@ -54,23 +54,20 @@ public class AddProductBean {
     /*
     * 
     */
-    public void saveProduct() throws IOException{        
-       if(image != null){
-           Product p = new Product(this.id, this.name, this.price, this.category, this.description, this.image.getSubmittedFileName());     
-           this.group4shop.getProductCatalogue().add(p);
-           saveImage();
-       }else{
-           Product p = new Product(this.id, this.name, this.price, this.category, this.description);     
-           this.group4shop.getProductCatalogue().add(p);
-       }
+    public void saveProduct() throws IOException{   
+       ProductImage newproductImage = null;
+       if(this.image != null)
+           newproductImage = createProductImage();
+       Product p = new Product(this.id, this.name, this.price, this.category, this.description, newproductImage);     
+       this.group4shop.getProductCatalogue().add(p);
     }
     
     
-    private void saveImage() throws IOException{   
+    private ProductImage createProductImage() throws IOException{   
         InputStream stream = this.image.getInputStream();
         byte[] imageBytes = IOUtils.toByteArray(stream);
-        ProductImage productImage = new ProductImage(this.image.getSubmittedFileName(), imageBytes);
-        this.group4shop.getProductImageContainer().add(productImage);
+        return  new ProductImage(this.image.getSubmittedFileName(), imageBytes);
+        //this.group4shop.getProductImageContainer().add(productImage);
     }
  
     public Map<String,Object> getProductCategories() {

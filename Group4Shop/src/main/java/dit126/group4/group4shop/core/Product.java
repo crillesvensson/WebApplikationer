@@ -1,9 +1,12 @@
 package dit126.group4.group4shop.core;
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -31,8 +34,10 @@ public class Product implements Serializable {
     @Column(name="CATEGORY")
     private String category;
     
-    @Column(name="IMAGE")
-    private String image_id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PRODUCT")
+    private ProductImage image;
+    
     
     protected Product(){}
     
@@ -52,13 +57,13 @@ public class Product implements Serializable {
         this.description = description;
     }
     
-    public Product(Long id, String name, Double price, String categorie, String description, String image){
+    public Product(Long id, String name, Double price, String categorie, String description, ProductImage image){
         this.id = id;
         this.name = name;
         this.price = price;
         this.category = categorie;
         this.description = description;
-        this.image_id = image;
+        this.image = image;
     }
     
     public Long getId(){
@@ -81,8 +86,8 @@ public class Product implements Serializable {
         return category;
     }
     
-    public String getImage(){
-        return this.image_id;
+    public ProductImage getImage(){
+        return this.image;
     }
     
     @Override

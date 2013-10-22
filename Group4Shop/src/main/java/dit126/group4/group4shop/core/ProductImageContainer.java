@@ -22,7 +22,7 @@ public class ProductImageContainer extends AbstractDAO<ProductImage, String> imp
         super(ProductImage.class, persistanceUnitName);   
     }
     
-    @Override
+    /*@Override
     public List<ProductImage> getForProduct(Long id){
         List<ProductImage> found = new ArrayList<>();
         for (ProductImage pi : getRange(0, getCount())) {
@@ -31,5 +31,5 @@ public class ProductImageContainer extends AbstractDAO<ProductImage, String> imp
             }
         }
         return found;
-    }
+    }*/
 }

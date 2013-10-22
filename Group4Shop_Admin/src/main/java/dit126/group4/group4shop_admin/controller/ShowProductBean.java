@@ -48,10 +48,9 @@ public class ShowProductBean implements Serializable{
         this.category = p.getCategory();
         
         //Get product image if there is one, else set image bytes to null
-        String image_id = p.getImage();
-        if(image_id != null){
-            ProductImage productImage = group4shop.get().getProductImageContainer().find(image_id);
-            this.imageData = productImage.getImageBytes();
+        ProductImage productimage = p.getImage();
+        if(productimage != null){
+            this.imageData = productimage.getImageBytes();
         }else{
             this.imageData = null;
         }

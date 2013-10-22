@@ -9,6 +9,8 @@ import dit126.group4.group4shop.core.ProductImage;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
@@ -26,7 +28,7 @@ public class DeleteProductBean implements Serializable{
     private double price;
     private String description;
     private String category;
-    private String image_id;
+    private ProductImage image;
     
     @Inject
     private Provider<Group4ShopBean> group4shop;
@@ -38,14 +40,15 @@ public class DeleteProductBean implements Serializable{
         this.price = p.getPrice();
         this.description = p.getDescription();
         this.category = p.getCategory();
-        this.image_id = p.getImage();
+        this.image = p.getImage();
     }
     
     public void deleteProduct(){  
-       if(this.image_id != null)
-            group4shop.get().getProductImageContainer().remove(this.image_id);
-       group4shop.get().getProductCatalogue().remove(this.id);
-       
+        if(group4shop.get().getOrderItemCatalgoue().getForProduct(this.id).isEmpty()){
+            group4shop.get().getProductCatalogue().remove(this.id);
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Can't delete because product is in an OrderItem"));
+        }  
     }
     
     public Long getId(){

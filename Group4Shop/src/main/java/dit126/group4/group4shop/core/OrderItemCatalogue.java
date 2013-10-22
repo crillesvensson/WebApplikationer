@@ -33,4 +33,14 @@ public class OrderItemCatalogue extends AbstractDAO<OrderItem, Long> implements 
 */        return found;
     }
     
+    @Override
+    public List<OrderItem> getForProduct(Long id){
+        List<OrderItem> found = new ArrayList<>();
+        for(OrderItem oi : getRange(0, getCount())){
+            if(oi.getProduct().getId().equals(id))
+                found.add(oi);
+        }
+        return found;
+    }
+    
 }

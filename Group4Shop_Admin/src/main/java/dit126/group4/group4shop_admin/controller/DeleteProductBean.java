@@ -8,8 +8,6 @@ import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.ProductImage;
 import java.io.Serializable;
 import java.util.List;
-
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -27,6 +25,8 @@ public class DeleteProductBean implements Serializable{
     private String name; 
     private double price;
     private String description;
+    private String category;
+    private String image_id;
     
     @Inject
     private Provider<Group4ShopBean> group4shop;
@@ -37,18 +37,15 @@ public class DeleteProductBean implements Serializable{
         this.name = p.getName();
         this.price = p.getPrice();
         this.description = p.getDescription();
-        
-        List<ProductImage> imageList = group4shop.get().getProductImageContainer().getForProduct(this.id);
-        
-        for(ProductImage pI : imageList){
-            group4shop.get().getProductImageContainer().remove(pI.getName());
-        }
-        
-        
+        this.category = p.getCategory();
+        this.image_id = p.getImage();
     }
     
     public void deleteProduct(){  
+       if(this.image_id != null)
+            group4shop.get().getProductImageContainer().remove(this.image_id);
        group4shop.get().getProductCatalogue().remove(this.id);
+       
     }
     
     public Long getId(){

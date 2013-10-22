@@ -26,7 +26,7 @@ public class ProductImageContainer extends AbstractDAO<ProductImage, String> imp
     public List<ProductImage> getForProduct(Long id){
         List<ProductImage> found = new ArrayList<>();
         for (ProductImage pi : getRange(0, getCount())) {
-            if (pi.getProductId() == id) {
+            if (pi.getProductId().equals(id)) {
                 found.add(pi);
             }
         }

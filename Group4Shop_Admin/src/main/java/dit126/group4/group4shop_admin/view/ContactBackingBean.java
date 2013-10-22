@@ -16,7 +16,7 @@ import javax.inject.Named;
 @RequestScoped
 public class ContactBackingBean {
  
-    private String from = "group4@emilbogren.se";
+    private final String from = "group4@emilbogren.se";
     private String subject;
     private String content;
     

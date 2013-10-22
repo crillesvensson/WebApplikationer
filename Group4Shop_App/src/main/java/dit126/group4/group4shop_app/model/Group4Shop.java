@@ -3,6 +3,7 @@ package dit126.group4.group4shop_app.model;
 import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IAddressCatalogue;
 import dit126.group4.group4shop.core.IGroup4Shop;
+import dit126.group4.group4shop.core.IOrderBook;
 import dit126.group4.group4shop.core.IProductCatalogue;
 import dit126.group4.group4shop.core.IProductImageContainer;
 import dit126.group4.group4shop.core.IRolesRegister;
@@ -53,6 +54,10 @@ public class Group4Shop implements Serializable{
     
     public IProductImageContainer getProductImageContainer(){
         return this.shop.getProductImageConatiner();
+    }
+    
+    public IOrderBook getOrderBook(){
+        return this.shop.getOrderBook();
     }
     
 //    public IShoppingCart getIShoppingCart(){

@@ -50,8 +50,8 @@
         
         <!--  Checkout -->
     
-        <url-mapping id="checkout">
-		<pattern value="/checkout" />
+        <url-mapping id="cart">
+		<pattern value="/cart" />
 		<view-id value="/content/checkout/checkout.xhtml" />
 	</url-mapping>
     

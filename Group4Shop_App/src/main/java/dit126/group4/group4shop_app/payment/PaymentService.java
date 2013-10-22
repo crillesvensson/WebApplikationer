@@ -22,9 +22,11 @@ public class PaymentService {
     private String cardHolder;
     private String cvc;
     
+    private boolean pendingPayment = false;
+    
     
     public String doPayment(){
-        
+        pendingPayment = true;
         System.out.println("Payment reached paymentservice with info: " + getCardnumber() + 
                 " " + getValidUntil() + " " + getCardHolder() + " " + getCvc() );
         if(getCardnumber() != null && getCvc() != null){
@@ -72,6 +74,14 @@ public class PaymentService {
 
     public String getCvc() {
         return cvc;
+    }
+
+    public boolean isPendingPayment() {
+        return pendingPayment;
+    }
+
+    public void setPendingPayment(boolean pendingPayment) {
+        this.pendingPayment = pendingPayment;
     }
     
     

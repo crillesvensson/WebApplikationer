@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author Group4
  */
 @Named("loginController")
-public class LoginController {
+public class LoginController{
     
     @Inject
     private LoginBackingBean loginBackingBean;

@@ -33,7 +33,7 @@ public class PurchaseOrder implements Serializable{
     private Users user;
     
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ORDERITEMS")
+    @JoinColumn(name = "PURCHASEORDER")
     private List<OrderItem> items;
     
     @Column(name = "DATE")

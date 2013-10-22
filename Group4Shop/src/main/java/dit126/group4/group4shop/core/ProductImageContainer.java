@@ -7,14 +7,14 @@ package dit126.group4.group4shop.core;
 import dit126.group4.group4shop.utils.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 
 /**
  *
  * @author Group4
+ * 
+ * Class for accessing the image for a specific product. Returns a list (with only one item)
+ * Could be possible to add more than one image per product..
+ * 
  */
 public class ProductImageContainer extends AbstractDAO<ProductImage, String> implements IProductImageContainer{
         
@@ -22,14 +22,14 @@ public class ProductImageContainer extends AbstractDAO<ProductImage, String> imp
         super(ProductImage.class, persistanceUnitName);   
     }
     
-    @Override
+    /*@Override
     public List<ProductImage> getForProduct(Long id){
         List<ProductImage> found = new ArrayList<>();
         for (ProductImage pi : getRange(0, getCount())) {
-            if (pi.getProductId() == id) {
+            if (pi.getProductId().equals(id)) {
                 found.add(pi);
             }
         }
         return found;
-    }
+    }*/
 }

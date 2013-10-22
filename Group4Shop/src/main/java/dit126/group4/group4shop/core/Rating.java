@@ -9,6 +9,9 @@ import javax.persistence.Table;
 /**
  *
  * @author Group4
+ * 
+ * Class defining user-specific ratings on a product.
+ * 
  */
 @Entity 
 @Table(name="RATING")

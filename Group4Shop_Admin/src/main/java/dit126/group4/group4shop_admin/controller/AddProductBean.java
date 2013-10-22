@@ -6,7 +6,6 @@ package dit126.group4.group4shop_admin.controller;
 
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.ProductImage;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -30,44 +29,46 @@ import org.apache.commons.io.IOUtils;
 @RequestScoped
 public class AddProductBean {
     
+    //Product information
     private Long id;
     private String name; 
     private double price;
     private String description;
     private String category;
     
-    private List<Part> images = new ArrayList<Part>();
+    //Product image
     private Part image;
+    
+    /*Product categories*/
+     private static final Map<String,Object> productCategories;
+	static{
+		productCategories = new LinkedHashMap<>();
+		productCategories.put("Other", "Other"); 
+		productCategories.put("Pants", "Pants");
+		productCategories.put("Shirts", "Shirts");
+	}
     
     @Inject
     private Group4ShopBean group4shop;
     
-    public void saveProduct() throws IOException{     
-       Product p = new Product(this.id, this.name, this.price, this.category, this.description);     
+    /*
+    * 
+    */
+    public void saveProduct() throws IOException{   
+       ProductImage newproductImage = null;
+       if(this.image != null)
+           newproductImage = createProductImage();
+       Product p = new Product(this.id, this.name, this.price, this.category, this.description, newproductImage);     
        this.group4shop.getProductCatalogue().add(p);
-       if(!images.isEmpty()){
-         saveImages();
-       }
     }
     
     
-    private void saveImages() throws IOException{
-        for(Part p : images){
-            System.out.println("" + p.getName());
-            InputStream stream = p.getInputStream();
-            byte[] imageByte = IOUtils.toByteArray(stream);
-            ProductImage pImage = new ProductImage(p.getSubmittedFileName(), this.id, imageByte);
-            this.group4shop.getProductImageContainer().add(pImage);
-        }
+    private ProductImage createProductImage() throws IOException{   
+        InputStream stream = this.image.getInputStream();
+        byte[] imageBytes = IOUtils.toByteArray(stream);
+        return  new ProductImage(this.image.getSubmittedFileName(), imageBytes);
+        //this.group4shop.getProductImageContainer().add(productImage);
     }
-
-    private static Map<String,Object> productCategories;
-	static{
-		productCategories = new LinkedHashMap<String,Object>();
-		productCategories.put("Other", "Other"); //label, value
-		productCategories.put("Pants", "Pants");
-		productCategories.put("Shirts", "Shirts");
-	}
  
     public Map<String,Object> getProductCategories() {
 	return productCategories;
@@ -113,12 +114,12 @@ public class AddProductBean {
         this.category = category;
     }
     
-    public Part getImages(){
+    public Part getImage(){
         return this.image;
     }
     
-    public void setImages(Part image){
-        this.images.add(image);
+    public void setImage(Part image){
+        this.image = image;
     }
 
 }

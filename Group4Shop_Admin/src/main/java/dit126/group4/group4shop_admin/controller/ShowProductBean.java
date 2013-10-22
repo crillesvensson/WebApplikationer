@@ -16,7 +16,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
-import javax.servlet.http.Part;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
@@ -32,6 +31,7 @@ public class ShowProductBean implements Serializable{
     private String name; 
     private double price;
     private String description;
+    private String category;
     private byte[] imageData;
     
 
@@ -45,10 +45,12 @@ public class ShowProductBean implements Serializable{
         this.name = p.getName();
         this.price = p.getPrice();
         this.description = p.getDescription();
-        List<ProductImage> imageList = group4shop.get().getProductImageContainer().getForProduct(this.getId());
-
-        if(!imageList.isEmpty() && imageList.get(0).getProductId() == this.getId()){
-            this.imageData = imageList.get(0).getImageBytes();
+        this.category = p.getCategory();
+        
+        //Get product image if there is one, else set image bytes to null
+        ProductImage productimage = p.getImage();
+        if(productimage != null){
+            this.imageData = productimage.getImageBytes();
         }else{
             this.imageData = null;
         }
@@ -72,6 +74,10 @@ public class ShowProductBean implements Serializable{
     
     public String getDescription() {
         return this.description;
+    }
+    
+    public String getCategory(){
+        return this.category;
     }
 
     

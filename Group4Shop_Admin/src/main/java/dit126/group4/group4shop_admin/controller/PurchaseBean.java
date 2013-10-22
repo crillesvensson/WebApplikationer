@@ -29,7 +29,6 @@ public class PurchaseBean implements Serializable{
 
     private Long id;
     private Users user;
-    //private List<OrderItem> items;
     private Date date;
     
     @Inject
@@ -67,12 +66,11 @@ public class PurchaseBean implements Serializable{
         PurchaseOrder po = group4shop.get().getOrderBook().find(id);
         this.id = po.getId();
         this.user = po.getUser();
-        //this.items = po.getOrderItems();
         this.date = po.getDate();
     }
     
     public List<OrderItem> getPurchaseOrderItems(Long id){
-        List<OrderItem> orderItemList = group4shop.get().getOrderItemCatalgoue().getForPurchaseOrder(id);
+        List<OrderItem> orderItemList = group4shop.get().getOrderBook().find(this.id).getOrderItems();
         return orderItemList;
     }
     
@@ -87,10 +85,6 @@ public class PurchaseBean implements Serializable{
     public Users getUser(){
         return this.user;
     }
-    
-    /*public List<OrderItem> getOrderItems(){
-        return this.items;
-    }*/
     
     public String getDate(){
         return this.date.toString();

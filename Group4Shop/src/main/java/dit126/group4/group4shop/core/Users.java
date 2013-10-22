@@ -11,6 +11,8 @@ import javax.persistence.Transient;
 /**
  *
  * @author Group4
+ * 
+ * Class representing the users in database
  */
 
 @Entity

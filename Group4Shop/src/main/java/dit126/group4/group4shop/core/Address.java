@@ -10,6 +10,9 @@ import javax.persistence.Table;
 /**
  *
  * @author Christian
+ * 
+ * Representing a adress in database
+ * 
  */
 @Entity
 @Table(name = "ADDRESS")

@@ -44,7 +44,10 @@ public class AddressCatalogue implements IAddressCatalogue{
             em.close();
         }
     }
-
+    
+    
+// find adress(es) of a specific user
+    
     @Override
     public List<Address> find(String id) {
         EntityManager em = this.emf.createEntityManager();

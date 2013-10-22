@@ -13,6 +13,9 @@ import java.util.List;
 /**
  *
  * @author Christian
+ * 
+ * Catalogue class with all ratings, access methods as follows.
+ * 
  */
 public class RatingCatalogue extends AbstractDAO<Rating, Long> implements IRatingCatalogue{
  

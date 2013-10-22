@@ -11,6 +11,9 @@ import java.util.List;
  *
  * @author emilbogren
  */
+
+// Container class for images
+
 public interface IProductImageContainer extends IDAO<ProductImage, String>{
     public List<ProductImage> getForProduct(Long id);
 }

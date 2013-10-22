@@ -13,6 +13,9 @@ import javax.persistence.Table;
 /**
  *
  * @author Group4
+ * 
+ * Class for representaion of the user roles (currently user and admin)
+ * 
  */
 
 @Entity

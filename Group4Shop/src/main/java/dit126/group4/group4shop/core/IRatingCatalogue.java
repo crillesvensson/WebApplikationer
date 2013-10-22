@@ -13,6 +13,8 @@ import java.util.List;
  *
  * @author Christian
  */
+
+// Rating container
 public interface IRatingCatalogue extends IDAO<Rating, Long>{
     
     public List<Rating> getforProduct(Long product_id);

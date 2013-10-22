@@ -16,6 +16,8 @@ public class ProductCatalogue extends AbstractDAO<Product, Long> implements IPro
         super(Product.class, puName);
     }
    
+    
+    // Query database to get a product by its name
 
     @Override
     public List<Product> getByName(String name){
@@ -24,6 +26,8 @@ public class ProductCatalogue extends AbstractDAO<Product, Long> implements IPro
         result = em.createQuery("SELECT p FROM PRODUCT p WHERE p.name = '" + name + "'").getResultList();
         return result;
     }
+    
+    // Query products depending on category (not used in our implementation right now, but could be usefull..)
     
     @Override
     public List<Product> getByCategory(String category){

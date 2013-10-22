@@ -9,6 +9,9 @@ import javax.persistence.Table;
 /**
  *
  * @author Group4
+ * 
+ * Class for defining a product
+ * 
  */
 
 @Entity(name = "Product")

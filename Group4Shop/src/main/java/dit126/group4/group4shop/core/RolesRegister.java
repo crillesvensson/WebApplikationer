@@ -11,6 +11,9 @@ import javax.persistence.Persistence;
 /**
  *
  * @author Group4
+ * 
+ * Class for accessing the roles. Also possible to add new user roles
+ * 
  */
 public class RolesRegister implements IRolesRegister{
     private EntityManagerFactory emf;

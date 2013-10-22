@@ -12,7 +12,7 @@
             <ui:define name="content"> 
                 <div class="inner-2part">
                     <h1>Checkout</h1>
-                    <p:dataTable var="cart" value="#{shoppingCart.orderItems}">
+                    <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
                         <p:column headerText="Product">
                             <h:outputText  value="#{cart.product.name}"/>
                         </p:column>

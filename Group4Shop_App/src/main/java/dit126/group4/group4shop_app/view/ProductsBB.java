@@ -11,6 +11,7 @@ import javax.faces.component.UIColumn;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.primefaces.model.SortMeta;
@@ -28,36 +29,52 @@ public class ProductsBB implements Serializable{
     @Inject
     private Group4Shop shop;
     private List<SortMeta> preSortOrder = new ArrayList();
+    private List<Product> filteredProducts;
+    private SelectItem[] categoryOptions;
+    private final static String[] categories =  new String[5];
+    
     
     @PostConstruct
     public void post() {
         // We know all injection are done so shop not null (hopefully)
+        categories[0] = "Shirts";
+        categories[1] = "Pants";
+        categories[2] = "Hats";
+        categories[3] = "Ties";
+        categories[4] = "Other";
+        categoryOptions= createFilterOptions(categories);
         buildSortOrder();
     }
     
-           /*
+    /*
      * method to build initial sort order for multisort
      */
     private void buildSortOrder() {
         UIViewRoot viewRoot =  FacesContext.getCurrentInstance().getViewRoot();
-        UIComponent column = viewRoot.findComponent("productsDT:nameColumn"); 
-
+        UIComponent column = viewRoot.findComponent("productsDT:nameColumn");
+        
         SortMeta sm1 = new SortMeta();
         sm1.setSortBy((org.primefaces.component.api.UIColumn)(UIColumn)column);
         sm1.setSortField("nameColumn");
         sm1.setSortOrder(SortOrder.DESCENDING);
-        preSortOrder.add(sm1);          
+        preSortOrder.add(sm1);
     }
-
+    
     public List<SortMeta> getPreSortOrder(){
         return preSortOrder;
     }
     
- 
+    public List<Product> getFilteredProducts(){
+        return filteredProducts;
+    }
+    
+    public void setFilteredProducts(List<Product> filteredProducts) {
+        this.filteredProducts = filteredProducts;
+    }
     
     public List<Product> getProducts(){
         int count = shop.getProductCatalogue().getCount();
-        List<Product> productList = shop.getProductCatalogue().getRange(0, count);     
+        List<Product> productList = shop.getProductCatalogue().getRange(0, count);
         return productList;
     }
     /*
@@ -66,8 +83,22 @@ public class ProductsBB implements Serializable{
      * return productList;
      * }
      */
-
+    
     public String navigate(String target) {
         return target;
+    }
+    
+    private SelectItem[] createFilterOptions(String[] data)  {
+        SelectItem[] options = new SelectItem[data.length + 1];
+        
+        options[0] = new SelectItem("", "Show all");
+        for(int i = 0; i < data.length; i++) {
+            options[i + 1] = new SelectItem(data[i], data[i]);
+        }
+        return options;
+    }
+    
+    public SelectItem[] getCategoryOptions() {
+        return categoryOptions;
     }
 }

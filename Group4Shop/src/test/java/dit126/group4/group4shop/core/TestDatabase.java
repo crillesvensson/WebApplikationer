@@ -59,6 +59,7 @@ public class TestDatabase {
         //Now find user!
         Users found = shop.getUserRegister().find("emil@tes.se");
         assertTrue(found.getFirstName().equals("Emil"));
+        assertTrue(true);
     }
     
     @Test

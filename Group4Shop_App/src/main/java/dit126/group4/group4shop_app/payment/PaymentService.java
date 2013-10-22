@@ -27,6 +27,8 @@ public class PaymentService {
     private String cardHolder;
     private String cvc;
     
+    private boolean pendingPayment = false;
+    
     
     @Inject
     private CurrentUserBackingBean userBB;
@@ -38,7 +40,12 @@ public class PaymentService {
     private Group4Shop shop;
     
     public String doPayment(){
+<<<<<<< HEAD
         System.out.println("Payment reached paymentservice with info: " + getCardnumber() +
+=======
+        pendingPayment = true;
+        System.out.println("Payment reached paymentservice with info: " + getCardnumber() + 
+>>>>>>> 0779f620ada8f700692b19fa5d32115d3013c9ad
                 " " + getValidUntil() + " " + getCardHolder() + " " + getCvc() );
         if(getCardnumber() != null && getCvc() != null){
             try {
@@ -87,6 +94,14 @@ public class PaymentService {
     
     public String getCvc() {
         return cvc;
+    }
+
+    public boolean isPendingPayment() {
+        return pendingPayment;
+    }
+
+    public void setPendingPayment(boolean pendingPayment) {
+        this.pendingPayment = pendingPayment;
     }
     
     

@@ -3,15 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Check Out!</title>
+        
     </h:head>
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content"> 
                 <div class="inner-2part">
                     <h1>Checkout</h1>
+<<<<<<< HEAD
                     <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
                         <p:column headerText="Product">
                             <h:outputText  value="#{cart.product.name}"/>
@@ -34,32 +37,88 @@
                         </p:columnGroup> 
                     </p:dataTable>  
                     <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
+=======
+>>>>>>> 0779f620ada8f700692b19fa5d32115d3013c9ad
                     
-                    <h:panelGroup rendered="#{not empty request.remoteUser}">
-                        <h3>Delivery - Correct address</h3>
-                        <p>Choose other address</p>
+                    <h:panelGroup id="checkoutCart" layout="block" rendered="#{!paymentservice.pendingPayment}">
+                        <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
+                            <p:column headerText="Product">
+                                <h:outputText  value="#{cart.product.name}"/>
+                            </p:column>
+                            <p:column headerText="Price">
+                                <h:outputText  value="#{cart.product.price} "/>
+                            </p:column>
+                            <p:column headerText="Quantity">
+                                <h:outputText  value="#{cart.quantity} "/>
+                            </p:column>
+                            <p:column headerText="Total">
+                                <h:outputText  value="#{cart.total}"/>
+                            </p:column>
+                        </p:dataTable>  
+                        <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
+                    </h:panelGroup> 
+                    
+                    <h:panelGroup layout="block" rendered="#{!paymentservice.pendingPayment}">
+                        <h:panelGroup layout="block" rendered="#{not empty request.remoteUser}">
+                            <h3>Delivery - Correct address</h3>
+                            <p>Choose address<br/></p>
+                            <p>Your items will be delivered to </p>
+                            <h:dataTable var="address" value="#{currentUserBean.currentAddress}">
+                                <p:column>
+                                    <h:panelGrid columns="2">
+                                        <h:outputText  value="#{address.street} "/>
+                                        <h:outputText  value="#{address.streetNr} "/>         
+                                    </h:panelGrid>
+                                    <h:panelGrid columns="2">
+                                        <h:outputText  value="#{address.postalCode} "/>
+                                        <h:outputText  value="#{address.region} "/>
+                                    </h:panelGrid>
+                                    <h:panelGrid columns="1">
+                                        <h:outputText  value="#{address.country} "/>
+                                    </h:panelGrid>
+                                </p:column>
+                            </h:dataTable>
+                            
+                            
+                            <h3>Payment - How would you like to pay</h3>
+                            <input type="checkbox" name="Paymentmethod" value="Visa / Mastercard" checked="checked" />
+                            
+                            <h:form id ="confirmPayment">
+                                <h:panelGrid columns="3" >
+                                    <h:outputText value="Cardnumber: " />
+                                    <h:inputText id="cardnumber" value="#{paymentservice.cardnumber}"/>
+                                    <h:message for="cardnumber" style="color:red"/>
+                                    
+                                    <h:outputText value="Cardholder " />
+                                    <h:inputText id="cardholder" value="#{paymentservice.cardHolder}"/>
+                                    <h:message for="cardholder" style="color:red"/>
+                                    
+                                    <h:outputText value="Valid: " />
+                                    <h:inputText id="cardvalid" value="#{paymentservice.validUntil}"/>
+                                    <h:message for="cardvalid" style="color:red"/>
+                                    
+                                    <h:outputText value="CVC " />
+                                    <h:inputText id="cardcvc" value="#{paymentservice.cvc}"/>
+                                    <h:message for="cardcvc" style="color:red"/>
+                                </h:panelGrid>
+                                <h:commandButton value="Pay - Complete Order" style="color:green" 
+                                                 action="#{paymentservice.doPayment}"/>
+                            </h:form>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{paymentservice.pendingPayment}">
+                        <p>Please wait - Pending payment! </p>
                         
-                        <h3>Payment - How would you like to pay</h3>
-                        <input type="checkbox" name="Paymentmethod" value="Visa / Mastercard" checked="checked" />
-                        
-                        <h:form>
-                            <h:panelGrid columns="2" >
-                                <h:outputText value="Cardnumber: " />
-                                <h:inputText id="cardnumber" value="#{paymentservice.cardnumber}"/>
-                                <h:outputText value="Cardholder " />
-                                <h:inputText id="cardholder" value="#{paymentservice.cardHolder}"/>
-                                <h:outputText value="Valid: " />
-                                <h:inputText id="cardvalid" value="#{paymentservice.validUntil}"/>
-                                <h:outputText value="CVC " />
-                                <h:inputText id="cardcvc" value="#{paymentservice.cvc}"/>
-                            </h:panelGrid>
-                            <h:commandButton value="Pay - Complete Order" style="color:green" action="#{paymentservice.doPayment}"/>
-                        </h:form>
+                        <div id="spin"> </div>
                     </h:panelGroup>
                     
                 </div>
+<<<<<<< HEAD
                 <h:form>            <h:commandButton value="Create PDF" action="#{pdfbean.createPDF()}"/>
                 </h:form>
+=======
+>>>>>>> 0779f620ada8f700692b19fa5d32115d3013c9ad
                 
                 
             </ui:define>

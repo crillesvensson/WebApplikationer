@@ -36,6 +36,10 @@
             <to-view-id>/content/checkout/checkout.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-outcome>pendingtransaction</from-outcome>
+            <to-view-id>/content/checkout/pendingtransaction.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>customer</from-outcome>
             <to-view-id>/content/user/customerhome.xhtml</to-view-id>
         </navigation-case>

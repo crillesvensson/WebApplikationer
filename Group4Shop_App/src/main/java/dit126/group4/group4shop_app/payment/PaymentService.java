@@ -24,9 +24,15 @@ public class PaymentService {
     
     private boolean pendingPayment = false;
     
+//    public String doPayment() throws InterruptedException{
+//        pendingPayment = true;
+//        transaction();
+//        return null;
+//    }
     
-    public String doPayment(){
+    public String doPayment() throws InterruptedException{
         pendingPayment = true;
+        Thread.sleep(8000);
         System.out.println("Payment reached paymentservice with info: " + getCardnumber() + 
                 " " + getValidUntil() + " " + getCardHolder() + " " + getCvc() );
         if(getCardnumber() != null && getCvc() != null){
@@ -37,9 +43,11 @@ public class PaymentService {
             } catch (InterruptedException ex) {
                 Logger.getLogger(PaymentService.class.getName()).log(Level.SEVERE, null, ex);
             }
-            return "SUCCESS";
+            pendingPayment = false;
+            return "home";
         } else{
-            return "FAILED";
+            pendingPayment = false;
+            return "home";
         }
         
     }

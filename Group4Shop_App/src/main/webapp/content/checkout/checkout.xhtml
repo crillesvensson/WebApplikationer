@@ -15,7 +15,7 @@
                 <div class="inner-2part">
                     <h1>Checkout</h1>
                     
-                    <h:panelGroup id="checkoutCart" layout="block" rendered="#{!paymentservice.pendingPayment}">
+                    <h:panelGroup id="checkoutCart" >
                         <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
                             <p:column headerText="Product">
                                 <h:outputText  value="#{cart.product.name}"/>
@@ -33,7 +33,6 @@
                         <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
                     </h:panelGroup> 
                     
-                    <h:panelGroup layout="block" rendered="#{!paymentservice.pendingPayment}">
                         <h:panelGroup layout="block" rendered="#{not empty request.remoteUser}">
                             <h3>Delivery - Correct address</h3>
                             <p>Choose address<br/></p>
@@ -77,18 +76,13 @@
                                     <h:message for="cardcvc" style="color:red"/>
                                 </h:panelGrid>
                                 <h:commandButton value="Pay - Complete Order" style="color:green" 
-                                                 action="#{paymentservice.doPayment}"/>
+                                                 action="#{paymentservice.doPayment}" onclick="hideOrShow(no);"/>
                             </h:form>
                         </h:panelGroup>
-                    </h:panelGroup>
                     
-                    <h:panelGroup rendered="#{paymentservice.pendingPayment}">
-                        <p>Please wait - Pending payment! </p>
-                        
-                        <div id="spin"> </div>
-                    </h:panelGroup>
-                    
+                 
                 </div>
+                
                 
                 
             </ui:define>

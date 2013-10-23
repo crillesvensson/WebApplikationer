@@ -11,8 +11,10 @@ import javax.persistence.Table;
 /**
  *
  * @author Group4
- * 
- * Class for pairing users with a userrole
+ *
+ * Class for pairing users with a userroles 
+ * Map Roles with User. Used for glassfish authentication
+ *
  */
 @Entity
 @Table(name="USERROLES")

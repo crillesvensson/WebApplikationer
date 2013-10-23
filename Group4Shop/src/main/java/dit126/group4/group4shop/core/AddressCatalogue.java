@@ -1,54 +1,27 @@
 package dit126.group4.group4shop.core;
 
+import dit126.group4.group4shop.utils.AbstractDAO;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 /**
  *
  * @author Christian
  */
-public class AddressCatalogue implements IAddressCatalogue{
+public class AddressCatalogue extends AbstractDAO<Address, String> implements IAddressCatalogue{
     
-    private EntityManagerFactory emf;
+    //private EntityManagerFactory emf;
     
     public AddressCatalogue(String puName){
-        this.emf = Persistence.createEntityManagerFactory(puName);
-    }
-
-    @Override
-    public void add(Address address) {
-        EntityManager em = this.emf.createEntityManager();
-        try{
-            em.getTransaction().begin();
-            em.persist(address);
-            em.getTransaction().commit();
-        }finally{
-            em.close();
-        }
-    }
-
-    @Override
-    public void remove(AddressPK addressPK) {
-        EntityManager em = this.emf.createEntityManager();
-        try{
-            em.getTransaction().begin();
-            em.remove(em.find(Address.class, addressPK));
-            em.getTransaction().commit();
-        }finally{
-            em.close();
-        }
+        //this.emf = Persistence.createEntityManagerFactory(puName);
+         super(Address.class, puName); 
     }
     
-    
-// find adress(es) of a specific user
-    
     @Override
-    public List<Address> find(String id) {
-        EntityManager em = this.emf.createEntityManager();
-        return em.createQuery("SELECT p FROM Address p WHERE p.userId = ?1")
-                .setParameter(1, id).getResultList();
+    public List<Address> findAddress(String username){
+        EntityManager em = super.emf.createEntityManager();
+        return em.createQuery("SELECT p FROM ADDRESS p WHERE p.userId = ?1")
+                .setParameter(1, username).getResultList(); 
     }
     
 }

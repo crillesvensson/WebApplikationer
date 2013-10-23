@@ -17,6 +17,8 @@ import javax.inject.Named;
 /**
  *
  * @author emilbogren
+ * 
+ * Simple 
  */
 @Named("paymentservice")
 @RequestScoped
@@ -28,12 +30,6 @@ public class PaymentService {
     private String cvc;
     
     private boolean pendingPayment = false;
-    
-//    public String doPayment() throws InterruptedException{
-//        pendingPayment = true;
-//        transaction();
-//        return null;
-//    }
     
     @Inject
     private CurrentUserBackingBean userBB;

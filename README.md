@@ -18,9 +18,10 @@ Christian Svensson - 9007290555 - crillesvensson22@gmail.com
 * Contact via email form
 * Login as user
 * Buying products (creating purchaseorder)
-* Create reciept (somewhat functional)
+* Create receipt (somewhat functional)
 
 ### Admin side;
+- product filter 
 - adding products
 - editing products
 - deleting products

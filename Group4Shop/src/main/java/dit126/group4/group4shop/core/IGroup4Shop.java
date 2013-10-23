@@ -14,15 +14,13 @@ public interface IGroup4Shop {
     
     public IUserRegister getUserRegister();
     
-    public IRolesRegister getRolesRegister();
+    public RolesRegister getRolesRegister();
     
     public IUserRolesRegister getUserRolesRegister();
     
     public IOrderBook getOrderBook();
     
     public IRatingCatalogue getRatingCatalogue();
-    
-    public IShoppingCart getShoppingCart();
     
     public IOrderItemCatalogue getOrderItemCatalogue();
 }

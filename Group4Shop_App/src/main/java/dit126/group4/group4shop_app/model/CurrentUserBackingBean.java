@@ -8,7 +8,6 @@ import dit126.group4.group4shop.core.Address;
 import dit126.group4.group4shop.core.Users;
 import java.io.Serializable;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -42,7 +41,7 @@ public class CurrentUserBackingBean implements Serializable{
     public void initUser(){
         this.username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
         this.currentuser = shop.get().getUserRegister().find(username);
-        this.currentAddress = shop.get().getAddressCatalogue().find(username);
+        this.currentAddress = shop.get().getAddressCatalogue().findAddress(username);
         
         /*this.firstname = currentuser.getFirstName();
         this.lastname = currentuser.getLastName();

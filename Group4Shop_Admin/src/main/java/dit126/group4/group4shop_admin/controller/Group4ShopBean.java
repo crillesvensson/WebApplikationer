@@ -12,7 +12,7 @@ import dit126.group4.group4shop.core.IOrderItemCatalogue;
 import dit126.group4.group4shop.core.IProductCatalogue;
 import dit126.group4.group4shop.core.IProductImageContainer;
 import dit126.group4.group4shop.core.IRatingCatalogue;
-import dit126.group4.group4shop.core.IRolesRegister;
+import dit126.group4.group4shop.core.RolesRegister;
 import dit126.group4.group4shop.core.IUserRegister;
 import dit126.group4.group4shop.core.IUserRolesRegister;
 import java.io.Serializable;
@@ -64,7 +64,7 @@ public class Group4ShopBean implements Serializable{
        return this.group4shop.getUserRolesRegister();
    }
    
-   public IRolesRegister getRolesRegister(){
+   public RolesRegister getRolesRegister(){
         return this.group4shop.getRolesRegister();
     }
             

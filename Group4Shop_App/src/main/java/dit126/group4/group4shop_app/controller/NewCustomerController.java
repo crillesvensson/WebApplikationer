@@ -43,12 +43,11 @@ public class NewCustomerController {
         shop.get().getUserRegister().add(newCustomer);
         shop.get().getAddressCatalogue().add(address);
         
-        Roles role = shop.get().getRolesRegister().get("user");
+        Roles role = shop.get().getRolesRegister().find("user");
         UserRoles newCustomerWithRole = new UserRoles(newCustomer, role);
         shop.get().getUserRoleRegister().add(newCustomerWithRole);
         
         loginRegisteredUser();
-        
     }
     
     
@@ -61,7 +60,5 @@ public class NewCustomerController {
         } catch(Exception e){
             System.out.println("Failed to login newly registered user! " + e.getMessage());
         }
-        
     }
-    
 }

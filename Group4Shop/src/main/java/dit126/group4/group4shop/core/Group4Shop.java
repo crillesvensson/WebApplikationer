@@ -13,7 +13,7 @@ public class Group4Shop implements IGroup4Shop{
     private IProductImageContainer productImageContainer;
     private IAddressCatalogue addressCatalogue;
     private IUserRegister userregister;
-    private IRolesRegister rolesRegister;
+    private RolesRegister rolesRegister;
     private IUserRolesRegister userRolesRegister;
     private IOrderBook orderBook;
     private IRatingCatalogue ratingCatalogue;
@@ -54,7 +54,7 @@ public class Group4Shop implements IGroup4Shop{
     }
     
     @Override
-    public IRolesRegister getRolesRegister() {
+    public RolesRegister getRolesRegister() {
         return this.rolesRegister;
     }
     
@@ -68,11 +68,6 @@ public class Group4Shop implements IGroup4Shop{
         return this.orderBook;
     }
 
-    @Override
-    public IShoppingCart getShoppingCart() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     @Override
     public IRatingCatalogue getRatingCatalogue(){
         return this.ratingCatalogue;

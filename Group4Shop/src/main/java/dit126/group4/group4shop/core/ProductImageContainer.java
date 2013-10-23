@@ -1,8 +1,6 @@
 package dit126.group4.group4shop.core;
 
 import dit126.group4.group4shop.utils.AbstractDAO;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -17,15 +15,4 @@ public class ProductImageContainer extends AbstractDAO<ProductImage, String> imp
     public ProductImageContainer(String persistanceUnitName){
         super(ProductImage.class, persistanceUnitName);   
     }
-    
-    /*@Override
-    public List<ProductImage> getForProduct(Long id){
-        List<ProductImage> found = new ArrayList<>();
-        for (ProductImage pi : getRange(0, getCount())) {
-            if (pi.getProductId().equals(id)) {
-                found.add(pi);
-            }
-        }
-        return found;
-    }*/
 }

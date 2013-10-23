@@ -6,10 +6,10 @@ import dit126.group4.group4shop.core.IGroup4Shop;
 import dit126.group4.group4shop.core.IOrderBook;
 import dit126.group4.group4shop.core.IProductCatalogue;
 import dit126.group4.group4shop.core.IProductImageContainer;
-import dit126.group4.group4shop.core.IRolesRegister;
 import dit126.group4.group4shop.core.IUserRolesRegister;
 //import dit126.group4.group4shop.core.IShoppingCart;
 import dit126.group4.group4shop.core.IUserRegister;
+import dit126.group4.group4shop.core.RolesRegister;
 import java.io.Serializable;
 import javax.inject.Singleton;
 
@@ -40,7 +40,7 @@ public class Group4Shop implements Serializable{
         return this.shop.getUserRegister();
     }
     
-    public IRolesRegister getRolesRegister(){
+    public RolesRegister getRolesRegister(){
         return this.shop.getRolesRegister();
     }
     

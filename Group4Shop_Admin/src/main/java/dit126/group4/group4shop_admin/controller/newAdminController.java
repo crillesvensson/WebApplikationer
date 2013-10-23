@@ -38,7 +38,7 @@ public class newAdminController {
         group4shop.getUserRegister().add(newAdmin);
         group4shop.getAddressCatalogue().add(address);
         
-        Roles role = group4shop.getRolesRegister().get("admin");
+        Roles role = group4shop.getRolesRegister().find("admin");
         UserRoles newCustomerWithRole = new UserRoles(newAdmin, role);
         group4shop.getUserRolesRegister().add(newCustomerWithRole);
     }

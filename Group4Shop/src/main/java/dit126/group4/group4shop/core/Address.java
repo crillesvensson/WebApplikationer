@@ -11,7 +11,7 @@ import javax.persistence.Table;
  *
  * @author Christian
  * 
- * Representing a adress in database
+ * Representing a address in database
  * 
  */
 @Entity
@@ -34,7 +34,6 @@ public class Address implements Serializable{
     @Id
     @Column(name = "STREETNR")
     private String streetNr;
-    //@ManyToMany(cascade = CascadeType.ALL)
     @Column(name = "USERID")
     private String userId;
     

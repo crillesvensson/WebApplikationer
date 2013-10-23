@@ -42,7 +42,7 @@ public class TestLogin {
         shop.getUserRegister().add(user);
         shop.getAddressCatalogue().add(address);
         
-        Roles adminRole = shop.getRolesRegister().get("admin");
+        Roles adminRole = shop.getRolesRegister().find("admin");
         
         UserRoles adminUserRole = new UserRoles(user, adminRole);
         shop.getUserRolesRegister().add(adminUserRole);

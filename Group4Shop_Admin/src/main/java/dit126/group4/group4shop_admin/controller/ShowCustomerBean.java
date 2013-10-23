@@ -33,7 +33,7 @@ public class ShowCustomerBean implements Serializable{
     
     public void selectedCustomer(String email){
         Users user = group4shop.get().getUserRegister().find(email);
-        List<Address> addresses = group4shop.get().getAddressCatalogue().find(user.getEmail());
+        List<Address> addresses = group4shop.get().getAddressCatalogue().findAddress(user.getEmail());
         if(!addresses.isEmpty())
             address = addresses.get(0);
         else{

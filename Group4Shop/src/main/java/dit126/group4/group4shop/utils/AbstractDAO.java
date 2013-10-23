@@ -1,6 +1,5 @@
 package dit126.group4.group4shop.utils;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -84,9 +83,6 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K>{
     @Override
     public T find(K id) {
         EntityManager em = emf.createEntityManager();
-        //TypedQuery query = em.createQuery("SELECT p FROM " + clazz.getSimpleName() + " p", clazz);
-        //T result = (T)query.getSingleResult();
-        System.out.println("AbstractDAO clazz: " + clazz.getSimpleName() + " And next " + clazz);
         T t = em.find(clazz, id);
         return t;
     }
@@ -97,13 +93,6 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K>{
         TypedQuery query = em.createQuery("SELECT p FROM "+ clazz.getSimpleName() + " p", clazz);
         List<T> result = query.getResultList();
         return result.subList(first, nItems);
-        /*List<T> list = new ArrayList<>();
-        int i = first;
-        while (i < (first+nItems) && i < result.size()){
-            list.add(result.get(i));
-            i++;
-        }
-        return list;*/
     }
     
     @Override

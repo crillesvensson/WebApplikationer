@@ -10,7 +10,7 @@ import java.util.Map;
  * 
  * @author hajo
  */
-public class ShoppingCart /*implements IShoppingCart*/{
+public class ShoppingCart {
  
     private final Map<Product, Integer> productFreq = new HashMap<>();
 
@@ -37,7 +37,6 @@ public class ShoppingCart /*implements IShoppingCart*/{
             Long id = e.getKey().getId();
             items.add(new OrderItem(id, e.getKey(), e.getValue()));
         }
-        //productFreq.clear();
         return items;
     }
     
@@ -49,6 +48,10 @@ public class ShoppingCart /*implements IShoppingCart*/{
         return total.toString();
     }
 
+    public void clearShoppingCart(){
+        productFreq.clear();
+    }
+    
     @Override
     public String toString() {
         return "ShoppingCart{" + "productFreq=" + productFreq.toString() + "}";

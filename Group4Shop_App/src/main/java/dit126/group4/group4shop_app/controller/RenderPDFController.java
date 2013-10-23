@@ -49,7 +49,7 @@ public class RenderPDFController {
             filepath = "";
             OutputStream filepath = new FileOutputStream("/Users/emilbogren/Documents/"
                     + "WebbApp/Project/WebApplikationer/Group4Shop_App/src/main/webapp/"
-                    + "content/checkout/receipts/Receipt#"+"orderID"+ ".pdf");
+                    + "content/checkout/receipts/Receipt#"+ " " + ".pdf");
             renderer.layout();
             renderer.createPDF(filepath);
             filepath.close();

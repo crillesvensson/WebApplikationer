@@ -37,9 +37,7 @@ public class InfoProductBB implements Serializable{
     private Provider<Group4Shop> shop;
     
     public void setSelected(String id) {
-        Logger.getAnonymousLogger().log(Level.INFO, "setSelected id={0}", id);
         Product p = shop.get().getProductCatalogue().find(Long.valueOf(id));
-        Logger.getAnonymousLogger().log(Level.INFO, "setSelected p={0}", p);
         this.id = p.getId();
         this.name = p.getName();
         this.price = String.valueOf(p.getPrice());
@@ -47,10 +45,9 @@ public class InfoProductBB implements Serializable{
         this.description = p.getDescription();
         
         if (p.getImage() != null){
-            System.out.println(p.getImage().getName() + " PRODUCT IMAGE");
             this.imageData = p.getImage().getImageBytes();
         }else{
-            System.out.println("Product image is empty");
+            this.imageData = null;
         }
     }
     
@@ -80,8 +77,6 @@ public class InfoProductBB implements Serializable{
     
     public StreamedContent getImage() throws IOException{
         if(this.imageData == null){
-            /*String noImageString = "There is no image for this product";
-            this.imageData = noImageString.getBytes();*/
             return null;
         }
         StreamedContent blobImage = new DefaultStreamedContent(new ByteArrayInputStream(this.imageData), "image/jpg");

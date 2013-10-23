@@ -37,23 +37,6 @@
                     </p:dataTable>  
                     <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
                     
-                    <h:panelGroup id="checkoutCart" >
-                        <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
-                            <p:column headerText="Product">
-                                <h:outputText  value="#{cart.product.name}"/>
-                            </p:column>
-                            <p:column headerText="Price">
-                                <h:outputText  value="#{cart.product.price} "/>
-                            </p:column>
-                            <p:column headerText="Quantity">
-                                <h:outputText  value="#{cart.quantity} "/>
-                            </p:column>
-                            <p:column headerText="Total">
-                                <h:outputText  value="#{cart.total}"/>
-                            </p:column>
-                        </p:dataTable>  
-                        <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
-                    </h:panelGroup> 
                     
                         <h:panelGroup layout="block" rendered="#{not empty request.remoteUser}">
                             <h3>Delivery - Correct address</h3>

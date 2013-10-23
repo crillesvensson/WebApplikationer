@@ -39,8 +39,12 @@
                             </f:facet>
                             <h:outputText value="Firstname : "></h:outputText>
                             <h:inputText id="firstname" value="#{newCustomer.firstname}"/>
+                                                        <h:message for="firstname" style="color:red"/>
+
                             <h:outputText value="Lastname : "></h:outputText>
                             <h:inputText id="lastname" value="#{newCustomer.lastname}"/>
+                                                        <h:message for="lastname" style="color:red"/>
+
                             
                             <h:outputText value="Email : "></h:outputText>
                             <h:inputText id="email" value="#{newCustomer.email}"/>
@@ -52,15 +56,24 @@
                             
                             <h:outputText value="Street : "></h:outputText>
                             <h:inputText id="street" value="#{newCustomer.street}"/>
+                                                        <h:message for="street" style="color:red"/>
+
                             <h:outputText value="Street Number : "></h:outputText>
                             <h:inputText id="streetnumber" value="#{newCustomer.streetnumber}"/>
+                                                        <h:message for="streetnumber" style="color:red"/>
+
                             <h:outputText value="Postal Code : "></h:outputText>
                             <h:inputText id="postalcode" value="#{newCustomer.postalcode}"/>
                             <h:message for="postalcode" style="color:red" />
+                            
                             <h:outputText value="City : "></h:outputText>
                             <h:inputText id="city" value="#{newCustomer.city}"/>
+                                                        <h:message for="city" style="color:red"/>
+
                             <h:outputText value="Country : "></h:outputText>
                             <h:inputText id="country" value="#{newCustomer.country}"/>
+                                                        <h:message for="country" style="color:red"/>
+
                             <f:facet name="footer">
                                 <h:commandButton value="Register" action="#{newcustomerController.register}" 
                                                  type="Register" class="btn btn-default" />

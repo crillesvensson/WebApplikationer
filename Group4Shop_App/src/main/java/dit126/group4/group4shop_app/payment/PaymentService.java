@@ -29,6 +29,11 @@ public class PaymentService {
     
     private boolean pendingPayment = false;
     
+//    public String doPayment() throws InterruptedException{
+//        pendingPayment = true;
+//        transaction();
+//        return null;
+//    }
     
     @Inject
     private CurrentUserBackingBean userBB;
@@ -39,8 +44,9 @@ public class PaymentService {
     @Inject
     private Group4Shop shop;
     
-    public String doPayment(){
+    public String doPayment() throws InterruptedException{
         pendingPayment = true;
+        Thread.sleep(8000);
         System.out.println("Payment reached paymentservice with info: " + getCardnumber() + 
                 " " + getValidUntil() + " " + getCardHolder() + " " + getCvc() );
         if(getCardnumber() != null && getCvc() != null){
@@ -51,11 +57,13 @@ public class PaymentService {
             } catch (InterruptedException ex) {
                 Logger.getLogger(PaymentService.class.getName()).log(Level.SEVERE, null, ex);
             }
-            //PurchaseOrder po = new PurchaseOrder(userBB.getCurrentUser(), cartBB.getOrderItems());
-            //shop.getOrderBook().add(po);
+            pendingPayment = false;
+            PurchaseOrder po = new PurchaseOrder(userBB.getCurrentUser(), cartBB.getOrderItems());
+            shop.getOrderBook().add(po);
             return "SUCCESS";
         } else{
-            return "FAILED";
+            pendingPayment = false;
+            return "home";
         }
         
     }

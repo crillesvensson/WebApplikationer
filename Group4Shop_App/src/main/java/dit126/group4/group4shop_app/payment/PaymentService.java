@@ -4,6 +4,7 @@
  */
 package dit126.group4.group4shop_app.payment;
 
+import dit126.group4.group4shop.core.PurchaseOrder;
 import dit126.group4.group4shop_app.model.CurrentUserBackingBean;
 import dit126.group4.group4shop_app.model.Group4Shop;
 import dit126.group4.group4shop_app.view.ShoppingCartBB;
@@ -57,8 +58,8 @@ public class PaymentService {
                 Logger.getLogger(PaymentService.class.getName()).log(Level.SEVERE, null, ex);
             }
             pendingPayment = false;
-            //PurchaseOrder po = new PurchaseOrder(userBB.getCurrentUser(), cartBB.getOrderItems());
-            //shop.getOrderBook().add(po);
+            PurchaseOrder po = new PurchaseOrder(userBB.getCurrentUser(), cartBB.getOrderItems());
+            shop.getOrderBook().add(po);
             return "SUCCESS";
         } else{
             pendingPayment = false;

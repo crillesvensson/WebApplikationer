@@ -34,7 +34,7 @@ public class EmailController implements Serializable{
    
     private String recipient = "group4@emilbogren.se";
    
-    public void sendEmail(){
+    public void sendEmailContactForm(){
         Properties properties = new Properties();
         properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.port", port);
@@ -62,8 +62,10 @@ public class EmailController implements Serializable{
             msg.setText(contactBackingBean.getContent());
 
             Transport.send(msg);
+            clear();
         } catch (Exception e) {
-            // Catch exception.
+            System.out.println("Couldn't send email: " + e.getMessage());
+            clear();
         }
     }
     
@@ -106,5 +108,13 @@ public class EmailController implements Serializable{
             System.out.println("Failed to send receipt " + e.getMessage());
         }
     }
+    
+    private void clear(){
+        contactBackingBean.setFrom(null);
+        contactBackingBean.setSubject(null);
+        contactBackingBean.setContent(null);
+    }
+    
+    
     
 }

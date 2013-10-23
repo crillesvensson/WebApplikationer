@@ -33,7 +33,7 @@
                 </div>
                 <div class="inner-2part">
                     <h:form id="register-newcustomer-form">
-                        <h:panelGrid>
+                        <h:panelGrid columns="3">
                             <f:facet name="header" class="h1">
                                 New Customer, Register here! 
                             </f:facet>
@@ -41,9 +41,11 @@
                             <h:inputText id="firstname" value="#{newCustomer.firstname}"/>
                             <h:outputText value="Lastname : "></h:outputText>
                             <h:inputText id="lastname" value="#{newCustomer.lastname}"/>
+                            
                             <h:outputText value="Email : "></h:outputText>
                             <h:inputText id="email" value="#{newCustomer.email}"/>
                             <h:message for="email" style="color:red"/>
+                            
                             <h:outputText value="Password : "></h:outputText>
                             <h:inputSecret id="password" value="#{newCustomer.password}"/>
                             <h:message for="password" style="color:red"/>

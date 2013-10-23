@@ -67,7 +67,6 @@ public class AddProductBean {
         InputStream stream = this.image.getInputStream();
         byte[] imageBytes = IOUtils.toByteArray(stream);
         return  new ProductImage(this.image.getSubmittedFileName(), imageBytes);
-        //this.group4shop.getProductImageContainer().add(productImage);
     }
  
     public Map<String,Object> getProductCategories() {

@@ -14,6 +14,28 @@
             <ui:define name="content"> 
                 <div class="inner-2part">
                     <h1>Checkout</h1>
+                    <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
+                        <p:column headerText="Product">
+                            <h:outputText  value="#{cart.product.name}"/>
+                        </p:column>
+                        <p:column headerText="Price">
+                            <h:outputText  value="#{cart.product.price} "/>
+                        </p:column>
+                        <p:column headerText="Quantity">
+                            <h:outputText  value="#{cart.quantity} "/>
+                        </p:column>
+                        <p:column headerText="Total">
+                            <h:outputText  value="#{cart.total}"/>
+                        </p:column>
+                        <p:columnGroup type="footer">  
+                            <p:row>  
+                                <p:column colspan="3" footerText="Totals:"  
+                                          style="text-align:right"  />  
+                                <p:column footerText="#{shoppingCart.totalPrice} SEK" />  
+                            </p:row>  
+                        </p:columnGroup> 
+                    </p:dataTable>  
+                    <h:button value="Checkout" style="color:green" outcome="customer" rendered="#{empty request.remoteUser}"/>
                     
                     <h:panelGroup id="checkoutCart" >
                         <p:dataTable var="cart" value="#{shoppingCart.orderItems}" emptyMessage="You have nothing in your cart">
@@ -82,6 +104,8 @@
                     
                  
                 </div>
+                <h:form>            <h:commandButton value="Create PDF" action="#{pdfbean.createPDF()}"/>
+                </h:form>
                 
                 
                 
@@ -89,4 +113,3 @@
         </ui:composition>
     </h:body>
 </html>
-

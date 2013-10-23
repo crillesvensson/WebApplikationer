@@ -58,7 +58,7 @@ public class TestLogin {
         
         orderItemList.add(orderItem);
         
-        PurchaseOrder purchaseOrder = new PurchaseOrder(new Long(1), user, orderItemList);
+        PurchaseOrder purchaseOrder = new PurchaseOrder(user, orderItemList);
         Roles adminRole = shop.getRolesRegister().get("admin");
         
         UserRoles adminUserRole = new UserRoles(user, adminRole);

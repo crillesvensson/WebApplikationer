@@ -7,6 +7,8 @@ import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,9 +27,10 @@ import javax.persistence.TemporalType;
 @Table(name="PURCHASEORDERS")
 public class PurchaseOrder implements Serializable{
     
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name="ID", nullable = false)
-    Long id;
+    private Long id;
     
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Users user;
@@ -46,8 +49,7 @@ public class PurchaseOrder implements Serializable{
     protected PurchaseOrder(){
     }
     
-    public PurchaseOrder(Long id, Users user, List<OrderItem> items){
-        this.id = id;
+    public PurchaseOrder(Users user, List<OrderItem> items){
         this.user = user;
         this.items = items;
         this.date = new Date();

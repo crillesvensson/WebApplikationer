@@ -8,6 +8,7 @@ import dit126.group4.group4shop_app.view.ContactBackingBean;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Properties;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -22,6 +23,7 @@ import javax.mail.internet.MimeMultipart;
  * @author Group4
  */
 @Named("emailController")
+@RequestScoped
 public class EmailController implements Serializable{
     
     @Inject 

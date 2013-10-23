@@ -10,6 +10,7 @@ import dit126.group4.group4shop_app.view.NewCustomerBackingBean;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  *
@@ -23,10 +24,10 @@ public class NewCustomerController {
     private NewCustomerBackingBean newCustomerBackingBean;
     
     @Inject
-    private Group4Shop shop;
+    private Provider<Group4Shop> shop;
     
     @Inject
-    private LoginController loginController;
+    private Provider<LoginController> loginController;
     
     @Inject
     private LoginBackingBean loginBackingBean;
@@ -39,12 +40,12 @@ public class NewCustomerController {
                 newCustomerBackingBean.getPostalcode(), newCustomerBackingBean.getStreet(), newCustomerBackingBean.getStreetnumber(),
                 newCustomerBackingBean.getEmail());
         
-        shop.getUserRegister().add(newCustomer);
-        shop.getAddressCatalogue().add(address);
+        shop.get().getUserRegister().add(newCustomer);
+        shop.get().getAddressCatalogue().add(address);
         
-        Roles role = shop.getRolesRegister().get("user");
+        Roles role = shop.get().getRolesRegister().get("user");
         UserRoles newCustomerWithRole = new UserRoles(newCustomer, role);
-        shop.getUserRoleRegister().add(newCustomerWithRole);
+        shop.get().getUserRoleRegister().add(newCustomerWithRole);
         
         loginRegisteredUser();
         
@@ -56,7 +57,7 @@ public class NewCustomerController {
             loginBackingBean.setUsername(newCustomerBackingBean.getEmail());
             loginBackingBean.setPassword(newCustomerBackingBean.getPassword());
    
-            loginController.login();
+            loginController.get().login();
         } catch(Exception e){
             System.out.println("Failed to login newly registered user! " + e.getMessage());
         }

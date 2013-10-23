@@ -44,7 +44,6 @@ public class InfoProductBB {
         this.description = p.getDescription();
         
         if (p.getImage() != null){
-          //  ProductImage productImage = shop.getProductImageContainer().find(p.getImage());
             this.imageData = p.getImage().getImageBytes();
         }
     }

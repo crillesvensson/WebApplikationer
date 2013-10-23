@@ -3,6 +3,8 @@ package dit126.group4.group4shop_app.controller;
 import dit126.group4.group4shop_app.model.CurrentUserBackingBean;
 import dit126.group4.group4shop_app.view.LoginBackingBean;
 import java.io.IOException;
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -16,7 +18,8 @@ import javax.servlet.http.HttpServletRequest;
  * @author Group4
  */
 @Named("loginController")
-public class LoginController{
+@SessionScoped
+public class LoginController implements Serializable{
     
     @Inject
     private LoginBackingBean loginBackingBean;

@@ -13,6 +13,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  *
@@ -23,7 +24,7 @@ import javax.inject.Named;
 public class CurrentUserBackingBean implements Serializable{
     
     @Inject
-    private Group4Shop shop;
+    private Provider<Group4Shop> shop;
     
     private String username;  
     
@@ -40,8 +41,8 @@ public class CurrentUserBackingBean implements Serializable{
 
     public void initUser(){
         this.username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
-        this.currentuser = shop.getUserRegister().find(username);
-        this.currentAddress = shop.getAddressCatalogue().find(username);
+        this.currentuser = shop.get().getUserRegister().find(username);
+        this.currentAddress = shop.get().getAddressCatalogue().find(username);
         
         /*this.firstname = currentuser.getFirstName();
         this.lastname = currentuser.getLastName();

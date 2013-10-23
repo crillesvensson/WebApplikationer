@@ -12,6 +12,7 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.xhtmlrenderer.pdf.ITextRenderer;
@@ -26,7 +27,7 @@ import org.xhtmlrenderer.pdf.ITextUserAgent;
 public class RenderPDFController {
     
     @Inject
-    private EmailController emailController;
+    private Provider<EmailController> emailController;
     
     private String filepath;
     
@@ -63,7 +64,7 @@ public class RenderPDFController {
     }
     
     private void sendReceiptAsMail(){
-        emailController.sendEmail(" ", "SPAM", filepath);
+        emailController.get().sendEmail(" ", "SPAM", filepath);
         
     }
     

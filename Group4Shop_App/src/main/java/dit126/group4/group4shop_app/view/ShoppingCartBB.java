@@ -14,6 +14,7 @@ import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  *
@@ -26,7 +27,7 @@ public class ShoppingCartBB implements Serializable{
     
     
     @Inject
-    private Group4Shop shop;
+    private Provider<Group4Shop> shop;
     
     @Inject
     private CurrentUserBackingBean userBB;
@@ -39,7 +40,7 @@ public class ShoppingCartBB implements Serializable{
             if(cart == null){
                 cart = currentUser.getCart();
             }
-            Product prod = shop.getProductCatalogue().find(id);
+            Product prod = shop.get().getProductCatalogue().find(id);
             cart.add(prod);
             /*     if (currentUser.getCart() != null){
              * currentUser.getCart().add(prod);

@@ -62,8 +62,10 @@ public class EmailController implements Serializable{
             msg.setText(contactBackingBean.getContent());
 
             Transport.send(msg);
+            clear();
         } catch (Exception e) {
-            // Catch exception.
+            System.out.println("Couldn't send email: " + e.getMessage());
+            clear();
         }
     }
     

@@ -27,7 +27,7 @@ import javax.inject.Provider;
 public class ProductsBB implements Serializable{
     
     @Inject
-    private Group4Shop shop;
+    private Provider<Group4Shop> shop;
     private List<SortMeta> preSortOrder = new ArrayList();
     private List<Product> filteredProducts;
     private SelectItem[] categoryOptions;
@@ -73,8 +73,8 @@ public class ProductsBB implements Serializable{
     }
     
     public List<Product> getProducts(){
-        int count = shop.getProductCatalogue().getCount();
-        List<Product> productList = shop.getProductCatalogue().getRange(0, count);
+        int count = shop.get().getProductCatalogue().getCount();
+        List<Product> productList = shop.get().getProductCatalogue().getRange(0, count);
         return productList;
     }
     /*

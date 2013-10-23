@@ -1,6 +1,7 @@
 
 package dit126.group4.group4shop_admin.controller;
 
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.Users;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import javax.inject.Named;
 public class CustomerBean implements Serializable{
     
     @Inject
-    private Group4ShopBean group4shop;
+    private Group4Shop group4shop;
     
     @PostConstruct
     public void post() {

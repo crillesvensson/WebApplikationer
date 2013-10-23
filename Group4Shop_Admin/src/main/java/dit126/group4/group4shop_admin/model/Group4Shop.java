@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dit126.group4.group4shop_admin.controller;
+package dit126.group4.group4shop_admin.model;
 
 import dit126.group4.group4shop.core.Group4ShopFactory;
 import dit126.group4.group4shop.core.IAddressCatalogue;
@@ -23,12 +23,12 @@ import javax.inject.Singleton;
  * @author Christian
  */
 @Singleton
-public class Group4ShopBean implements Serializable{
+public class Group4Shop implements Serializable{
     
     private final IGroup4Shop group4shop;
     private final String PU_NAME = "group4_shop";
     
-    private Group4ShopBean(){
+    private Group4Shop(){
         this.group4shop = Group4ShopFactory.getShop(PU_NAME);
     }
     

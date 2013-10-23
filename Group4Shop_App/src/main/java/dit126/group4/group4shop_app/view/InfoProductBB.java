@@ -6,11 +6,14 @@ import dit126.group4.group4shop.core.ProductImage;
 import dit126.group4.group4shop_app.model.Group4Shop;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 /**
@@ -18,8 +21,8 @@ import org.primefaces.model.StreamedContent;
  * @author David
  */
 @Named("infoProduct")
-@RequestScoped
-public class InfoProductBB {
+@SessionScoped
+public class InfoProductBB implements Serializable{
     
     
     private Long id;
@@ -31,11 +34,11 @@ public class InfoProductBB {
     private byte[] imageData;
     
     @Inject
-    private Group4Shop shop;
+    private Provider<Group4Shop> shop;
     
     public void setSelected(String id) {
         Logger.getAnonymousLogger().log(Level.INFO, "setSelected id={0}", id);
-        Product p = shop.getProductCatalogue().find(Long.valueOf(id));
+        Product p = shop.get().getProductCatalogue().find(Long.valueOf(id));
         Logger.getAnonymousLogger().log(Level.INFO, "setSelected p={0}", p);
         this.id = p.getId();
         this.name = p.getName();
@@ -44,12 +47,15 @@ public class InfoProductBB {
         this.description = p.getDescription();
         
         if (p.getImage() != null){
+            System.out.println(p.getImage().getName() + " PRODUCT IMAGE");
             this.imageData = p.getImage().getImageBytes();
+        }else{
+            System.out.println("Product image is empty");
         }
     }
     
     protected IProductCatalogue getProductCatalogue() {
-        return shop.getProductCatalogue();
+        return shop.get().getProductCatalogue();
     }
     
     public Long getId() {
@@ -74,8 +80,8 @@ public class InfoProductBB {
     
     public StreamedContent getImage() throws IOException{
         if(this.imageData == null){
-            String noImageString = "There is no image for this product";
-            this.imageData = noImageString.getBytes();
+            /*String noImageString = "There is no image for this product";
+            this.imageData = noImageString.getBytes();*/
             return null;
         }
         StreamedContent blobImage = new DefaultStreamedContent(new ByteArrayInputStream(this.imageData), "image/jpg");

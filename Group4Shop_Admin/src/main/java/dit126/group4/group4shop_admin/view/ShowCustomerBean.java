@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package dit126.group4.group4shop_admin.controller;
+package dit126.group4.group4shop_admin.view;
 
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.Address;
 import dit126.group4.group4shop.core.Users;
 import java.io.Serializable;
@@ -29,7 +30,7 @@ public class ShowCustomerBean implements Serializable{
     private Address address;
     
     @Inject
-    private Provider<Group4ShopBean> group4shop;
+    private Provider<Group4Shop> group4shop;
     
     public void selectedCustomer(String email){
         Users user = group4shop.get().getUserRegister().find(email);

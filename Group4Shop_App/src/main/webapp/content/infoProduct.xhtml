@@ -24,8 +24,8 @@
                             <h:outputText id="price" value="#{infoProduct.price}"/>
                             <h:outputText style="font-weight:bold" value="Description:" styleClass="formTextCustom"/>
                             <h:outputText id="description" value="#{infoProduct.description}"/>
-                            <p:graphicImage value="#{infoProduct.image}" />
-                            <h:outputText value=" "/>
+                            <p:graphicImage value="#{infoProduct.image}" id="Image"/>
+                            <h:outputText value=""/>
                             <h:button class="btn btn-default" outcome="products" value="Back"/>   
                             <h:commandButton class="btn btn-default" action="#{infoProduct.actOnSelected}" value="Buy" />   
                         </h:panelGrid>      

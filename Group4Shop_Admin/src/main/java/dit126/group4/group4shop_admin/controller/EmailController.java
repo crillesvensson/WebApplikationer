@@ -4,6 +4,7 @@
  */
 package dit126.group4.group4shop_admin.controller;
 
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.Users;
 import dit126.group4.group4shop_admin.view.ContactBackingBean;
 import java.io.Serializable;
@@ -30,7 +31,7 @@ public class EmailController implements Serializable{
     private ContactBackingBean contactBackingBean;
     
     @Inject
-    private Group4ShopBean group4shop;
+    private Group4Shop group4shop;
     
     private String host = FacesContext.getCurrentInstance().getExternalContext().getInitParameter("host");
     private String port = FacesContext.getCurrentInstance().getExternalContext().getInitParameter("port");

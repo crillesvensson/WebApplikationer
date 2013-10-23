@@ -6,6 +6,7 @@
 
 package dit126.group4.group4shop_admin.controller;
 
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.Rating;
 import java.io.Serializable;
@@ -27,7 +28,7 @@ public class RatingsBean implements Serializable{
     private String product_name;
     
     @Inject
-    private Provider<Group4ShopBean> group4shop;
+    private Provider<Group4Shop> group4shop;
     
     public List<Rating> getRatings(Long id){
         //Rating rating = new Rating(new Long(1), new Long(2), new Long(5), 3, "Best ever");

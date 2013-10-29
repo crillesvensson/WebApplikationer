@@ -2,10 +2,10 @@
 
 Members:
 
-Erik Forsberg: 9005213815 - erikforsberg90@gmail.com   
-David Oskarsson: 8709044971 - gusoskada@student.gu.se  
-Emil Bogren 9112062154 - emil.bogren@fripost.org  
-Christian Svensson - 9007290555 - crillesvensson22@gmail.com
+Erik Forsberg:  - erikforsberg90@gmail.com   
+David Oskarsson:  - gusoskada@student.gu.se  
+Emil Bogren  - emil.bogren@fripost.org  
+Christian Svensson -  - crillesvensson22@gmail.com
 
 ##Things that work:
 

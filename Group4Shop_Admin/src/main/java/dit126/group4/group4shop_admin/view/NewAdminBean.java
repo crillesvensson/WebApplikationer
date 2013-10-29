@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package dit126.group4.group4shop_admin.controller;
+package dit126.group4.group4shop_admin.view;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;

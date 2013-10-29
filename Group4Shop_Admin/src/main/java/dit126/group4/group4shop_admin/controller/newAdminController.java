@@ -6,6 +6,8 @@
 
 package dit126.group4.group4shop_admin.controller;
 
+import dit126.group4.group4shop_admin.view.NewAdminBean;
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.Address;
 import dit126.group4.group4shop.core.Roles;
 import dit126.group4.group4shop.core.UserRoles;
@@ -26,7 +28,7 @@ public class newAdminController {
     private NewAdminBean adminBean;
     
     @Inject
-    private Group4ShopBean group4shop;
+    private Group4Shop group4shop;
     
     public void addAdmin(){
         Users newAdmin = new Users(adminBean.getEmail(), adminBean.getFirstname(),

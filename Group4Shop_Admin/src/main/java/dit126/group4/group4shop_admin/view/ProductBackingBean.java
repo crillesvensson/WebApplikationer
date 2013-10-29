@@ -2,7 +2,7 @@ package dit126.group4.group4shop_admin.view;
 
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.ProductImage;
-import dit126.group4.group4shop_admin.controller.Group4ShopBean;
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.Serializable;
@@ -28,7 +28,7 @@ public class ProductBackingBean implements Serializable{
     protected byte[] imageData;
     
     @Inject
-    private Provider<Group4ShopBean> group4shop;
+    private Provider<Group4Shop> group4shop;
     
     public void selectedProduct(String id){
         Product p = group4shop.get().getProductCatalogue().find(Long.parseLong(id));
@@ -46,7 +46,7 @@ public class ProductBackingBean implements Serializable{
         }
     }
     
-    protected Group4ShopBean getShop(){
+    protected Group4Shop getShop(){
         return this.group4shop.get();
     }
     

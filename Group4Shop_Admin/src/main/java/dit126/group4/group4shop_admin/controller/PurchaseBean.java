@@ -6,6 +6,7 @@
 
 package dit126.group4.group4shop_admin.controller;
 
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.OrderItem;
 import dit126.group4.group4shop.core.PurchaseOrder;
 import dit126.group4.group4shop.core.Users;
@@ -32,7 +33,7 @@ public class PurchaseBean implements Serializable{
     private Date date;
     
     @Inject
-    private Provider<Group4ShopBean> group4shop;
+    private Provider<Group4Shop> group4shop;
     
     public List<PurchaseOrder> getNewPurchaseOrders(){
         return null;

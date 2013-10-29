@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dit126.group4.group4shop_admin.controller;
+package dit126.group4.group4shop_admin.view;
 
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.Product;
 import dit126.group4.group4shop.core.ProductImage;
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class AddProductBean {
 	}
     
     @Inject
-    private Group4ShopBean group4shop;
+    private Group4Shop group4shop;
     
     /*
     * 

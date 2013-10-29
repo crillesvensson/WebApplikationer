@@ -4,6 +4,7 @@
  */
 package dit126.group4.group4shop_admin.controller;
 
+import dit126.group4.group4shop_admin.model.Group4Shop;
 import dit126.group4.group4shop.core.Product;
 import java.io.Serializable;
 import java.util.List;
@@ -21,7 +22,7 @@ import javax.inject.Named;
 public class ProductBean implements Serializable{
  
     @Inject
-    private Group4ShopBean group4shop;
+    private Group4Shop group4shop;
     
     public ProductBean(){
     }

@@ -27,7 +27,7 @@
                             <p:graphicImage value="#{infoProduct.image}" id="Image"/>
                             <h:outputText value=""/>
                             <h:button class="btn btn-default" outcome="products" value="Back"/>   
-                            <h:commandButton class="btn btn-default" action="#{infoProduct.actOnSelected}" value="Buy" />   
+                            <h:commandButton class="btn btn-default" action="#{shoppingCart.buyProduct(infoProduct.id)}" value="Buy" />   
                         </h:panelGrid>      
                     </h:form>
                 </div>

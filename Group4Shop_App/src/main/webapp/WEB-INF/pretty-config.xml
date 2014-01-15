@@ -40,6 +40,22 @@
 		<pattern value="/about" />
 		<view-id value="/content/about/about.xhtml" />
 	</url-mapping>
+         <url-mapping id="aboutcompamy">
+		<pattern value="/aboutcompany" />
+		<view-id value="/content/about/aboutcompany.xhtml" />
+	</url-mapping>
+         <url-mapping id="aboutgroup4">
+		<pattern value="/aboutgroup4" />
+		<view-id value="/content/about/aboutgroup4.xhtml" />
+	</url-mapping>
+         <url-mapping id="aboutproducts">
+		<pattern value="/aboutproducts" />
+		<view-id value="/content/about/aboutproducts.xhtml" />
+	</url-mapping>
+         <url-mapping id="termsandconditions">
+		<pattern value="/termsandconditons" />
+		<view-id value="/content/about/termsandconditions.xhtml" />
+	</url-mapping>
         
         <!-- Customer -->
         

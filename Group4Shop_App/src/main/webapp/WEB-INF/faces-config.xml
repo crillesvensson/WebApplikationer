@@ -27,22 +27,6 @@
             <from-outcome>about</from-outcome>
             <to-view-id>/content/about/about.xhtml</to-view-id>
         </navigation-case>
-      <navigation-case>
-            <from-outcome>aboutcompany</from-outcome>
-            <to-view-id>/content/about/aboutcompany.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>aboutgroup4</from-outcome>
-            <to-view-id>/content/about/aboutgroup4.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>aboutproducts</from-outcome>
-            <to-view-id>/content/about/aboutproducts.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>termsandconditions</from-outcome>
-            <to-view-id>/content/about/termsandconditions.xhtml</to-view-id>
-        </navigation-case>
       
       
       
@@ -88,7 +72,26 @@
     </navigation-rule>
     
     <!-- From About -->
-    
+    <navigation-rule>
+        <from-view-id>/content/about/about.xhtml</from-view-id> 
+        <navigation-case>
+            <from-outcome>aboutcompany</from-outcome>
+            <to-view-id>/content/about/aboutcompany.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>aboutgroup4</from-outcome>
+            <to-view-id>/content/about/aboutgroup4.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>aboutproducts</from-outcome>
+            <to-view-id>/content/about/aboutproducts.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>termsandconditions</from-outcome>
+            <to-view-id>/content/about/termsandconditions.xhtml</to-view-id>
+        </navigation-case>
+        </navigation-rule>
+      
     
 
     

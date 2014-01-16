@@ -11,14 +11,14 @@
         <!--<h:outputScript library="js/core" name="bootstrap.js" />-->
         <h:outputScript library="js/core" name="spin.js" />
         <h:outputScript library="js/core" name="pay.js" />
-
+        
         <title>Group4 WebShop - 1337 </title>
     </h:head>
     <h:body>
         <div id="wrapper">
             <header>
                 <div id="logodiv">
-                   <!-- Used for background-image -->
+                    <!-- Used for background-image -->
                 </div>
                 <div id="headerlinks">
                     <ul class="hlink">
@@ -58,8 +58,37 @@
             </div>
             
             <footer class="footerstyle">
-                <p>This is footer include some link | © Group4 DIT126 </p>    
+                <p>This is footer include some link | © Group4 DIT126 | Follow us on Twitter: 
+                    
+                    <!-- TWITTER LINK -->
+                    <a href="https://twitter.com/group4" class="twitter-follow-button"
+                       data-show-count="false" data-show-screen-name="false">Follow @group4</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                        if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js,fjs);}}
+                    (document, 'script', 'twitter-wjs');</script> 
+                    
+                    | Like us on Facebook:
+                    
+                    <!-- FACEBOOK LINK -->
+                    
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                    
+                    <div class="fb-like" data-href="http://www.example.com" 
+                         data-width="100" data-layout="standard" 
+                         data-action="like" data-show-faces="true" 
+                         data-share="true"></div>
+                    
+                </p>    
             </footer>
+            
         </div>
     </h:body>
 </html>

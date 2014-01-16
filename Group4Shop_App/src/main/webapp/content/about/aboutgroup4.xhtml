@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+         <h:outputScript library="js/gui" name="menu-navigation.js" />
+
+        <title>Contact us!</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content"> 
+                <h1>About group4!</h1>
+                <h4>Allways high quality products</h4>
+                
+                
+                <div id="info-text-box">
+                    this is a short description of our company.
+                    
+                </div>
+  
+                
+                
+                
+                
+            </ui:define>
+        </ui:composition>
+    </h:body>
 </html>

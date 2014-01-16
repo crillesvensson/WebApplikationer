@@ -40,7 +40,7 @@
 		<pattern value="/about" />
 		<view-id value="/content/about/about.xhtml" />
 	</url-mapping>
-         <url-mapping id="aboutcompamy">
+         <url-mapping id="aboutcompany">
 		<pattern value="/aboutcompany" />
 		<view-id value="/content/about/aboutcompany.xhtml" />
 	</url-mapping>

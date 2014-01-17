@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui" >
     <h:head>
         <h:outputScript library="js/gui" name="menu-navigation.js" />
         
@@ -19,7 +19,23 @@
                 <div id="info-text-box">
                     Our company is based in the city of Göteborg, Sweden. Established in 2013.
                     
-                                     
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
+                    
+                    <h4>Photos from our modest offices</h4>  
+                    <p:graphicImage value="/resources/img/galleria1.jpg" alt="Image Description for" title="1" width="256" height="167"/>.
+                    <p:graphicImage value="/resources/img/galleria2.jpg" alt="Image Description for" title="1" width="256" height="167"/>.
+                    <p:graphicImage value="/resources/img/galleria3.jpg" alt="Image Description for" title="1" width="256" height="167"/> 
+                    
+                    
+                    
+                    <!-- this slideshow SHOULD be working, but its not.. for some reason -->
+                    <P>Now this should have been a gallery displaying the above photos, but no luck with the beanz :(
+                        
+                     <!--   <p:galleria value="#{slideshowBean.images}" var="image" panelWidth="200" panelHeight="200" >  
+                            <p:graphicImage value="/resources/img/#{image}"/> 
+                        </p:galleria> -->
+                    </P>
                 </div>
                 <h:link value="Go Back" outcome="about" />
                 
